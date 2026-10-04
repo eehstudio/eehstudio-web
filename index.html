@@ -408,6 +408,75 @@ img{display:block;max-width:100%}
   .ph-fig.wide{aspect-ratio:3/2}
 }
 
+
+/* case study v3 */
+.cs-h2{font-size:clamp(26px,3vw,44px);font-weight:500;letter-spacing:-0.04em;line-height:1.25;margin-bottom:clamp(24px,3vw,40px)}
+.ideas{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid #000}
+.idea{padding:20px clamp(12px,1.2vw,20px) 8px 0;border-right:1px solid var(--line)}
+.idea + .idea{padding-left:clamp(12px,1.2vw,20px)}
+.idea:last-child{border-right:0}
+.idea .n{font-size:12px;color:var(--gray);letter-spacing:.04em}
+.idea h3{font-size:clamp(19px,1.6vw,24px);font-weight:600;letter-spacing:-0.03em;line-height:1.25;margin:14px 0 10px}
+.idea p{font-size:14.5px;color:var(--gray-2);line-height:1.75}
+.b3frame{position:relative;aspect-ratio:16/9;border:1px solid var(--line);background:#F5F5F3;overflow:hidden}
+.b3frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+a.ul{color:#000;border-bottom:1px solid #000}
+.walls-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:clamp(28px,3vw,44px);max-width:760px}
+.walls-strip figure{margin:0}
+.walls-strip img{width:100%;aspect-ratio:950/2200;object-fit:cover;display:block;box-shadow:0 0 0 1px #e4e4e4}
+.walls-strip figcaption{font-size:12px;color:var(--gray);margin-top:6px}
+.demo{display:grid;grid-template-columns:auto 1fr;gap:clamp(28px,5vw,88px);align-items:center}
+.phone{width:min(380px,86vw);aspect-ratio:390/800;border-radius:44px;background:#111;padding:12px;box-shadow:0 30px 60px rgba(0,0,0,.18)}
+.phone iframe{width:100%;height:100%;border:0;border-radius:34px;background:#fff;display:block}
+.demo-t p{font-size:clamp(15.5px,1.15vw,17px);font-weight:300;line-height:1.85;color:#2b2b2b;max-width:34em}
+.demo-list{list-style:none;margin:24px 0;border-top:1px solid #000;max-width:34em}
+.demo-list li{padding:14px 0;border-bottom:1px solid var(--line);font-size:14.5px;color:var(--gray-2)}
+.demo-list b{display:block;color:#000;font-size:16px;font-weight:600;margin-bottom:2px}
+.demo-t .note{font-size:13px;color:var(--gray);margin-bottom:18px}
+.rc-wrap{display:grid;grid-template-columns:minmax(260px,420px) 1fr;gap:clamp(28px,5vw,88px);align-items:start}
+.rc-img{margin:0;background:#F0F0ED}
+.rc-img img{width:100%;display:block}
+.rc-t p{font-size:clamp(15.5px,1.15vw,17px);font-weight:300;line-height:1.85;color:#2b2b2b;max-width:34em}
+.rc-t p + p{margin-top:12px}
+.ph-fig.tvfig{width:min(260px,60%);aspect-ratio:9/16;margin-top:32px}
+.goods2{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.4vw,20px);margin-top:clamp(28px,3vw,44px)}
+.gcol h3{font-size:15px;font-weight:600;display:flex;justify-content:space-between;padding-bottom:10px;border-bottom:1px solid #000;margin-bottom:12px}
+.gcol h3 span{color:var(--gray);font-weight:400}
+.gcard{display:grid;grid-template-columns:64px 1fr;column-gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
+.gcard img{grid-row:1/4;width:64px;height:64px;object-fit:contain;background:#f6f6f4;border-radius:8px}
+.gcard b{font-size:16px;font-weight:600;letter-spacing:-0.01em;line-height:1.2}
+.gcard span{font-size:13.5px}
+.gcard small{font-size:12.5px;color:var(--gray)}
+.timeline{list-style:none;border-top:1px solid #000}
+.timeline li{display:grid;grid-template-columns:120px 1fr;gap:16px;padding:20px 0;border-bottom:1px solid var(--line)}
+.timeline .d{font-size:clamp(20px,1.8vw,26px);font-weight:600;letter-spacing:-0.03em}
+.timeline h3{font-size:clamp(18px,1.5vw,21px);font-weight:600;letter-spacing:-0.02em;margin-bottom:6px}
+.timeline p{font-size:15px;color:var(--gray-2);max-width:48em}
+.press{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(12px,1.4vw,20px)}
+.press-card{display:flex;flex-direction:column;gap:12px;padding:22px;border:1px solid #000;min-height:280px;transition:background .3s,color .3s}
+.press-card:hover{background:#000;color:#fff}
+.press-card .src{font-size:13px;font-weight:600;display:flex;justify-content:space-between}
+.press-card .src i{font-style:normal;color:var(--gray);font-weight:400}
+.press-card h3{font-size:clamp(17px,1.4vw,20px);font-weight:600;letter-spacing:-0.02em;line-height:1.4}
+.press-card p{font-size:14px;color:var(--gray-2);flex:1}
+.press-card:hover p{color:#cfcfcf}
+.press-card .tag{align-self:flex-start;margin-top:0}
+@media (max-width:1024px){
+  .ideas{grid-template-columns:1fr 1fr}
+  .idea,.idea + .idea{padding-left:0;border-right:0;border-bottom:1px solid var(--line);padding-bottom:18px}
+  .goods2{grid-template-columns:1fr 1fr}
+  .press{grid-template-columns:1fr}
+  .press-card{min-height:0}
+}
+@media (max-width:720px){
+  .ideas,.goods2{grid-template-columns:1fr}
+  .b3frame{aspect-ratio:3/4}
+  .demo,.rc-wrap{grid-template-columns:1fr}
+  .phone{margin:0 auto}
+  .timeline li{grid-template-columns:1fr;gap:4px}
+  .walls-strip{gap:4px}
+}
+
 /* ---------- Contact ---------- */
 .contact-grid{display:grid;grid-template-columns:1fr 1.35fr;gap:clamp(36px,6vw,104px)}
 .contact-info dl{display:grid;gap:22px}
@@ -936,7 +1005,37 @@ function renderWork(){
 
 /* ---------- Case study (SOCIAL VALUE MARKET) ---------- */
 const IMG = "images/";
+const SVM_GOODS = [
+  ["ENVIRONMENT","환경",[["REFILL","레몬 키링","텀블러·다회용기 사용","refill"],["RECYCLE","머쉬룸 펜던트","분리배출","recycle"],["WALK","감자 키링","대중교통·도보","walk"],["CLEAN PLATE","양파 키링","음식 남기지 않기","clean-plate"]]],
+  ["CARE","돌봄",[["WARMTH","군고구마 펜던트","병원 동행·돌봄","warmth"],["HELP","생강 키링","어르신 돕기","help"],["SWEET","딸기 동전지갑","아이 돌봄","sweet"],["LIFE","토마토 카드 홀더","헌혈 참여","life"]]],
+  ["SHARING","나눔",[["TREAT","토스트 동전지갑","음료·식사 미리 결제","treat"],["CIRCLE","당근 동전지갑","중고거래","circle"],["GIVE","버터 스틱 말랑이","기부·재능 나눔","give"],["HANDS","마늘 키링","봉사활동","hands"]]],
+  ["COMMUNITY","지역사회",[["LOCAL","노란 감자 동전지갑","전통시장·지역화폐","local"],["FAIR","가지 동전지갑","사회적기업 구매","fair"],["TOGETHER","찹쌀 경단 동전지갑","마을 가꾸기","together"],["VOICE","고추 키링","지역 공청회 참여","voice"]]]
+];
 const SVM = {
+  ideas: [
+    ["가치에 가격표를 붙이다","측정 결과를 점수가 아니라 돈으로 보여주고, 그 돈으로 장을 보게 했습니다. 연구 기관의 '사회적 가치 화폐화'를 누구나 아는 장보기와 계산대의 문법으로 바꾼 것이 출발점이었습니다."],
+    ["상품명 대신 가치의 이름","굿즈 16종에 측정 문항의 키워드를 이름으로 붙였습니다. REFILL 레몬 키링, LIFE 토마토 카드 홀더. 사 가는 것이 인형이 아니라 이름이 된 가치가 되도록 했습니다."],
+    ["누구에게나 같은 보상","처음에는 측정 금액만큼 차등 지급하려 했지만, 실천에 등수를 매기지 않기 위해 20,000 VALUE 정액으로 바꿨습니다. 대신 체크할 때마다 금액이 올라가는 미터로 배우는 재미를 살리고, 남은 금액은 사회에 기부되도록 했습니다."],
+    ["바코드가 곧 데이터","유형, 체크한 문항, 응답 정보를 16자리 숫자 바코드 하나에 담았습니다. 서버 없이 휴대폰 앱과 카운터 POS가 연결되고, 행사가 끝나면 문항별 실천율까지 바로 집계됩니다. 얼굴 사진 입력은 개인정보를 위해 과감히 뺐습니다."],
+    ["영수증이 벽이 되다","80mm 감열 영수증을 체험의 결말로 삼았습니다. 손에 쥐는 영수증과 부스 코너를 채운 초대형 영수증 배너가 같은 디자인으로 만나, 인증샷과 기념품이 되었습니다."]
+  ],
+  timeline: [
+    ["08.08","플랜 전환","인스타그램 이벤트와 미니 소쿠리를 덜어내고, 장보기와 결제를 오프라인 POS로 옮겼습니다. 체험의 중심을 계산대에 두기로 한 결정입니다."],
+    ["08.15","실행 설계","82개 업무와 결정 질문지 15개로 실행 플랜을 만들어, 클라이언트 미팅을 논의가 아닌 결정의 자리로 설계했습니다."],
+    ["08.19","프로토타입","80mm 영수증 프린터를 들이고, 바코드에 20문항 응답을 담는 앱·POS 시뮬레이터를 처음 만들었습니다."],
+    ["09.05","리브랜딩","CSES Grocery Store에서 SOCIAL VALUE MARKET으로 이름을 바꾸고, 연구원의 브랜드 메시지 구조를 부스 언어로 옮겼습니다."],
+    ["09.06","굿즈와 영수증","굿즈 16종에 가치의 이름을 붙이고, 가치 영수증과 SV TYPE 미니미 5종, 공간기획 덱을 완성했습니다."],
+    ["09.13","덜어내기","앱에서 얼굴 사진 입력을 없애고 화이트와 레드로 톤을 정리했습니다. 개인정보는 최소로, 메시지는 선명하게."],
+    ["09.14","보상 구조 재설계","측정 금액과 상관없는 20,000 VALUE 정액 보상, 체크마다 오르는 누적 미터, 사회에 기부되는 잔액. 벽면 5면 인쇄 시안도 이날 확정했습니다."],
+    ["09.15","POS와 행택","COUNTER POS를 처음 배포하고, 굿즈 16종에 EAN-13 행택 바코드를 붙였습니다. 발주 수량은 1,300개로 확정했습니다."],
+    ["09.17","하루 네 번의 배포","3D 아이콘, 중복 사용 차단, 숫자 16자리 바코드, 휴대폰 영수증 QR까지 하루 동안 네 번 업데이트했습니다."],
+    ["09.21","현장에서 계속","행사 첫날에도 결제 데이터 집계, 세로 화면과 A3 홍보물, 우산 굿즈와 품절 관리를 현장에서 바로 반영했습니다."]
+  ],
+  press: [
+    ["데일리안","2026.09.21","[현장] 최태원 \"사회적 가치도 측정·보상해야\"…내가 한 '착한 행동'은 얼마짜리?","기자가 SOCIAL VALUE MARKET에서 직접 일상 행동을 체크해 본 체험기. 텀블러, 분리배출, 헌혈 같은 행동이 SV로 환산되고, 영수증에 20,500 SV와 GREEN 밸류메이커 유형이 찍혔다고 전했습니다.","https://www.dailian.co.kr/news/view/1693168/%ED%98%84%EC%9E%A5-%EC%B5%9C%ED%83%9C%EC%9B%90-%EC%82%AC%ED%9A%8C%EC%A0%81-%EA%B0%80%EC%B9%98%EB%8F%84-%EC%B8%A1%EC%A0%95%EB%B3%B4%EC%83%81%ED%95%B4-2026","부스 체험기"],
+    ["이로운넷","2026.09.22","[이로운넷현장] 저상버스부터 잘피·AI까지...2026 대한민국 사회적가치 페스타, 사회문제 해법 한자리에","행사 현장 기사에서 SOCIAL VALUE MARKET을 이름으로 소개했습니다. 텀블러 사용이나 이웃 돕기 같은 행동을 고르면 내 사회적 가치를 화폐 단위로 확인하는 체험형 부스로 다뤘습니다.","https://www.eroun.net/news/articleView.html?idxno=90721","부스 소개"]
+  ],
+
   principles: [
     ["일상성","Everyday","거창한 선행이 아닌, 당신의 일상 속에 이미 존재하는 가치를 발견하세요."],
     ["측정성","Measure","보이지 않던 일상 속 사회적 가치를 정밀하게 측정하라."],
@@ -996,16 +1095,17 @@ function receiptPanel(){
 }
 
 function svmBody(){
+  const G = SVM_GOODS;
   return `
     <div class="cs-block">
-      <div class="cs-label">Principles</div>
-      <div class="principles">${SVM.principles.map(([k,e,d])=>`<div><span class="en">${e}</span><h3>${k}</h3><p>${esc(d)}</p></div>`).join("")}</div>
+      <div class="cs-label">Key ideas</div>
+      <h2 class="cs-h2">이 마켓을 움직인 다섯 가지 아이디어</h2>
+      <div class="ideas">${SVM.ideas.map(([t,d],i)=>`<div class="idea"><span class="n">IDEA ${pad(i+1)}</span><h3>${esc(t)}</h3><p>${esc(d)}</p></div>`).join("")}</div>
     </div>
 
     <div class="cs-block">
-      <div class="cs-label">Identity</div>
-      <div class="pair">${fig("svm-deck-01.jpg","SOCIAL VALUE MARKET 로고","wide169")}${fig("svm-package.jpg","굿즈 패키지와 안내 카드","wide169")}</div>
-      <p class="cap"><b>동네 마켓처럼 친근하게.</b> 필기체 Value와 하트를 품은 로고, 레드와 체크 패턴으로 연구 기관의 메시지를 누구나 들어오고 싶은 가게의 얼굴로 바꿨습니다.</p>
+      <div class="cs-label">Principles</div>
+      <div class="principles">${SVM.principles.map(([k,e,d])=>`<div><span class="en">${e}</span><h3>${k}</h3><p>${esc(d)}</p></div>`).join("")}</div>
     </div>
 
     <div class="cs-block">
@@ -1017,11 +1117,12 @@ function svmBody(){
     </div>
 
     <div class="cs-block">
-      <div class="cs-label">Space planning</div>
-      ${fig("svm-deck-04.jpg","부스 3D 시안","wide169")}
-      <div class="pair mt">${fig("svm-deck-05.jpg","부스 정면도","wide169")}${fig("svm-deck-06.jpg","부스 평면도","wide169")}</div>
+      <div class="cs-label">Booth in 3D</div>
+      <div class="b3frame"><iframe src="svm/booth3d.html" title="SOCIAL VALUE MARKET 3D 부스" loading="lazy"></iframe></div>
+      <p class="cap"><b>3,000 × 3,000mm, ㄴ자 개방형 부스를 3D로 먼저 지었습니다.</b> 드래그해서 돌려 보거나 ISO, FRONT, TOP 시점으로 바꿔 볼 수 있습니다. 레드 크레이트 34개와 화이트 7개, 벽면 5면, 코너의 초대형 영수증까지 실제 시공과 같은 배치입니다. <a class="ul" href="svm/booth3d.html" target="_blank" rel="noopener">크게 보기</a></p>
+      <div class="walls-strip">${["p1","p2","p3","p4","p5"].map((p,i)=>`<figure><img src="${IMG}walls/wall${p}.webp" alt="벽면 ${p.toUpperCase()} 인쇄 시안" loading="lazy"><figcaption>${p.toUpperCase()}</figcaption></figure>`).join("")}</div>
+      <p class="cap"><b>벽면 5면 인쇄 시안, 각 950 × 2,200mm.</b> 뒷벽 3면에 SOCIAL Value MARKET 워드마크가 이어지고, 우측 레드 2면에는 브랜드 선언문과 MISSION을 담았습니다.</p>
       <div class="flow" aria-label="부스 동선"><span>IN</span><i></i><span>TEST</span><i></i><span>GIFT</span><i></i><span>COUNTER</span><i></i><span>OUT</span></div>
-      <p class="cap"><b>3,000 × 3,000mm, ㄴ자 개방형 부스.</b> 들어와서 측정하고, 고르고, 계산하고, 나가는 장보기의 동선을 그대로 부스에 옮겼습니다.</p>
     </div>
 
     <div class="cs-block">
@@ -1033,20 +1134,55 @@ function svmBody(){
     </div>
 
     <div class="cs-block">
+      <div class="cs-label">Live app</div>
+      <div class="demo">
+        <div class="phone"><iframe src="svm/app.html" title="SOCIAL VALUE MARKET 설문 앱 체험" loading="lazy"></iframe></div>
+        <div class="demo-t">
+          <h2 class="cs-h2">현장에서 쓴 앱을<br>그대로 해볼 수 있습니다</h2>
+          <p>카트를 누르면 시작됩니다. 지난 한 달의 실천을 체크할 때마다 가치 미터가 올라가고, 환산 금액과 SV TYPE, 실제 POS에서 스캔되던 16자리 VALUE 바코드까지 받을 수 있습니다.</p>
+          <ul class="demo-list">
+            <li><b>20문항, 4개 영역</b>환경, 돌봄, 나눔, 지역사회. 문항마다 지급액과 산정 근거가 있습니다.</li>
+            <li><b>SV TYPE 5종</b>환경, 돌봄, 나눔, 지역사회, 올라운드. 1비트 도트 미니미로 표현했습니다.</li>
+            <li><b>16자리 VALUE 바코드</b>유형과 체크 문항, 응답 정보를 숫자 하나에 담아 서버 없이 POS와 연결했습니다.</li>
+          </ul>
+          <p class="note">포트폴리오용 체험판이라, 열 때마다 처음부터 다시 시작됩니다.</p>
+          <a class="text-link" href="svm/app.html" target="_blank" rel="noopener" data-cursor="Open">새 창에서 앱 열기</a>
+        </div>
+      </div>
+      <div class="pair mt">${fig("svm-pos.jpg","COUNTER POS 화면","wide169")}${fig("svm-cashier.jpg","카운터 결제 장면","wide169")}</div>
+      <p class="cap"><b>COUNTER POS.</b> 굿즈 행택과 VALUE 바코드를 순서 상관없이 스캔하면 자동으로 결제되고, Enter 한 번에 80mm 영수증이 나옵니다. 중복 사용 차단, 품절 관리, 판매 데이터 집계까지 행사 기간 내내 이 화면 하나로 운영했습니다.</p>
+    </div>
+
+    <div class="cs-block">
+      <div class="cs-label">Value receipt</div>
+      <div class="rc-wrap">
+        <figure class="rc-img"><img src="${IMG}svm-receipt.jpg" alt="가치 영수증 디자인" loading="lazy"></figure>
+        <div class="rc-t">
+          <h2 class="cs-h2">평생 남의 물건값만 찍히던 영수증에,<br>처음으로 내가 만든 가치가</h2>
+          <p>상단은 앨범 아트워크처럼, 하단은 진짜 영수증처럼 설계했습니다. 실천한 문항과 지급액, 카테고리별 기여, SV TYPE 미니미, 교환한 굿즈, 바코드가 한 장에 들어갑니다.</p>
+          <p>모노스페이스 한 벌로 활자를 통일하고, 감열 프린터에서도 그대로 찍히는 1비트 픽셀 아이콘을 직접 그렸습니다. 같은 영수증은 휴대폰에서 QR로 열어 이미지로도 저장할 수 있습니다.</p>
+          ${fig("svm-tv.jpg","스탠바이미 세로 화면 설문 QR 안내","tvfig")}
+          <p class="cap">부스 앞 세로 화면(1080 × 1920)과 A3 홍보물. 행사 당일 현장에서 만들어 바로 띄웠습니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-block">
       <div class="cs-label">Goods</div>
       <div class="cs-intro">
         <h2>이름을 고르는 일이,<br>가치를 고르는 일이 되도록</h2>
         <div><p>사회적 가치 측정에 쓰인 20개 문항을 16종 굿즈의 이름으로 옮겼습니다. 텀블러를 챙긴 하루는 REFILL 레몬 키링이, 헌혈로 건넨 하루는 LIFE 토마토 카드 홀더가 됩니다. 값은 모두 개당 10,000 VALUE로, 가치에 등수를 매기지 않기 위해 하나로 맞췄습니다.</p>
         <p class="quote">그래서 이 마켓에서 사 가는 것은 인형이 아니라, 이름이 된 가치입니다.</p></div>
       </div>
-      <div class="slides">${["08","09","10","11"].map(n=>fig(`svm-deck-${n}.jpg`,"굿즈 구성 시안","wide169")).join("")}</div>
-      <div class="pair mt">${fig("svm-tags.jpg","굿즈 행택 WALK, REFILL")}${fig("svm-crates.jpg","카테고리별 굿즈 크레이트")}</div>
+      <div class="goods2">${G.map(([en,ko,items])=>`<div class="gcol"><h3>${en}<span>${ko}</span></h3>${items.map(([k,g,a,f])=>`<div class="gcard"><img src="${IMG}goods/${f}.webp" alt="${esc(g)}" loading="lazy"><b>${esc(k)}</b><span>${esc(g)}</span><small>${esc(a)}</small></div>`).join("")}</div>`).join("")}</div>
+      <div class="pair mt">${fig("svm-tags.jpg","굿즈 행택 WALK, REFILL")}${fig("svm-package.jpg","굿즈 패키지와 안내 카드")}</div>
+      <p class="cap"><b>행택 하나에도 같은 언어로.</b> 키워드와 문항, EAN-13 바코드를 행택과 크레이트 사인에 같은 서식으로 인쇄해, 온라인 POS와 오프라인 매대가 같은 번호로 움직이게 했습니다.</p>
     </div>
 
     <div class="cs-block">
-      <div class="cs-label">Value receipt</div>
-      <div class="panel-scroll">${receiptPanel()}</div>
-      <p class="cap"><b>측정, 환산, 교환이 한 장에.</b> 실천 항목과 SV TYPE, 교환한 굿즈가 영수증에 남아 인증샷과 기념품이 됩니다.</p>
+      <div class="cs-label">Build-up</div>
+      <h2 class="cs-h2">6주 동안, 이렇게 발전시켰습니다</h2>
+      <ol class="timeline">${SVM.timeline.map(([d,t,x])=>`<li><span class="d">${esc(d)}</span><div><h3>${esc(t)}</h3><p>${esc(x)}</p></div></li>`).join("")}</ol>
     </div>
 
     <div class="cs-block">
@@ -1055,19 +1191,19 @@ function svmBody(){
     </div>
 
     <div class="cs-block">
-      <div class="cs-label">System</div>
-      <div class="sys-wrap">
-        ${fig("svm-qr.jpg","STEP 1 QR 안내 스탠드")}
-        <div class="sys">${SVM.system.map(([t,s,d])=>`<div><h3>${esc(t)}</h3><small>${esc(s)}</small><p>${esc(d)}</p></div>`).join("")}</div>
-      </div>
+      <div class="cs-label">On site</div>
+      ${fig("svm-hall.jpg","코엑스 A홀 부스 전경","wide")}
+      <div class="pair mt">${fig("svm-crowd.jpg","부스 앞 참여 인파")}${fig("svm-counter.jpg","카운터에서 영수증을 받는 방문자")}</div>
+      <div class="pair mt">${fig("svm-visitors.jpg","굿즈를 고르는 방문자")}${fig("svm-measure.jpg","휴대폰으로 가치를 측정하는 방문자")}</div>
+      <div class="pair mt">${fig("svm-crates.jpg","카테고리별 굿즈 크레이트")}${fig("svm-queue.jpg","행사장 방문객")}</div>
     </div>
 
     <div class="cs-block">
-      <div class="cs-label">On site</div>
-      ${fig("svm-hall.jpg","코엑스 A홀 부스 전경","wide")}
-      <div class="pair mt">${fig("svm-crowd.jpg","부스 앞 참여 인파")}${fig("svm-cashier.jpg","카운터 결제 장면")}</div>
-      <div class="pair mt">${fig("svm-visitors.jpg","굿즈를 고르는 방문자")}${fig("svm-queue.jpg","행사장 방문객")}</div>
-      <p class="cap"><b>2026.09.21 – 22, 코엑스 A홀 D-43.</b> 이틀 동안 방문자들이 자신의 하루를 측정하고, 가치의 이름을 단 굿즈와 영수증을 가져갔습니다.</p>
+      <div class="cs-label">Press</div>
+      <h2 class="cs-h2">현장의 목소리</h2>
+      <div class="press">${SVM.press.map(([src,date,title,sum,url,tag])=>`<a class="press-card" href="${url}" target="_blank" rel="noopener" data-cursor="Read">
+        <span class="src">${esc(src)}<i>${esc(date)}</i></span><h3>${esc(title)}</h3><p>${esc(sum)}</p><span class="tag">${esc(tag)}</span></a>`).join("")}</div>
+      <p class="cap">부스가 운영된 2026 대한민국 사회적가치 페스타는 첫날에만 1만 5천 명이 찾았습니다. <a class="ul" href="https://www.kmjournal.net/news/articleView.html?idxno=13571" target="_blank" rel="noopener">KMJ 기사 보기</a></p>
     </div>`;
 }
 
@@ -1173,7 +1309,7 @@ if (fine){
     const t = e.target;
     const lbl = t.closest && t.closest("[data-cursor]");
     const link = t.closest && t.closest("a,button,label,.svc-row button");
-    const field = t.closest && t.closest("input,textarea,select");
+    const field = t.closest && t.closest("input,textarea,select,iframe");
     setCursor(lbl ? lbl.dataset.cursor : null);
     dot.classList.toggle("is-link", !lbl && !!link);
     dot.classList.toggle("is-hidden", !!field);
