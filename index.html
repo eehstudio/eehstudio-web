@@ -1273,6 +1273,86 @@ h1,h2,h3{text-wrap:balance}
   .ctab td.fin{padding-top:8px}
   .rails .sec-head{flex-direction:column;align-items:flex-start;gap:8px}
 }
+/* ---------- v10 ---------- */
+.car.photo .car-s .im{aspect-ratio:3/2;background:#111}
+.car.photo .car-s img{object-fit:cover}
+.car.photo .car-track{grid-auto-columns:78%}
+.site-lead{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,64px);align-items:end;margin-bottom:clamp(24px,3vw,40px)}
+.site-lead p{font-size:clamp(15px,1.15vw,17px);color:var(--gray-2);max-width:34em}
+.site-tall{display:grid;grid-template-columns:1fr 1fr 2fr;gap:clamp(8px,1vw,14px);margin-top:clamp(12px,1.4vw,20px)}
+.site-tall .ph-fig{aspect-ratio:2/3}
+.site-tall .ph-fig.w{aspect-ratio:auto}
+.xf{position:relative;aspect-ratio:16/9!important;background:#F4F4F2}
+.xf img{position:absolute;inset:0;width:100%;height:100%;transition:opacity .9s ease,transform 3.4s ease}
+.xf img.pl{object-fit:contain}
+.xf img.st{object-fit:cover;opacity:0;transform:scale(1.05);pointer-events:none}
+.xf.s img.st{opacity:1;transform:scale(1);pointer-events:auto}
+.xf.s img.pl{opacity:0;pointer-events:none}
+.xf-t{position:absolute;left:12px;top:12px;display:flex;gap:0;border:1px solid #000;background:#fff;z-index:2}
+.xf-t button{font-size:11.5px;font-weight:700;letter-spacing:.06em;padding:6px 10px;background:#fff;color:#000;border:0}
+.xf-t button.on{background:#000;color:#fff}
+.xf-bar{position:absolute;left:0;right:0;bottom:0;height:3px;background:rgba(0,0,0,.08);z-index:2}
+.xf-bar i{display:block;height:100%;width:0;background:#000}
+.xf.run .xf-bar i{animation:reelbar 3200ms linear}
+.stgs{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.4vw,20px)}
+.stg{margin:0;min-width:0}
+.stg-box{position:relative;aspect-ratio:4/3;overflow:hidden;background:#f6f6f4;border:1px solid var(--line)}
+.stg-box img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;transition:opacity .7s ease,transform 2.8s ease;transform:scale(1.03);cursor:zoom-in;pointer-events:none}
+.stg-box img.photo{object-fit:cover}
+.stg-box img.on{opacity:1;transform:scale(1);pointer-events:auto}
+.stg-n{position:absolute;left:10px;bottom:10px;display:flex;align-items:center;gap:4px;z-index:2}
+.stg-n i{font-style:normal;font-size:11px;color:#000;background:#fff;padding:5px 2px}
+.stg-n button{font-size:11.5px;font-weight:700;letter-spacing:.06em;padding:6px 9px;background:#fff;color:#000;border:1px solid #000;transition:background .3s,color .3s}
+.stg-n button.on{background:#000;color:#fff}
+.stg figcaption{font-size:13.5px;color:var(--gray-2);margin-top:10px}
+.stg figcaption b{color:#000}
+.cmp.wide .cmp-box{aspect-ratio:16/9}
+.cmp.wide .cmp-box img{object-fit:cover}
+.cmp.wide .cmp-box img.top{object-fit:contain;background:#f6f6f4}
+.bx-panel .imgs.n3{grid-template-columns:repeat(3,1fr)}
+.bx-panel .imgs img.photo{object-fit:cover}
+.emb-fl{display:flex;flex-wrap:wrap;gap:8px;margin:clamp(18px,2vw,28px) 0 16px}
+.emb-fl button{font-size:14px;padding:8px 14px;border:1px solid #000;background:#fff;color:#000;border-radius:999px;transition:background .25s,color .25s}
+.emb-fl button small{font-family:var(--mono);font-size:11px;color:var(--gray);margin-left:2px}
+.emb-fl button[aria-selected="true"]{background:#000;color:#fff}
+.emb-fl button[aria-selected="true"] small{color:#bbb}
+.emb{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.4vw,20px);align-items:start}
+.emb-c{display:flex;flex-direction:column;border:1px solid var(--line);background:#fff;min-width:0}
+.emb-c[hidden]{display:none}
+.emb-h{display:grid;grid-template-columns:1fr auto;gap:2px 10px;padding:12px 14px;border-bottom:1px solid var(--line)}
+.emb-h b{font-size:14.5px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.emb-h .t{grid-column:2;grid-row:1;font-size:11px;letter-spacing:.03em;padding:3px 7px;border:1px solid #000;align-self:center}
+.emb-h .m{grid-column:1/3;font-size:12.5px;color:var(--gray-2)}
+.emb-w{position:relative;background:#f6f6f4;overflow:hidden}
+.ig-w{min-height:540px}
+.ig-w.measured{min-height:0}
+.yt-w{aspect-ratio:9/16;background:#000}
+.emb-w iframe{display:block;width:100%;border:0;background:transparent;position:relative;z-index:1}
+.ig-w iframe{height:620px;min-width:0}
+.yt-w iframe{position:absolute;inset:0;height:100%}
+.emb-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;font-size:12.5px;color:var(--gray)}
+.yt-w .emb-ph{color:#888}
+.emb-ph i{width:22px;height:22px;border-radius:50%;border:2px solid currentColor;border-right-color:transparent;animation:spin .9s linear infinite}
+.emb-w.ok .emb-ph{display:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+.emb-l{font-size:13px;padding:11px 14px;border-top:1px solid var(--line);transition:background .25s,color .25s}
+@media (hover:hover){.emb-l:hover{background:#000;color:#fff}}
+.emb-more{display:block;margin:clamp(18px,2vw,28px) auto 0;font-size:15px;padding:13px 26px;border:1px solid #000;background:#fff;border-radius:999px;transition:background .25s,color .25s}
+.emb-more small{font-family:var(--mono);font-size:11.5px;color:var(--gray);margin-left:4px}
+@media (hover:hover){.emb-more:hover{background:#000;color:#fff}}
+.emb-more[hidden]{display:none}
+@media (max-width:1100px){.emb{grid-template-columns:repeat(2,minmax(0,1fr))}.stgs{grid-template-columns:1fr 1fr}}
+@media (max-width:760px){
+  .emb{grid-template-columns:minmax(0,1fr)}
+  .stgs{grid-template-columns:1fr}
+  .site-lead{grid-template-columns:1fr}
+  .site-tall{grid-template-columns:1fr 1fr}
+  .site-tall .ph-fig.w{grid-column:1/3;aspect-ratio:3/2}
+  .car.photo .car-track{grid-auto-columns:88%}
+  .bx-panel .imgs.n3{grid-template-columns:1fr 1fr}
+  .bx-panel .imgs.n3 figure:last-child{grid-column:1/3}
+}
+@media (prefers-reduced-motion:reduce){.xf img,.stg-box img{transition:none}}
 </style>
 </head>
 <body>
@@ -1606,8 +1686,8 @@ const WORKS = [
     category: "Pop-up Store",
     tags: ["Concept","Space","3D","Graphic","Digital","Operation"],
     summary: "용산 아이파크몰 리빙파크 4F에서 14일간 연 라이프밀 추석 선물 팝업. 방문객을 연구원으로 세우고, 진공동결건조 공정을 그대로 동선으로 옮긴 실험실형 스토어.",
-    cover: "images/fl/deck/keyvisual.jpg",
-    hero: "fl/deck/keyvisual.jpg",
+    cover: "images/pf/fl-site/01.jpg",
+    hero: "pf/fl-site/01.jpg",
     art: "fl",
     photos: [],
     meta: [
@@ -1799,11 +1879,11 @@ function renderWork(){
 /* ---------- Reel / numbers / notes / about ---------- */
 const REEL = [
   ["images/svm-cover.jpg","SOCIAL VALUE MARKET","CSES 2026","#/work/social-value-market"],
-  ["images/fl/deck/keyvisual.jpg","LIFEMEAL FREEZE LAB","LIFEMEAL 2026","#/work/freeze-lab"],
+  ["images/pf/fl-site/01.jpg","LIFEMEAL FREEZE LAB","On site 2026","#/work/freeze-lab"],
   ["images/svm-hall.jpg","SOCIAL VALUE MARKET","On site","#/work/social-value-market"],
   ["images/fl/fl-cover.jpg","LIFEMEAL FREEZE LAB","Booth in 3D","#/work/freeze-lab"],
   ["images/svm-receipt.jpg","SOCIAL VALUE MARKET","Value receipt","#/work/social-value-market"],
-  ["images/fl/deck/cover.jpg","LIFEMEAL FREEZE LAB","Identity","#/work/freeze-lab"]
+  ["images/pf/fl-site/03.jpg","LIFEMEAL FREEZE LAB","Researchers on site","#/work/freeze-lab"]
 ];
 const NUMS = [
   ["1,094","사전예약 인원","LIFEMEAL FREEZE LAB"],
@@ -1834,7 +1914,8 @@ const FAQ = [
 const NOTES = [
   { id:"language-over-efficacy", date:"2026.10", tag:"Brand language", case:"freeze-lab",
     title:"효능 대신 경험의 언어로",
-    img:"fl/deck/theme.jpg",
+    img:"pf/fl-site/03.jpg",
+    gallery:[["pf/fl-site/07.jpg","연구복 행거와 체험 안내 배너"],["pf/fl-site/04.jpg","미션 체험존"],["pf/fl-site/09.jpg","제품 진열벽"]],
     sum:"건강식 브랜드의 팝업에서 효능을 말하지 않기로 한 이유, 그리고 고객이 그 말을 되받아 쓰기까지.",
     body:[
       ["p","건강식 브랜드가 팝업을 열면 가장 하고 싶은 말은 대개 효능입니다. 무엇에 좋은지, 얼마나 좋은지. 하지만 LIFEMEAL FREEZE LAB의 판매 제품은 모두 일반식품이었고, 기능을 약속하는 문장은 쓸 수 없었습니다. 그리고 이 브랜드를 고른 사람의 70% 이상은 20~30대였습니다."],
@@ -1859,7 +1940,8 @@ const NOTES = [
     ]},
   { id:"after-opening", date:"2026.10", tag:"Operation", case:"freeze-lab",
     title:"오픈한 날부터 다시 기획합니다",
-    img:"fl/fl-mission.jpg",
+    img:"pf/fl-site/11.jpg",
+    gallery:[["pf/fl-site/10.jpg","넓힌 추석 보자기 포장"],["pf/fl-site/13.jpg","매대에서 미션존으로 이어지는 동선"],["pf/fl-site/14.jpg","메인 진열대와 사이니지"]],
     sum:"팝업 2주차 일평균 매출이 1주차의 1.6배가 되기까지, 현장에서 바꾼 일곱 가지.",
     body:[
       ["p","팝업을 열면 기획이 끝났다고 생각하기 쉽습니다. LIFEMEAL FREEZE LAB에서 우리는 오픈 다음 날부터 다시 기획했습니다. 매대 앞에서 고객이 어디서 멈추고 무엇을 집었다 내려놓는지 보고, 다음 날 아침 진열과 동선을 바꿨습니다."],
@@ -2103,7 +2185,8 @@ function svmBody(){
       <h2 class="cs-h2">현장의 목소리</h2>
       <div class="press">${SVM.press.map(([src,date,title,sum,url,tag])=>`<a class="press-card" href="${url}" target="_blank" rel="noopener" data-cursor="Read">
         <span class="src">${esc(src)}<i>${esc(date)}</i></span><h3>${esc(title)}</h3><p>${esc(sum)}</p><span class="tag">${esc(tag)}</span></a>`).join("")}</div>
-      <div class="ig mt" style="grid-template-columns:repeat(3,1fr)">${SVM.social.map(([h,d,t,u,k])=>`<a class="ig-c big" href="${u}" target="_blank" rel="noopener" data-cursor="Open"><span class="t">${esc(k)} · ${esc(d)}</span><b>${esc(h)}</b><span class="q">${esc(t)}</span></a>`).join("")}</div>
+      <h3 class="mini-h" style="margin-top:clamp(36px,4vw,56px)">인스타그램에 남은 현장</h3>
+      <div class="mt">${embHTML(SVM_EMB(), 3, false)}</div>
       <p class="cap">부스가 운영된 2026 대한민국 사회적가치 페스타는 첫날에만 1만 5천 명이 찾았습니다. <a class="ul" href="https://www.kmjournal.net/news/articleView.html?idxno=13571" target="_blank" rel="noopener">KMJ 기사 보기</a></p>
     </div>`;
 }
@@ -2261,6 +2344,14 @@ function flBody(){
   const maxIn = Math.max(...FL.inflow.map(r=>r[1]));
   return `
     <div class="cs-block">
+      <div class="cs-label">Live at LIVING PARK</div>
+      <div class="site-lead"><h2 class="cs-h2" style="margin:0">14일 동안 실제로 열린 실험실</h2><p>2026년 9월 10일부터 23일까지, 용산 아이파크몰 리빙파크 4F 더 팝업. 3D와 도면으로 먼저 지은 공간이 그대로 현장이 되었습니다. 끌어서 넘기고, 사진을 누르면 크게 볼 수 있습니다.</p></div>
+      ${carHTML("fl-site", FL_SITE, "FREEZE LAB 현장").replace('class="car"','class="car photo"')}
+      <div class="site-tall">${fig(SITE(17),"FreezeLab 사인 타워와 선물세트 스택")}${fig(SITE(18),"진열 선반 디테일")}${fig(SITE(2),"쿨러백 스택 위 브랜드 화면","w")}</div>
+      <p class="cap"><b>그린 박스와 헤어라인 스텐, 흰 연구복.</b> 장표에서 정한 세 가지 재료가 리빙파크의 밝은 통로 한가운데서 멀리서도 실험실로 읽히게 했습니다.</p>
+    </div>
+
+    <div class="cs-block">
       <div class="cs-label">Key ideas</div>
       <h2 class="cs-h2">이 실험실을 움직인 다섯 가지 아이디어</h2>
       <div class="ideas">${FL.ideas.map(([t,d],i)=>`<div class="idea"><span class="n">IDEA ${pad(i+1)}</span><h3>${esc(t)}</h3><p>${esc(d)}</p></div>`).join("")}</div>
@@ -2309,7 +2400,7 @@ function flBody(){
       <div class="cs-label">Course</div>
       <h2 class="cs-h2">연구원이 되어 걷는,<br>네 단계의 코스</h2>
       <div class="story">${FL.zones.map(([e,k,img,z,a,b],i)=>`<div class="story-row ${i%2?"rev":""}">
-        ${fig(img, z, "contain")}
+        ${xfHTML(img, SITE([7,4,3,10][i]), "PLAN", "SITE", z.replace(/ ?입면도$/,""))}
         <div class="story-t"><span class="en">${pad(i+1)} ${e}</span><h3>${esc(k)}</h3><p>${esc(a)}</p><p>${esc(b)}</p></div>
       </div>`).join("")}</div>
     </div>
@@ -2383,16 +2474,16 @@ function flBody(){
 
     <div class="cs-block">
       <div class="cs-label">Creators</div>
-      <h2 class="cs-h2">크리에이터와 함께, 같은 언어로</h2>
-      <p class="lede">협업 크리에이터, 배우 정주희, 팝업 큐레이션 계정, 그리고 직접 다녀간 방문자까지. 인스타그램에 공개된 19개의 게시물입니다.</p>
-      <div class="ig">${FL.ig.map(([h,k,c,t,d,likes,tag])=>`<a class="ig-c" href="${IGU(t,c)}" target="_blank" rel="noopener" data-cursor="Open"><span class="t">${esc(tag)}</span><b>@${esc(h)}</b><span class="m">${esc(k)} · ${esc(d)}${likes?` · 좋아요 ${likes}`:""}</span></a>`).join("")}</div>
+      <h2 class="cs-h2">사람들이 직접 찍어 올린 FREEZE LAB</h2>
+      <p class="lede">협업 크리에이터, 배우 정주희, 팝업 큐레이션 계정, 유튜브 쇼츠, 그리고 직접 다녀간 방문자까지. 공개된 릴스와 쇼츠, 피드를 이 화면에서 바로 재생할 수 있습니다.</p>
+      ${embHTML(FL_EMB(), 6, true)}
     </div>
 
     <div class="cs-block">
       <div class="cs-label">Blog</div>
       <h2 class="cs-h2">오픈 전 7건, 다녀온 뒤 4건</h2>
       <ol class="blogs">${FL.blogs.map(([d,n,t,u,k])=>`<li><a href="${u}" target="_blank" rel="noopener" data-cursor="Read"><span class="d">${esc(d)}</span><span class="tt">${esc(t)}</span><span class="n">${esc(n)}</span><span class="k">${esc(k)}</span></a></li>`).join("")}</ol>
-      <div class="more">${FL.more.map(([ch,n,t,u,d])=>`<a href="${u}" target="_blank" rel="noopener" data-cursor="Open"><span class="ch">${esc(ch)}</span><b>${esc(t)}</b><span class="m">${esc(n)} · ${esc(d)}</span></a>`).join("")}</div>
+      <div class="more">${FL.more.filter(r=>!/YouTube|Instagram/.test(r[0])).map(([ch,n,t,u,d])=>`<a href="${u}" target="_blank" rel="noopener" data-cursor="Open"><span class="ch">${esc(ch)}</span><b>${esc(t)}</b><span class="m">${esc(n)} · ${esc(d)}</span></a>`).join("")}</div>
       <p class="cap">스마트플레이스 방문자 리뷰 159건은 사전예약 리뷰 미션과 연결되어 쌓였습니다.</p>
     </div>
 
@@ -2412,7 +2503,7 @@ function renderCase(w){
     <div class="kicker">${esc(w.kicker || w.client)}</div>
     <h1>${esc(w.title)}</h1>
     <dl class="meta">${w.meta.map(([k,v])=>`<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>
-    <div class="cs-hero">${w.hero ? fig(w.hero, w.title+(isFL?" 3D 부스 정면":" 부스 전경")) : `<div class="thumb">${thumbHTML(w)}</div>`}</div>
+    <div class="cs-hero">${w.hero ? fig(w.hero, w.title+(isFL?" 현장 전경, 리빙파크 4F":" 부스 전경")) : `<div class="thumb">${thumbHTML(w)}</div>`}</div>
 
     <div class="cs-block cs-intro">
       <h2>${esc(w.headline)}</h2>
@@ -2862,25 +2953,58 @@ const ARCHIVE = [
     points:[["Booth Graphic","부스 사인과 라이팅 패널, 메뉴보드, 입면 그래픽"],["ISP","베이커리·음료·원밀 카테고리 포스터, 이벤트 POP, 가격 표시"],["Editorial","레시피북 표지와 내지, 리플렛"],["Goods","리유저블 텀블러와 컵 슬리브, 보틀 라벨"],["Uniform","스태프 셔츠와 점퍼에 같은 아치 그래픽"],["On site","부스 현장 사진으로 마지막까지 확인"]],
     slides:["현장 전경","진열 선반과 카테고리 POP","현장 사진","현장 사진","현장 사진","현장 사진","부스 그래픽 설계","메뉴보드","부스 사인","라이팅 패널","입면 그래픽","카테고리 포스터","이벤트 POP","가격 POP","그래픽 적용","이벤트 배너","보틀 라벨","레시피북 표지","레시피북 내지","리유저블 텀블러","컵 슬리브","유니폼","유니폼 후면"],
     link:"recette-bi" },
-  { id:"lifemeal-yeonnam", div:"space", status:"Built", title:"LIFEMEAL MY WELLNESS ROUTINE", client:"이롬 라이프밀", year:"2026", category:"Pop-up Store",
+  { id:"lifemeal-yeonnam", div:"space", status:"Built", studio:true, title:"LIFEMEAL MY WELLNESS ROUTINE", client:"라이프밀 LIFEMEAL", year:"2026", category:"Pop-up Store",
     tags:["Concept","Space","Program","WBTI","Goods"],
-    summary:"연남동 편집숍 팔시보 스토어 안에 연 라이프밀의 첫 브랜드 팝업. WBTI 웰니스 유형 진단과 웰니스 오마카세로 일상 속 건강 루틴을 직접 겪게 한 공간.",
-    meta:[["Client","이롬 라이프밀"],["Place","팔시보 스토어, 서울 마포구 동교로38안길 17"],["Date","2026.02"],["Scope","Concept, Space, Program, MD"]],
+    summary:"연남동 편집숍 팔시보 스토어 안에 연 라이프밀의 첫 단독 브랜드 팝업. WBTI 웰니스 유형 진단과 웰니스 오마카세로 일상 속 건강 루틴을 직접 겪게 했고, 사전예약은 이틀 만에 1,000명을 넘었습니다.",
+    meta:[["Client","라이프밀 LIFEMEAL"],["Place","팔시보 스토어, 서울 마포구 동교로38안길 17"],["Date","2026.02.13 – 02.22"],["Scope","Concept, Space, Program, MD, Content"]],
+    results:[["1,000+","사전예약, 오픈 이틀 만에"],["10일","연남동 팔시보 스토어 운영"],["4","보도 매체, 헤럴드경제 · 데일리시큐 · 내외경제TV · 한국경제"]],
     headline:"제품 전시를 넘어, 나의 하루 루틴을 체험하는 편집숍.",
     body:["작은 편집숍 형태의 푸드 팝업은 선별된 제품만으로 브랜드의 취향과 기준을 또렷하게 보여줄 수 있습니다. 공간과 콘텐츠가 많지 않아 시선이 흩어지지 않고, 각 제품의 이야기에 집중할 수 있도록 설계했습니다.",
-          "방문객은 웰니스 체크리스트와 WBTI 진단으로 자신의 유형을 확인하고, 생식부터 하루견과, 그래놀라 요거트로 이어지는 웰니스 오마카세로 성분과 섭취 방식을 맛보았습니다. 이 경험은 일곱 달 뒤 용산 FREEZE LAB의 연구원 코스로 확장되었습니다."],
+          "방문객은 웰니스 체크리스트와 WBTI 진단으로 자신의 유형을 확인하고, 생식부터 하루견과, 그래놀라 요거트로 이어지는 웰니스 오마카세로 성분과 섭취 방식을 맛보았습니다. 마지막에는 럭키드로우와 인증 리뷰 스타터 패키지로 다음 방문을 약속했습니다.",
+          "제안 발표부터 공간과 프로그램, 굿즈와 콘텐츠, 현장 운영까지 EEH STUDIO 디렉터 황윤희가 전체 디렉팅을 맡았습니다. 이 경험은 일곱 달 뒤 용산 FREEZE LAB의 연구원 코스로 확장되었습니다."],
     points:[["Mission 1","웰니스 체크리스트로 오늘의 상태를 적기"],["Mission 2","WBTI 진단으로 나의 웰니스 유형 찾기"],["Mission 3","2026 웰니스 루틴 카드 받아 가기"],["Wellness Omakase","생식, 하루견과, 프로틴바, 그래놀라 요거트로 이어지는 시식 코스"],["Gift","마지막 기프트는 닥터샐러드"],["Next chapter","2026.09 용산 FREEZE LAB으로 이어진 첫 번째 챕터"]],
-    slides:["팔시보 스토어 외관 시뮬레이션","운영 개요","동선 시뮬레이션","팔시보 스토어 공간","Mission 1 웰니스 체크리스트","Mission 2 WBTI","Mission 3 2026 웰니스 루틴","MD","Program II 웰니스 오마카세","Course 1 생식","Course 2 하루견과","Course 3 영양식 with 프로틴바","Course 4 그래놀라 요거트","Gift Dr.샐러드"],
+    slides:["팔시보 스토어 외관 시뮬레이션","운영 개요","동선 시뮬레이션","팔시보 스토어 공간","Mission 1 웰니스 체크리스트","Mission 2 WBTI","Mission 3 2026 웰니스 루틴","MD","Program II 웰니스 오마카세","Course 1 생식","Course 2 하루견과","Course 3 영양식 with 프로틴바","Course 4 그래놀라 요거트","Gift Dr.샐러드","키 비주얼 Wellness Routine","웰니스 루틴 스웨트셔츠","루틴 도어행어 카드","팔로우 이벤트 안내"],
     link:"freeze-lab" },
-  { id:"king-of-kings", div:"space", status:"Proposal", title:"KING OF KINGS POP-UP", client:"팔시보 스토어 × 영화 <킹 오브 킹스>", year:"2025", category:"Immersive Pop-up",
+  { id:"king-of-kings", div:"space", status:"Built", studio:true, title:"KING OF KINGS POP-UP", client:"팔시보 스토어 × 영화 <킹 오브 킹스>", year:"2025", category:"Immersive Pop-up",
     tags:["Concept","Stamp Tour","Goods","Space"],
-    summary:"영화 <킹 오브 킹스>의 인물들 ID 카드를 모아 나의 이야기를 완성하는 연남동 팔시보 스토어 몰입형 팝업 기획.",
-    meta:[["Client","팔시보 스토어"],["Place","팔시보 스토어, 연남동"],["Year","2025"],["Scope","Concept, Program, Goods, Space"]],
+    summary:"애니메이션 <킹 오브 킹스> 개봉과 함께 연남동 팔시보 스토어에 연 몰입형 팝업. 인물들의 ID 카드를 모아 나의 이야기를 완성하는 스탬프 투어와 리워드 굿즈, MD, 공간 동선까지 전체 디렉팅을 맡았습니다.",
+    meta:[["Client","팔시보 스토어"],["Place","팔시보 스토어, 연남동"],["Year","2025"],["Scope","Concept, Program, Goods, MD, Space"]],
     headline:"영화 속 인물들과 함께 떠나는 스탬프 투어.",
     body:["주요 인물들의 ID 카드를 앞면과 뒷면으로 나눠, 인물의 정체성과 메시지를 직접 채워 가며 투어하도록 설계했습니다. 마지막에는 나의 이야기가 담긴 카드가 완성됩니다.",
-          "공식 굿즈샵, 미공개 스케치와 비하인드 공개, 연남동 골목에서 누구나 들를 수 있는 따뜻한 공간까지. 관람보다 참여가 먼저 기억에 남도록 동선을 짰습니다."],
+          "공식 굿즈샵, 미공개 스케치와 비하인드 공개, 연남동 골목에서 누구나 들를 수 있는 따뜻한 공간까지. 관람보다 참여가 먼저 기억에 남도록 동선을 짰습니다.",
+          "같은 편집숍에서 이듬해 2월 라이프밀의 첫 브랜드 팝업을 다시 열었습니다. 방문객이 직접 채우는 카드 한 장으로 작은 공간의 동선을 묶는 방식은 WBTI 루틴 카드와 FREEZE LAB의 연구원증으로 이어졌습니다."],
     points:[["Stamp Tour","인물별 ID 카드를 모아 나의 이야기를 완성"],["Reward Goods","투어 완주 리워드 KOK Fan"],["Goods Shop","영화 장면과 캐릭터를 담은 공식 굿즈"],["Behind","미공개 스케치와 콘셉트 아트 공개"],["Event","스탬프 완주, My ID 인증, 구매 이벤트"],["Space","연남동 골목에 열린 누구나 들를 수 있는 공간"]],
-    slides:["표지","팔시보 스토어","공간","ID 카드 구성","스탬프 투어 운영","리워드 굿즈 KOK Fan","공간 동선","MD 리스트","굿즈 라인업","이벤트","포인트"] },
+    slides:["표지","팔시보 스토어","공간","ID 카드 구성","스탬프 투어 운영","리워드 굿즈 KOK Fan","공간 동선","MD 리스트","굿즈 라인업","이벤트","포인트"],
+    link:"lifemeal-yeonnam" },
+  { id:"cheongsinho", div:"space", status:"Built", title:"CHEONGSINHO MYEONGDONG CULTURE PROGRAM", client:"청신호 명동 (SH 서울주택도시공사)", year:"2021–2022", category:"Community Program",
+    tags:["Program","Space","Content","SNS","Report"],
+    summary:"청년 주거 커뮤니티 청신호 명동의 연간 문화 프로그램. 랜선 버스킹 폰서트와 북콘서트, 전시와 플리마켓까지 기획부터 예산, 섭외, 광고, 운영, 결과 보고서를 한 사람이 맡았습니다.",
+    meta:[["Client","청신호 명동, SH 서울주택도시공사"],["Period","2021 – 2022"],["Scope","Program, Space, Content, SNS"],["Role","Art Director, Design & Marketing"]],
+    headline:"한 사람이 끝까지 맡은 1년치 문화 프로그램.",
+    body:["청년들이 함께 사는 집이 동네의 문화 공간이 되도록, 한 해의 프로그램을 달력처럼 짰습니다. 랜선 버스킹 폰서트, 라운지를 서재로 바꾼 북콘서트, 사진전과 셀프 스튜디오, 플리마켓까지 매달 다른 방식으로 입주민과 이웃을 불러 모았습니다.",
+          "프로그램마다 카드뉴스와 포스터, 인스타그램 운영, 예산과 섭외, 현장 운영과 결과 보고서까지 혼자 진행했습니다. 기획서 한 장이 현장과 기록으로 끝까지 이어지는 방식은 지금 EEH STUDIO가 일하는 방식의 출발점입니다."],
+    points:[["Phone concert","랜선 버스킹 폰서트"],["Book concert","라운지를 서재로 바꾼 북콘서트 공간 기획"],["Exhibition","사진전 About time과 Feeling 전시"],["Market","청신호 명동 플리마켓"],["SNS","카드뉴스, 포스터, 인스타그램 운영"],["Report","예산, 섭외, 광고, 집행, 결과 보고서"]],
+    slides:["연간 프로그램과 인스타그램 운영","카드뉴스 2021","폰서트 카드뉴스","카드뉴스 2022","북콘서트 공간","북콘서트 일러스트 포스터"] },
+  { id:"immersive-2021", div:"space", status:"Built", title:"IMMERSIVE EXHIBITIONS 2021", client:"교회친구다모여 × 스페이스코르 · 한밭제일교회", year:"2021", category:"Immersive Exhibition",
+    tags:["Exhibition","Space","Storytelling","Poster","Goods"],
+    summary:"이야기를 날짜와 코스로 나눠 관람객이 직접 걸으며 겪게 한 두 편의 체험 전시. 「예수님과 함께한 마지막 7일」과 대전 성탄 체험 전시 「HAPPY JESUS DAY」.",
+    meta:[["Exhibitions","마지막 7일 · HAPPY JESUS DAY"],["Place","스페이스코르 · 대전 한밭제일교회"],["Year","2021"],["Scope","Concept, Space, Poster, Ticket, Goods"]],
+    headline:"보는 전시보다, 걸으며 겪는 이야기.",
+    body:["「예수님과 함께한 마지막 7일」은 일주일의 이야기를 날짜별 체험 부스로 나눴습니다. 하루마다 부스 콘셉트와 활동, 준비물을 정리한 기획안과 공간 동선도를 만들고, 포스터와 티켓, 날짜별 스토리텔링 포스터로 이어 붙였습니다.",
+          "같은 해 겨울에는 코로나 시기의 성탄절을 오감 체험 전시로 풀었습니다. Hope, Lead 같은 코스마다 공간과 활동을 정하고, 포스터와 티켓, 스티커와 달력, 무드등 굿즈까지 한 톤으로 묶었습니다. 이야기를 동선으로 옮기는 이 방식이 FREEZE LAB의 연구원 코스까지 이어졌습니다."],
+    points:[["7 Days","날짜별 체험 부스 구성"],["Plan","부스별 콘셉트, 활동, 준비물 기획안"],["Flow","공간 동선도"],["Courses","Hope, Lead 등 코스별 체험"],["Print","포스터, 티켓, 스토리텔링 포스터"],["Goods","스티커, 달력, 무드등"]],
+    slides:["마지막 7일 포스터","마지막 7일 티켓","공간 동선 기획","Day 2 부스 기획","전시 기획안","마지막 7일 메인 포스터","HAPPY JESUS DAY 전시 기획안","코스 #2 Hope","코스 #3 Lead","HAPPY JESUS DAY 포스터","HAPPY JESUS DAY 티켓","HAPPY JESUS DAY 메인 포스터"],
+    link:"freeze-lab" },
+  { id:"creator-festival", div:"space", status:"Built", title:"CREATOR FESTIVAL 2025", client:"넥스트엠(next M)", year:"2025", category:"Festival",
+    tags:["Key Visual","Program","Signage","Goods","Report"],
+    summary:"제4회 넥스트엠 크리에이터 페스티벌. 분야가 다른 연사 13명의 라인업과 세션을 하나의 키 비주얼로 묶고, 현장 사인과 웰컴 굿즈, 행사 후 설문 리포트까지 만들었습니다.",
+    meta:[["Client","넥스트엠(next M)"],["Date","2025.11.29"],["Place","광림교회 B1 나사렛성전"],["Scope","Key Visual, Program, Signage, Goods, Report"]],
+    headline:"크리에이터가 되는 가장 확실한 길, 하루짜리 페스티벌로.",
+    body:["필름, 워십, 인스타그램, 유튜브, 브랜딩, 디자인, AI까지 분야가 다른 연사들을 한 장의 라인업으로 읽히게 하는 것이 첫 과제였습니다. 블루 바탕에 흑백 인물 사진과 분야 라벨을 격자로 맞춰, 포스터와 무대 현수막, 세로 배너가 같은 리듬으로 이어지게 했습니다.",
+          "현장에서는 팔로우 이벤트와 후기 설문 이벤트를 QR로 연결하고, 설문을 마친 참가자에게 킹 오브 킹스 전시 초청권을 건넸습니다. 행사가 끝난 뒤에는 설문 결과를 리포트로 정리해 다음 페스티벌의 기준으로 남겼습니다."],
+    points:[["Line-up","13명 연사의 분야별 라인업 그래픽"],["Program","세션 타임테이블"],["Signage","무대 현수막과 세로 배너"],["Event","팔로우 이벤트와 후기 설문 QR"],["Goods","웰컴 굿즈"],["Report","설문 결과 리포트"]],
+    slides:["키 비주얼","라인업","프로그램","현장 스케치","무대 현수막과 배너","웰컴 굿즈"],
+    link:"king-of-kings" },
   { id:"hotel-1997", div:"space", status:"Proposal", title:"THE HOTEL 1997 LOBBY BRANDING", client:"THE HOTEL 1997", year:"2025", category:"Space Branding",
     tags:["Space","Furniture","Signage","Mock-up"],
     summary:"호텔 로비와 입구 통로를 브랜드 공간으로 바꾸는 로비 브랜딩 제안. 실측 사진 위에 가구와 조명, 러그의 치수와 배치를 올려 바로 발주할 수 있게 정리했습니다.",
@@ -2918,6 +3042,16 @@ const ARCHIVE = [
           "로고와 심볼은 블랙 앤 화이트 두 가지로 단단하게, 서체는 카카오 글씨로 친근하게. 인스타그램 하이라이트와 피드 운영 보드까지 같은 규칙으로 이어지게 했습니다."],
     points:[["Values","Connection, Center, Forward, Variety"],["Logo","대표 로고와 서비스 로고, 여백과 최소 크기"],["Symbol","보조 로고 심볼"],["Color","KCYCF Black과 White, 그레이 단계"],["Typeface","카카오 큰글씨·작은글씨"],["Instagram","하이라이트와 피드 운영 보드"]],
     slides:["표지","가치 Connection","로고","심볼","컬러","서체","인스타그램 보드","하이라이트","피드 KCYCF","피드 HOME"] },
+  { id:"holly-jolly", div:"brand", status:"System", title:"HOLLY & JOLLY REBRANDING", client:"네오에프앤비 · Holly & Jolly", year:"2023", category:"Rebranding",
+    tags:["Character","Logo","Package","Instagram"],
+    summary:"도넛·디저트 카페 홀리앤졸리의 캐릭터와 로고를 정비하고, 패키지와 인스타그램 첫 화면까지 다시 세운 리브랜딩.",
+    meta:[["Client","네오에프앤비 · Holly & Jolly"],["Year","2023"],["Scope","Character, Logo, Package, SNS"],["Role","Art Director"]],
+    headline:"작은 디저트 카페가 화면 안에서도 같은 얼굴로 보이도록.",
+    body:["흩어져 있던 캐릭터와 로고를 먼저 정비하고, 그 규칙을 패키지와 매장 그래픽, 인스타그램 피드에 그대로 옮겼습니다.",
+          "피드의 첫 화면을 Before와 After로 비교하며 무엇을 덜어내고 무엇을 반복할지 정했습니다. 포케올데이와 같은 회사의 브랜드로, 디자인과 마케팅을 한 사람이 함께 본 기록입니다."],
+    points:[["Character","캐릭터와 로고 정비"],["Package","패키지 리뉴얼"],["Instagram","피드 첫 화면 Before · After"]],
+    slides:["인스타그램 리브랜딩 Before · After","리브랜딩 적용","패키지와 콘텐츠"],
+    link:"marketing" },
   { id:"ghs-2025", div:"brand", status:"Proposal", title:"GLOBAL HARVEST SUMMIT 2025", client:"Global Harvest Summit 2025", year:"2025", category:"Event Identity",
     tags:["Logo","Graphic","Signage","Stage"],
     summary:"제주에서 열리는 국제 서밋의 아이덴티티와 행사장 그래픽 제안. 수확의 물결을 닮은 그라데이션 하나로 빌보드, 배너, 사인, 무대, 부스까지 확장했습니다.",
@@ -2942,7 +3076,7 @@ const ARCHIVE = [
     meta:[["Brands","포케올데이 외"],["Period","2021 – 2023"],["Scope","SNS, Rebranding, Content, Print"],["Role","Art Director, Design & Marketing"]],
     headline:"매일 고객과 만나는 화면에서, 브랜드를 다시 세웁니다.",
     body:["인스타그램 피드의 첫 화면을 다시 정리하는 리브랜딩부터, 매장 포스터와 행잉 배너, 신메뉴와 이벤트를 알리는 카드뉴스까지. 각 게시물마다 목표와 타깃, 결과를 함께 기록하며 운영했습니다.",
-          "이 경험이 EEH STUDIO가 디자인을 실제로 작동하는 마케팅으로 보는 이유입니다."],
+          "포케올데이에서는 인스타그램 1.2만 계정을 운영하며 마케팅비를 절반으로 줄였고, 포케트럭 캠페인으로 한 달 매출을 세 배로 만들었습니다. 이 경험이 EEH STUDIO가 디자인을 실제로 작동하는 마케팅으로 보는 이유입니다."],
     points:[["Rebranding","SNS 첫 화면 Before · After"],["Poster","신메뉴와 제품 포스터"],["Banner","매장 행잉 배너"],["Card News","이벤트·메뉴 카드뉴스와 성과 기록"]],
     slides:["SNS 리브랜딩 2021","리브랜딩 솔루션","브랜드 운영 2023","리브랜딩 Before·After","리브랜딩 2023","리브랜딩 적용","포스터","포스터","행잉 배너","카드뉴스","카드뉴스","카드뉴스","카드뉴스","카드뉴스"] },
   { id:"design-archive", div:"brand", status:"Archive", title:"GRAPHIC DESIGN 2020–2022", client:"전시 · 공연 · 공공 공간", year:"2020–2022", category:"Graphic Design",
@@ -2956,6 +3090,7 @@ const ARCHIVE = [
     slides:["포스터","브로슈어","포스터","포스터","포스터","포스터","포스터","포스터","티켓","포스터 월","카드뉴스","브로슈어","카드뉴스","엽서","카드뉴스","포스터","포스터","배너"] }
 ];
 REEL.push(["images/pf/recette-booth/01.jpg","RECETTE @ SEOUL CAFE SHOW","On site 2023","#/work/recette-booth"],["images/fl/turn/f10.jpg","LIFEMEAL FREEZE LAB","360° booth","#/work/freeze-lab"],["images/pf/ghs-2025/01.jpg","GLOBAL HARVEST SUMMIT 2025","Event identity","#/work/ghs-2025"]);
+(function(){ const first = ["lifemeal-yeonnam","king-of-kings"]; ARCHIVE.sort((a,b)=>(first.indexOf(b.id)>-1)-(first.indexOf(a.id)>-1)); })();
 ARCHIVE.forEach(p => { p.lite = true; p.cover = PF + p.id + "/t01.jpg"; p.hero = null; p.photos = []; WORKS.push(p); });
 CLIENTS.splice(0, CLIENTS.length, ...new Set(WORKS.map(w => w.client)));
 
@@ -3015,7 +3150,7 @@ addEventListener("keydown", e => { if (!lbEl.classList.contains("on")) return; i
 (function(){ let sx = null; lbEl.addEventListener("touchstart", e => { sx = e.touches[0].clientX; }, {passive:true}); lbEl.addEventListener("touchend", e => { if (sx === null) return; const d = e.changedTouches[0].clientX - sx; if (Math.abs(d) > 50){ LB.i = (LB.i + (d < 0 ? 1 : -1) + LB.list.length) % LB.list.length; lbShow(); } sx = null; }); })();
 document.addEventListener("click", e => {
   if (typeof ED !== "undefined" && ED.on) return;
-  const img = e.target.closest && e.target.closest(".js-case .ph-fig img, .js-case .deck-strip img, .js-case .trio img, .js-case .prod img, .js-case .car-s img, .js-note .ph-fig img, .js-case .bx-panel img");
+  const img = e.target.closest && e.target.closest(".js-case .ph-fig img, .js-case .deck-strip img, .js-case .trio img, .js-case .prod img, .js-case .car-s img, .js-note .ph-fig img, .js-case .bx-panel img, .js-case .stg img, .js-note .note-gal img");
   if (!img) return;
   const tr = img.closest(".car-track"); if (tr && tr.dataset.moved) return;
   e.preventDefault(); lbOpen(img);
@@ -3034,7 +3169,8 @@ function railCard(w){
     <div class="card-meta"><h3>${esc(w.title)}</h3><p>${esc(w.category)} · ${esc(w.year)}</p></div></a>`;
 }
 let workDiv = "all";
-const ARCHIVE_NOTE = "SOCIAL VALUE MARKET과 LIFEMEAL FREEZE LAB 이전의 작업은 디렉터 황윤희가 MIRACLE AD와 이전 소속에서 기획하고 디자인한 프로젝트입니다. 각 프로젝트에 현장 운영, 제안·기획, 아이덴티티 시스템, 아카이브 중 어떤 단계의 작업인지 함께 적었습니다.";
+const ARCHIVE_NOTE = "SOCIAL VALUE MARKET, LIFEMEAL FREEZE LAB, 그리고 팔시보 스토어의 두 팝업은 디렉터 황윤희가 기획부터 현장까지 전체 디렉팅을 맡은 프로젝트입니다. 그 밖의 작업은 MIRACLE AD와 이전 소속, 외주로 기획하고 디자인했습니다. 각 프로젝트에 현장 운영, 제안·기획, 아이덴티티 시스템, 아카이브 중 어떤 단계의 작업인지 함께 적었습니다.";
+const STUDIO_NOTE = "EEH STUDIO 디렉터 황윤희가 콘셉트와 공간, 프로그램, 굿즈, 현장 운영까지 전체 디렉팅을 맡은 프로젝트입니다.";
 renderWork = function(){
   const box = $(".js-work");
   const groups = workDiv === "all" ? ["space","brand"] : [workDiv];
@@ -3074,14 +3210,15 @@ function renderLite(w){
     <h1>${esc(w.title)}</h1>
     <dl class="meta">${w.meta.map(([k,v])=>`<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>
     <div class="cs-hero">${`<figure class="ph-fig wide169"><img src="${PF}${esc(w.id)}/01.jpg" alt="${esc(w.title)} 대표 장표" decoding="async"></figure>`}</div>
-    <div class="lite-status"><b class="${esc(w.status)}">${esc(STATUS[w.status])}</b><span>${esc(STATUS_NOTE[w.status])}</span></div>
+    <div class="lite-status"><b class="${esc(w.status)}">${esc(STATUS[w.status])}</b><span>${esc(w.studio ? STUDIO_NOTE : STATUS_NOTE[w.status])}</span></div>
+    ${w.results ? `<div class="cs-block"><div class="cs-label">In numbers</div><div class="stats">${w.results.map(([b,t])=>`<div><b>${esc(b)}</b><span>${esc(t)}</span></div>`).join("")}</div></div>` : ""}
     <div class="cs-block cs-intro"><h2>${esc(w.headline)}</h2><div>${w.body.map(p=>`<p>${esc(p)}</p>`).join("")}<div class="keys">${w.tags.map(t=>`<span class="tag">${esc(t)}</span>`).join("")}</div></div></div>
     ${w.points ? `<div class="cs-block"><div class="cs-label">Highlights</div><div class="pts">${w.points.map(([t,d],k)=>`<div><span class="n">${pad(k+1)}</span><h3>${esc(t)}</h3><p>${esc(d)}</p></div>`).join("")}</div></div>` : ""}
     <div class="cs-block"><div class="cs-label">Slides</div><h2 class="cs-h2">장표로 보는 ${esc(w.title)}</h2>${carHTML(w.id, w.slides, w.title)}<p class="cap">드래그하거나 화살표로 넘기고, 장표를 누르면 크게 볼 수 있습니다.</p></div>
     ${rel ? `<div class="cs-block"><div class="cs-label">Related</div><div class="rel"><a href="#/work/${esc(rel.id)}" data-cursor="View"><img src="${esc(rel.cover)}" alt="${esc(rel.title)}" loading="lazy"><span><small>함께 보면 좋은 프로젝트</small><b>${esc(rel.title)}</b></span></a></div></div>` : ""}
     <div class="cs-block"><dl class="credits">
       <div><dt>Client</dt><dd>${esc(w.client)}</dd></div>
-      <div><dt>Director</dt><dd>황윤희</dd></div>
+      <div><dt>Director</dt><dd>${w.studio ? "황윤희, EEH STUDIO 전체 디렉팅" : "황윤희"}</dd></div>
       <div><dt>Stage</dt><dd>${esc(STATUS[w.status])}</dd></div>
       <div><dt>Year</dt><dd>${esc(w.year)}</dd></div>
     </dl><p class="cap">${esc(ARCHIVE_NOTE)}</p></div>
@@ -3104,15 +3241,15 @@ renderCase = function(w){
 const BX_Z = [
   { k:"Z00", ko:"입구 브랜드존", en:"ENTRANCE / BRAND WALL", step:"1", stepT:"STEP 1 연구원 등록하기", img:"fl/view_z00_front.jpg", deck:"fl/deck/entry.jpg",
     d:"라이팅패널과 브랜드 월, 차단봉 동선으로 입구를 열었습니다. 연구원 목걸이를 받고 QR로 체크인하면 체험이 시작되고, 인스타그램을 팔로우하면 사진이 들어간 연구원증이 현장에서 바로 나옵니다.", dim:"라이팅패널 출력 880×1480 / 프레임 900×1500" },
-  { k:"Z05", ko:"연구복 행거존", en:"LAB COAT RACK", step:"1", stepT:"STEP 1 연구원 등록하기", img:"fl/deck/coat.jpg", deck:"fl/deck/coat.jpg",
+  { k:"Z05", site:"pf/fl-site/07.jpg", ko:"연구복 행거존", en:"LAB COAT RACK", step:"1", stepT:"STEP 1 연구원 등록하기", img:"fl/deck/coat.jpg", deck:"fl/deck/coat.jpg",
     d:"랩코트를 걸어 두고 갈아입는 자리. 손님이 연구원이 되는 순간을 공간 한쪽에 남겼습니다.", dim:"" },
-  { k:"Z03", ko:"미션 체험존", en:"MISSION EXPERIENCE", step:"2", stepT:"STEP 2 좋은 것을 발견하기", img:"fl/view_z03_iso.jpg", deck:"fl/deck/mission.jpg",
+  { k:"Z03", site:"pf/fl-site/03.jpg", ko:"미션 체험존", en:"MISSION EXPERIENCE", step:"2", stepT:"STEP 2 좋은 것을 발견하기", img:"fl/view_z03_iso.jpg", deck:"fl/deck/mission.jpg",
     d:"중앙 이중 가벽에 미션, 게임, 연구원증을 차례로 두었습니다. 원물을 고르고 얼리고 수분을 덜어내는 동결건조 과정을 벽면과 미션으로 따라가고, WBTI로 나의 웰니스 타입을 확인합니다.", dim:"체험벽 3,660 · 높이 1,820 · 미션 작업대 1,200×600×800 ×3 · 상부선반 높이 770" },
   { k:"Z04", ko:"시식대", en:"TASTING STAND", step:"3", stepT:"STEP 3 나의 연구 결과 받기", img:"fl/view_z04_iso.jpg", deck:"fl/deck/tasting.jpg",
     d:"저울과 플라스크, 스텐 작업대가 놓인 연구실의 한 칸. 동결건조 칩을 맛보고 결과 카드와 추천 루틴으로 오늘의 연구 기록을 완성합니다.", dim:"가벽·매대 마감 RM004 헤어라인 스텐 시트" },
-  { k:"Z01", ko:"제품 진열벽", en:"MAIN PRODUCT WALL", step:"4", stepT:"STEP 4 좋은 마음으로 건네기", img:"fl/view_z01_iso.jpg", deck:"fl/deck/mainwall.jpg",
+  { k:"Z01", site:"pf/fl-site/09.jpg", ko:"제품 진열벽", en:"MAIN PRODUCT WALL", step:"4", stepT:"STEP 4 좋은 마음으로 건네기", img:"fl/view_z01_iso.jpg", deck:"fl/deck/mainwall.jpg",
     d:"FREEZE THE FRESH, KEEP THE BEST 레터링 아래 단품과 선물세트를 진열한 메인 벽. 실험 끝에 고른 좋은 것을 소중한 사람에게 건네는 장면으로 마무리합니다.", dim:"L자 목공 백월 · 솔벤 인쇄와 레터링 컷팅 시트" },
-  { k:"Z06", ko:"제품 아일랜드", en:"PRODUCT ISLANDS", step:"4", stepT:"STEP 4 좋은 마음으로 건네기", img:"fl/view_z06_iso.jpg", deck:"fl/deck/plan.jpg",
+  { k:"Z06", site:"pf/fl-site/10.jpg", ko:"제품 아일랜드", en:"PRODUCT ISLANDS", step:"4", stepT:"STEP 4 좋은 마음으로 건네기", img:"fl/view_z06_iso.jpg", deck:"fl/deck/plan.jpg",
     d:"입구 쪽 유리 쇼케이스 매대. 추석 선물세트를 단품 존과 분리해 별도 구획으로 보여줬습니다.", dim:"제품매대 A · B" },
   { k:"Z04C", ko:"카운터", en:"COUNTER", step:"$", stepT:"결제 · 포장", img:"fl/fl-top.jpg", deck:"fl/deck/plan.jpg",
     d:"결제와 포장이 이뤄진 자리. 운영 2주차에는 고객이 고른 대로 세트를 다시 담고, 추석 보자기 포장을 넓혔습니다.", dim:"" }
@@ -3157,7 +3294,7 @@ function initBx(bx){
     hs.forEach((h,i)=>h.classList.toggle("on", i===k)); chips.forEach((c,i)=>c.setAttribute("aria-pressed", i===k));
     stopAuto(); target = BX_BEST[k];
     panel.innerHTML = `<div class="t"><span class="k">${esc(z.stepT)}</span><h3>${esc(z.ko)}</h3><span class="en">${esc(z.en)}</span><p>${esc(z.d)}</p>${z.dim?`<p class="dim">${esc(z.dim)}</p>`:""}</div>
-      <div class="imgs"><figure><img src="${IMG}${z.img}" alt="${esc(z.ko)} 3D 렌더" loading="lazy" data-lb="${esc(z.ko)} · 3D 모델"><figcaption>3D 모델 R02</figcaption></figure><figure><img src="${IMG}${z.deck}" alt="${esc(z.ko)} 기획 장표" loading="lazy" data-lb="${esc(z.ko)} · 공간기획 덱"><figcaption>공간기획 덱</figcaption></figure></div>`;
+      <div class="imgs${z.site?" n3":""}"><figure><img src="${IMG}${z.deck}" alt="${esc(z.ko)} 기획 장표" loading="lazy" data-lb="${esc(z.ko)} · 공간기획 덱"><figcaption>PLAN · 공간기획 덱</figcaption></figure><figure><img src="${IMG}${z.img}" alt="${esc(z.ko)} 3D 렌더" loading="lazy" data-lb="${esc(z.ko)} · 3D 모델"><figcaption>3D · 모델 R02</figcaption></figure>${z.site?`<figure><img class="photo" src="${IMG}${z.site}" alt="${esc(z.ko)} 현장 사진" loading="lazy" data-lb="${esc(z.ko)} · 현장"><figcaption>SITE · 현장</figcaption></figure>`:""}</div>`;
   };
   hs.forEach(h => h.addEventListener("click", e => { e.stopPropagation(); pick(+h.dataset.z); }));
   chips.forEach(c => c.addEventListener("click", () => pick(+c.dataset.z)));
@@ -3339,13 +3476,14 @@ function enhanceFL(){
     b3.insertAdjacentHTML("afterend", `
       <div class="cs-block">
         <div class="cs-label">Plan to site</div>
-        <h2 class="cs-h2">기획 장표에서 3D로, 3D에서 시공 계약까지<br>같은 숫자로 이어졌습니다</h2>
-        <div class="cmps">
-          ${cmpHTML("fl/deck/entry.jpg","fl/view_z00_front.jpg","PLAN","3D","<b>입구 브랜드존.</b> 라이팅패널과 브랜드 월, 차단봉 동선")}
-          ${cmpHTML("fl/deck/mission.jpg","fl/view_z03_iso.jpg","PLAN","3D","<b>미션 체험존.</b> 체험벽 3,660 · 높이 1,820")}
-          ${cmpHTML("fl/deck/mainwall.jpg","fl/view_z01_iso.jpg","PLAN","3D","<b>제품 진열벽.</b> FREEZE THE FRESH, KEEP THE BEST")}
+        <h2 class="cs-h2">장표 한 장이 3D가 되고,<br>3D가 그대로 현장이 되었습니다</h2>
+        ${cmpHTML("fl/deck/mission.jpg", SITE(4), "PLAN", "SITE", "<b>미션 체험존, 장표와 현장.</b> 체험벽 3,660 · 높이 1,820, 미션 작업대 1,200×600×800 세 대. 가운데 선을 끌어 겹쳐 보세요.").replace('class="cmp"','class="cmp wide"')}
+        <div class="stgs mt">
+          ${stgHTML("미션 체험존", "스텐 실험대와 미션 화면, 양옆 그린 크레이트까지", [["PLAN","fl/deck/mission.jpg"],["3D","fl/view_z03_iso.jpg"],["SITE",SITE(5)]])}
+          ${stgHTML("제품 진열벽", "FREEZE THE FRESH, KEEP THE BEST 레터링과 L자 백월", [["PLAN","fl/deck/mainwall.jpg"],["3D","fl/view_z01_iso.jpg"],["SITE",SITE(9)]])}
+          ${stgHTML("연구복 행거존", "랩코트 행거와 체험 안내 배너", [["PLAN","fl/deck/coat.jpg"],["3D","fl/fl-mission.jpg"],["SITE",SITE(6)]])}
         </div>
-        <p class="cap">가운데 선을 끌어 공간기획 덱의 입면과 3D 모델을 겹쳐 보세요.</p>
+        <p class="cap">PLAN, 3D, SITE 버튼을 눌러 같은 자리를 장표, 3D 모델, 현장 사진으로 바꿔 보세요. 화면에 들어오면 자동으로 넘어갑니다.</p>
         <ol class="trail">
           <li><span class="d">07 – 08</span><h3>콘셉트 문서</h3><p>22평을 상품 대신 공정 라인으로 채운다는 결정과 Z1 – Z4 존 구성</p></li>
           <li><span class="d">08.25</span><h3>공간기획 덱</h3><p>브랜드 선언문, 코스 시뮬레이션, 2D 평면과 입면을 바이어에게 회신</p></li>
@@ -3379,7 +3517,7 @@ function enhanceSVM(){
 const WHY = [
   ["한 팀이 기획부터 철수까지","콘셉트 문장, 3D 도면, 제작물 명세, 시공 발주, 현장 운영, 결과 리포트까지 한 팀이 끝까지 맡습니다. 메일 첫 통부터 정산까지 하나의 문서로 관리합니다.","77","실행 항목, 8주","pf/fl-deck/05.jpg","#/work/freeze-lab"],
   ["먼저 짓고, 같은 그림으로 말합니다","실제 치수 3D 모델로 부스를 먼저 짓고, 도면과 렌더를 같은 모델에서 뽑아 클라이언트, 시공사와 같은 화면을 봅니다.","48","시점의 360° 부스","fl/turn/f05.jpg","#/work/freeze-lab"],
-  ["숫자로 확인하는 경험","사전예약 1,094명 중 96%가 실제로 방문했고, 현장에서 매일 고친 끝에 2주차 일평균 매출은 1주차의 1.6배가 되었습니다.","96%","예약자의 실제 방문율","fl/deck/tasting.jpg","#/work/freeze-lab"],
+  ["숫자로 확인하는 경험","사전예약 1,094명 중 96%가 실제로 방문했고, 현장에서 매일 고친 끝에 2주차 일평균 매출은 1주차의 1.6배가 되었습니다.","96%","예약자의 실제 방문율","pf/fl-site/03.jpg","#/work/freeze-lab"],
   ["브랜드와 현장을 같은 손으로","아이덴티티 가이드와 패키지, 부스 그래픽을 따로 맡기지 않아도 됩니다. RECETTE는 BI 가이드의 아치 하나로 카페쇼 부스 전체를 묶었습니다.","13","Space · Brand 프로젝트","pf/recette-booth/01.jpg","#/work/recette-booth"]
 ];
 const WF = [
@@ -3440,12 +3578,25 @@ Object.assign(NOTES[1], { facts:[["20,000","모두에게 같은 VALUE 지급"],[
   gallery:[["svm-receipt.jpg","가치가 찍힌 영수증"],["svm-tags.jpg","가치의 이름을 단 행택"],["svm-queue.jpg","계산대 앞의 줄"]] });
 Object.assign(NOTES[2], { facts:[["7","현장에서 바꾼 것"],["2.9×","가격표·시식 동선 다음 날 매출"],["1.6×","2주차 일평균 매출, 1주차 대비"]],
   gallery:[["fl/deck/tasting.jpg","시식존 입면"],["fl/deck/mainwall.jpg","제품 진열벽 입면"],["fl/poster-set.jpg","구매 혜택 POP"]] });
+NOTES.push({ id:"palsibo-store", date:"2026.10", tag:"Space", case:"lifemeal-yeonnam",
+  title:"한 편집숍에서 연 두 번의 팝업",
+  img:"pf/lifemeal-yeonnam/04.jpg",
+  sum:"연남동 팔시보 스토어에서 연 킹 오브 킹스와 라이프밀. 작은 공간을 카드 한 장으로 묶은 방법이 FREEZE LAB까지 이어지기까지.",
+  facts:[["2","팔시보 스토어에서 연 팝업"],["1,000+","라이프밀 사전예약, 이틀 만에"],["7개월","연남동에서 용산 FREEZE LAB까지"]],
+  gallery:[["pf/king-of-kings/04.jpg","킹 오브 킹스, 인물 ID 카드"],["pf/lifemeal-yeonnam/03.jpg","라이프밀, 동선 시뮬레이션"],["pf/lifemeal-yeonnam/17.jpg","라이프밀, 루틴 도어행어 카드"]],
+  body:[
+    ["p","연남동 골목의 편집숍 팔시보 스토어에서 두 번의 팝업을 열었습니다. 2025년에는 애니메이션 <킹 오브 킹스>, 2026년 2월에는 라이프밀의 첫 단독 브랜드 팝업이었습니다. 두 프로젝트 모두 콘셉트부터 공간, 굿즈, 현장 운영까지 전체 디렉팅을 맡았습니다."],
+    ["h2","작은 공간에는 많이 놓을 수 없습니다"],
+    ["p","편집숍 한쪽을 빌려 쓰는 팝업은 가벽을 세우거나 집기를 늘리기 어렵습니다. 그래서 공간을 채우는 대신 방문객의 손에 카드 한 장을 쥐여 주기로 했습니다. 킹 오브 킹스에서는 인물들의 ID 카드를 모아 나의 이야기를 완성하는 스탬프 투어였고, 라이프밀에서는 웰니스 체크리스트와 WBTI 진단으로 받는 나의 웰니스 루틴 카드였습니다."],
+    ["blockquote","공간을 채우는 대신, 방문객의 손에 카드 한 장을 쥐여 주었습니다."],
+    ["p","카드가 있으면 동선이 생깁니다. 어디서 시작해 어디서 끝나는지, 무엇을 모으고 무엇을 가져가는지가 분명해집니다. 라이프밀 팝업의 사전예약은 이틀 만에 1,000명을 넘었고, 이 방식은 일곱 달 뒤 용산 FREEZE LAB에서 연구원증과 네 단계 코스로 커졌습니다."]
+  ]});
 NOTES.push({ id:"plan-to-site", date:"2026.10", tag:"Process", case:"freeze-lab",
   title:"기획안이 현장이 되기까지",
   img:"pf/fl-deck/08.jpg",
   sum:"메일 첫 통에서 철수까지, 하나의 문서로 움직인 14일짜리 실험실의 준비 과정.",
   facts:[["77","실행 항목을 8주로"],["9","리스크와 미리 적어 둔 대응"],["6","몰에 제출한 고지물 종류"]],
-  gallery:[["fl/deck/plan.jpg","메인 존 평면 배치"],["fl/turn/f06.jpg","3D 모델 R02"],["fl/view_w02_iso.jpg","중앙 가벽 도면"]],
+  gallery:[["fl/deck/plan.jpg","PLAN · 메인 존 평면 배치"],["fl/turn/f06.jpg","3D · 모델 R02"],["pf/fl-site/04.jpg","SITE · 미션 체험존 현장"]],
   body:[
     ["p","FREEZE LAB은 6월 30일 몰의 첫 제안 메일에서 시작해 9월 23일 철수까지 하나의 문서로 움직였습니다. 바이어와 본사, 제작사와 주고받은 메일을 모두 이어 붙이고, 그 안에서 확정된 것과 아직 답이 없는 것을 매일 나눴습니다."],
     ["h2","조건이 적혀 있으면, 디자인이 빨라집니다"],
@@ -3491,9 +3642,87 @@ function rvScan(){
   });
   $$(".cs-hero .ph-fig, .story-row .ph-fig, .why-card .ph-fig", v).forEach(el => { if (el.classList.contains("rv-img")) return; el.classList.add("rv-img"); if (el.getBoundingClientRect().top < innerHeight) el.classList.add("in"); else rvIO.observe(el); });
 }
+/* ---------- v10: on-site photos, plan→3D→site, social embeds ---------- */
+const FL_SITE = ["리빙파크 4F 메인 통로에서 본 FREEZE LAB","쿨러백 스택 위 브랜드 화면","연구복을 입고 미션 체험존에 선 방문객","미션 체험존, FREEZE THE FRESH 가벽과 실험대","스텐 실험대와 두 대의 미션 화면","미션존 옆 연구복 행거","연구복 행거와 체험 안내 배너","코스 입구, 추석 선물 연구소 안내 배너","제품 진열벽, 단품과 선물세트","보자기 포장 선물세트 아일랜드","추석 선물세트 메인 진열","추석 VIP 선물세트와 루틴 세트","제품 매대에서 미션존으로 이어지는 동선","메인 진열대와 디지털 사이니지","사이니지 아래 선물세트 스택","통로 쪽에서 본 진열 측면"];
+const SITE = n => `pf/fl-site/${pad(n)}.jpg`;
+/* crossfade figure: plan ↔ site */
+function xfHTML(a, b, la, lb, alt){
+  return `<figure class="ph-fig xf" data-lb-skip><img class="pl" src="${IMG}${a}" alt="${esc(alt)} ${esc(la)}" loading="lazy" data-lb="${esc(alt)} · ${esc(la)}"><img class="st" src="${IMG}${b}" alt="${esc(alt)} ${esc(lb)}" loading="lazy" data-lb="${esc(alt)} · ${esc(lb)}">
+    <span class="xf-t"><button type="button" class="on" data-i="0">${esc(la)}</button><button type="button" data-i="1">${esc(lb)}</button></span><span class="xf-bar"><i></i></span></figure>`;
+}
+function initXf(x){
+  if (x.dataset.ready) return; x.dataset.ready = "1";
+  const bs = $$(".xf-t button", x); let i = 0, tm = null, man = false, vis = false;
+  const set = k => { i = k; x.classList.toggle("s", k === 1); bs.forEach((b,j)=>b.classList.toggle("on", j===k)); x.classList.remove("run"); void x.offsetWidth; if (!man && vis && !reduce) x.classList.add("run"); };
+  bs.forEach(b => b.addEventListener("click", e => { e.stopPropagation(); man = true; clearInterval(tm); set(+b.dataset.i); }));
+  const io = new IntersectionObserver(es => { vis = es[0].isIntersecting; clearInterval(tm); if (vis && !man && !reduce){ set(i); tm = setInterval(()=> set(1 - i), 3200); } }, {threshold:.45});
+  io.observe(x);
+}
+/* stage switcher: PLAN / 3D / SITE */
+function stgHTML(title, sub, st){
+  return `<figure class="stg"><div class="stg-box">${st.map(([l,s],k)=>`<img src="${IMG}${s}" alt="${esc(title)} ${esc(l)}" loading="lazy" class="${k?"":"on"}${l==="SITE"?" photo":""}" data-lb="${esc(title)} · ${esc(l)}">`).join("")}<span class="stg-n">${st.map(([l],k)=>`<button type="button" class="${k?"":"on"}" data-i="${k}">${esc(l)}</button>`).join("<i>→</i>")}</span></div>
+    <figcaption><b>${esc(title)}.</b> ${esc(sub)}</figcaption></figure>`;
+}
+function initStg(s){
+  if (s.dataset.ready) return; s.dataset.ready = "1";
+  const im = $$(".stg-box img", s), bs = $$(".stg-n button", s); let i = 0, tm = null, man = false;
+  const set = k => { i = k; im.forEach((m,j)=>m.classList.toggle("on", j===k)); bs.forEach((b,j)=>b.classList.toggle("on", j===k)); };
+  bs.forEach(b => b.addEventListener("click", e => { e.stopPropagation(); man = true; clearInterval(tm); set(+b.dataset.i); }));
+  const io = new IntersectionObserver(es => { clearInterval(tm); if (es[0].isIntersecting && !man && !reduce) tm = setInterval(()=> set((i+1) % im.length), 2600); }, {threshold:.5});
+  io.observe(s);
+}
+/* social embeds (Instagram / YouTube), lazy */
+const EMB_YT = id => `https://www.youtube-nocookie.com/embed/${id}?rel=0&playsinline=1&modestbranding=1`;
+function embCard(o, i){
+  const ig = o.kind !== "yt";
+  const href = ig ? `https://www.instagram.com/${o.t}/${o.c}/` : `https://www.youtube.com/shorts/${o.c}`;
+  const src = ig ? `https://www.instagram.com/${o.t}/${o.c}/embed/?cr=1&v=14#${encodeURIComponent(JSON.stringify({ci:i,os:0}))}` : EMB_YT(o.c);
+  return `<article class="emb-c" data-k="${ig?(o.t==="reel"?"reel":"feed"):"yt"}">
+    <div class="emb-h"><span class="t">${esc(o.tag)}</span><b>${esc(o.h)}</b><span class="m">${esc(o.m)}</span></div>
+    <div class="emb-w ${ig?"ig-w":"yt-w"}" data-src="${esc(src)}" data-title="${esc(o.h)} ${esc(o.m)}"><span class="emb-ph"><i></i>${ig?"Instagram":"YouTube"} 불러오는 중</span></div>
+    <a class="emb-l" href="${href}" target="_blank" rel="noopener">${ig?"Instagram":"YouTube"}에서 보기 ↗</a></article>`;
+}
+function embHTML(list, show, filters){
+  const cnt = k => list.filter(o => (o.kind==="yt"?"yt":(o.t==="reel"?"reel":"feed")) === k).length;
+  const fl = filters ? `<div class="emb-fl" role="tablist">${[["all","전체",list.length],["reel","릴스",cnt("reel")],["yt","쇼츠",cnt("yt")],["feed","피드",cnt("feed")]].filter(r=>r[2]).map(([k,l,n],j)=>`<button type="button" role="tab" aria-selected="${!j}" data-f="${k}">${l} <small>${n}</small></button>`).join("")}</div>` : "";
+  return `${fl}<div class="emb" data-show="${show}">${list.map(embCard).join("")}</div>${list.length > show ? `<button type="button" class="emb-more">게시물 더 보기 <small>${list.length - show}</small></button>` : ""}`;
+}
+let embIO = null;
+function embLoad(w){
+  if (w.dataset.on) return; w.dataset.on = "1";
+  const f = document.createElement("iframe");
+  f.src = w.dataset.src; f.title = w.dataset.title; f.loading = "lazy"; f.allow = "autoplay; encrypted-media; picture-in-picture; clipboard-write"; f.allowFullscreen = true; f.setAttribute("scrolling","no"); f.setAttribute("frameborder","0");
+  f.onload = () => w.classList.add("ok");
+  w.appendChild(f);
+}
+function initEmb(e){
+  if (e.dataset.ready) return; e.dataset.ready = "1";
+  embIO = embIO || new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting){ embLoad(en.target); embIO.unobserve(en.target); } }), {rootMargin:"600px 0px"});
+  const cs = $$(".emb-c", e), show = +e.dataset.show || 99, more = e.nextElementSibling && e.nextElementSibling.classList.contains("emb-more") ? e.nextElementSibling : null;
+  const fl = e.previousElementSibling && e.previousElementSibling.classList.contains("emb-fl") ? e.previousElementSibling : null;
+  let f = "all", open = false;
+  const apply = () => { let n = 0; cs.forEach(c => { const ok = f === "all" || c.dataset.k === f; const vis = ok && (open || f !== "all" || n < show); if (ok) n++; c.hidden = !vis; if (vis) embIO.observe($(".emb-w", c)); }); if (more) more.hidden = open || f !== "all"; };
+  if (more) more.onclick = () => { open = true; apply(); };
+  if (fl) $$("button", fl).forEach(b => b.onclick = () => { f = b.dataset.f; $$("button", fl).forEach(x => x.setAttribute("aria-selected", x === b)); apply(); });
+  apply();
+}
+addEventListener("message", ev => {
+  if (!/instagram\.com$/.test((ev.origin||"").replace(/^https?:\/\//,"").split(":")[0])) return;
+  let d = ev.data; try { if (typeof d === "string") d = JSON.parse(d); } catch(_){ return; }
+  if (!d || d.type !== "MEASURE" || !d.details || !d.details.height) return;
+  $$(".ig-w iframe").forEach(f => { if (f.contentWindow === ev.source){ f.style.height = d.details.height + "px"; f.parentElement.classList.add("measured"); } });
+});
+const FL_EMB = () => {
+  const L = FL.ig.map(([h,k,c,t,d,likes,tag]) => ({kind:"ig", h:"@"+h, t, c, tag, m:`${k} · ${d}${likes?` · 좋아요 ${likes}`:""}`}));
+  L.splice(3, 0, {kind:"yt", h:"으농띠", c:"_54SvBWPk28", tag:"YouTube Shorts", m:"쇼츠 · 09.10 · 용산에 나타난 라이프밀 추석연구소"});
+  L.push({kind:"ig", h:"@lifemeal_wellness", t:"p", c:"DcabaNskeCl", tag:"공식 계정", m:"피드 · 08.24 · 사전예약 OPEN"});
+  return L;
+};
+const SVM_EMB = () => SVM.social.map(([h,d,t,u,k]) => { const m = u.match(/instagram\.com\/(p|reel)\/([^/]+)/); return {kind:"ig", h, t:m[1], c:m[2], tag:k, m:`${m[1]==="reel"?"릴스":"피드"} · ${d.slice(5)}`}; });
+
 function initDyn(){
   const v = $(".view.active"); if (!v) return;
-  $$(".car", v).forEach(initCar); $$(".bx", v).forEach(initBx); $$(".cmp", v).forEach(initCmp); $$(".dos", v).forEach(initDos);
+  $$(".car", v).forEach(initCar); $$(".bx", v).forEach(initBx); $$(".cmp", v).forEach(initCmp); $$(".dos", v).forEach(initDos); $$(".xf", v).forEach(initXf); $$(".stg", v).forEach(initStg); $$(".emb", v).forEach(initEmb);
   $$(".rail-wrap", v).forEach(initRail); $$(".wf", v).forEach(initWf);
 }
 (function(){
