@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>HOMPI Music</title>
+<style>
+:root{--bg:#0f1012;--card:#18191c;--ink:#f5f5f7;--sub:#9a9ca3;--line:#2a2b30;--acc:#ff5a8a}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Pretendard","Apple SD Gothic Neo",sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:440px;margin:0 auto;padding:18px 18px 24px;min-height:100vh;display:flex;flex-direction:column;gap:16px}
+.top{display:flex;justify-content:space-between;align-items:center;font-size:12px;letter-spacing:.12em;color:var(--sub);text-transform:uppercase}
+.vid{position:relative;border-radius:16px;overflow:hidden;background:#000;aspect-ratio:16/9}
+.vid #p,.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.gate{position:absolute;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.55);border:0;color:#fff;font:inherit;font-size:16px;font-weight:700;cursor:pointer}
+.gate.on{display:flex}
+.now b{display:block;font-size:18px;font-weight:800;letter-spacing:-.02em;line-height:1.35;word-break:keep-all}
+.now span{font-size:13px;color:var(--sub)}
+.ctl{display:flex;justify-content:center;align-items:center;gap:14px}
+.ctl button{width:52px;height:52px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:18px;cursor:pointer}
+.ctl .pp{width:64px;height:64px;background:var(--ink);color:var(--bg);font-size:22px;border:0}
+.ctl button:focus-visible,.list button:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.list li button{display:flex;gap:12px;align-items:center;width:100%;padding:10px 4px;border:0;border-bottom:1px solid var(--line);background:none;color:var(--ink);font:inherit;text-align:left;cursor:pointer}
+.list img{width:64px;height:36px;object-fit:cover;border-radius:6px;flex:none;background:#222}
+.list span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:14px}
+.list li.on span{color:var(--acc);font-weight:700}
+.empty{color:var(--sub);text-align:center;padding:40px 0}
+.foot{margin-top:auto;font-size:12px;color:var(--sub);text-align:center}
+.foot a{color:var(--sub)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><span>HOMPI · Music</span><span id="cnt"></span></div>
+  <div class="vid"><div id="p"></div><button class="gate" id="gate" type="button">▶ 눌러서 재생</button></div>
+  <div class="now"><b id="title">불러오는 중</b><span id="sub">창을 닫으면 음악이 멈춰요</span></div>
+  <div class="ctl"><button type="button" id="prev" aria-label="이전 곡">⏮</button><button type="button" class="pp" id="pp" aria-label="재생/일시정지">▶</button><button type="button" id="next" aria-label="다음 곡">⏭</button></div>
+  <ol class="list" id="list"></ol>
+  <div class="foot">이 창은 2026 황윤희 HOMPI의 음악 플레이어예요. <a id="yt" href="#" target="_blank" rel="noopener">YouTube에서 열기</a></div>
+</div>
+<script>
+(function(){
+  "use strict";
+  var tracks=[],cur=0,player=null,ready=false,playing=false;
+  function parse(){
+    try{var h=location.hash.slice(1);if(!h)return [];var s=decodeURIComponent(escape(atob(h.replace(/-/g,"+").replace(/_/g,"/"))));var a=JSON.parse(s);
+      return (a.t||[]).filter(function(x){return x&&(x.v||x.l)}).map(function(x){return {v:String(x.v||"").slice(0,20),l:String(x.l||"").slice(0,80),n:String(x.n||"").slice(0,120)}});}catch(e){return []}
+  }
+  function $(id){return document.getElementById(id)}
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+  function send(){try{if(window.opener)window.opener.postMessage({yhm:"state",i:cur,playing:playing,title:tracks[cur]?tracks[cur].n:"",n:tracks.length},"*")}catch(e){}}
+  function render(){
+    $("cnt").textContent=tracks.length?(cur+1)+" / "+tracks.length:"";
+    var t=tracks[cur];$("title").textContent=t?(t.n||"재생 목록"):"곡이 없어요";
+    $("pp").textContent=playing?"❚❚":"▶";
+    $("yt").href=t?(t.v?"https://music.youtube.com/watch?v="+t.v:"https://music.youtube.com/playlist?list="+t.l):"https://music.youtube.com";
+    $("list").innerHTML=tracks.map(function(x,i){return '<li class="'+(i===cur?"on":"")+'"><button type="button" data-i="'+i+'">'+(x.v?'<img alt="" src="https://i.ytimg.com/vi/'+esc(x.v)+'/mqdefault.jpg">':'<img alt="">')+'<span>'+esc(x.n||("Track "+(i+1)))+'</span></button></li>'}).join("");
+    document.title=(t&&t.n?t.n+" · ":"")+"HOMPI Music";
+  }
+  function load(i,auto){
+    if(!tracks.length)return;cur=(i+tracks.length)%tracks.length;var t=tracks[cur];render();
+    if(!ready)return;
+    if(t.v){auto?player.loadVideoById(t.v):player.cueVideoById(t.v)}
+    else{auto?player.loadPlaylist({list:t.l,listType:"playlist"}):player.cuePlaylist({list:t.l,listType:"playlist"})}
+    send();
+  }
+  function toggle(){if(!ready)return;playing?player.pauseVideo():player.playVideo()}
+  window.onYouTubeIframeAPIReady=function(){
+    var t=tracks[cur]||{};
+    player=new YT.Player("p",{width:"100%",height:"100%",videoId:t.v||undefined,
+      playerVars:Object.assign({autoplay:1,playsinline:1,rel:0,modestbranding:1},t.v?{}:{listType:"playlist",list:t.l}),
+      events:{onReady:function(){ready=true;try{player.playVideo()}catch(e){}setTimeout(function(){if(!playing)$("gate").classList.add("on")},1800)},
+        onStateChange:function(e){if(e.data===1){playing=true;$("gate").classList.remove("on")}else if(e.data===2||e.data===0){playing=false}
+          if(e.data===0&&tracks.length){if(tracks[cur].l&&!tracks[cur].v){}else load(cur+1,true)}render();send()},
+        onError:function(){setTimeout(function(){load(cur+1,true)},800)}}});
+  };
+  $("gate").onclick=function(){$("gate").classList.remove("on");if(ready)player.playVideo()};
+  $("pp").onclick=toggle;$("prev").onclick=function(){load(cur-1,true)};$("next").onclick=function(){load(cur+1,true)};
+  $("list").onclick=function(e){var b=e.target.closest("button[data-i]");if(b)load(+b.getAttribute("data-i"),true)};
+  window.addEventListener("message",function(e){var m=e.data;if(!m||m.yhm!=="cmd")return;
+    if(m.tracks){tracks=m.tracks.filter(function(x){return x&&(x.v||x.l)});}
+    if(m.op==="go")load(m.i|0,true);else if(m.op==="next")load(cur+1,true);else if(m.op==="prev")load(cur-1,true);
+    else if(m.op==="toggle")toggle();else if(m.op==="pause"&&ready)player.pauseVideo();else if(m.op==="play"&&ready)player.playVideo();else if(m.op==="ping")send();});
+  window.addEventListener("hashchange",function(){tracks=parse();load(0,true)});
+  tracks=parse();var q=location.search.match(/[?&]i=(\d+)/);cur=q?Math.min(+q[1],Math.max(0,tracks.length-1)):0;render();
+  if(!tracks.length){$("list").innerHTML='<li class="empty">재생할 곡이 없어요. HOMPI에서 음악을 추가해 주세요.</li>'}
+  var s=document.createElement("script");s.src="https://www.youtube.com/iframe_api";document.head.appendChild(s);
+})();
+</script>
+</body>
+</html>
