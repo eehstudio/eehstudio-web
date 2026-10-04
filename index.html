@@ -1387,7 +1387,8 @@ h1,h2,h3{text-wrap:balance}
 .xs-row.w12{grid-template-columns:1.3fr 1fr}
 /* cards */
 .xs-cards{display:grid;gap:0;border-top:1px solid #000}
-.xs-cards.c2{grid-template-columns:repeat(2,1fr)}.xs-cards.c3{grid-template-columns:repeat(3,1fr)}.xs-cards.c4{grid-template-columns:repeat(4,1fr)}
+.xs-cards.c2{grid-template-columns:repeat(2,1fr)}.xs-cards.c3{grid-template-columns:repeat(3,1fr)}.xs-cards.c4{grid-template-columns:repeat(4,1fr)}.xs-cards.c5{grid-template-columns:repeat(5,1fr)}
+.xs-cards.ct .im{aspect-ratio:1;background:#f6f5f1}.xs-cards.ct .im img{object-fit:contain}
 .xs-card{padding:22px clamp(14px,1.6vw,26px) 26px 0;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:10px;min-width:0}
 .xs-cards .xs-card + .xs-card{padding-left:clamp(14px,1.6vw,26px);border-left:1px solid var(--line)}
 .xs-card .k{font-family:var(--mono);font-size:12px;color:var(--gray)}
@@ -1444,8 +1445,9 @@ h1,h2,h3{text-wrap:balance}
 .xs-zp .t p{font-size:14.5px;line-height:1.75;color:#2b2b2b}
 .xs-zp dl{display:grid;grid-template-columns:72px 1fr;gap:6px 12px;margin-top:14px;font-size:13.5px;line-height:1.6;border-top:1px solid var(--line);padding-top:12px}
 .xs-zp dt{font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--gray-2);padding-top:2px}
-.xs-zp .sub{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+.xs-zp .sub{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}
 .xs-zp .sub img{width:100%;aspect-ratio:1;object-fit:cover;display:block;background:#f3f3f1;cursor:zoom-in}
+.xs-plan.sc .xs-zp .sub img{object-fit:contain;padding:6px}
 /* grid gallery */
 .xs-grid{display:grid;gap:clamp(8px,1vw,14px)}
 .xs-grid.c4{grid-template-columns:repeat(4,1fr)}.xs-grid.c5{grid-template-columns:repeat(5,1fr)}.xs-grid.c6{grid-template-columns:repeat(6,1fr)}.xs-grid.c3{grid-template-columns:repeat(3,1fr)}
@@ -1461,7 +1463,7 @@ h1,h2,h3{text-wrap:balance}
   .xs-specs{grid-template-columns:repeat(2,1fr)}
   .xs-specs .xs-spec:not(:nth-child(3n+1)){padding-left:0;border-left:0}
   .xs-specs .xs-spec:nth-child(2n){padding-left:18px;border-left:1px solid var(--line)}
-  .xs-cards.c4{grid-template-columns:repeat(2,1fr)}
+  .xs-cards.c4,.xs-cards.c5{grid-template-columns:repeat(2,1fr)}
   .xs-grid.c6{grid-template-columns:repeat(4,1fr)}.xs-grid.c5{grid-template-columns:repeat(4,1fr)}
   .xs-plan{grid-template-columns:1fr}
 }
@@ -1470,6 +1472,7 @@ h1,h2,h3{text-wrap:balance}
   .xs-role ul{grid-template-columns:1fr}
   .xs-role li{grid-template-columns:96px 1fr}
   .xs-cards.c2,.xs-cards.c3,.xs-cards.c4{grid-template-columns:1fr}
+  .xs-cards.c5{grid-template-columns:1fr 1fr}
   .xs-cards .xs-card + .xs-card{padding-left:0;border-left:0}
   .xs-row.c2,.xs-row.c3,.xs-row.w12{grid-template-columns:1fr}
   .xs-row.c4,.xs-row.c6{grid-template-columns:1fr 1fr}
@@ -1479,6 +1482,124 @@ h1,h2,h3{text-wrap:balance}
   .xs-specs{grid-template-columns:1fr 1fr}
   .xs-tbl{font-size:13.5px}
   .xs-tbl th:nth-child(n+4),.xs-tbl td:nth-child(n+4){display:none}
+}
+.xs-pal{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:clamp(18px,2vw,28px) clamp(10px,1.2vw,16px)}
+.xs-pal .sw{min-width:0}
+.xs-pal .sw.big{grid-column:span 2}
+.xs-pal .sw i{display:block;height:clamp(84px,9vw,140px);border:1px solid rgba(0,0,0,.06)}
+.xs-pal .sw b{display:block;margin-top:10px;font-size:14px;font-weight:600}
+.xs-pal .sw span{display:block;font-family:var(--mono);font-size:12px;color:var(--gray-2);margin-top:3px}
+.xs-type{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid #000}
+.xs-type .ty{padding:20px 18px 24px 0;border-bottom:1px solid var(--line);min-width:0}
+.xs-type .ty + .ty{padding-left:18px;border-left:1px solid var(--line)}
+.xs-type small{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--gray)}
+.xs-type b{display:block;font-size:15px;font-weight:600;margin-top:4px}
+.xs-type .sm{font-size:clamp(34px,4vw,58px);line-height:1.15;margin:14px 0 8px;color:var(--accent,#000);word-break:keep-all}
+.xs-type .sm.img img{display:block;max-width:100%;height:clamp(40px,4.4vw,64px);object-fit:contain;object-position:left center}
+.xs-type span{display:block;font-size:13px;color:var(--gray-2);line-height:1.6}
+@media (max-width:760px){.xs-type{grid-template-columns:1fr}.xs-type .ty + .ty{padding-left:0;border-left:0}}
+/* ---------- v13c: brand-system boards ---------- */
+.xb{margin:0}
+.xb-in{position:relative;overflow:hidden;background:#fff;border:1px solid var(--line);display:flex;align-items:center;justify-content:center}
+.xb-in > svg{display:block;width:100%;height:100%}
+.xb figcaption{font-size:12.5px;color:var(--gray-2);margin-top:8px;line-height:1.55}
+.xb figcaption b{color:#000;font-weight:600;margin-right:6px}
+.xb-g{display:grid;gap:clamp(10px,1.2vw,18px)}
+.xb-g.c2{grid-template-columns:1fr 1fr}.xb-g.c3{grid-template-columns:repeat(3,1fr)}.xb-g.c4{grid-template-columns:repeat(4,1fr)}
+.xb-g.w21{grid-template-columns:1.25fr 1fr}
+.xb-g + .xb-g{margin-top:clamp(10px,1.2vw,18px)}
+.xb-guide line,.xb-guide rect{stroke:#38b2d6;stroke-width:1;fill:none;vector-effect:non-scaling-stroke}
+.xb-guide text{fill:#38b2d6;font:500 20px/1 var(--font,system-ui),sans-serif;letter-spacing:.04em}
+/* hero */
+.xs-brandhero{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.xs-brandhero svg{height:64%;width:auto;display:block}
+/* steps */
+.xb-steps{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,3vw,48px)}
+.xb-steps ol{list-style:none;margin:0;padding:0}
+.xb-steps li{display:grid;grid-template-columns:1fr 54px;align-items:center;gap:14px}
+.xb-steps li > div{height:clamp(54px,6vw,84px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px}
+.xb-steps li svg{height:34%;width:auto;display:block}
+.xb-steps li span{font:500 12.5px/1 var(--mono,monospace);color:var(--gray-2)}
+/* type */
+.xb-type{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,64px);border-top:1px solid #000}
+.xb-type > div{padding-top:20px}
+.xb-type h4{margin:0 0 4px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:600}
+.xb-type .fam{font-size:14px;color:var(--gray-2);margin-bottom:18px}
+.xb-type .row{display:grid;grid-template-columns:86px 1fr;gap:14px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--line)}
+.xb-type .row small{font:500 11.5px/1.3 var(--mono,monospace);color:var(--gray-2);text-transform:uppercase}
+.xb-type .row p{margin:0;font-size:clamp(16px,1.45vw,22px);line-height:1.35;color:#3d3e41;word-break:keep-all;overflow-wrap:anywhere}
+.xb-type .en p{font-family:"Futura PT",Futura,"Jost",sans-serif}
+.xb-type .ko p{font-family:"Apple SD Gothic Neo","Noto Sans KR",sans-serif;letter-spacing:-0.01em}
+/* rules */
+.xb-x .xb-in::after{content:"";position:absolute;inset:0;background:linear-gradient(to top right,transparent calc(50% - 1px),#e2264b calc(50% - 1px),#e2264b calc(50% + 1px),transparent calc(50% + 1px))}
+.xb-kw{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,64px);border-top:1px solid #000;padding-top:20px;margin-bottom:clamp(20px,3vw,40px)}
+.xb-kw h4{margin:0 0 14px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:600}
+.xb-kw ul{list-style:none;margin:0;padding:0}
+.xb-kw li{font-family:"Futura PT",Futura,"Jost",sans-serif;font-weight:300;font-size:clamp(26px,3vw,46px);line-height:1.18;color:#86898e;letter-spacing:-0.01em}
+.xb-kw li small{font-family:inherit;font-size:13px;font-weight:500;color:#5b5d61;margin-left:10px;letter-spacing:0;font-family:var(--font,system-ui),sans-serif}
+/* namecard */
+.xb-card{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,28px);padding:clamp(24px,4vw,64px);background:#efede8}
+.xb-card > div{aspect-ratio:90/50;border-radius:3px;box-shadow:0 1px 2px rgba(0,0,0,.08),0 12px 30px -12px rgba(0,0,0,.25);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.xb-card svg{display:block}
+/* concept orbs */
+.xg-orbs{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,4vw,64px);background:#2b2b2b;padding:clamp(32px,5vw,80px) clamp(20px,4vw,64px);color:#fff}
+.xg-orbs > div{text-align:center}
+.xg-orbs i{display:block;position:relative;width:min(100%,300px);aspect-ratio:1;border-radius:50%;margin:0 auto 26px;font-style:normal}
+.xg-orbs i b{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:clamp(18px,1.8vw,26px);font-weight:600;color:#111}
+.xg-orbs i em{position:absolute;right:-6%;top:-6%;width:46%;aspect-ratio:1;border-radius:50%;display:flex;align-items:center;justify-content:center;font-style:normal;font-weight:600;color:#111;font-size:clamp(14px,1.3vw,19px);z-index:1}
+.xg-orbs h3{margin:0 0 10px;color:#fc6a2c;font-size:clamp(20px,1.9vw,28px);font-weight:700;letter-spacing:-0.02em}
+.xg-orbs p{margin:0 auto;max-width:22em;font-size:14px;line-height:1.75;color:#d8d6d2}
+/* kcycf */
+.xs-brandhero .xk-cap{position:absolute;left:clamp(16px,3vw,40px);bottom:clamp(14px,2.4vw,32px);font-size:12px;letter-spacing:.06em;color:rgba(255,255,255,.55)}
+.xk-hls{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(10px,2vw,32px);background:#0d0d0d;padding:clamp(32px,5vw,72px) clamp(16px,5vw,80px)}
+.xk-hl{text-align:center}
+.xk-hl i{display:flex;align-items:center;justify-content:center;aspect-ratio:1;background:#000;border:1px solid #fff;color:#fff;font:500 clamp(22px,3.4vw,52px)/1 Futura,"Jost",sans-serif;font-style:normal;letter-spacing:.02em}
+.xk-hl i svg{display:block}
+.xk-hl span{display:block;margin-top:14px;color:#fff;font:500 clamp(11px,1.1vw,15px)/1 Futura,"Jost",sans-serif;letter-spacing:.04em}
+/* report */
+.xr-stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #000}
+.xr-stats > div{padding:22px 18px 22px 0;border-bottom:1px solid var(--line)}
+.xr-stats b{display:block;font-size:clamp(34px,4.4vw,64px);font-weight:600;letter-spacing:-0.04em;line-height:1}
+.xr-stats span{display:block;margin-top:10px;font-size:14px;font-weight:600}
+.xr-stats small{display:block;margin-top:4px;font-size:12.5px;color:var(--gray-2);line-height:1.5}
+.xr-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,64px);margin-top:clamp(28px,4vw,56px)}
+.xr-bars h4{margin:0 0 14px;font-size:14px;font-weight:600;letter-spacing:-0.01em}
+.xr-bars .r{display:grid;grid-template-columns:minmax(90px,38%) 1fr 92px;gap:12px;align-items:center;padding:7px 0;font-size:13.5px}
+.xr-bars .k{color:#333;line-height:1.35}
+.xr-bars .b{height:10px;background:#f0f0ee;position:relative}
+.xr-bars .b i{position:absolute;inset:0 auto 0 0;background:#4b3ef0}
+.xr-bars .r.hi .k{font-weight:600;color:#000}
+.xr-bars .v{font-family:var(--mono);font-size:12.5px;color:#333;text-align:right}
+.xr-quotes{display:flex;flex-wrap:wrap;gap:10px;margin-top:clamp(24px,3vw,40px)}
+.xr-quotes q{display:inline-block;padding:10px 16px;border:1px solid var(--line);border-radius:40px;font-size:14px;line-height:1.4;quotes:"“" "”"}
+.xr-time{list-style:none;margin:0;padding:0;border-top:1px solid #000}
+.xr-time li{display:grid;grid-template-columns:132px 1fr 1.2fr;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:14.5px;align-items:baseline}
+.xr-time .t{font-family:var(--mono);font-size:12.5px;color:var(--gray-2)}
+.xr-time .d{color:#555;font-size:13.5px}
+.xr-time li.br{color:#999}.xr-time li.br b{font-weight:400}
+.xr-time li.hl b{color:#4b3ef0}
+/* red sky hero */
+.xr-sky{background:radial-gradient(120% 90% at 20% 15%,#b9231d 0%,#d9453a 45%,#e88a7d 75%,#efc0b6 100%);color:#1b0b0a;text-align:center}
+.xr-sky::after{content:"";position:absolute;inset:0;opacity:.18;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.xr-sky > div{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:clamp(6px,1vw,14px);font-family:"Playfair Display",Georgia,serif}
+.xr-sky small{font-size:clamp(12px,1.2vw,18px)}
+.xr-sky b{font-size:clamp(56px,10vw,150px);font-weight:500;line-height:.95;letter-spacing:-0.02em}
+.xr-sky i{font-style:normal;font-size:clamp(13px,1.4vw,20px)}
+.xr-sky i em{font-style:italic}
+.xr-sky span{margin-top:clamp(10px,2vw,30px);font-size:clamp(12px,1.2vw,18px);font-weight:600}
+@media (max-width:1100px){.xb-g.c4{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:760px){
+  .xb-g.c2,.xb-g.c3,.xb-g.w21{grid-template-columns:1fr}
+  .xb-steps,.xb-type,.xb-kw{grid-template-columns:1fr}
+  .xb-card{grid-template-columns:1fr}
+  .xb-g.m2{grid-template-columns:1fr 1fr}
+  .xg-orbs{grid-template-columns:1fr}
+  .xk-hls{gap:8px;padding:24px 12px}
+  .xr-stats{grid-template-columns:1fr 1fr}
+  .xr-grid{grid-template-columns:1fr}
+  .xr-time li{grid-template-columns:96px 1fr}
+  .xr-time .d{grid-column:2}
+  .xg-orbs i{width:62%}
 }
 </style>
 </head>
@@ -3353,7 +3474,7 @@ function renderLite(w){
     <div class="kicker">${esc(w.category)} · ${esc(w.client)}</div>
     <h1>${esc(w.title)}</h1>
     <dl class="meta">${w.meta.map(([k,v])=>`<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>
-    <div class="cs-hero">${w.heroSrc ? `<figure class="ph-fig wide169" style="position:relative">${w.heroTag?`<span class="xs-tag${w.heroTag==="SIMULATION"?" sim":""}">${esc(w.heroTag)}</span>`:""}<img src="${XI(w.heroSrc)}" alt="${esc(w.title)} 대표 이미지" decoding="async"></figure>` : `<figure class="ph-fig wide169"><img src="${PF}${esc(w.id)}/01.jpg" alt="${esc(w.title)} 대표 장표" decoding="async"></figure>`}</div>
+    <div class="cs-hero">${w.heroHTML ? `<figure class="ph-fig wide169" style="position:relative">${(w.heroSprites||[]).map(([i,u])=>(xsSprite(i,u),"")).join("")}${w.heroHTML}</figure>` : w.heroSrc ? `<figure class="ph-fig wide169" style="position:relative">${w.heroTag?`<span class="xs-tag${w.heroTag==="SIMULATION"?" sim":""}">${esc(w.heroTag)}</span>`:""}<img src="${XI(w.heroSrc)}" alt="${esc(w.title)} 대표 이미지" decoding="async"></figure>` : `<figure class="ph-fig wide169"><img src="${PF}${esc(w.id)}/01.jpg" alt="${esc(w.title)} 대표 장표" decoding="async"></figure>`}</div>
     <div class="lite-status"><b class="${esc(w.status)}">${esc(STATUS[w.status])}</b><span>${esc(w.studio ? STUDIO_NOTE : STATUS_NOTE[w.status])}</span></div>
     ${w.results ? `<div class="cs-block"><div class="cs-label">In numbers</div><div class="stats">${w.results.map(([b,t])=>`<div><b>${esc(b)}</b><span>${esc(t)}</span></div>`).join("")}</div></div>` : ""}
     ${w.sections ? secsHTML(w) : `<div class="cs-block cs-intro"><h2>${esc(w.headline)}</h2><div>${w.body.map(p=>`<p>${esc(p)}</p>`).join("")}<div class="keys">${w.tags.map(t=>`<span class="tag">${esc(t)}</span>`).join("")}</div></div></div>
@@ -3648,7 +3769,7 @@ function enhanceFL(){
       </div>`);
   }
   const idb = blocks.find(b => /Identity/.test(($(".cs-label", b)||{}).textContent||""));
-  if (idb) idb.insertAdjacentHTML("afterend", `<div class="cs-block"><div class="cs-label">Deck &amp; package</div><h2 class="cs-h2">공간기획 덱부터 선물세트 패키지, 굿즈까지</h2>${carHTML("fl-deck", FL_DECK, "FREEZE LAB")}<p class="cap"><b>한 장의 덱에서 시작한 언어.</b> 키 비주얼과 코스 시뮬레이션, 2D 평면, 그리고 네 가지 추석 선물세트의 아우터·이너 패키지 전개도와 트라이얼 키트, 쿨러백, 쇼핑백까지 같은 그린과 워드마크로 이어집니다.</p></div>`);
+  if (idb) idb.insertAdjacentHTML("afterend", `<div class="cs-block">${secsHTML({sections:FL_PKG})}</div>`);
 }
 const CSES_DECK = ["첫 제안 The better, the more","콘셉트","콘텐츠","부스 디자인","부스 3D","정면 그래픽","그래픽 상세","조명","테이블","보관함"];
 function enhanceSVM(){
@@ -3657,8 +3778,7 @@ function enhanceSVM(){
   if (!anchor) return;
   anchor.insertAdjacentHTML("afterend", `<div class="cs-block"><div class="cs-label">Proposal to market</div>
     <div class="cs-intro"><h2>같은 질문, 더 선명해진 답.<br>첫 제안에서 마켓까지</h2><div><p>첫 제안의 이름은 The better, the more였습니다. 미션을 수행하고 코인을 모아 굿즈로 바꾸는 구조를, 옐로 그래픽과 종이 집기, 캡슐 뽑기로 3,000 × 3,000 부스에 담은 안이었습니다.</p><p>측정한 가치를 보상으로 돌려준다는 뼈대는 그대로 두고, 논의를 거쳐 누구나 아는 장보기와 계산대, 영수증의 언어로 다시 썼습니다. 그렇게 SOCIAL VALUE MARKET이 되었습니다.</p></div></div>
-    <div class="mt" style="margin-top:clamp(28px,3vw,44px)">${carHTML("cses-proposal", CSES_DECK, "CSES 첫 제안")}</div>
-    <p class="cap">첫 제안 장표 10장. 최종 부스와 비교해 보면 무엇을 남기고 무엇을 바꿨는지 보입니다.</p></div>`);
+    </div>${secsHTML({sections:CSES_SECS})}`);
 }
 
 /* ---------- home: rails + why + workflow ---------- */
@@ -3882,12 +4002,12 @@ const XS = {
   lead: s => `${xsLab(s.label)}<div class="xs-lead"><blockquote>${esc(s.q)}</blockquote><div>${(s.p||[]).map(t=>`<p class="xs-p">${esc(t)}</p>`).join("")}</div></div>`,
   media: s => `${xsHead(s)}${xsFig(s.src, s.cap, s)}`,
   row: s => `${xsHead(s)}<div class="xs-row ${s.cls||"c2"}">${s.items.map(([src,cap,o])=>xsFig(src,cap,Object.assign({ratio:s.ratio,contain:s.contain,bg:s.bg},o||{}))).join("")}</div>${s.note?`<p class="xs-note">${esc(s.note)}</p>`:""}`,
-  cards: s => `${xsHead(s)}<div class="xs-cards c${s.cols||3}">${s.items.map((c,i)=>`<div class="xs-card">${c.img?`<div class="im"><img src="${XI(c.img)}" alt="${esc(c.t)}" loading="lazy" data-lb="${esc(c.t)}"></div>`:""}<span class="k">${esc(c.k||pad(i+1))}</span><h3>${esc(c.t)}</h3><p>${esc(c.d)}</p>${c.pt?`<span class="pt">${esc(c.pt)}</span>`:""}</div>`).join("")}</div>`,
+  cards: s => `${xsHead(s)}<div class="xs-cards c${s.cols||3}${s.contain?" ct":""}">${s.items.map((c,i)=>`<div class="xs-card">${c.img?`<div class="im"${s.ratio?` style="aspect-ratio:${s.ratio}"`:""}><img src="${XI(c.img)}" alt="${esc(c.t)}" loading="lazy" data-lb="${esc(c.t)}"></div>`:""}<span class="k">${esc(c.k||pad(i+1))}</span><h3>${esc(c.t)}</h3><p>${esc(c.d)}</p>${c.pt?`<span class="pt">${esc(c.pt)}</span>`:""}</div>`).join("")}</div>`,
   table: s => `${xsHead(s)}<div style="overflow-x:auto"><table class="xs-tbl"><thead><tr>${s.head.map(h=>`<th>${esc(h)}</th>`).join("")}</tr></thead><tbody>${s.rows.map(r=>`<tr>${r.map((c,i)=>`<td>${i===1?`<b>${esc(c)}</b>`:esc(c)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>${s.note?`<p class="xs-note">${esc(s.note)}</p>`:""}`,
   strip: s => `${xsHead(s)}<div class="xs-strip">${s.items.map(([src,cap])=>xsFig(src,cap,{ratio:s.ratio||"3/2",contain:s.contain,bg:s.bg})).join("")}</div>`,
   specs: s => `${xsHead(s)}<div class="xs-specs">${s.items.map(([a,b,c])=>`<div class="xs-spec"><small>${esc(a)}</small><b>${esc(b)}</b>${c?`<span>${esc(c)}</span>`:""}</div>`).join("")}</div>`,
   grid: s => `${xsHead(s)}<div class="xs-grid c${s.cols||4}${s.cover?" cover":""}">${s.items.map(([src,cap])=>`<figure><div class="im" style="${s.ratio?`aspect-ratio:${s.ratio};`:""}${s.bg?`background:${s.bg}`:""}"><img src="${XI(src)}" alt="${esc(cap||"")}" loading="lazy" data-lb="${esc(cap||"")}"></div>${cap?`<figcaption>${esc(cap)}</figcaption>`:""}</figure>`).join("")}</div>${s.note?`<p class="xs-note">${esc(s.note)}</p>`:""}`,
-  plan: s => `${xsHead(s)}<div class="xs-plan" data-n="${s.zones.length}"><div><div class="pl">${s.svg.replace("</svg>", s.zones.map((z,i)=>`<g class="z${i?"":" on"}" data-i="${i}" transform="translate(${z.x},${z.y})"><circle class="ring" r="20"></circle><circle r="19"></circle><text>${esc(z.n)}</text></g>`).join("") + "</svg>")}</div>
+  plan: s => `${xsHead(s)}<div class="xs-plan${s.subContain?" sc":""}" data-n="${s.zones.length}"><div><div class="pl">${s.svg.replace("</svg>", s.zones.map((z,i)=>`<g class="z${i?"":" on"}" data-i="${i}" transform="translate(${z.x},${z.y})"><circle class="ring" r="20"></circle><circle r="19"></circle><text>${esc(z.n)}</text></g>`).join("") + "</svg>")}</div>
       <div class="xs-tabs">${s.zones.map((z,i)=>`<button type="button" class="${i?"":"on"}" data-i="${i}"><b>${esc(z.n)}</b>${esc(z.name)}</button>`).join("")}</div></div>
       <div class="xs-zp" aria-live="polite"></div></div>
       <script type="application/json" class="xs-zd">${JSON.stringify(s.zones).replace(/</g,"\\u003c")}<\/script>`,
@@ -3918,7 +4038,7 @@ function initPlan(p){
 (function(){
 const w = WORKS.find(x => x.id === "king-of-kings"); if (!w) return;
 const P = "pf/king-of-kings/x/";
-w.heroSrc = P + "facade.jpg"; w.heroTag = "SIMULATION";
+w.heroSrc = P + "sim-z1.jpg"; w.heroTag = "SIMULATION";
 w.cover = "images/pf/king-of-kings/t01.jpg";
 const svg = `<svg viewBox="200 150 1620 930" role="img" aria-label="팔시보 스토어 평면도와 존 배치">
   <rect x="200" y="150" width="1620" height="930" fill="#fafaf8"/>
@@ -3953,25 +4073,25 @@ w.sections = [
     {k:"FRONT", t:"인물의 정체성을 모으다", d:"존마다 인물의 스탬프 부스가 있습니다. 방문객은 인물의 정보를 적고 포토 스탬프를 사진 칸에 직접 찍어, 이름과 정보가 정리된 카드 앞면을 완성합니다."},
     {k:"BACK", t:"인물의 목소리를 따라 적다", d:"인물마다 영화 속 핵심 대사 한 줄을 남깁니다. 뒷면 미션으로 그 대사를 직접 적으며, 스탬프 수집을 넘어 인물의 감정에 공감하게 됩니다."},
     {k:"LAST", t:"마지막 스탬프는 나 자신", d:"모든 인물의 ID를 채우면 마지막 장에 복음을 전하는 월터의 장면과 함께 나의 ID 카드가 나옵니다. 내 이름과 전하고 싶은 메시지를 적어 투어를 마칩니다."}]},
-  { t:"row", cls:"c2", label:"ID Card", h:"인물별 ID 카드, 앞면과 뒷면", ratio:"1228/366", contain:true, bg:"#fff", items:[
+  { t:"strip", label:"ID Card", h:"인물별 ID 카드, 앞면과 뒷면", ratio:"1228/366", contain:true, bg:"#fff", items:[
     [P+"id4.jpg","01 찰스 디킨스. 이야기를 들려주는 아버지"],[P+"id2.jpg","02 캐서린 디킨스. 어머니"],[P+"id1.jpg","03 고양이 윌라. 뒷면은 색칠 미션"],
     [P+"id6.jpg","04 월터 디킨스. 이야기를 듣는 막내"],[P+"id3.jpg","05 예수. 두려워하지 마라"],[P+"id5.jpg","06 나. 비어 있는 마지막 카드"]]},
-  { t:"plan", label:"Deco Plan", h:"팔시보 스토어 한 층을 일곱 개의 장면으로", p:["번호를 누르면 존별 실측 사진과 데코 플랜이 열립니다. 사진은 설치 전 공간을 직접 찍은 것입니다."], svg, zones:[
-    {n:"0", name:"Collect Start", en:"Entrance · Counter", x:1370, y:430, photo:P+"z0b.jpg", tag:"BEFORE",
+  { t:"plan", label:"Deco Plan", h:"팔시보 스토어 한 층을 일곱 개의 장면으로", p:["번호를 누르면 존별 데코 플랜이 열립니다. 큰 이미지는 직접 실측한 설치 전 사진 위에 데코 플랜을 시뮬레이션한 것이고, 아래 첫 사진이 설치 전 모습입니다."], svg, zones:[
+    {n:"0", name:"Collect Start", en:"Entrance · Counter", x:1370, y:430, photo:P+"sim-z0.jpg", tag:"SIMULATION",
       p:["입구 커튼을 지나면 카운터에서 스탬프 투어 카드와 집게형 명찰을 받습니다. 카운터는 투어의 시작점이자 미션을 마치고 돌아오는 자리입니다."],
-      dl:[["DP","입구 커튼, 입구 현수막, 행잉 스틸"],["Kit","스탬프 투어 카드, 집게형 명찰"]], sub:[[P+"z0.jpg","입구 실측"],[P+"z0-curtain.jpg","커튼 샘플"],[P+"z0-banner.jpg","입구 현수막 디자인"]]},
-    {n:"1·2", name:"Dickens Family", en:"Charles & Catherine", x:1615, y:610, photo:P+"z1.jpg", tag:"BEFORE",
+      dl:[["DP","입구 커튼, 입구 현수막, 행잉 스틸"],["Kit","스탬프 투어 카드, 집게형 명찰"]], sub:[[P+"z0b.jpg","설치 전 실측 사진"],[P+"z0.jpg","입구 실측"],[P+"z0-curtain.jpg","커튼 샘플"],[P+"z0-banner.jpg","입구 현수막 디자인"]]},
+    {n:"1·2", name:"Dickens Family", en:"Charles & Catherine", x:1615, y:610, photo:P+"sim-z1.jpg", tag:"SIMULATION",
       p:["이야기를 들려주는 아버지 찰스와 어머니 캐서린의 존. 영화 스틸을 걸고 티셔츠를 종류별로 모듈 가구에 진열해, 첫 스탬프와 첫 굿즈 동선을 겹쳤습니다."],
-      dl:[["DP","행잉 스틸, 롤링 트라이비전, 옷걸이 20개"],["MD","티셔츠, 목걸이와 키링은 가구 뒷면 후크"],["Stamp","찰스, 캐서린 ID"]], sub:[[P+"z1b.jpg","디킨스 패밀리 DP 벽면"],[P+"z1c.jpg","전체 굿즈 DP 3단"],[P+"story.jpg","영화 스틸컷 롤링"]]},
-    {n:"3·4", name:"Walter’s Room", en:"Willa & Walter · Coloring", x:620, y:825, photo:P+"z3.jpg", tag:"BEFORE",
+      dl:[["DP","행잉 스틸, 롤링 트라이비전, 옷걸이 20개"],["MD","티셔츠, 목걸이와 키링은 가구 뒷면 후크"],["Stamp","찰스, 캐서린 ID"]], sub:[[P+"z1.jpg","설치 전 실측 사진"],[P+"z1b.jpg","디킨스 패밀리 DP 벽면"],[P+"z1c.jpg","전체 굿즈 DP 3단"],[P+"story.jpg","영화 스틸컷 롤링"]]},
+    {n:"3·4", name:"Walter’s Room", en:"Willa & Walter · Coloring", x:620, y:825, photo:P+"sim-z3.jpg", tag:"SIMULATION",
       p:["막내 월터의 방을 색칠 공간으로 꾸몄습니다. 접이식 테이블과 롤 도화지에서 윌라 카드와 포스터를 색칠하고, 완성작은 벽에 붙여 함께 만드는 전시가 됩니다. 공간 곳곳에 숨은 고양이 윌라를 찾는 미션도 이어집니다."],
-      dl:[["Set","접이식 테이블 2, 크레용과 롤 도화지, A4 도안"],["Wall","색칠을 마친 포스터, 등신대"]], sub:[[P+"z3-mola.jpg","색칠 키트 레퍼런스"],[P+"col2.jpg","색칠 도안"],[P+"col3.jpg","색칠 도안"]]},
-    {n:"5", name:"Message Wall", en:"Jesus Christ", x:307, y:752, photo:P+"z5.jpg", tag:"BEFORE",
+      dl:[["Set","접이식 테이블 2, 크레용과 롤 도화지, A4 도안"],["Wall","색칠을 마친 포스터, 등신대"]], sub:[[P+"z3.jpg","설치 전 실측 사진"],[P+"z3-mola.jpg","색칠 키트 레퍼런스"],[P+"col2.jpg","색칠 도안"],[P+"col3.jpg","색칠 도안"]]},
+    {n:"5", name:"Message Wall", en:"Jesus Christ", x:307, y:752, photo:P+"sim-z5.jpg", tag:"SIMULATION",
       p:["투명 PET에 드로잉 스케치를 출력해 창에 붙이고, 빛이 그림을 통과하는 라이팅 패널로 만들었습니다. 아래에는 등신대를, 맞은편 흰 벽에는 방문객이 메시지를 남기고 스티커로 투표하는 테이블을 두었습니다."],
-      dl:[["Size","안쪽 창 95×50cm, 흰 벽 500×155cm"],["Play","가장 나쁜 빌런, 최애 제자 스티커 투표"]], sub:[[P+"z5-wall.jpg","흰 벽 투표존 계획"],[P+"z5-mock.jpg","라이팅 패널 위치"],[P+"v9.jpg",""]]},
-    {n:"6", name:"Myself", en:"Drawing Sketch", x:355, y:486, photo:P+"z6.jpg", tag:"BEFORE",
+      dl:[["Size","안쪽 창 95×50cm, 흰 벽 500×155cm"],["Play","가장 나쁜 빌런, 최애 제자 스티커 투표"]], sub:[[P+"z5.jpg","설치 전 실측 사진"],[P+"z5-wall.jpg","흰 벽 투표존 계획"],[P+"z5-mock.jpg","라이팅 패널 위치"],[P+"v9.jpg","예수"]]},
+    {n:"6", name:"Myself", en:"Drawing Sketch", x:355, y:486, photo:P+"sim-z6.jpg", tag:"SIMULATION",
       p:["마지막 존에서는 나의 ID 카드를 완성합니다. 복음을 전하는 월터의 장면 앞에서 내 이름과 전하고 싶은 메시지를 적고, 마지막 스탬프를 찍습니다."],
-      dl:[["DP","드로잉 스케치 투명 PET, 접이식 테이블"]], sub:[[P+"c-walter.jpg",""],[P+"id5.jpg","나의 ID 카드"],[P+"z5-strip.jpg","드로잉 스케치"]]},
+      dl:[["DP","드로잉 스케치 투명 PET, 접이식 테이블"]], sub:[[P+"z6.jpg","설치 전 실측 사진"],[P+"c-walter.jpg","월터"],[P+"id5.jpg","나의 ID 카드"],[P+"z5-strip.jpg","드로잉 스케치"]]},
     {n:"✓", name:"Mission Complete", en:"Reward · Photo zone", x:850, y:380, photo:P+"fan.jpg",
       p:["모든 ID를 완성하면 팝업 한정 리워드 KOK Fan을 받고, 집게 카드걸이를 단 채 인증 포토존에서 사진을 남깁니다. 인스타그램에 올리면 선물 추첨으로 이어집니다."],
       dl:[["Reward","미니 부채 140×140, 앞면 윌라와 월터, 뒷면 좋아하는 말씀"],["Event","My ID 인증, 윌라 찾기"]]},
@@ -3983,7 +4103,7 @@ w.sections = [
     ["외부 간판","64.3 × 22.2 cm","두께 3.9cm, 간판 시트 교체"],["메인 창","305 × 213 cm","외관 윈도 그래픽"],["실내 거울","84 × 173 cm","거울 포토존"],
     ["안쪽 창","95 × 50 cm","라이팅 패널 5칸"],["안쪽 흰 벽","500 × 155 cm","메시지 월과 투표존"],["디피 테이블","200 × 60 cm","중앙 MD 테이블"]]},
   { t:"grid", label:"Characters", h:"가장 나쁜 빌런은? 최애 제자는?", p:["안쪽 흰 벽 테이블에 인물 카드를 펼쳐 두고, 방문객이 스티커로 투표했습니다. 정답이 없는 질문이 대화를 만들었습니다."], cols:6, cover:true, ratio:"3/4", bg:"#111", items:[
-    [P+"c-charles.jpg",""],[P+"c-catherine.jpg",""],[P+"c-walter.jpg",""],[P+"v1.jpg",""],[P+"v2.jpg",""],[P+"v3.jpg",""],[P+"v4.jpg",""],[P+"v5.jpg",""],[P+"v6.jpg",""],[P+"v7.jpg",""],[P+"v8.jpg",""],[P+"v9.jpg",""]]},
+    [P+"c-charles.jpg","찰스"],[P+"c-catherine.jpg","캐서린"],[P+"c-walter.jpg","월터"],[P+"v1.jpg",""],[P+"v2.jpg",""],[P+"v3.jpg",""],[P+"v4.jpg",""],[P+"v5.jpg",""],[P+"v6.jpg",""],[P+"v7.jpg",""],[P+"v8.jpg",""],[P+"v9.jpg","예수"]]},
   { t:"cards", label:"Event", h:"끝까지 걷게 만드는 네 가지 장치", cols:4, items:[
     {k:"01", t:"스탬프 완주 리워드", d:"모든 ID와 나의 페이지까지 완성하면 KOK Fan을 증정했습니다.", pt:"자연스러운 완주와 성취감"},
     {k:"02", t:"My ID 인증", d:"집게 카드걸이를 단 채 사진을 찍어 인스타그램에 올리면 선물을 추첨했습니다.", pt:"메시지의 개인화, SNS 확산"},
@@ -4006,6 +4126,873 @@ w.sections = [
 ];
 })();
 
+XS.palette = s => `${xsHead(s)}<div class="xs-pal">${s.items.map(([hex,name,note,big])=>`<div class="sw${big?" big":""}"><i style="background:${hex}"></i><b>${esc(name)}</b><span>${esc(hex.toUpperCase())}${note?` · ${esc(note)}`:""}</span></div>`).join("")}</div>`;
+XS.type = s => { if (s.gfont && !document.querySelector(`link[data-gf="${s.gfont}"]`)) document.head.insertAdjacentHTML("beforeend", `<link rel="stylesheet" data-gf="${s.gfont}" href="https://fonts.googleapis.com/css2?family=${s.gfont}&display=swap">`);
+  return `${xsHead(s)}<div class="xs-type">${s.items.map(it=>`<div class="ty"><small>${esc(it.role)}</small><b>${esc(it.family)}</b>${it.css?`<div class="sm" style="font-family:${it.css};${it.style||""}">${esc(it.sample)}</div>`:`<div class="sm img"><img src="${XI(it.img)}" alt="${esc(it.family)} 견본" loading="lazy"></div>`}${it.note?`<span>${esc(it.note)}</span>`:""}</div>`).join("")}</div>`; };
+
+/* ---- RECETTE booth + BI: HTML case ---- */
+(function(){
+const w = WORKS.find(x => x.id === "recette-booth"); if (!w) return;
+const P = "pf/recette-booth/x/";
+w.heroSrc = P + "b05.jpg"; w.heroTag = "ON SITE"; w.cover = "images/pf/recette-booth/t01.jpg";
+w.sections = [
+  { t:"role", who:"황윤희", sub:"Brand Designer, 신세계푸드 브랜드디자인팀", items:[
+    ["Guide","카페쇼 전용 ISP 디자인 가이드, 로고와 서체, 컬러, 아치 프레임"],
+    ["Booth","부스 사인, 메뉴보드, 라이팅 패널, 오더 사인"],
+    ["ISP","포스터, 카테고리·이벤트·안내 POP, 쿠폰, 뽑기판, X배너"],
+    ["Editorial","레시피북 표지와 내지, 리플렛"],
+    ["Goods","리유저블 텀블러, 미니 페이퍼컵 슬리브, 보틀 라벨"],
+    ["Uniform","정직원 셔츠, 파트타임 티셔츠 그래픽"]]},
+  { t:"lead", label:"Concept", q:"아치 하나로,\n부스 전체를\n한 브랜드로.",
+    p:["프레임 그래픽은 르쎄떼의 심볼을 모티브로, 유럽의 아치형 파사드를 현대적으로 풀었습니다. 브랜드 스토리의 배경인 벨에포크 시대의 아르누보 양식을 심볼과 결합하고, 직선 라인으로 단순하게 다듬었습니다.",
+       "프레임 안에 제품 이미지와 콘텐츠를 넣으면, 르쎄떼라는 공간에서 맛있는 음식이 만들어진다는 뜻이 됩니다. 이 아치를 부스 사인부터 메뉴보드, 포스터, 쿠폰, 컵 슬리브와 유니폼까지 반복했습니다."]},
+  { t:"row", cls:"c2", label:"ISP Design Guide", h:"카페쇼를 위해 먼저 만든 디자인 가이드", ratio:"4/3", contain:true, bg:"#fff", items:[[P+"logo.jpg","로고 운용. RECETTE by Shinsegae Food"],[P+"frame.jpg","프레임. 심볼에서 가져온 아치"]]},
+  { t:"palette", h:"", items:[["#ec662c","Main","PANTONE 165C",1],["#484746","Sub","PANTONE 2334C"],["#e94f1a","Sub","PANTONE 1655C"],["#fcf0d8","Cream 1","M3 Y15"],["#fbe7b9","Cream 2","M6 Y30"],["#f8da87","Cream 3","M11 Y55"]]},
+  { t:"type", gfont:"Abril+Fatface", items:[
+    {role:"Title · English", family:"Abril Fatface", css:"'Abril Fatface',serif", style:"color:#ec662c", sample:"Par-Baked", note:"Adobe Fonts 라이브러리 서체"},
+    {role:"Title · Korean", family:"210 처음처럼", img:P+"f2.jpg", note:"국문 타이틀"},
+    {role:"Body · Korean", family:"산돌고딕 Neo1", img:P+"f3.jpg", note:"22년 가이드와 같은 본문 서체"}]},
+  { t:"media", label:"Booth", h:"3D로 먼저 맞춘 부스 그래픽", src:P+"b04.jpg", cap:"부스 정면 입면과 3D 시뮬레이션. 상단 사인, 메뉴보드, 라이팅 패널의 위치를 함께 잡았습니다.", ratio:"2400/1260", contain:true, bg:"#fff"},
+  { t:"row", cls:"c2", ratio:"1217/1741", items:[[P+"b09a.jpg","라이팅 패널 디자인 1600×2020mm",{contain:true,bg:"#fff"}],[P+"b09b.jpg","부스 입구에 설치된 라이팅 패널",{tag:"ON SITE"}]]},
+  { t:"media", src:P+"o7.jpg", cap:"부스 내부. 카테고리 포스터와 진열 선반", ratio:"3/2", tag:"ON SITE"},
+  { t:"table", label:"Deliverables", h:"하나의 아치로 만든 21가지 제작물", head:["#","제작물","사이즈","분류"], rows:[
+    ["01","부스 정면 사인","2800×780mm","Booth"],["02","메뉴보드","3070×600mm","Booth"],["03","오더 사인","420×150mm","Booth"],["04","라이팅 패널","1600×2020mm","Booth"],
+    ["05","포스터","A2","ISP"],["06","카테고리 POP","A4","ISP"],["07","카페쇼 이벤트 POP","A4","ISP"],["08","안내 POP","A4","ISP"],["09","카페쇼 메뉴 POP","A4","ISP"],
+    ["10","뽑기판","600×900mm","ISP"],["11","X배너","600×1800mm","ISP"],["12","스탬프 쿠폰과 스탬프","100×148mm · 32×32mm","ISP"],["13","쿠폰","90×50mm","ISP"],["14","할인 쿠폰","135×65mm","ISP"],
+    ["15","보틀 라벨","70×135mm","ISP"],["16","네임택 · 메뉴 카드","90×50mm","ISP"],["17","레시피북","표지와 내지","Editorial"],["18","리플렛","420×190mm","Editorial"],
+    ["19","리유저블 텀블러","95×126mm, 473ml","Goods"],["20","미니 페이퍼컵","133×61mm","Goods"],["21","셔츠와 티셔츠","정직원 · 파트타임","Uniform"]]},
+  { t:"grid", label:"Booth graphic", h:"부스 사인과 메뉴보드", cols:3, ratio:"2/1", bg:"#fff", items:[[P+"b07.jpg","부스 정면 사인 2800×780"],[P+"b06.jpg","메뉴보드 3070×600"],[P+"b08.jpg","오더 사인 420×150"]]},
+  { t:"grid", label:"ISP", h:"포스터와 POP, 쿠폰까지 같은 프레임으로", cols:3, ratio:"2/1", bg:"#fff", items:[
+    [P+"b12.jpg","포스터 A2"],[P+"b13.jpg","포스터 부착 예시"],[P+"b14.jpg","카테고리 POP A4"],[P+"b15.jpg","이벤트 POP A4"],[P+"b16.jpg","안내 POP A4"],[P+"b17.jpg","카페쇼 메뉴 POP A4"],
+    [P+"b18.jpg","뽑기판 600×900"],[P+"b19.jpg","X배너 600×1800"],[P+"b20.jpg","스탬프 이벤트 쿠폰과 스탬프"],[P+"b21.jpg","쿠폰 90×50"],[P+"b22.jpg","할인 쿠폰 135×65"],[P+"b23.jpg","보틀 라벨 70×135"],
+    [P+"b24.jpg","네임택과 메뉴 카드 90×50"],[P+"b26.jpg","기타 현장 제작물"]]},
+  { t:"grid", label:"Editorial · Goods · Uniform", h:"손에 남는 것들", cols:3, ratio:"2/1", bg:"#fff", items:[
+    [P+"b28.jpg","레시피북 표지"],[P+"b29.jpg","레시피북 내지"],[P+"b30.jpg","레시피북 내지"],[P+"b31.jpg","리플렛 420×190"],[P+"b33.jpg","리유저블 텀블러 473ml"],[P+"b34.jpg","미니 페이퍼컵 슬리브"],
+    [P+"b36.jpg","정직원 셔츠"],[P+"b37.jpg","파트타임 티셔츠"]]},
+  { t:"grid", label:"On site", h:"2023 서울카페쇼 현장", cols:4, ratio:"3/2", cover:true, items:[[P+"o1.jpg","입구 라이팅 패널과 부스 전경"],[P+"o2.jpg","정면 카운터와 이벤트 X배너"],[P+"o3.jpg","카운터와 뽑기판"],[P+"o4.jpg","주문 대기 동선"],[P+"o5.jpg","오더 카운터와 쇼케이스"],[P+"o6.jpg","스탬프 이벤트 참여"],[P+"o7.jpg","포스터 월과 진열 선반"],[P+"o8.jpg","시식대와 이벤트 POP"]]}
+];
+})();
+(function(){
+const w = WORKS.find(x => x.id === "recette-bi"); if (!w) return;
+const P = "pf/recette-bi/x/", V = "images/pf/recette-bi/v/";
+const SPR = [["rb-arch", V+"arch.svg"], ["rb-word", V+"wordmark.svg"], ["rb-slogan", V+"slogan.svg"]];
+const OR = "#ec652b", GR = "#86898e", CY = "#38b2d6";
+const AR = 1896/2064, WR = 2936/568, SR = 2992/360, WW = 100*WR;
+const U = (id,x,y,w,h,c) => `<use href="#${id}" x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${w.toFixed(1)}" height="${h.toFixed(1)}" fill="${c}"/>`;
+const T = (x,y,t,a="middle") => `<text x="${x.toFixed(1)}" y="${y.toFixed(1)}" text-anchor="${a}" dominant-baseline="middle">${t}</text>`;
+const L = (x1,y1,x2,y2) => `<line x1="${x1.toFixed(1)}" y1="${y1.toFixed(1)}" x2="${x2.toFixed(1)}" y2="${y2.toFixed(1)}"/>`;
+const R = (x,y,w,h) => `<rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${w.toFixed(1)}" height="${h.toFixed(1)}"/>`;
+const SV = (W,H,inner,st="") => `<svg viewBox="0 0 ${W.toFixed(1)} ${H.toFixed(1)}" role="img" aria-label="RECETTE" style="${st}">${inner}</svg>`;
+/* vertical lockup: arch over wordmark, gap 1/2X, clear space 1X (X = wordmark height) */
+function lockV(c, o={}){
+  const p = o.pad ?? 100, ah = WW/AR, H = ah+50+100, Wt = WW+2*p, Ht = H+2*p;
+  let g = "";
+  if (o.guide){ g = `<g class="xb-guide">${R(0,0,Wt,Ht)}${R(p,p,WW,H)}${L(0,p,Wt,p)}${L(0,p+H,Wt,p+H)}${L(p,0,p,Ht)}${L(p+WW,0,p+WW,Ht)}${L(0,p+ah,Wt,p+ah)}${L(0,p+ah+50,Wt,p+ah+50)}
+    ${T(p/2,p/2,"1X")}${T(p/2,p+ah+25,"1/2X")}${T(p/2,p+H+p/2,"1X")}${T(Wt/2,p+H+p/2,"CLEAR SPACE")}</g>`; }
+  return SV(Wt,Ht, g + U("rb-arch",p,p,WW,ah,c) + U("rb-word",p,p+ah+50,WW,100,c), o.st);
+}
+/* horizontal lockup: arch 3X tall, 1/2X gap, wordmark bottom on 2X (with slogan) or 3X */
+function lockH(c, o={}){
+  const p = o.pad ?? 100, aw = 300*AR, wx = p+aw+50, Wt = p*2+aw+50+WW, Ht = p*2+300, sl = o.slogan;
+  const wy = sl ? p+100 : p+200;
+  let g = "";
+  if (o.guide){ g = `<g class="xb-guide">${R(0,0,Wt,Ht)}${L(0,p,Wt,p)}${L(0,p+300,Wt,p+300)}${L(p,0,p,Ht)}${L(Wt-p,0,Wt-p,Ht)}${L(p+aw,0,p+aw,Ht)}${L(wx,0,wx,Ht)}${L(0,sl?p+200:p+200,Wt,sl?p+200:p+200)}
+    ${sl ? L(wx+50,0,wx+50,Ht)+L(wx+WW-50,0,wx+WW-50,Ht) : ""}
+    ${T(Wt-p/2,p+100,"2X")}${T(Wt-p/2,p+250,"1X")}${T(p+aw+25,Ht-p/2,"1/2X")}${T(Wt/2+p,Ht-p/2,"CLEAR SPACE")}</g>`; }
+  let m = U("rb-arch",p,p,aw,300,c) + U("rb-word",wx,wy,WW,100,c);
+  if (sl) m += U("rb-slogan",wx+50,p+300-(WW-100)/SR,WW-100,(WW-100)/SR,c);
+  return SV(Wt,Ht, g + m, o.st);
+}
+/* wordmark + slogan stacked (for color steps) */
+const wordSlogan = (c, st) => SV(WW,170, U("rb-word",0,0,WW,100,c) + U("rb-slogan",(WW-330)/2,130,330,330/SR,c), st);
+const wordGrid = () => { const Wt = WW+200, Ht = 300; return SV(Wt,Ht, `<g class="xb-guide">${R(0,0,Wt,Ht)}${L(0,100,Wt,100)}${L(0,200,Wt,200)}${L(100,0,100,Ht)}${L(100+WW,0,100+WW,Ht)}${T(50,150,"X")}${T(Wt/2,250,"CAP HEIGHT = X")}</g>` + U("rb-word",100,100,WW,100,GR), "width:86%"); };
+const archBoard = c => SV(900,700, U("rb-arch",(900-520*AR)/2,90,520*AR,520,c), "height:100%");
+const steps = (hex) => `<ol>${[1,.9,.8,.7,.6,.5].map(k => `<li><div style="background:${xsTint(hex,k)}">${wordSlogan("#fff","height:46%")}</div><span>${Math.round(k*100)}%</span></li>`).join("")}</ol>`;
+const wrong = [
+  ["비율 변형", `transform="translate(-62 50) scale(1.12 .8)"`, GR],
+  ["심볼 크기 임의 변경", "", GR, "big"],
+  ["요소 간격 임의 변경", "", GR, "gap"],
+  ["지정 외 컬러", "", "#2f7fd6"],
+  ["지정 외 컬러", "", "#2f9e5b"],
+  ["회전", `transform="rotate(-10 571 250)"`, GR]
+];
+function wrongCell([cap, tf, c, mode]){
+  const p = 100, aw = 300*AR; let inner;
+  if (mode === "big") inner = U("rb-arch",p-40,p-80,aw*1.45,300*1.45,c) + U("rb-word",p+aw+50,p+100,WW,100,c) + U("rb-slogan",p+aw+100,p+250,WW-100,(WW-100)/SR,c);
+  else if (mode === "gap") inner = U("rb-arch",p-40,p,aw,300,c) + U("rb-word",p+aw+190,p+40,WW*.9,90,c) + U("rb-slogan",p+aw+170,p+260,WW-100,(WW-100)/SR,c);
+  else inner = `<g ${tf}>` + U("rb-arch",p,p,aw,300,c) + U("rb-word",p+aw+50,p+100,WW,100,c) + U("rb-slogan",p+aw+100,p+300-(WW-100)/SR,WW-100,(WW-100)/SR,c) + `</g>`;
+  return xbBoard(SV(p*2+aw+50+WW, p*2+300, inner, "width:84%"), `<b>✕</b>${esc(cap)}`, {cls:"xb-x", ratio:"16/10"});
+}
+w.heroHTML = `<div class="xs-brandhero" style="background:${OR}">${lockV("#fff",{pad:0})}</div>`;
+w.heroSprites = SPR;
+w.cover = "images/pf/recette-bi/t01.jpg";
+w.sections = [
+  { t:"role", who:"황윤희", sub:"Brand Designer, 신세계푸드 브랜드디자인팀", items:[
+    ["Identity","워드마크 그리드, 아치 심볼, 시그니처 조합"],["Slogan","French Classic Bakery 가로·세로 조합"],
+    ["Color","오렌지와 그레이 두 축, 배경 단계"],["Type","Futura 패밀리와 국문 본문 서체"],
+    ["Rules","잘못된 사용 예, 사진 레귤레이션"],["Application","명함, 봉투, X배너, 인쇄물 그리드"]]},
+  { t:"lead", label:"Identity", q:"어디에 놓여도\n같은 빵집으로\n읽히도록.",
+    p:["르쎄떼 Visual Communication Design의 기본 원칙과 적용 지침을 한 권으로 정리했습니다. 정해진 범위 안에서는 제작물에 자유롭게 쓰되, 지나친 변형은 브랜드의 목적을 흐리지 않도록 기준을 세웠습니다.",
+       "가이드는 관련 부서와 협력사가 같은 기준으로 제작물을 만들기 위한 길잡이입니다. 카페쇼 부스의 아치 그래픽도 이 시스템에서 나왔습니다."]},
+  { t:"html", label:"Wordmark & Motif", h:"워드마크와 페이스트리의 결", sprites:SPR,
+    p:["비주얼 모티프는 페이스트리의 결을 그린 아치입니다. 워드마크와 함께 쓰면 심볼이 되고, 혼자서는 패턴과 프레임이 됩니다."],
+    html: () => `<div class="xb-g w21">${xbBoard(wordGrid(), "<b>Wordmark</b>워드마크 높이를 X로 두고 모든 간격을 X 단위로 정했습니다", {ratio:"16/10"})}${xbBoard(archBoard(GR), "<b>Visual Motif</b>아치 심볼. 페이스트리의 결을 손으로 그린 선", {ratio:"9/7"})}</div>`},
+  { t:"html", label:"Signature", h:"심볼과 워드마크, 슬로건의 조합", sprites:SPR,
+    p:["세로형, 가로형, 슬로건 결합형 세 가지 시그니처를 같은 그리드에서 만들었습니다. 사방 1X의 여백 안에는 어떤 요소도 두지 않습니다."],
+    html: () => `<div class="xb-g c3">${xbBoard(lockV(GR,{guide:1,st:"height:82%"}), "<b>Vertical</b>심볼과 워드마크 사이 1/2X", {ratio:"1/1"})}${xbBoard(lockH(GR,{guide:1,st:"width:88%"}), "<b>Horizontal</b>심볼 높이 3X, 워드마크 1X", {ratio:"1/1"})}${xbBoard(lockH(GR,{guide:1,slogan:1,st:"width:88%"}), "<b>With slogan</b>French Classic Bakery 결합형", {ratio:"1/1"})}</div>`},
+  { t:"palette", label:"Color", h:"오렌지와 그레이, 두 개의 축", items:[[OR,"Recette Orange","PANTONE 165C / 165U",1],["#f29166","Orange 70",""],["#f5ae8e","Orange 50",""],[GR,"Recette Gray","PANTONE Cool Gray 8C / 8U",1],["#a9aaae","Gray 70",""],["#c0c1c3","Gray 50",""]]},
+  { t:"html", sprites:SPR, html: () => `<div class="xb-g c4">${xbBoard(lockH(OR,{slogan:1,st:"width:80%"}), "<b>Positive</b>오렌지", {ratio:"4/3"})}${xbBoard(lockH(GR,{slogan:1,st:"width:80%"}), "<b>Positive</b>그레이", {ratio:"4/3"})}${xbBoard(lockH("#fff",{slogan:1,st:"width:80%"}), "<b>Reverse</b>오렌지 바탕", {ratio:"4/3", bg:OR})}${xbBoard(lockH("#fff",{slogan:1,st:"width:80%"}), "<b>Reverse</b>그레이 바탕", {ratio:"4/3", bg:GR})}</div>`},
+  { t:"html", label:"Background", h:"배경으로 쓸 수 있는 단계는 50%까지", sprites:SPR,
+    p:["두 메인 컬러를 10% 단위로 낮춰 배경 단계를 만들고, 흰 워드마크가 읽히는 50%를 하한으로 정했습니다."],
+    html: () => `<div class="xb-steps">${steps(OR)}${steps(GR)}</div>`},
+  { t:"html", label:"Typeface", h:"Futura와 산돌고딕 Neo", gfont:"Jost:wght@300;400;700;800",
+    note:"웹 미리보기에서는 기기에 Futura가 없으면 유사 서체 Jost로 표시됩니다.",
+    html: () => { if (!document.querySelector('link[data-gf="jost"]')) document.head.insertAdjacentHTML("beforeend", `<link rel="stylesheet" data-gf="jost" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;700;800&display=swap">`);
+      return `<div class="xb-type"><div class="en"><h4>Typefaces · English</h4><div class="fam">Futura Family</div>${[["Light",300],["Book",400],["Bold",700],["Extra Bold",800]].map(([n,k])=>`<div class="row"><small>${n}</small><p style="font-weight:${k}">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz</p></div>`).join("")}</div>
+      <div class="ko"><h4>Typefaces · Korean</h4><div class="fam">산돌고딕 Neo</div>${[["Light",300],["Regular",400],["Medium",500],["Bold",700],["Heavy",800]].map(([n,k])=>`<div class="row"><small>${n}</small><p style="font-weight:${k}">르쎄떼의 지정서체를 사용한다</p></div>`).join("")}</div></div>`; }},
+  { t:"html", label:"Incorrect usage", h:"쓰지 말아야 할 방식", sprites:SPR,
+    p:["비율, 크기, 간격, 컬러, 각도를 임의로 바꾸지 않습니다. 협력사가 가장 자주 틀리는 여섯 가지를 골라 예시로 남겼습니다."],
+    html: () => `<div class="xb-g c3 m2">${wrong.map(wrongCell).join("")}</div>`},
+  { t:"html", label:"Imagery", h:"사진은 자연스럽고, 정돈되고, 얕게",
+    html: `<div class="xb-kw"><div><h4>Style of image · 이미지 스타일</h4><ul><li>Natural<small>자연스러운</small></li><li>Neat Layout<small>정돈된 레이아웃</small></li><li>Shallow Focus<small>셸로 포커스</small></li><li>Appropriate Cropping<small>적절한 크롭</small></li></ul></div>
+      <div><h4>Contents of image · 이미지의 내용</h4><ul><li>Freshness<small>신선한</small></li><li>Homemade<small>홈메이드</small></li><li>Tasty Flavor<small>풍부한 맛</small></li><li>Organic Food<small>건강한 음식</small></li></ul></div></div>`},
+  { t:"grid", cols:3, ratio:"858/593", cover:true, items:[[P+"r1.jpg",""],[P+"r2.jpg",""],[P+"r3.jpg",""],[P+"r4.jpg",""],[P+"r5.jpg",""],[P+"r6.jpg",""]], note:"가이드에 수록한 추천 이미지 예시입니다."},
+  { t:"html", label:"Application", h:"명함부터 X배너까지", sprites:SPR,
+    html: () => `<div class="xb-card"><div style="background:${OR}">${SV(900,500, U("rb-arch",(900-300*AR)/2,100,300*AR,300,"#fff"), "width:100%;height:100%")}</div><div style="background:#fff">${SV(900,500, U("rb-word",(900-WW*.9)/2,180,WW*.9,90,GR) + U("rb-slogan",(900-300)/2,300,300,300/SR,GR), "width:100%;height:100%")}</div></div>
+      <p class="xs-note" style="margin-top:10px">명함 90×50mm. 앞면은 오렌지 바탕에 아치 심볼, 뒷면은 워드마크와 슬로건.</p>`},
+  { t:"grid", cols:3, ratio:"4/3", bg:"#fff", items:[[P+"g21.jpg","봉투 규격과 로고 위치"],[P+"g19.jpg","X배너 600×1800 그리드"],[P+"g18.jpg","인쇄물 로고 배치 그리드"]]}
+];
+})();
+
+/* ---------- v13c: brand-system HTML/SVG components ---------- */
+const XSPR = {};
+function xsSprite(id, url){
+  if (XSPR[id]) return; XSPR[id] = 1;
+  fetch(XI(url)).then(r => r.text()).then(t => {
+    const vb = (t.match(/viewBox="([^"]+)"/) || [])[1], d = (t.match(/\sd="([^"]+)"/) || [])[1];
+    if (!vb || !d) return;
+    let s = document.getElementById("xs-sprite");
+    if (!s){ s = document.createElementNS("http://www.w3.org/2000/svg", "svg"); s.id = "xs-sprite"; s.setAttribute("aria-hidden", "true"); s.style.cssText = "position:absolute;width:0;height:0;overflow:hidden"; document.body.appendChild(s); }
+    const sym = document.createElementNS("http://www.w3.org/2000/svg", "symbol"); sym.id = id; sym.setAttribute("viewBox", vb);
+    const p = document.createElementNS("http://www.w3.org/2000/svg", "path"); p.setAttribute("fill-rule", "evenodd"); p.setAttribute("d", d);
+    sym.appendChild(p); s.appendChild(sym);
+  }).catch(()=>{});
+}
+XS.html = s => { (s.sprites || []).forEach(([id, url]) => xsSprite(id, url)); return `${xsHead(s)}${typeof s.html === "function" ? s.html() : s.html}${s.note ? `<p class="xs-note">${esc(s.note)}</p>` : ""}`; };
+const xbBoard = (inner, cap, o={}) => `<figure class="xb${o.cls ? " " + o.cls : ""}"><div class="xb-in" style="${o.ratio ? `aspect-ratio:${o.ratio};` : ""}${o.bg ? `background:${o.bg};` : ""}${o.st || ""}">${inner}</div>${cap ? `<figcaption>${cap}</figcaption>` : ""}</figure>`;
+function xsTint(hex, p){ const n = parseInt(hex.slice(1), 16), c = [n >> 16, (n >> 8) & 255, n & 255].map(v => Math.round(v * p + 255 * (1 - p))); return "#" + c.map(v => v.toString(16).padStart(2, "0")).join(""); }
+/* report charts */
+const xrBars = (rows, o={}) => { const max = o.max || Math.max(...rows.map(r=>r[1])); return `<div class="xr-bars${o.cls?" "+o.cls:""}">${o.title?`<h4>${esc(o.title)}</h4>`:""}${rows.map(([k,v,lab])=>`<div class="r${o.hi!==undefined && o.hi===k?" hi":""}"><span class="k">${esc(String(k))}</span><span class="b"><i style="width:${(v/max*100).toFixed(1)}%"></i></span><span class="v">${esc(lab || String(v))}</span></div>`).join("")}</div>`; };
+const xrStats = items => `<div class="xr-stats">${items.map(([v,k,d])=>`<div><b>${esc(v)}</b><span>${esc(k)}</span>${d?`<small>${esc(d)}</small>`:""}</div>`).join("")}</div>`;
+const xrQuotes = qs => `<div class="xr-quotes">${qs.map(q=>`<q>${esc(q)}</q>`).join("")}</div>`;
+const xrTime = rows => `<ol class="xr-time">${rows.map(([t,k,d,c])=>`<li class="${c||""}"><span class="t">${esc(t)}</span><b>${esc(k)}</b>${d?`<span class="d">${esc(d)}</span>`:""}</li>`).join("")}</ol>`;
+/* ---------- end v13c ---------- */
+/* ---- GHS 2025: HTML case ---- */
+(function(){
+const w = WORKS.find(x => x.id === "ghs-2025"); if (!w) return;
+const P = "pf/ghs-2025/x/", V = "images/pf/ghs-2025/v/";
+const SPR = [["ghs-logo", V+"logo.svg"], ["ghs-logo2", V+"logo2.svg"], ["ghs-bsh", V+"bsh.svg"]];
+const OR = "#fc4c02", BL = "#00b5e2", DK = "#2b2b2b";
+const LR = 2157/621, L2 = 6408/408, BR = 2448/472;
+const U = (id,x,y,w,h,c) => `<use href="#${id}" x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${w.toFixed(1)}" height="${h.toFixed(1)}" fill="${c}"/>`;
+const SV = (W,H,inner,st="") => `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Global Harvest Summit 2025" style="${st}">${inner}</svg>`;
+const logo1 = (c, st) => SV(1000, 1000/LR, U("ghs-logo",0,0,1000,1000/LR,c), st);
+const logo2 = (c, st) => SV(1600, 1600/L2, U("ghs-logo2",0,0,1600,1600/L2,c), st);
+const bsh = (c, st) => SV(1000, 1000/BR, U("ghs-bsh",0,0,1000,1000/BR,c), st);
+
+/* venue section: outdoor → 1F → 3F → 5F Tamna Hall */
+const svg = `<svg viewBox="0 0 1200 760" role="img" aria-label="제주 ICC 단면 동선과 매체 위치">
+  <rect width="1200" height="760" fill="#fafaf8"/>
+  <line x1="20" y1="700" x2="1180" y2="700" stroke="#000" stroke-width="2"/>
+  <path class="wall" d="M260 700 V90 H1150 V700"/>
+  <path d="M260 520 H1150 M260 330 H1150" stroke="#000" stroke-width="1.5"/>
+  <line x1="1150" y1="92" x2="1150" y2="330" stroke="#9cc8e0" stroke-width="7"/>
+  <rect x="262" y="612" width="14" height="86" fill="#fff" stroke="#000"/>
+  <path d="M370 700 L520 520 M392 700 L542 520" stroke="#b9b7ae" stroke-width="2"/>
+  <path d="M560 520 L690 330 M582 520 L712 330" stroke="#b9b7ae" stroke-width="2"/>
+  <path class="flow" d="M180 660 C230 660 250 660 300 660 S360 690 381 690 L531 510 C560 505 575 505 571 510 L701 320 H1080"/>
+  <line x1="100" y1="700" x2="100" y2="500" stroke="#000" stroke-width="3"/><rect x="104" y="520" width="18" height="54" fill="${OR}"/><rect x="124" y="520" width="18" height="54" fill="${BL}"/>
+  <line x1="200" y1="700" x2="200" y2="500" stroke="#000" stroke-width="3"/><rect x="204" y="520" width="18" height="54" fill="${OR}"/><rect x="224" y="520" width="18" height="54" fill="${BL}"/>
+  <rect x="268" y="560" width="210" height="16" fill="${OR}"/>
+  <rect x="584" y="440" width="16" height="48" fill="${OR}"/>
+  <rect x="728" y="286" width="96" height="42" fill="${OR}"/><rect x="716" y="290" width="9" height="38" fill="${BL}"/><rect x="827" y="290" width="9" height="38" fill="${OR}"/>
+  <rect x="862" y="92" width="14" height="72" fill="#c9a86a"/><rect x="882" y="92" width="14" height="72" fill="#c9a86a"/>
+  <rect x="930" y="160" width="104" height="82" fill="${BL}"/><path d="M944 330 V262 H1020 V330" fill="#fff" stroke="#000"/>
+  <g fill="#fff" stroke="#000"><rect x="1050" y="300" width="22" height="28"/><rect x="1076" y="300" width="22" height="28"/><rect x="1102" y="300" width="22" height="28"/></g>
+  <rect x="1132" y="102" width="12" height="150" fill="${OR}"/>
+  <text class="lbl dk" x="1170" y="225" text-anchor="end" transform="rotate(-90 1170 225)">유리 파사드</text>
+  <text class="lbl dk" x="280" y="350">5F 탐라홀</text><text class="lbl dk" x="280" y="540">3F</text><text class="lbl dk" x="290" y="690">1F 입구</text>
+  <text class="lbl" x="150" y="725" text-anchor="middle">진입로</text>
+  <text class="lbl" x="476" y="645">에스컬레이터</text>
+</svg>`;
+
+w.heroSrc = P + "c14.jpg"; w.heroTag = "MOCK-UP";
+w.cover = "images/pf/ghs-2025/t01.jpg";
+w.sections = [
+  { t:"role", who:"황윤희", sub:"Designer · 아이덴티티와 공간 디자인", items:[
+    ["Identity","프라이머리·세컨더리 로고, 컨셉, 컬러, 무드, 서체"],["Graphic","오렌지와 블루 두 무드의 웨이브 그래픽"],
+    ["Space","제주 ICC 진입로부터 5층 탐라홀까지 매체 8종"],["Spec","매체별 위치, 사이즈, 인쇄·설치 조건 정리"],
+    ["Booth","2.5m 개별 부스 업체 패널과 배치"],["Survey","현장 답사 보고와 인포 동선 시뮬레이션"],
+    ["Mock-up","빌보드부터 전시 스탠드까지 적용 목업 14종"],["Final","2025.10.16 공간 디자인 최종 확인본"]]},
+  { t:"lead", label:"Concept", q:"하나의 물결이\n빌보드에서 무대까지.",
+    p:["Global Billion Soul, Harvest, Jeju 세 단어를 원 세 개로 풀었습니다. 많은 이들의 영혼, 물결처럼 흔들리며 익어가는 수확, 그리고 제주의 감귤빛과 하늘입니다.",
+       "이 물결 하나로 로고 주변의 모든 매체를 묶었습니다. 행사장은 진입로에서 5층 홀까지 동선이 길어서, 어느 층에서 고개를 들어도 같은 그래픽이 다음 장소를 가리키도록 했습니다."]},
+  { t:"html", label:"Brand Logo", h:"한 줄과 두 줄, 두 가지 로고", sprites:SPR,
+    p:["프라이머리는 두 줄, 세컨더리는 한 줄입니다. 2025의 0을 지구본으로 바꿔 국제 서밋이라는 성격을 숫자 안에 넣었습니다."],
+    html: () => `<div class="xb-g c2">${xbBoard(logo1("#fff","width:62%"), "<b>Primary</b>두 줄 로고", {ratio:"16/10", bg:DK})}${xbBoard(logo2("#fff","width:84%"), "<b>Secondary</b>한 줄 로고. 가로로 긴 현수막과 사인용", {ratio:"16/10", bg:DK})}</div>
+      <div class="xb-g w21">${xbBoard(`<img src="${XI(P+"wave-o.jpg")}" alt="" style="position:absolute;inset:auto 0 0 0;width:100%;height:58%;object-fit:cover;object-position:top"><div style="position:relative;width:58%;margin-top:-14%">${logo1("#111","width:100%")}</div>`, "<b>On graphic</b>오렌지 무드 위의 프라이머리", {ratio:"16/10", bg:OR})}${xbBoard(bsh("#111","width:74%"), "<b>Host</b>주최 Billion Soul Harvest 로고와 함께 쓰는 하단 시그니처", {ratio:"16/10", bg:"#fff"})}</div>`},
+  { t:"html", label:"Concept", h:"세 개의 원", html: `<div class="xg-orbs">
+      <div><i style="background:url('${XI(P+"tex-soul.jpg")}') center/cover"></i><h3>Global Billion Soul</h3><p>Billion Soul Harvest 전도의 대상, 세계 수억 명의 영혼을 의미합니다.</p></div>
+      <div><i style="background:url('${XI(P+"tex-harvest.jpg")}') center/cover"></i><h3>Harvest</h3><p>멀리서는 벼가 흔들리며 만드는 큰 물결이지만, 가까이 보면 수많은 선이 모여 연대를 이룹니다.</p></div>
+      <div><i style="background:${OR}"><em style="background:${BL}">Sub</em><b>Main</b></i><h3>Jeju</h3><p>제주를 상징하는 감귤빛 오렌지와 푸른 하늘의 색을 담았습니다.</p></div></div>`},
+  { t:"palette", label:"Color", h:"감귤빛과 하늘색, 그리고 두 개의 보조색", items:[
+    ["#fc4c02","Bright Red-Orange","PANTONE 1655C · CMYK 0 70 99 1",1],["#00b5e2","Bright Sky Blue","PANTONE 306C · CMYK 100 20 0 11",1],
+    ["#fad6c6","Light Apricot","CMYK 0 14 21 2"],["#f0ee7f","Lime Cream","CMYK 0 1 47 6"],["#ffffff","White",""],["#040000","Rich Black","CMYK 0 100 100 98"]]},
+  { t:"html", label:"Typeface", h:"제목은 굵게, 소개는 좁게",
+    note:"Creato Display는 기기에 설치되지 않은 경우 Poppins로 대체해 보여 줍니다.",
+    html: () => { if (!document.querySelector('link[data-gf="ghs"]')) document.head.insertAdjacentHTML("beforeend", `<link rel="stylesheet" data-gf="ghs" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@600;800&display=swap"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">`);
+      const R = (k,f,st,t) => `<div class="row"><small>${k}</small><p style="font-family:${f};${st}">${t}</p></div>`;
+      return `<div class="xb-type"><div class="en"><h4>English</h4><div class="fam">Creato Display · Bebas Neue · Poppins</div>
+        ${R("Title","'Creato Display','Poppins',sans-serif","font-weight:800;font-size:clamp(22px,2.3vw,34px);letter-spacing:-0.02em;color:#111","Global Harvest Summit")}
+        ${R("Intro","'Bebas Neue',sans-serif","font-size:clamp(24px,2.4vw,36px);letter-spacing:.02em;color:#111","GO BILLION SOULS!")}
+        ${R("Foreword","'Creato Display','Poppins',sans-serif","font-weight:600;color:#111","“Open your eyes and look at the fields!”")}
+        ${R("Body","'Poppins',sans-serif","font-weight:600;font-size:15px;color:#333","International Convention Center Jeju · 2025.11.01(SAT) – 05(WED)")}</div>
+        <div class="ko"><h4>Korean</h4><div class="fam">Pretendard</div>
+        ${R("Bold","Pretendard,sans-serif","font-weight:700;color:#111","국내 참가자 등록")}
+        ${R("Medium","Pretendard,sans-serif","font-weight:500;color:#111","국제 참가자 등록 · 탐라홀")}
+        ${R("Regular","Pretendard,sans-serif","font-weight:400;color:#333","에스컬레이터를 타고 5층 탐라홀로 이동해 주세요.")}</div></div>`; }},
+  { t:"row", label:"Mood", h:"오렌지와 스카이블루, 같은 물결의 두 날씨", cls:"c2", ratio:"1/1", contain:true, bg:"#efede8", items:[[P+"d-giant.jpg","Orange. 메인 무드, 12×12m 초대형 현수막 원본"],[P+"d-main.jpg","Sky blue. 서브 무드, 탐라홀 입구 메인 원본"]]},
+  { t:"row", label:"Site survey", h:"답사로 먼저 확인한 동선과 대기열", cls:"c3", ratio:"16/9", items:[[P+"sv-info.jpg","5F 인포메이션 배치. 키오스크와 배너 위치"],[P+"sv-route.jpg","입장과 퇴장 동선, 대기 라인"],[P+"sv-sim.jpg","접수 대기 인원 시뮬레이션"]], note:"행사 전 제주 ICC를 직접 답사해 매체 자리와 접수 동선을 사진 위에서 맞췄습니다."},
+  { t:"row", cls:"c3", ratio:"16/9", items:[[P+"sv-entry.jpg","ICC 정문, 입구 현수막 자리"],[P+"sv-photo.jpg","5F 포토존과 부스 위치"],[P+"sv-booth.jpg","탐라홀 측면 부스 운영 위치"]]},
+  { t:"plan", label:"Venue", h:"진입로에서 5층 홀까지, 여덟 개의 매체", subContain:true,
+    p:["행사장 제주 ICC는 진입로에서 메인 홀까지 세 개 층을 올라야 합니다. 동선 순서대로 매체를 놓고, 각 매체의 위치와 사이즈, 인쇄 조건을 현장 사진 위에서 확인했습니다. 번호를 누르면 매체별 시안과 원본 디자인이 열립니다."], svg, zones:[
+    {n:"1", name:"가로등 현수막", en:"Street Banner · Approach", x:150, y:470, photo:P+"c02.jpg", tag:"MOCK-UP",
+      p:["진입로 가로등에 오렌지와 블루 두 장을 한 쌍으로 걸었습니다. 행사명과 슬로건 GO BILLION SOULS!를 번갈아 보여 줍니다."],
+      dl:[["위치","제주 ICC 진입로"],["사이즈","600×1800mm"],["구성","A·B 2종 Mix"]], sub:[[P+"d-lamp-o.jpg","가로등 현수막 A"],[P+"d-lamp-b.jpg","가로등 현수막 B"]]},
+    {n:"2", name:"입구 현수막", en:"Entrance Banner · 1F", x:372, y:560, photo:P+"c04.jpg", tag:"MOCK-UP",
+      p:["ICC 정문 캐노피 아래 12m 폭의 가로 현수막입니다. 행사장 사진을 받아 실제 비율로 앉혀 보고, 자리를 미리 선점해야 한다는 조건까지 함께 정리했습니다."],
+      dl:[["위치","제주 ICC 입구"],["사이즈","12200×1800mm"],["조건","설치 자리 선점 필요"]], sub:[[P+"d-entry.jpg","입구 현수막 원본"]]},
+    {n:"3", name:"에스컬레이터 배너", en:"Escalator Banner · 3F", x:592, y:412, photo:P+"c06.jpg", tag:"MOCK-UP",
+      p:["3층 입구 에스컬레이터 사이에 화살표 하나만 크게 넣은 배너를 세웠습니다. 같은 배너를 동선 곳곳에 반복해 길을 잃지 않게 했습니다."],
+      dl:[["위치","3F 입구"],["사이즈","600×1800mm"],["역할","동선 표시"]], sub:[[P+"d-esc.jpg","에스컬레이터 배너 원본"]]},
+    {n:"4", name:"인포메이션", en:"Information · 5F", x:776, y:262, photo:P+"c08.jpg", tag:"MOCK-UP",
+      p:["5층에 올라서자마자 보이는 인포메이션입니다. 목공 백월 상·하부로 평소에는 안내 데스크로 쓰고, 첫날 접수 때만 양쪽에 등록 배너를 세웁니다. 에스컬레이터에서 국제 참가자 등록이 먼저 보이도록 인포 오른쪽에 두었습니다."],
+      dl:[["위치","5F 탐라홀 입구"],["백월","상부 7350×2500mm · 하부 7350×1220mm"],["배너","600×1800mm 좌·우"]], sub:[[P+"d-info-top.jpg","백월 상부"],[P+"d-reg-korea.jpg","국내 참가자 등록"],[P+"d-reg-global.jpg","국제 참가자 등록"]]},
+    {n:"5", name:"초대형 현수막", en:"Glass Facade · 5F", x:1100, y:150, photo:P+"c11.jpg", tag:"MOCK-UP",
+      p:["탐라홀 유리 파사드에 거는 12m 정사각 현수막으로, 행사의 정면 메인입니다. 단면 인쇄라 반대편에서는 보이지 않는다는 조건을 시안 단계에서 짚었습니다."],
+      dl:[["위치","5F 탐라홀 유리"],["사이즈","12000×12000mm"],["인쇄","단면"]], sub:[[P+"d-giant.jpg","초대형 현수막 원본"]]},
+    {n:"6", name:"탐라홀 포이어", en:"Foyer Ceiling · 5F", x:880, y:200, photo:P+"foyer-pair.jpg",
+      p:["포이어 천장에서 내려오는 세로 현수막 두 장입니다. 하늘과 벼 이삭 사진 위에 슬로건과 성경 구절을 얹었습니다."],
+      dl:[["위치","5F 탐라홀 천장"],["사이즈","3000×12000mm"],["인쇄","세로 천장 현수막, 단면"]], sub:[[P+"d-foyer-1.jpg","포이어 현수막 1"],[P+"d-foyer-2.jpg","포이어 현수막 2"]]},
+    {n:"7", name:"입구 메인", en:"Hall Entrance · 5F", x:982, y:202, photo:P+"c14.jpg", tag:"MOCK-UP",
+      p:["탐라홀 입구 위의 대형 현수막은 블루 B안으로 정했습니다. 유리면 메인이 오렌지라서, 마주 보는 홀 입구는 블루로 바꿔 두 장면을 구분했습니다."],
+      dl:[["위치","5F 탐라홀 입구"],["사이즈","7200×5690mm"],["안","B안 블루"]], sub:[[P+"d-main.jpg","입구 메인 원본"]]},
+    {n:"8", name:"부스존", en:"Booth Zone · 5F", x:1087, y:268, photo:P+"c16.jpg",
+      p:["탐라홀 측면에 2.5m 개별 부스를 줄지어 놓았습니다. 참여 단체마다 같은 그리드의 상단 패널을 만들고, 각 단체 홈페이지 QR을 넣었습니다."],
+      dl:[["위치","5F 탐라홀 측면"],["부스","2.5m 개별 부스"],["패널","단체명과 홈페이지 QR"]], sub:[[P+"d-booth-plan.jpg","부스 배치"],[P+"d-booth-o.jpg","부스 패널 오렌지"],[P+"d-booth-b.jpg","부스 패널 블루"]]}
+  ]},
+  { t:"table", label:"Spec sheet", h:"매체 아홉 종의 위치와 사이즈", head:["#","매체","위치","사이즈","비고"], rows:[
+    ["01","가로등 현수막","제주 ICC 진입로","600×1800mm","A·B 2종 Mix"],
+    ["02","입구 현수막","제주 ICC 입구","12200×1800mm","자리 선점 필요"],
+    ["03","에스컬레이터 배너","3F 입구","600×1800mm","동선 곳곳 반복"],
+    ["04","인포메이션 백월","5F 탐라홀 입구","7350×2500 · 7350×1220mm","목공 백월 상·하부"],
+    ["05","인포메이션 배너","5F 탐라홀 입구","600×1800mm","국내·국제 등록 좌·우"],
+    ["06","초대형 현수막","5F 탐라홀 유리","12000×12000mm","단면 인쇄, 정면 메인"],
+    ["07","포이어 현수막","5F 탐라홀 천장","3000×12000mm","세로 2종, 단면"],
+    ["08","입구 메인","5F 탐라홀 입구","7200×5690mm","B안 블루"],
+    ["09","부스 패널","5F 탐라홀 측면","2.5m 부스 상단","단체별 QR"]], note:"2025.10.16 공간 디자인 최종 확인본 기준입니다."},
+  { t:"row", label:"Design files", h:"세로 매체", cls:"c6", ratio:"1/3", contain:true, bg:"#efede8", items:[[P+"d-lamp-o.jpg","가로등 A"],[P+"d-lamp-b.jpg","가로등 B"],[P+"d-esc.jpg","에스컬레이터"],[P+"d-reg-korea.jpg","국내 등록"],[P+"d-reg-global.jpg","국제 등록"],[P+"d-foyer-1.jpg","포이어"]]},
+  { t:"row", h:"가로 매체", cls:"c1", ratio:"2800/413", contain:true, bg:"#efede8", items:[[P+"d-entry.jpg","입구 현수막 12200×1800mm"]]},
+  { t:"row", cls:"c2", ratio:"2600/884", contain:true, bg:"#efede8", items:[[P+"d-info-top.jpg","인포메이션 백월 상부 7350×2500mm"],[P+"d-info-low.jpg","인포메이션 백월 하부 7350×1220mm"]]},
+  { t:"row", label:"Booth", h:"부스 패널", cls:"c2", ratio:"2800/1309", contain:true, bg:"#fff", items:[[P+"d-booth-o.jpg","부스 패널 오렌지 그룹"],[P+"d-booth-b.jpg","부스 패널 블루 그룹"]]},
+  { t:"grid", label:"Mock-up", h:"빌보드부터 전시 스탠드까지", cols:4, ratio:"16/9", cover:true, items:[
+    [P+"m08.jpg","빌보드"],[P+"m09.jpg","폴 플래그"],[P+"m10.jpg","메인 포스터"],[P+"m11.jpg","광고 벽"],[P+"m12.jpg","롤업 스탠드"],[P+"m13.jpg","방향 사인"],
+    [P+"m15.jpg","세션 포스터 스탠드"],[P+"m16.jpg","천장 배너"],[P+"m17.jpg","무대"],[P+"m18.jpg","컨퍼런스 스탠드"],[P+"m19.jpg","플래그 A"],[P+"m21.jpg","전시 스탠드"]],
+    note:"아이덴티티를 실제 매체에 얹어 본 적용 목업입니다."}
+];
+})();
+/* ---- CSES first proposal: HTML sections ---- */
+const CSES_SECS = (function(){
+const P = "pf/cses-proposal/x/", M = "#b0859f", ML = "#dcc6d6", Y = "#f5e33a";
+const concept = `<svg viewBox="0 0 900 520" role="img" aria-label="미션, 코인, 굿즈로 이어지는 구조" style="width:92%;height:auto">
+  <defs><marker id="cs-ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="${M}"/></marker></defs>
+  <g font-family="inherit" text-anchor="middle">
+  <circle cx="110" cy="260" r="78" fill="#fff" stroke="${M}" stroke-width="2"/><text x="110" y="252" font-size="20" fill="${M}">가치 창출</text><text x="110" y="280" font-size="22" font-weight="700" fill="${M}">Mission</text>
+  <line x1="192" y1="260" x2="252" y2="260" stroke="${M}" stroke-width="2" marker-end="url(#cs-ar)"/>
+  <rect x="266" y="44" width="190" height="432" rx="95" fill="none" stroke="${M}" stroke-width="2"/>
+  ${[150,260,370].map(y=>`<circle cx="361" cy="${y}" r="80" fill="${ML}" fill-opacity=".86"/>`).join("")}
+  ${[150,260,370].map(y=>`<text x="361" y="${y-6}" font-size="19" fill="#fff">가치</text><text x="361" y="${y+22}" font-size="22" font-weight="700" fill="#fff">Coin</text>`).join("")}
+  <text x="560" y="78" font-size="24" font-weight="700" fill="${M}">Trade</text>
+  ${[150,260,370].map((y,i)=>`<line x1="462" y1="${y}" x2="${598-i*0}" y2="${y}" stroke="${M}" stroke-width="2" marker-end="url(#cs-ar)"/>`).join("")}
+  ${[[150,62],[260,72],[370,84]].map(([y,r])=>`<circle cx="700" cy="${y}" r="${r}" fill="${M}"/><text x="700" y="${y-6}" font-size="18" fill="#fff">리워드</text><text x="700" y="${y+22}" font-size="21" font-weight="700" fill="#fff">Goods</text>`).join("")}
+  <text x="830" y="476" font-size="15" fill="${M}" text-anchor="end">참여할수록 더 좋은 리워드</text>
+  </g></svg>`;
+const panels = [["가치카드","가치 카드 설명","side"],["Collect Card","CSES 소개 · 미션과 비전"],["프로젝트 1 · DBL","지속가능한 성장 방법론"],["프로젝트 2 · SPC","사회적 가치 측정·보상"],["프로젝트 3 · EPC","탄소 중립을 위한 새로운 해법"]];
+const elev = `<svg viewBox="0 0 1100 520" role="img" aria-label="부스 패널 입면" style="width:94%;height:auto">
+  <g font-family="inherit">
+  ${panels.map(([t,d,side],i)=>{ const x=60+i*200; return `<rect x="${x}" y="40" width="190" height="380" fill="${side?"#efe6ec":"#fff"}" stroke="#000" stroke-width="1.5"/>
+    <rect x="${x}" y="352" width="190" height="68" fill="${Y}" opacity=".9"/>
+    <text x="${x+95}" y="150" text-anchor="middle" font-size="17" font-weight="700">${t}</text>
+    <foreignObject x="${x+12}" y="164" width="166" height="90"><div xmlns="http://www.w3.org/1999/xhtml" style="font-size:13px;line-height:1.5;text-align:center;color:#555">${d}</div></foreignObject>`; }).join("")}
+  <g stroke="#38b2d6" fill="#38b2d6" font-size="14"><line x1="60" y1="450" x2="250" y2="450"/><text x="155" y="472" text-anchor="middle" stroke="none">950</text>
+  <line x1="260" y1="450" x2="1050" y2="450"/><text x="655" y="472" text-anchor="middle" stroke="none">정면 3,010 (+ 측면 950)</text>
+  <line x1="30" y1="40" x2="30" y2="420"/><text x="22" y="236" text-anchor="middle" stroke="none" transform="rotate(-90 22 236)">2,370</text></g>
+  <text x="155" y="30" text-anchor="middle" font-size="13" fill="#888">측면</text><text x="655" y="30" text-anchor="middle" font-size="13" fill="#888">정면</text>
+  <text x="1050" y="505" text-anchor="end" font-size="13" fill="#888">패널 950×2370 · 종이보드 949×2200 (mm)</text>
+  </g></svg>`;
+return [
+  { t:"html", label:"Concept", h:"사회적 가치를 만들수록 더 큰 보상이 돌아오는 구조",
+    p:["제안의 이름은 The better, the more. 연구원이 운영하는 사회성과보상(SPC) 제도를 관람객이 몸으로 겪도록, 미션을 수행하면 코인을 받고 코인을 굿즈로 바꾸는 흐름으로 옮겼습니다."],
+    html: xbBoard(concept, "<b>SPC 구조</b>미션 → 코인 → 굿즈. 1인 최대 5회까지 참여", {ratio:"900/520", bg:"#f7f2f5", st:"border:0"})},
+  { t:"cards", label:"Event", h:"두 개의 이벤트", cols:4, items:[
+    {k:"A", t:"SNS · SV 허브 구독", d:"배너와 인쇄물의 QR로 인스타그램 팔로우나 SV 허브 구독을 마치면 참가자 전원에게 굿즈를 줍니다.", pt:"부채, 떡메모지"},
+    {k:"B-1", t:"카드 받기", d:"부스에서 미션 카드를 받습니다. 카드 한 장마다 사회적 가치 하나가 적혀 있습니다."},
+    {k:"B-2", t:"SPC 기업 방문", d:"지정된 SPC 참여 기업 부스를 찾아가 미션을 수행합니다."},
+    {k:"B-3", t:"코인 교환과 뽑기", d:"연구원 부스에서 미션을 확인받아 코인을 받고, 캡슐 자판기에서 굿즈를 뽑습니다.", pt:"캡슐 150개 · 코인 60개"}]},
+  { t:"html", label:"Booth", h:"패널 다섯 장으로 짓는 3×3 부스",
+    p:["정면 세 장에는 연구원과 세 개의 프로젝트를, 측면에는 가치카드를 걸었습니다. 집기는 종이 가구로 맞췄습니다."],
+    html: xbBoard(elev, "<b>Elevation</b>측면 가치카드 + 정면 연구원·프로젝트 소개", {ratio:"1100/520", bg:"#fafaf8"})},
+  { t:"row", cls:"c2", ratio:"16/9", items:[[P+"booth3d.jpg","부스 3D. 패널과 상부 사인",{tag:"3D"}],[P+"booth3d-b.jpg","테이블이 없을 경우의 배치",{tag:"3D"}]]},
+  { t:"row", cls:"w12", label:"Front graphic", h:"옐로와 크라프트, 두 가지 재료", ratio:"1940/962", contain:true, bg:"#5a5a5a", items:[[P+"detail.jpg","정면 그래픽 상세. 가치카드 월, 미션 안내, TV, 굿즈 캐비닛"],[P+"front.jpg","정면 구성. 입구, 이벤트 테이블, 로고 스탠드",{ratio:"1340/1090"}]]},
+  { t:"media", label:"Card design", h:"가치카드 25종", src:P+"cards.jpg", cap:"앞면은 그라데이션 위의 문장 하나, 뒷면은 SOCIAL PROGRESS CREDIT 정보와 미션 칸입니다.", ratio:"2400/2871", contain:true, bg:"#fff"},
+  { t:"cards", label:"Fixtures", h:"종이 가구 중심의 집기", cols:4, items:[
+    {img:P+"f-table.jpg", k:"Table", t:"테이블", d:"높은 것 3개는 인포, 낮은 것 1개는 가챠용."},
+    {img:P+"f-box.jpg", k:"Storage", t:"보관함", d:"짐과 굿즈 보관."},
+    {img:P+"f-corner.jpg", k:"Corner", t:"코너 테이블", d:"가치카드 물품 보관."},
+    {img:P+"f-logo.jpg", k:"Logo pick", t:"스탠딩 로고", d:"CSES 로고를 세워 두는 픽."},
+    {img:P+"f-cabinet.jpg", k:"Cabinet", t:"굿즈 캐비닛", d:"2세트. 굿즈 진열과 TV 선반."},
+    {img:P+"f-rack.jpg", k:"Rack", t:"브랜드존 랙", d:"CSES 책자와 리플릿."},
+    {img:P+"f-banner.jpg", k:"Banner", t:"허니콤 배너", d:"종이 허니콤 구조의 배너."},
+    {img:P+"f-gotcha.jpg", k:"Gotcha", t:"캡슐 자판기", d:"불투명 캡슐 빨강·노랑·파랑 각 50개, 코인 60개."}]},
+  { t:"row", cls:"c2", label:"Light", ratio:"1438/1228", contain:true, bg:"#fff", items:[[P+"light.jpg","패널마다 조명 하나. 상시 켜짐 모드로 10시간"],[P+"light-temp.jpg","색온도 비교. 주광·주백·전구색",{ratio:"1504/1144"}]]},
+  { t:"specs", label:"Goods", h:"굿즈 2,700개", items:[["Mission MD","타포린백","1,000"],["Mission MD","마우스패드","500"],["Mission MD","에코백","200"],["Mission MD","컵","40"],["Event MD","부채","1,800 · 인스타그램"],["Event MD","떡메모지","500 · SV 허브"]]}
+];
+})();
+/* ---- KCYCF branding: HTML case ---- */
+(function(){
+const w = WORKS.find(x => x.id === "kcycf"); if (!w) return;
+const P = "pf/kcycf/x/", V = "images/pf/kcycf/v/";
+const SPR = [["kc-word", V+"word.svg"], ["kc-sym", V+"symbol.svg"], ["kc-bus", V+"sub-business.svg"], ["kc-cam", V+"sub-campaign.svg"]];
+const BK = "#0d0d0d";
+const WR = 1914/482, SR = 476/495, BR = 984/184, CR = 1128/188;
+const U = (id,x,y,w,h,c) => `<use href="#${id}" x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${w.toFixed(1)}" height="${h.toFixed(1)}" fill="${c}"/>`;
+const SV = (W,H,inner,st="") => `<svg viewBox="0 0 ${W.toFixed(1)} ${H.toFixed(1)}" role="img" aria-label="KCYCF" style="${st}">${inner}</svg>`;
+/* X = wordmark height 100 */
+const word = (c, st) => SV(100*WR, 100, U("kc-word",0,0,100*WR,100,c), st);
+const sym = (c, st) => SV(100*SR, 100, U("kc-sym",0,0,100*SR,100,c), st);
+const lockSec = (c, st) => { const sh = 128, sw = sh*SR; return SV(sw+40+100*WR, sh, U("kc-sym",0,0,sw,sh,c) + U("kc-word",sw+40,14,100*WR,100,c), st); };
+const sub = (id, r, c, st) => { const lw = 100*WR, h = 35, sw = h*r; return SV(lw, 100+44+h, U("kc-word",0,0,lw,100,c) + U(id,(lw-sw)/2,144,sw,h,c), st); };
+const tile = (inner, label) => `<div class="xk-hl"><i>${inner}</i><span>${label}</span></div>`;
+
+w.heroHTML = `<div class="xs-brandhero" style="background:${BK}">${word("#fff","height:auto;width:34%")}<small class="xk-cap">Branding Project · 1.0.0 · 01 JUL 2025</small></div>`;
+w.heroSprites = SPR;
+w.cover = "images/pf/kcycf/t01.jpg";
+w.sections = [
+  { t:"role", who:"황윤희", sub:"Brand Designer · 브랜드 가이드와 인스타그램 운영 보드", items:[
+    ["Values","Connection, Center, Forward, Variety 정의"],["Logo","대표 로고, 서비스 로고, 여백과 최소 크기"],
+    ["Symbol","두 사람이 마주 보며 빛을 함께 쌓는 심볼"],["Color","KCYCF Black과 White, 그레이 3단계"],
+    ["Type","카카오 큰글씨·작은글씨"],["Instagram","하이라이트 5종과 피드 운영 보드"]]},
+  { t:"lead", label:"Values", q:"연결이라는\n한 단어에서.",
+    p:["KCYCF(한국기독교청년문화재단)를 나타내는 핵심 키워드는 Connection, 연결입니다. 청년과 청년, 교회와 세상을 서로 잇는 기독교 문화의 연결 주체라는 뜻입니다.",
+       "가이드는 로고보다 먼저 이 가치를 정의하는 데서 시작했습니다. 우리가 누구인지, 어디로 가려 하는지에 대한 기준이 있어야 로고와 컬러, 피드까지 같은 말을 할 수 있기 때문입니다."]},
+  { t:"cards", cols:4, items:[
+    {k:"01", t:"Connection", d:"청년과 청년, 교회와 세상을 서로 연결하는 기독교 문화의 연결 주체로서 지속적인 혁신을 이뤄 갑니다."},
+    {k:"02", t:"Center", d:"청년의 일상과 문화의 중심에 자리하며 가장 중요한 것이 무엇인지 고민하고, 더 나은 문화 경험을 만듭니다."},
+    {k:"03", t:"Forward", d:"청년 크리스천 문화의 리더로 앞서 흐름을 주도합니다. 기독교 문화와 세상의 문화를 구별하지 않고 변화를 모색합니다."},
+    {k:"04", t:"Variety", d:"일상 속 다양한 순간을 함께하며 청년 각자의 삶에 꼭 맞는 새롭고 즐거운 제안을 합니다."}]},
+  { t:"html", label:"Logo", h:"검정과 흰색, 두 가지로 단단하게", sprites:SPR,
+    p:["대표 로고는 KCYCF 다섯 글자만으로 씁니다. 심볼은 두 사람이 서로 마주 보며 빛을 함께 쌓아 가는 모습으로 '함께'의 가치를 그렸고, 보조 로고는 이 심볼과 워드마크를 나란히 둡니다."],
+    html: () => `<div class="xb-g c2">${xbBoard(word("#fff","width:52%;height:auto"), "<b>Primary</b>대표 로고", {ratio:"16/10", bg:BK})}${xbBoard(word(BK,"width:52%;height:auto"), "<b>Primary</b>흰 바탕", {ratio:"16/10", bg:"#fff"})}</div>
+      <div class="xb-g c3">${xbBoard(lockSec(BK,"width:66%;height:auto"), "<b>Secondary</b>심볼 + 워드마크", {ratio:"4/3", bg:"#f2f2f2"})}${xbBoard(sym("#fff","height:46%;width:auto"), "<b>Symbol</b>마주 보며 빛을 쌓는 두 사람", {ratio:"4/3", bg:BK})}${xbBoard(sym(BK,"height:46%;width:auto"), "<b>Symbol</b>흰 바탕", {ratio:"4/3", bg:"#fff"})}</div>`},
+  { t:"html", label:"Service logo", h:"사업마다 같은 자리에 이름 하나", sprites:SPR,
+    p:["서비스 로고는 브랜드 로고 아래에 사업명을 붙이는 규칙 하나로 만듭니다. 이름이 바뀌어도 한 재단의 일로 읽히도록 했습니다."],
+    html: () => `<div class="xb-g c2">${xbBoard(sub("kc-bus",BR,"#fff","width:44%;height:auto"), "<b>Service</b>KCYCF BUSINESS", {ratio:"16/9", bg:BK})}${xbBoard(sub("kc-cam",CR,"#fff","width:44%;height:auto"), "<b>Service</b>KCYCF CAMPAIGN", {ratio:"16/9", bg:BK})}</div>`},
+  { t:"palette", label:"Color", h:"KCYCF Black과 White", items:[["#0d0d0d","KCYCF Black","CMYK 0 0 0 95 · RGB 13 13 13",1],["#ffffff","KCYCF White","RGB 255 255 255",1],["#404040","Black 75","CMYK 0 0 0 75"],["#7f7f7f","Black 50","CMYK 0 0 0 50"],["#bfbfbf","Black 25","CMYK 0 0 0 25"]]},
+  { t:"media", label:"Typeface", h:"카카오 글씨", p:["청년층과 가까운 디지털 커뮤니케이션 문화를 반영해 카카오 글씨를 지정 서체로 골랐습니다. 화면에서 읽기 좋게 설계된 서체이고, 오픈 폰트 라이선스라 협력사도 자유롭게 쓸 수 있습니다."], src:P+"type.jpg", cap:"카카오 큰글씨와 작은글씨", ratio:"1760/810", contain:true, bg:"#fff"},
+  { t:"html", label:"Instagram", h:"하이라이트 다섯 개로 나눈 계정", sprites:SPR,
+    p:["@kcycf.official 계정의 하이라이트를 HOME, PROJECT, CREATOR, KCYCF, CURATION 다섯 갈래로 나누고, 커버는 두 글자 약어와 심볼로 통일했습니다."],
+    html: () => { if (!document.querySelector('link[data-gf="jost"]')) document.head.insertAdjacentHTML("beforeend", `<link rel="stylesheet" data-gf="jost" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;700;800&display=swap">`); return `<div class="xk-hls">${tile("HO","HOME")}${tile("PR","PROJECT")}${tile("CR","CREATOR")}${tile(sym("#fff","height:46%;width:auto"),"KCYCF")}${tile("CU","CURATION")}</div>`; }},
+  { t:"grid", label:"Feed", h:"같은 규칙으로 운영한 피드", cols:5, ratio:"4/5", cover:true, items:[[P+"feed-03.jpg","THE AUGUST RECAP"],[P+"feed-05.jpg","청년 크리스천 합창단원 모집"],[P+"feed-06.jpg","HOME 공간 오픈"],[P+"feed-07.jpg","HOME 오픈 파티"],[P+"feed-01.jpg","SEE YOU AT CHURCH 캠페인"]]}
+];
+})();
+/* ---- Creator Festival 2025: HTML case ---- */
+(function(){
+const w = WORKS.find(x => x.id === "creator-festival"); if (!w) return;
+const P = "pf/creator-festival/x/";
+w.heroSrc = P + "site-2.jpg"; w.heroTag = "ON SITE";
+w.cover = "images/pf/creator-festival/t01.jpg";
+const N = 33;
+const pct = n => (n/N*100).toFixed(1) + "%";
+w.sections = [
+  { t:"role", who:"황윤희", sub:"Designer · 키 비주얼부터 결과 리포트까지", items:[
+    ["Key visual","블루 그리드 위 C 심볼 메인 포스터"],["Line-up","연사 13명의 분야별 프로필 카드 14종"],
+    ["Program","하루 일정 타임테이블"],["Signage","무대 현수막과 세로 배너"],
+    ["Goods","웰컴 굿즈"],["Report","참가자 설문 33건 분석과 다음 회차 제안"]]},
+  { t:"lead", label:"Concept", q:"크리에이터가 되는\n가장 확실한 길,\n하루짜리 페스티벌로.",
+    p:["필름, 워십, 인스타그램, 유튜브, 브랜딩, 디자인, AI까지 분야가 다른 연사들을 한 장의 라인업으로 읽히게 하는 것이 첫 과제였습니다. 블루 바탕에 흑백 인물 사진과 분야 라벨을 같은 격자에 맞춰, 포스터와 무대 현수막, 세로 배너가 같은 리듬으로 이어지게 했습니다.",
+       "행사가 끝난 뒤에는 설문 결과를 리포트로 정리해 다음 페스티벌의 기준으로 남겼습니다."]},
+  { t:"row", label:"Key visual", h:"C 하나와 그리드", cls:"c2", ratio:"1755/2481", contain:true, bg:"#05053e", items:[[P+"poster-c.jpg","메인 포스터"],[P+"poster-lineup.jpg","라인업 포스터"]], note:"포스터 하단의 문의 연락처는 지웠습니다."},
+  { t:"grid", label:"Line-up", h:"메인 세미나와 소셜 임팩트", cols:6, ratio:"4/5", cover:true, items:[[P+"sp-m1.jpg","Film · Message"],[P+"sp-m2.jpg","Worship"],[P+"sp-m3.jpg","Social Media"],[P+"sp-m4.jpg","Instagram"],[P+"sp-m5.jpg","YouTube"],[P+"sp-m6.jpg","Vision"]]},
+  { t:"grid", h:"선택 세션 여덟 개", cols:4, ratio:"4/5", cover:true, items:[[P+"sp-s1.jpg","Branding"],[P+"sp-s2.jpg","Design"],[P+"sp-s3.jpg","Coaching"],[P+"sp-s4.jpg","Video planning"],[P+"sp-s5.jpg","Video"],[P+"sp-s6.jpg","AI"],[P+"sp-s7.jpg","Sound"],[P+"sp-s8.jpg","Producing"]]},
+  { t:"html", label:"Program", h:"2025.11.29, 광림교회 B1 나사렛성전",
+    html: xrTime([["– 13:00","접수 및 등록","",""],["13:00 – 13:10","OT","",""],["13:10 – 13:50","메인 강의 1 · Film & Message","케어코너즈","hl"],["13:50 – 14:30","메인 강의 2 · Social Media","교회친구다모여","hl"],["14:30 – 14:40","휴식","","br"],
+      ["14:40 – 15:00","소셜 임팩트 1 · Instagram","주케팅",""],["15:00 – 15:20","소셜 임팩트 2 · YouTube","스튜데오",""],["15:20 – 15:40","소셜 임팩트 3 · Vision","비전파인더",""],["15:40 – 15:50","휴식","","br"],
+      ["15:50 – 17:05","선택 강의 · Session","8개 강의실로 이동","hl"],["17:05 – 17:15","휴식","","br"],["17:15 – 17:50","메인 강의 3 · Worship","피아워십","hl"],["17:50 – 18:05","스페셜 강의","",""],["18:05 – 18:30","마무리 예배","",""]])},
+  { t:"strip", label:"On site", h:"현장", ratio:"16/9", items:[[P+"site-1.jpg","메인 강의"],[P+"site-2.jpg","나사렛성전 전경"],[P+"site-3.jpg","선택 세션"],[P+"site-4.jpg","접수 데스크"]]},
+  { t:"row", label:"Goods", h:"웰컴 굿즈", cls:"w12", ratio:"1252/1766", contain:true, bg:"#f3f3f1", items:[[P+"goods-1.jpg","웰컴 굿즈 구성"],[P+"goods-2.jpg","굿즈 디자인",{ratio:"1/1"}]]},
+  { t:"html", label:"Report", h:"설문 33건으로 다시 읽은 하루",
+    p:["행사 직후 참가자 설문을 받아 만족도, 참여 이유, 가장 유익했던 프로그램, 다음 회차에 바라는 점을 정리했습니다. 숫자는 설문 원자료를 그대로 옮겼습니다."],
+    html: xrStats([["4.61","평균 만족도","5점 만점, 5점 23명"],["90.9%","실질적 인사이트","넥크페의 차별점으로 꼽은 비율"],["84.8%","재참여 의향","4점 이상 28명"],["69.7%","관점의 변화","행사로 얻은 핵심 변화"]]) +
+      `<div class="xr-grid">` +
+      xrBars([["5점",23,"23 · 69.7%"],["4점",7,"7 · 21.2%"],["3점",3,"3 · 9.1%"],["2점",0,"0"],["1점",0,"0"]], {title:"전체 만족도", max:N, hi:"5점"}) +
+      xrBars([["5점",22,"22 · 66.7%"],["4점",6,"6 · 18.2%"],["3점",4,"4 · 12.1%"],["2점",1,"1 · 3%"],["1점",0,"0"]], {title:"내년에도 참여할 의향", max:N, hi:"5점"}) +
+      xrBars([["인사이트 · 기독 문화 콘텐츠의 영감",15,"45.5%"],["신앙 · 신앙과 크리에이티브의 연결",10,"30.3%"],["강의 · 크리스천 크리에이터를 만나기 위해",7,"21.2%"],["트렌드 · 새로운 문화 행사",1,"3.0%"]], {title:"참여한 이유", max:N, hi:"인사이트 · 기독 문화 콘텐츠의 영감"}) +
+      xrBars([["실질적 인사이트 · 강의 내용",30,"90.9%"],["강사 라인업",25,"75.8%"],["현장 운영과 프로그램 구성",12,"36.4%"],["브랜딩 · 공간, 무드, 굿즈",5,"15.2%"]], {title:"넥크페의 차별점 (최대 3개)", max:N, hi:"실질적 인사이트 · 강의 내용"}) +
+      xrBars([["새로운 관점과 마인드셋",23,"69.7%"],["실행 방법과 툴",6,"18.2%"],["퍼스널 브랜드 이해",4,"12.1%"]], {title:"행사로 얻은 핵심 변화", max:N, hi:"새로운 관점과 마인드셋"}) +
+      xrBars([["네트워킹 · 멘토와 소그룹",12,"36.4%"],["홍보 · 좋은 콘텐츠를 더 알리기",10,"30.3%"],["교육 · 강의 다양화",6,"18.2%"],["포럼과 페스티벌 확대",5,"15.2%"]], {title:"넥스트엠에 바라는 방향", max:N, hi:"네트워킹 · 멘토와 소그룹"}) +
+      `</div>` + xrQuotes(["창조성이 회복되어지는 축제","다양한 라인업을 가진 뷔페","크리스찬 인사이트와 지혜의 향연","신앙과 크리에이티브는 연결되어 있다","짧고 굵고 다양하다","하나님 안에서 비전을 발견할 수 있는 시간"])},
+  { t:"cards", label:"Findings", h:"리포트가 다음 회차에 남긴 메모", cols:4, items:[
+    {k:"01", t:"세션을 더 깊게", d:"참가자가 얻은 것은 실무 기술보다 관점의 변화였습니다. 그래서 선택 세션을 심화해야 한다고 적었습니다."},
+    {k:"02", t:"공통 강의보다 세션", d:"공통 프로그램을 줄이고 세션을 늘려도 좋겠다는 의견, 세션을 하나만 고르기 어려웠다는 의견이 함께 나왔습니다."},
+    {k:"03", t:"시간표 다시 보기", d:"일부 강의가 예정보다 짧아졌다는 아쉬움이 있어 프로그램 시간표 점검을 과제로 남겼습니다."},
+    {k:"04", t:"행사 밖으로 연결", d:"소그룹 멘토링과 Q&A 요청이 많았고, 넥스트엠 자체에 대한 홍보와 오프라인 연계가 필요하다고 정리했습니다."}]}];
+})();
+/* ---- Lifemeal Yeonnam: HTML case ---- */
+(function(){
+const w = WORKS.find(x => x.id === "lifemeal-yeonnam"); if (!w) return;
+const P = "pf/lifemeal-yeonnam/x/", Q = "pf/lifemeal-yeonnam/";
+const RED = "#a63d33", BLU = "#9cc1d9", BEI = "#d4cab6";
+const svg = `<svg viewBox="200 150 1620 930" role="img" aria-label="팔시보 스토어 라이프밀 팝업 동선">
+  <rect x="200" y="150" width="1620" height="930" fill="#fafaf8"/>
+  <rect class="room" x="220" y="177" width="1558" height="863"/>
+  <rect class="fx" x="221" y="178" width="468" height="258"/><text class="lbl" x="455" y="312" text-anchor="middle">Storage</text>
+  <path class="wall" d="M690 178 V540 H789 V474 M221 436 H488"/>
+  <rect class="fx" x="779" y="178" width="712" height="174"/><text class="lbl" x="1135" y="270" text-anchor="middle">Storage</text>
+  <rect x="779" y="352" width="712" height="29" fill="#fff" stroke="#000"/><text class="lbl" x="1135" y="372" text-anchor="middle">Curtain</text>
+  <rect class="fx" x="1491" y="178" width="286" height="349"/>
+  <rect x="779" y="420" width="176" height="53" fill="${RED}"/><rect x="955" y="420" width="338" height="53" fill="${BEI}"/><text class="lbl dk" x="1124" y="453" text-anchor="middle">Cashier</text>
+  <rect x="1409" y="420" width="82" height="107" fill="${BLU}"/><text class="lbl" x="1450" y="555" text-anchor="middle">Fridge</text>
+  <rect x="267" y="469" width="111" height="117" fill="${RED}"/>
+  <rect x="267" y="595" width="111" height="440" fill="${BLU}"/><text class="lbl dk" x="323" y="820" text-anchor="middle" transform="rotate(-90 323 820)">Product</text>
+  <text class="lbl" x="493" y="785" text-anchor="middle">Mart</text>
+  <rect x="608" y="723" width="82" height="312" fill="${RED}"/><rect x="690" y="723" width="83" height="259" fill="${RED}"/>
+  <rect x="1395" y="653" width="192" height="325" fill="${BEI}"/><text class="lbl dk" x="1491" y="905" text-anchor="middle">Tea Table</text>
+  <g fill="${BEI}">${[705,816,927].map(y=>`<circle cx="1338" cy="${y}" r="26"/><circle cx="1644" cy="${y}" r="26"/>`).join("")}</g>
+  <rect x="1002" y="1008" width="768" height="32" fill="#fff" stroke="#000"/><text class="lbl" x="1385" y="1030" text-anchor="middle">Window</text>
+  <path class="wall" d="M220 1040 H780 M985 1040 H1778 V177 H220 V1040"/>
+  <text class="lbl dk" x="883" y="1070" text-anchor="middle">IN &amp; OUT</text>
+  <path class="flow" d="M883 1010 C860 950 760 930 731 880 M731 700 C760 560 840 520 867 480 M800 500 C700 560 660 640 649 700 M600 860 C480 860 400 820 378 760 M323 560 C600 640 1000 700 1330 780"/>
+</svg>`;
+w.heroSrc = P + "sim-facade.jpg"; w.heroTag = "3D";
+w.cover = "images/pf/lifemeal-yeonnam/t01.jpg";
+w.sections = [
+  { t:"role", who:"황윤희", sub:"Director · EEH STUDIO 전체 디렉팅", items:[
+    ["Pitch","라이프밀 마케팅 단기 플랜과 팝업 기획안 발표"],["Space","팔시보 스토어 3D 모델과 동선 설계"],
+    ["Program","WBTI 미션 3단계, 웰니스 오마카세 5코스"],["Goods","루틴 스웻셔츠, 도어행어, 팔로우 이벤트 카드"],
+    ["Booking","주말·공휴일 회차제 예약 프로그램"],["Ops","10일 현장 운영"]]},
+  { t:"lead", label:"Concept", q:"제품 전시를 넘어,\n나의 하루 루틴을\n체험하는 편집숍.",
+    p:["작은 편집숍 형태의 푸드 팝업은 선별된 제품만으로 브랜드의 취향과 기준을 또렷하게 보여줄 수 있습니다. 공간과 콘텐츠가 과하지 않아 시선이 흩어지지 않고, 각 제품의 이야기에 집중할 수 있습니다.",
+       "방문객은 웰니스 체크리스트와 WBTI 진단으로 자신의 유형을 확인하고, 생식부터 그래놀라 요거트로 이어지는 웰니스 오마카세로 성분과 섭취 방식을 맛보았습니다."]},
+  { t:"cards", label:"Two concepts", h:"카페처럼 머물고, 마트처럼 고르고", cols:2, items:[
+    {k:"Cafe", t:"연남동 카페", d:"예약 프로그램이 열리는 티 테이블. 회차마다 여섯 명이 둘러앉아 웰니스 오마카세를 맛봅니다."},
+    {k:"Mart", t:"올리브영 같은 진열", d:"벽면 선반에 라이프밀 제품을 한눈에 늘어놓고, 미션을 마친 방문객이 직접 고르고 계산합니다."}]},
+  { t:"plan", label:"Pop-up course", h:"입구에서 티 테이블까지 여섯 개의 장면",
+    p:["킹 오브 킹스와 같은 팔시보 스토어 한 층을 라이프밀의 동선으로 다시 나눴습니다. 번호를 누르면 존별 계획이 열립니다. 3D는 공간을 먼저 모델링해 동선을 맞춘 화면입니다."], svg, zones:[
+    {n:"IN", name:"입구", en:"Entrance · Window", x:883, y:985, photo:P+"sim-facade.jpg", tag:"3D",
+      p:["통창 너머로 티 테이블이 보이도록 입구를 열어 두었습니다. 들어오면 바로 왼쪽 벽의 미션 존이 첫 장면이 됩니다."],
+      dl:[["운영","2026.02.13 – 02.22, 10일"],["시간","14:00 – 20:00"]]},
+    {n:"1", name:"웰니스 체크리스트", en:"Mission 1 · Check List", x:731, y:850, photo:P+"sim-in2.jpg", tag:"3D",
+      p:["종이에 나의 건강 루틴을 적습니다. 아침 식사 여부, 피부 관리 같은 질문에 답하고 점수를 합산해 카운터에 제출합니다."],
+      dl:[["미션","나의 건강 고민 체크"],["다음","카운터로 제출"]]},
+    {n:"2", name:"What's your WBTI?", en:"Mission 2 · Counter", x:867, y:447, photo:P+"sim-in1.jpg", tag:"3D",
+      p:["리스트를 내고 인스타그램을 팔로우하면 새뱃돈 봉투를 받습니다. 안에는 럭키드로우 동전과 나의 웰니스 타입 카드가 들어 있습니다."],
+      dl:[["진단","WBTI, Wellness Balance Type Indicator"],["증정","새뱃돈 봉투, 웰니스 타입 카드"]]},
+    {n:"3", name:"2026 웰니스 루틴", en:"Mission 3 · Routine Card", x:649, y:850, photo:P+"sim-in2.jpg", tag:"3D",
+      p:["웰니스 카드를 제품 스티커로 꾸며 나만의 2026 루틴을 만듭니다. 앞면은 타입별 분석, 뒷면은 제품 추천과 QR입니다. 카카오 플러스친구를 추가하면 꽝 없는 럭키드로우에 참여합니다."],
+      dl:[["보상","자사몰 쿠폰, 제품 1종, 2026 포스터 달력"]]},
+    {n:"M", name:"마트와 리워드", en:"Mart · Product · Reward", x:323, y:700, photo:P+"fx-1.jpg", tag:"BEFORE",
+      p:["왼쪽 벽 전체를 제품 진열로 쓰고, 안쪽 끝에 리워드 존을 두어 미션을 마친 뒤 자연스럽게 진열을 지나가게 했습니다. 사진은 설치 전 집기입니다."]},
+    {n:"O", name:"웰니스 오마카세", en:"Tea Table · Program II", x:1491, y:760, photo:P+"omakase.jpg", tag:"MOOD",
+      p:["예약한 방문객이 티 테이블에 둘러앉아 하루 루틴 순서대로 다섯 코스를 맛봅니다. 코스마다 효능과 섭취 타이밍을 적은 제품 카드를 함께 놓습니다."],
+      dl:[["회차","주말·공휴일 15:00 · 16:30 · 18:00"],["정원","회차별 6명, 네이버 예약과 워크인"],["시간","40분"]]}
+  ]},
+  { t:"cards", label:"Wellness Omakase", h:"아침을 여는 한 잔부터 집으로 가는 기프트까지", cols:5, contain:true, items:[
+    {img:P+"c1.jpg", k:"Course 1 · Open", t:"생식", d:"하루를 여는 가장 가벼운 시작. 공복, 첫 끼에 마시는 리셋 루틴."},
+    {img:P+"c2.jpg", k:"Course 2 · Chew", t:"하루견과", d:"씹는 리듬으로 균형 잡기. 식사 사이의 간식."},
+    {img:P+"c3.jpg", k:"Course 3 · Balance", t:"영양식 with 프로틴바", d:"식이섬유와 단백질을 함께. 점심 대용이 되는 핵심 코스."},
+    {img:P+"c4.jpg", k:"Course 4 · Finish", t:"그래놀라 요거트", d:"집에서 어떻게 먹을지 가장 쉽게 보여주는 마무리."},
+    {img:P+"c5.jpg", k:"Gift · Take home", t:"Dr. 샐러드", d:"채소와 과일을 한 포에 담은 생식으로 집까지 이어지는 루틴."}]},
+  { t:"row", label:"Space", h:"공간을 먼저 모델링하고", cls:"c2", ratio:"16/9", items:[[P+"sim-in1.jpg","팔시보 스토어 3D 모델, 카운터 방향",{tag:"3D"}],[P+"sim-in2.jpg","3D 모델, 미션 존 방향",{tag:"3D"}]]},
+  { t:"grid", label:"Goods", h:"루틴을 들고 나가게", cols:4, ratio:"1/1", cover:true, items:[[Q+"15.jpg","LIFEMEAL 키 비주얼"],[Q+"16.jpg","웰니스 루틴 스웻셔츠"],[Q+"17.jpg","루틴 도어행어"],[Q+"18.jpg","팔로우 이벤트 카드"]]}
+];
+})();
+/* ---- FREEZE LAB package: HTML sections ---- */
+const FL_PKG = (function(){
+const P = "pf/fl-deck/x/";
+return [
+  { t:"lead", label:"Gift set & package", q:"좋은 것을 지키는\n실험실의 첫인상.",
+    p:["FREEZE LAB의 그린 컬러와 연구 그래픽을 그대로 상자에 옮겨, 선물의 기대가 상자를 여는 순간까지 이어지도록 했습니다.",
+       "추석 선물세트 네 가지와 트라이얼 키트, 쿨러백, 쇼핑백까지 같은 그린과 워드마크 하나로 묶었습니다."]},
+  { t:"cards", label:"Four sets", h:"네 가지 추석 선물세트", cols:2, ratio:"16/9", items:[
+    {img:P+"p10.jpg", k:"Set 1", t:"Daily Routine", d:"70여 가지 농수산물을 담은 라이프밀 데일리와 닥터샐러드로, 매일의 한 끼가 든든한 습관으로 이어지도록 구성한 데일리 루틴입니다."},
+    {img:P+"p14.jpg", k:"Set 2", t:"Premium Routine", d:"발효건강식과 라이프밀 데일리, 프로틴골드 HIGH5, 영양식과 하루견과까지. 바쁜 일상 속에서도 영양의 균형을 놓치지 않도록 구성한 프리미엄 루틴입니다."},
+    {img:P+"p15.jpg", k:"Set 3", t:"Freeze Dried Set", d:"동결건조로 딸기, 감귤, 사과, 방울토마토의 맛과 영양을 지켰습니다. 좋은 원물을 더 쉽고 자주 만나는 동결건조 영양 간식 세트입니다."},
+    {img:P+"p16.jpg", k:"Set 4", t:"Hemily Set", d:"라이프밀이 자신 있게 제안하는 대표 간식을 직원들의 하루에 맞춰 한 상자에 모았습니다. 업무 중 가벼운 간식부터 든든한 영양 보충까지 챙기는 웰니스 루틴 세트입니다."}]},
+  { t:"row", label:"Structure", h:"아우터와 이너, 두 겹의 언박싱", cls:"c2", ratio:"16/9", items:[[P+"p11.jpg","Set 1 아우터 패키지 전개도"],[P+"p12.jpg","Set 1 이너 패키지 전개도. 1단과 2단이 차분히 이어지는 구조"]],
+    note:"1단과 2단이 이어지는 구조로 제품을 안정적으로 고정하고, 각 구성품을 발견하는 순서까지 하나의 언박싱 경험으로 설계했습니다."},
+  { t:"row", cls:"w12", ratio:"1400/610", bg:"#0a0a0a", contain:true, items:[[P+"p13.jpg","패키지 샘플과 레퍼런스. 1단 라이프밀 데일리, 2단 닥터샐러드, 박스와 리본끈 타입"]]},
+  { t:"cards", label:"Goods", h:"팝업이 끝난 뒤에도 남는 것", cols:3, ratio:"16/9", items:[
+    {img:P+"p17.jpg", k:"Trial kit", t:"프룻 젤리 스틱 체험 키트", d:"리플렛 대신 실제 제품을 맛별로 하나씩 담았습니다. 패키지의 QR로 체험 고객을 자사몰로 이어 첫 구매와 재구매를 유도합니다."},
+    {img:P+"p18.jpg", k:"Cooler bag", t:"쿨러백", d:"차가움을 유지해 식품의 좋은 상태를 오래 지킨다는 점에서, 동결건조 팝업의 메시지를 가장 직관적으로 잇는 굿즈입니다."},
+    {img:P+"p19.jpg", k:"Shopping bag", t:"쇼핑백", d:"그린 컬러와 FREEZE LAB 로고를 선명하게 얹어, 이동 중에도 브랜드가 자연스럽게 보이도록 했습니다."}]},
+  { t:"row", label:"Mood", cls:"c2", ratio:"16/9", items:[[P+"mood1.jpg","원물 무드"],[P+"mood2.jpg","FREEZE THE FRESH, KEEP THE BEST"]]}
+];
+})();
+/* ---- SIAFF 2025: HTML case ---- */
+(function(){
+const w = WORKS.find(x => x.id === "siaff"); if (!w) return;
+const P = "pf/siaff/x/";
+w.heroSrc = P + "mock-street.jpg"; w.heroTag = "MOCK-UP";
+w.cover = "images/pf/siaff/t01.jpg";
+w.sections = [
+  { t:"role", who:"황윤희", sub:"Designer · 메인 포스터 시안", items:[
+    ["Theme","LIGHT UP [ ] 해석과 세 가지 방향"],["A · Cinema","붉은 빛의 열린 공간"],["B · Simplicity","타이포그래피와 컬러만으로"],
+    ["C · Light bulb","전구 필라멘트에 담은 다섯 가치"],["Type","영문 로고와 캘리그라피 한글의 조합"],["Mock-up","벽면 포스터와 옥외 게시 목업"]]},
+  { t:"lead", label:"Theme", q:"LIGHT UP [   ],\n비어 있는 괄호를\n관객이 채우는 포스터.",
+    p:["2025 서울국제사랑영화제의 주제는 LIGHT UP [ ]입니다. 비어 있는 괄호를 관객 각자가 자신의 이야기와 해석으로 채워 넣는 열린 공간으로 보고, 같은 주제를 세 가지 방향으로 풀었습니다.",
+       "세 안 모두 레드를 메인 컬러로 두었습니다. 사랑과 열정, 빛의 에너지이자 영화의 몰입감입니다. 굵고 단정한 영문 로고는 국제 영화제의 위상을, 캘리그라피 한글은 따뜻한 정체성을 함께 보여 줍니다."]},
+  { t:"cards", label:"Three directions", h:"한 주제, 세 개의 포스터", cols:3, ratio:"764/1080", items:[
+    {img:P+"poster-a.jpg", k:"A · Concept: Cinema", t:"창의적 표현의 캔버스", d:"붉은 빛이 가득한 사각형 공간은 무한한 가능성을 담은 무대입니다. 공간 중앙의 비워진 괄호가 주제를 상징하고, 관객의 변화를 이끄는 미완성의 아름다움을 전합니다."},
+    {img:P+"poster-b.jpg", k:"B · Concept: Simplicity", t:"이름 자체를 각인시키는 안", d:"이미지 요소를 덜어내고 텍스트와 색감만으로 구성했습니다. 레드에서 화이트로 번지는 그라데이션은 빛의 확산을 뜻하고, 배너와 리플릿, 굿즈로 확장하기 쉬운 서브 비주얼이 됩니다."},
+    {img:P+"poster-c.jpg", k:"C · Concept: Light bulb", t:"전구 하나로 읽히는 LIGHT UP", d:"필라멘트에 Love, Inspiration, Grace, Hope, Truth 다섯 가치를 새겼습니다. 전구에 불이 켜지듯 영화제가 사랑과 영감, 은혜, 희망, 진리의 빛을 밝히는 통로가 된다는 의미입니다."}]},
+  { t:"row", label:"Mock-up", h:"벽에 붙였을 때, 거리에 걸렸을 때", cls:"c2", ratio:"16/9", items:[[P+"mock-a.jpg","A안 벽면 포스터 목업",{tag:"MOCK-UP"}],[P+"mock-b.jpg","B안 벽면 포스터 목업",{tag:"MOCK-UP"}]]},
+  { t:"row", cls:"c2", ratio:"16/9", items:[[P+"mock-c.jpg","C안 벽면 포스터 목업",{tag:"MOCK-UP"}],[P+"lineup.jpg","A·B·C 세 가지 안 비교"]]}
+];
+})();
+/* ---- RED SKY fan meeting: HTML case ---- */
+(function(){
+const w = WORKS.find(x => x.id === "red-sky"); if (!w) return;
+const P = "pf/red-sky/x/";
+if (!document.querySelector('link[data-gf="pf"]')) document.head.insertAdjacentHTML("beforeend", `<link rel="stylesheet" data-gf="pf" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap">`);
+w.heroHTML = `<div class="xs-brandhero xr-sky"><div><small>Cho Haneul 1st Fan Meeting</small><b>Red Sky</b><i>When the <em>clouds</em> gather, the <em>sky</em> turns red</i><span>2025.08.29 (FRI) 20:00 · Space Hong</span></div></div>`;
+w.cover = "images/pf/red-sky/t01.jpg";
+w.sections = [
+  { t:"role", who:"황윤희", sub:"Planner · Designer", items:[
+    ["Concept","Red Sky, 감정의 하늘과 구름이라는 한 문장"],["Key visual","노을빛 그라데이션 포스터"],["Program","입장부터 포토 타임까지 여섯 순서"],
+    ["Cafe","팬미팅 안의 미니 음료바, Red Sky Cafe"],["Goods","무료 증정과 판매 굿즈 구성"],["Survey","사전 설문으로 팬이 원하는 것 확인"]]},
+  { t:"lead", label:"Concept", q:"When the clouds gather,\nthe sky turns red.",
+    p:["하늘이 붉어지는 시간은 하루 중 가장 아름답고 짧은 순간입니다. 팬들의 마음을 구름에, 공연과 소통의 열기를 노을에 빗대어 모든 순서를 Red Sky라는 한 장면으로 이었습니다.",
+       "팬들과 함께 쌓아 온 감정의 구름이 짙어질 때, 붉은 노을처럼 짧지만 강렬한 순간을 맞습니다. 그 찰나의 Red Sunset 아래 하늘은 우리만의 빛으로 완성됩니다."]},
+  { t:"row", label:"Key visual", h:"노을 한 장으로 만든 포스터", cls:"c3", ratio:"608/1080", contain:true, bg:"#f1ece8", items:[[P+"kv.jpg","메인 포스터"]],
+    note:"키워드 Red, Passion, Energy, Elegance, Hot, Weather, Sunset, Summer. 붉은 노을이 번지는 그라데이션과 세리프 타이포로 한여름 밤의 열기와 우아함을 함께 담았습니다."},
+  { t:"cards", label:"Program", h:"입장 전부터 마지막 사진까지", cols:3, items:[
+    {k:"– 19:50", t:"0. Cloud to the Sky", d:"입장 전 감정 카드를 나눠 줍니다. 앞면의 날씨는 팬미팅 중간중간 호명에 쓰이고, 뒷면에는 오늘의 기대와 하고 싶은 말을 적습니다."},
+    {k:"20:10 –", t:"1. Opening · Red Hour Begins", d:"무대 전체를 붉은 노을빛으로 물들이며 시작합니다. \"오늘의 하늘, 여러분과 함께 물들어갑니다.\""},
+    {k:"20:20 –", t:"2. Talk · Emotion Forecast", d:"기상캐스터 콘셉트의 영상과 함께 구름이들의 요즘 감정 날씨를 묻고, 팬과 함께 감정 기상도를 완성합니다."},
+    {k:"20:40 –", t:"3. Cloud Lounge", d:"팬들과 마주 앉아 나누는 소규모 토크. 팬의 고민에 짧은 글귀나 문장으로 답합니다."},
+    {k:"21:00 –", t:"4. Game · Red Signal", d:"퀴즈와 밸런스 게임, 감정 맞추기로 이어지는 참여형 콘텐츠와 활기찬 무대."},
+    {k:"Finale", t:"5. Sunset Snapshot", d:"붉은 하늘 포토존과 구름 피켓 소품. 1:1 눈맞춤 포토와 사인, 단체 사진으로 마무리합니다."}]},
+  { t:"specs", label:"Special & Goods", h:"하늘색 대신 노을색으로 맞춘 디테일", items:[
+    ["Special point","Red Sky Cafe","팬미팅 장소 안의 미니 음료바와 베리 계열 시그니처 드링크"],
+    ["Cup sleeve","지금 당신의 감정 하늘은 어떤 색인가요?","컵홀더에 팬들에게 전하는 문장"],
+    ["Free","부채와 감정 카드","입장하는 모든 팬에게"],
+    ["Set","Sky 포카 세트","감정 컬러 카드 5매와 포토카드 3매"],
+    ["Book","하늘이 문장 엽서북","팬들에게 써 주는 문장 모음"],
+    ["Goods","구름이 핀 배지와 키링","떡메모지, 포스터, 티셔츠까지 팬미팅 한정"]]}
+];
+})();
+/* ---- THE HOTEL 1997: HTML case ---- */
+(function(){
+const w = WORKS.find(x => x.id === "hotel-1997"); if (!w) return;
+const P = "pf/hotel-1997/x/";
+const G = "#2d7a5a", K = "#151515", B = "#6f8fc0", D = "#3d3d3d";
+const box = (x,y,ww,h,fill,label,dim,tc="#fff") => `<rect x="${x}" y="${y}" width="${ww}" height="${h}" fill="${fill}"/><text x="${x+24}" y="${y+70}" font-size="62" fill="${tc}" font-weight="600">${label}</text>${dim?`<text x="${x+24}" y="${y+140}" font-size="50" fill="${tc}" opacity=".75">${dim}</text>`:""}`;
+const elev = `<svg viewBox="-160 -170 4300 2700" role="img" aria-label="로비 벽면 배치 입면" style="width:100%;height:auto;font-family:inherit">
+  <rect x="-160" y="-170" width="4300" height="2700" fill="#0d0d0d"/>
+  <rect x="0" y="0" width="3030" height="2180" fill="#efede8"/>
+  <g stroke="#38b2d6" stroke-width="6" fill="#38b2d6" font-size="56">
+    <line x1="0" y1="-70" x2="3030" y2="-70"/><text x="1515" y="-100" text-anchor="middle" stroke="none">3030</text>
+    <line x1="-70" y1="0" x2="-70" y2="2180"/><text x="-100" y="1090" text-anchor="middle" stroke="none" transform="rotate(-90 -100 1090)">2180</text></g>
+  ${box(70,380,875,1800,K,"선반","875 × 1800")}
+  <rect x="1080" y="260" width="500" height="640" fill="#fff" stroke="#bbb" stroke-width="6"/><rect x="1620" y="260" width="560" height="640" fill="#fff" stroke="#bbb" stroke-width="6"/>
+  <text x="1110" y="340" font-size="62" fill="#555" font-weight="600">작품</text>
+  <rect x="2600" y="380" width="70" height="1800" fill="#6a6a6a"/><path d="M2520 380 h230 l-60 -150 h-110z" fill="#8a8a8a"/><text x="2700" y="560" font-size="56" fill="#333" font-weight="600">스탠딩 조명 1800</text>
+  ${box(1080,1460,1000,720,G,"소파","1000 × 720")}
+  ${box(2090,1520,190,660,"#4a4a4a","","")}<text x="2090" y="1490" font-size="50" fill="#333">노트북 스탠드</text>
+  ${box(1080,1880,1200,300,D,"거실 테이블","1200 × 500")}
+  ${box(2320,1700,330,480,G,"스툴","")}
+  <rect x="380" y="2180" width="2400" height="110" fill="${B}"/><text x="400" y="2400" font-size="56" fill="#cfd8e8">러그 2000 × 3000 · 워셔블 논슬립</text>
+  <rect x="3300" y="0" width="760" height="2180" fill="#e2e0db"/>
+  <rect x="3360" y="420" width="640" height="640" fill="#bcd6ee"/><text x="3680" y="760" font-size="58" fill="#334" text-anchor="middle" font-weight="600">레터링 거울</text>
+  <text x="3680" y="840" font-size="48" fill="#556" text-anchor="middle">750 × 750</text>
+  <rect x="3420" y="1200" width="520" height="220" fill="none" stroke="#333" stroke-width="8"/><text x="3680" y="1330" font-size="54" fill="#333" text-anchor="middle">영문 레터링</text>
+  <text x="3680" y="2120" font-size="50" fill="#777" text-anchor="middle">측면 벽</text>
+</svg>`;
+w.heroSrc = P + "sim-lobby.jpg"; w.heroTag = "SIMULATION";
+w.cover = "images/pf/hotel-1997/t01.jpg";
+w.sections = [
+  { t:"role", who:"황윤희", sub:"Director · 공간 브랜딩 제안", items:[
+    ["Survey","로비와 입구 통로 실측과 현황 촬영"],["Layout","3030 × 2180 벽면 가구 배치와 치수"],["Furniture","선반, 소파, 테이블, 조명, 러그 선정"],
+    ["Retail","페그보드 벽선반으로 호텔 굿즈 진열"],["Signage","입구 통창 시트지와 영문 레터링"],["Ops","워셔블 논슬립 러그처럼 운영까지 고려"]]},
+  { t:"lead", label:"Concept", q:"사진 위에 치수를 올리면,\n제안이 곧 발주서가\n됩니다.",
+    p:["현재 로비와 입구 통로를 그대로 찍고, 그 위에 선반과 소파, 거실 테이블, 스탠딩 조명, 러그를 실제 치수로 배치했습니다. 먼지 없는 러그처럼 운영까지 생각한 선택도 함께 적었습니다.",
+       "입구 통로는 사인 자리를 비워 두고, 화이트 시트지로 어두운 첫인상을 밝히는 방향을 제안했습니다."]},
+  { t:"row", label:"Before", h:"지금의 로비와 입구", cls:"c2", ratio:"16/9", items:[[P+"before-lobby.jpg","Part 1. 실내 로비",{tag:"BEFORE"}],[P+"before-entry.jpg","Part 2. 실외 입구 통창",{tag:"BEFORE"}]]},
+  { t:"html", label:"Part 1 · Lobby", h:"벽 한 면에 들어가는 여덟 가지", html: xbBoard(elev, "<b>Elevation</b>실내 로비 벽면 3030 × 2180mm. 오른쪽은 측면 벽의 거울과 레터링", {ratio:"4300/2700", bg:"#0d0d0d", st:"border:0"})},
+  { t:"table", head:["#","항목","사이즈","메모"], rows:[
+    ["01","벽선반","875 × 1800mm","페그보드 결합, 호텔 굿즈와 키링 진열"],["02","작품","2점","소파 위 벽면"],["03","스탠딩 조명","H 1800mm","작품과 측면 벽 사이"],
+    ["04","소파","1000 × 720mm","노트북 스탠드 함께 배치"],["05","거실 테이블","1200 × 500mm","소파 앞"],["06","소파 스툴","—","오른쪽 보조 좌석"],
+    ["07","러그","2000 × 3000mm","워셔블, 논슬립. 먼지 없이 청소기로 관리"],["08","거울","750 × 750mm","측면 벽, 영문 레터링"]]},
+  { t:"row", label:"Simulation", h:"배치대로 꾸민 로비와 입구", cls:"c2", ratio:"16/9", items:[[P+"sim-lobby.jpg","실내 로비 배치 시뮬레이션",{tag:"SIMULATION"}],[P+"sim-entry.jpg","입구 통창 화이트 시트지 시뮬레이션",{tag:"SIMULATION"}]],
+    note:"시뮬레이션은 배치안을 바탕으로 생성한 이미지이며, 실제 시공 결과가 아닙니다."},
+  { t:"cards", label:"Part 2 · Entrance", h:"어두운 입구를 밝히는 시트지", cols:2, items:[
+    {k:"Left", t:"슬로건 레터링", d:"입구를 제외한 양쪽 면에 시트지를 붙이고, 왼쪽 면에는 슬로건을 영문 레터링으로 올립니다."},
+    {k:"Right", t:"호텔 로고 레터링", d:"오른쪽 면에는 호텔 로고를 레터링으로 올려, 거리에서 보이는 첫인상을 정리합니다."}]}
+];
+})();
+/* ---- Cheongsinho Myeongdong: HTML case ---- */
+(function(){
+const w = WORKS.find(x => x.id === "cheongsinho"); if (!w) return;
+const P = "pf/cheongsinho/x/";
+const spec = (title, date, target, usp, insight) => ({ t:"table", head:["", ""], rows:[["Title",title],["Upload",date],["Target",target],["USP",usp],["Insight",insight]] });
+w.heroSrc = P + "hero.jpg";
+w.cover = "images/pf/cheongsinho/t01.jpg";
+w.sections = [
+  { t:"role", who:"황윤희", sub:"Art Director · Design & Marketing", items:[
+    ["Client","SH 서울주택도시공사 산하 청신호 명동"],["Partner","PAGE 명동"],["Program","전시, 버스킹, 사진전, 셀프 스튜디오, 플리마켓"],
+    ["Content","카드뉴스, 포스터, 일러스트"],["SNS","@cheongsinho.m 인스타그램 운영"],["Report","예산, 섭외, 집행, 결과 보고"]]},
+  { t:"lead", label:"About", q:"더 잘 살고 싶은 청년들의\n주거 커뮤니티를\n동네의 문화 공간으로.",
+    p:["청신호 명동은 SH 서울주택도시공사 산하의 청년 주거 커뮤니티 공간입니다. 함께 사는 집이 동네의 문화 공간이 되도록, 한 해의 프로그램을 달력처럼 짰습니다.",
+       "프로그램마다 카드뉴스와 포스터, 인스타그램 운영, 예산과 섭외, 현장 운영과 결과 보고까지 한 사람이 끝까지 맡았습니다."]},
+  { t:"html", label:"Schedule", h:"2021.05부터 2022.10까지, 아홉 개의 프로그램", html: () => xrTime([
+    ["2021.05","라인 일러스트전","되찾을 것들에 대하여",""],["2021.07","라인 일러스트전","Feeling",""],["2021.09","랜선 버스킹","청신호 폰서트","hl"],
+    ["2022.03","사진전","About time",""],["2022.05","셀프 스튜디오","Personal photo",""],["2022.05","피아노 버스킹","열린 음악회",""],
+    ["2022.08","재봉틀 드로잉","작가가 직접 수놓는 패브릭 포스터","hl"],["2022.09","청신호 명동","Flea market",""],["2022.10","기획 초대전","명동",""]])},
+  { t:"row", label:"Card news · 2021", h:"되찾을 것들에 대하여 : 전시회 맛보기", cls:"c1", ratio:"1496/376", contain:true, bg:"#efefed", items:[[P+"cn-2021a.jpg","전시 맛보기, 콜라보, 포토존, 스탬프 투어 카드뉴스"]]},
+  spec("되찾을 것들에 대하여 : 전시회 맛보기","2021.05.18","2-30대 청년과 직장인","스탬프형 전시로 직장인도 짧고 재밌게 관람 · 다양한 포토존과 무료 굿즈 · 윈도우 페인팅","좋아요 46, 댓글 2"),
+  { t:"row", label:"Card news · 2021", h:"Feeling : 전시회 프롤로그", cls:"c1", ratio:"1495/370", contain:true, bg:"#efefed", items:[[P+"cn-feeling.jpg","전시 주제, 색채심리, 청년작가 소개, 운영 안내 카드뉴스"]]},
+  spec("Feeling : 전시회 프롤로그","2021.07.07","2-30대 청년과 직장인","Don't touch가 아닌 Do touch, 손으로 만져 보며 작품의 텍스처를 느끼는 전시 · 색채심리 카드","좋아요 26"),
+  { t:"row", label:"Print · 2021", h:"손에 남는 인쇄물", cls:"c2", ratio:"16/9", items:[[P+"brochure.jpg","되찾을 것들에 대하여 · 3단 접지 브로슈어 210×297mm, 아르떼 울트라화이트 190g",{tag:"MOCK-UP"}],[P+"feeling-cards.jpg","Feeling · 여섯 가지 색의 색채심리 카드",{tag:"MOCK-UP"}]]},
+  { t:"row", label:"Card news · 2021", h:"랜선 버스킹 : 청신호 폰서트", cls:"c1", ratio:"1496/376", contain:true, bg:"#efefed", items:[[P+"cn-2021b.jpg","청신호 폰서트와 달마다 바뀌는 아티스트 카드뉴스"]]},
+  spec("랜선 버스킹 : 청신호 폰서트","2021.09.13","YWCA 건물과 주변 직장인","VR 랜선 버스킹 · 코로나 시기 비대면 문화 행사 · 달마다 바뀌는 아티스트와 플레이리스트","좋아요 35"),
+  { t:"row", label:"Card news · 2022", h:"Personal photo : 코스 소개", cls:"c1", ratio:"1106/370", contain:true, bg:"#efefed", items:[[P+"cn-photo.jpg","건물 1층 셀프 스튜디오 팝업 카드뉴스"]]},
+  spec("Personal photo : 코스 소개","2022.05.17","2-30대 청년과 직장인","건물 1층 팝업 부스의 셀프 스튜디오 · 나만의 컬러를 고르면 촬영과 인화, 그 컬러의 엽서까지","좋아요 52"),
+  { t:"row", label:"Card news · 2022", h:"재봉틀 드로잉", cls:"c1", ratio:"1496/376", contain:true, bg:"#efefed", items:[[P+"cn-2022.jpg","작가가 직접 수놓는 패브릭 포스터 무료 체험"]]},
+  spec("재봉틀 드로잉","2022.08.18","청년 신혼부부","한 작품당 10분 정도의 짧은 시간, 무료 · 재봉틀 버스킹과 함께 라이브 미싱 감상","좋아요 55"),
+  { t:"row", label:"Flea market · 2022", h:"거리의 벽과 입구의 배너", cls:"c2", ratio:"16/9", items:[[P+"flea-banner.jpg","세로형 배너 600×1800mm, 유광 콜드코팅",{tag:"MOCK-UP"}],[P+"flea-wall.jpg","셀러 모집 포스터 월",{tag:"MOCK-UP"}]]},
+  { t:"row", label:"Channel & Illustration", h:"계정과 포스터", cls:"c2", ratio:"4/5", contain:true, bg:"#f3f2ef", items:[[P+"insta.jpg","@cheongsinho.m 인스타그램"],[P+"poster.jpg","북콘서트 일러스트 포스터 · 지금이 아니면 안되는"]]}
+];
+})();
+/* ---- Graphic Design Archive: HTML case ---- */
+(function(){
+const w = WORKS.find(x => x.id === "design-archive"); if (!w) return;
+const P = "pf/design-archive/x/";
+const A3 = "420×297mm";
+const card = (n, k, t, d) => ({ img:P+n+".jpg", k, t, d });
+w.heroSrc = P + "01.jpg"; w.heroTag = "MOCK-UP";
+w.cover = "images/pf/design-archive/t01.jpg";
+w.sections = [
+  { t:"role", who:"황윤희", sub:"Designer · Exhibition Manager", items:[
+    ["Poster","전시와 공연 메인 포스터"],["Print","브로슈어, 티켓, 카드, 배너"],["Spec","판형, 용지, 후가공까지 직접 결정"],
+    ["Card news","행사 전후를 잇는 SNS 카드뉴스"],["Exhibition","전시 운영과 현장 매니징"],["Clients","교회친구다모여, nextM, SH 청신호 명동"]]},
+  { t:"lead", label:"Archive", q:"한 장의 포스터에서\n공간의 경험까지.",
+    p:["2020년부터 2022년까지 전시와 공연, 공공 공간을 위해 만든 인쇄물입니다. 행사의 첫인상이 되는 포스터와 티켓, 손에 남는 브로슈어와 카드, 거리에서 보이는 배너까지 한 사람이 같은 톤으로 만들었습니다.",
+       "판형과 용지, 평량까지 직접 정했습니다. 이 기록이 지금의 공간 그래픽과 부스 디자인의 바탕이 되었습니다."]},
+  { t:"cards", label:"Poster · 교회친구다모여", h:"성탄과 사순절, 일 년의 전시를 여는 포스터", cols:3, ratio:"16/9", items:[
+    card("01","Poster · 2020.12","HAPPY JESUS DAY #HJD",`${A3} · 아트지 백색 150g. 종로 스페이스코르 성탄 전시`),
+    card("03","Poster · 2021.01","되찾을 것들에 대하여",`${A3} · 아트지 백색 180g. Project 회복 전시회`),
+    card("04","Poster · 2021.03","예수님과 함께한 마지막 7일",`${A3} · 아트지 백색 180g. 사순절 기념 십자가 전시회`),
+    card("05","Poster · 2021.07","ESCAPE 사도행전",`${A3} · 아트지 백색 180g. 폴리스라인으로 그린 체험 전시`),
+    card("06","Poster · 2021.12","CAF SEOUL 2021",`${A3} · 아트지 백색 180g. 크리스천 아티스트 페스티벌 Vol.1`),
+    card("07","Poster · 2021.12","HAPPY JESUS DAY 대전",`${A3} · 아트지 백색 180g. 한밭제일교회 성탄 체험 전시`)]},
+  { t:"row", label:"Print · #HJD 2020", h:"포스터와 같은 꽃으로 접은 브로슈어", cls:"c1", ratio:"16/9", items:[[P+"02.jpg","3단 접지 브로슈어 200×318mm, 스노우지 180g",{tag:"MOCK-UP"}]]},
+  { t:"cards", label:"Poster & Ticket · nextM", h:"어둠을 밝히는 빛, a light", cols:2, ratio:"16/9", items:[
+    card("08","Poster · 2022.07","a light",`${A3} · 아트지 백색 180g. 기독교 체험 전시회`),
+    card("09","Ticket · 2022.07","a light 티켓","70×148mm · 아르떼 울트라화이트 230g. 포스터의 빛 번짐을 티켓 앞뒤로")]},
+  { t:"row", label:"Poster series · 2022", h:"온라인 속 쉼표 하나, 내일을 위한 오늘의 편지", cls:"c1", ratio:"16/9", items:[[P+"10.jpg","책 한 권씩을 소개하는 포스터 시리즈",{tag:"MOCK-UP"}]]},
+  { t:"table", label:"Print list", h:"판형과 용지까지 정한 기록", head:["Date","Title","Type","Size","Material"], rows:[
+    ["2020.12","HAPPY JESUS DAY #HJD","포스터",A3,"아트지 백색 150g"],["2020.12","#HJD","3단 접지 브로슈어","200×318mm","스노우지 180g"],
+    ["2021.01","되찾을 것들에 대하여","포스터",A3,"아트지 백색 180g"],["2021.03","예수님과 함께한 마지막 7일","포스터",A3,"아트지 백색 180g"],
+    ["2021.05","되찾을 것들에 대하여 · 청신호 명동","3단 접지 브로슈어","210×297mm","아르떼 울트라화이트 190g"],["2021.07","ESCAPE 사도행전","포스터",A3,"아트지 백색 180g"],
+    ["2021.12","CAF SEOUL 2021","포스터",A3,"아트지 백색 180g"],["2021.12","HAPPY JESUS DAY 대전","포스터",A3,"아트지 백색 180g"],
+    ["2022.07","a light","포스터",A3,"아트지 백색 180g"],["2022.07","a light","티켓","70×148mm","아르떼 울트라화이트 230g"],
+    ["2022.09","Flea market · 청신호 명동","세로형 배너","600×1800mm","유광 콜드코팅"]]},
+  { t:"specs", label:"Press", h:"포스터가 걸린 전시들의 보도", items:[
+    ["2020.12","HAPPY JESUS DAY #HJD","데일리굿뉴스, 한국기독공보, 노컷뉴스, CBS뉴스"],
+    ["2021.01","되찾을 것들에 대하여","국민일보, CGNTV"],
+    ["2021.03","예수님과 함께한 마지막 7일","국민일보, CTS뉴스, CBS"],
+    ["2021.12","HAPPY JESUS DAY 대전","국민일보, 투데이N"],
+    ["2022.07","a light","CTS뉴스"]]}
+];
+w.link = "cheongsinho";
+})();
+/* ---- Immersive Exhibitions 2020-2021: HTML case ---- */
+(function(){
+const w = WORKS.find(x => x.id === "immersive-2021"); if (!w) return;
+const P = "pf/immersive-2021/x/", D = "pf/design-archive/x/";
+if (!document.getElementById("xi-css")) document.head.insertAdjacentHTML("beforeend", `<style id="xi-css">
+.xi-split{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(20px,3vw,48px);align-items:start}
+.xi-split figure{margin:0}.xi-split img{width:100%;height:auto;display:block}
+.xi-split figcaption{font-size:12px;color:var(--mute,#777);margin-top:10px}
+.xi-plan text{font-family:inherit}
+@media (max-width:760px){.xi-split{grid-template-columns:1fr}}</style>`);
+const R = (x0,y0,x1,y1,f,t1,t2,tc="#fff") => `<rect x="${x0}" y="${y0}" width="${x1-x0}" height="${y1-y0}" fill="${f}"/>${t1?`<text x="${(x0+x1)/2}" y="${(y0+y1)/2-(t2?3:-6)}" text-anchor="middle" font-size="17" font-weight="700" fill="${tc}">${t1}</text>`:""}${t2?`<text x="${(x0+x1)/2}" y="${(y0+y1)/2+16}" text-anchor="middle" font-size="12.5" fill="${tc}" opacity=".9">${t2}</text>`:""}`;
+const L = (x,y,t,s=15,c="#9a958c",a="start") => `<text x="${x}" y="${y}" font-size="${s}" fill="${c}" text-anchor="${a}" letter-spacing=".08em">${t}</text>`;
+const plan = `<svg class="xi-plan" viewBox="100 120 1420 760" role="img" aria-label="예수님과 함께한 마지막 7일 공간 동선도" style="width:100%;height:auto">
+  <rect x="100" y="120" width="1420" height="760" fill="#f6f4f0"/>
+  <rect x="116" y="140" width="1390" height="725" fill="#fff" stroke="#d9d4cb" stroke-width="2"/>
+  <g fill="#e7e1d6">${[[278,575],[462,575],[553,575],[278,780],[460,780]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="18"/>`).join("")}</g>
+  <path d="M225 668 L365 642 L520 680 L515 702 L365 664 L230 692Z" fill="#8a857c"/>
+  ${L(232,712,"기타 실물 십자가 · 하늘에 천 달기",12.5,"#6b665e")}
+  <g fill="none" stroke="#4a6c94" stroke-width="7" stroke-linejoin="round" opacity=".55">
+    <polyline points="160,225 160,790 700,790 700,380 1460,380 1460,470"/><polyline points="640,380 640,630 370,630 370,645"/><polyline points="160,225 675,225 675,380"/></g>
+  ${L(176,300,"ENTRANCE",15)} ${L(400,318,"GALLERY ZONE",15)} ${L(760,176,"SEMINAR ROOM  B",15)} ${L(292,768,"CAFE &amp; EVENT HALL  C",15)}
+  ${R(120,150,610,205,"#d8d5cf","Project 3. 십자가","제1일 – 제8일, 날짜를 따라 걷는 코스","#333")}
+  ${R(620,152,728,198,"#8c2bd1","제7일 · 토","암흑")}
+  ${R(938,152,1098,198,"#2f9a4e","제4일 · 수","향유옥합 · 향낭 만들기")}
+  ${R(1100,222,1422,266,"#e9711c","제2일 활동","스크래치에 성경말씀 적기")}
+  ${R(723,482,940,520,"#39c3d6","Isaiah 53:5","","#123")}
+  ${R(942,482,1045,520,"#d8b73a","제3일 · 화","과부의 헌금","#222")}
+  ${R(1045,482,1362,520,"#a69a3a","고난주간 에디션 일러스트","")}
+  ${R(1362,482,1492,520,"#e9711c","제2일 · 월","성전을 깨끗이")}
+  <path d="M735 532 H940 V590 H797 V845 H735Z" fill="#2449e0"/>
+  <text x="868" y="560" text-anchor="middle" font-size="17" font-weight="700" fill="#fff">제5일 · 목</text><text x="868" y="578" text-anchor="middle" font-size="12.5" fill="#fff">최후의 만찬</text>
+  ${R(313,497,423,545,"#26346b","제6일 · 금","십자가")}
+  <rect x="442" y="510" width="148" height="26" fill="none" stroke="#c0392b" stroke-width="6"/>
+  ${R(120,555,150,762,"#333","","")}<text x="135" y="660" transform="rotate(90 135 660)" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">제8일 · 일 · 부활</text>
+  ${R(120,800,224,848,"#d0352b","제1일 · 월","예루살렘 입성")}
+  <circle cx="368" cy="825" r="42" fill="#fff" stroke="#333" stroke-width="5"/><text x="368" y="822" text-anchor="middle" font-size="13.5" font-weight="700" fill="#333">거울</text><text x="368" y="840" text-anchor="middle" font-size="11.5" fill="#555">최후의 만찬</text>
+</svg>`;
+const DAYS = [
+  ["Day 1 · 주일","예루살렘 입성","종려나무 가지와 호산나 글씨 간판으로 입구를 엽니다."],
+  ["Day 2 · 월","성전을 깨끗이 하심","성전의 한 조각을 꾸며 붙이고, 기도 포즈로 사진을 남깁니다."],
+  ["Day 3 · 화","과부 여인의 헌금","고난주간 에디션 일러스트와 아트 테이블."],
+  ["Day 4 · 수","향유옥합","사랑의 언어 테스트 후 향을 골라 향낭을 만들고 메시지를 각인합니다."],
+  ["Day 5 · 목","세족식과 최후의 만찬","거울 일러스트 앞에서 성찬 세트와 포토존."],
+  ["Day 6 · 금","십자가에 달려 죽으심","가시관 모양의 원형 벽 중앙에 십자가를 걸고 못박기 퍼포먼스."],
+  ["Day 7 · 토","무덤에 머무르신 날","어둠 속으로 들어가 예수님의 죽음을 묵상하고 부활의 소망을 적습니다."],
+  ["Day 8 · 주일","부활하신 그리스도","커튼으로 표현한 돌문을 열고 나오며 코스를 마칩니다."]];
+const booth = `<div class="xi-split"><figure><img src="${XI(P+"day2.jpg")}" alt="제2일 부스 설치 사진" loading="lazy" data-lb="제2일 부스"><figcaption>제2일 부스 설치 · 왼쪽 입구 벽</figcaption></figure>
+  <div style="overflow-x:auto"><table class="xs-tbl"><tbody>${[
+    ["성경구절","마가복음 11장 15–17절"],["위치 · 사이즈","왼쪽 입구, 2 × 1.8m"],
+    ["기획의도","자신이 성전의 한 부분임을 알고, 성결하게 하는 기도와 말씀을 마음에 새깁니다."],
+    ["부스설명","“내 집은 만민이 기도하는 집”이라 말씀하시며 성전을 청결하게 하셨듯, 성전 된 우리 자신도 성결하게 하시기를 원하셨습니다."],
+    ["활동방법","QR코드로 코스 설명 듣기 → 성전의 한 조각을 꾸며 번호에 붙이기 → ‘기도’ 포즈로 사진 찍기 → 스크래치페이퍼에 성경말씀 적기"],
+    ["준비물","셀로판지, 배경 시트지, 스크래치페이퍼, 꼬치 · 오래된 느낌의 카펫과 빈티지 조명"]
+  ].map(([a,b])=>`<tr><td>${a}</td><td><b>${b}</b></td></tr>`).join("")}</tbody></table></div></div>`;
+w.heroSrc = P + "hero.jpg";
+w.cover = "images/pf/immersive-2021/t01.jpg";
+w.sections = [
+  { t:"role", who:"황윤희", sub:"Exhibition Planner · Designer", items:[
+    ["Concept","이야기를 날짜와 코스로 나누는 전시 구조"],["Booth","부스별 콘셉트, 활동, 준비물 기획안"],["Flow","공간 동선도와 부스 배치"],
+    ["Manual","교사강습회용 체험형 전시 세팅 매뉴얼"],["Print","포스터, 티켓, 브로슈어, 다이어리"],["Artwork","Lead 코스 라인 일러스트 작품"]]},
+  { t:"lead", label:"Concept", q:"보는 전시보다,\n걸으며 겪는 이야기.",
+    p:["세 편의 체험 전시 모두 이야기를 날짜와 코스로 나눠, 관람객이 직접 걸으며 한 장면씩 겪도록 만들었습니다. 부스마다 성경구절, 위치와 사이즈, 기획의도, 활동방법, 준비물을 한 장의 기획안으로 정리했습니다.",
+       "기획안은 그대로 다른 교회가 따라 세울 수 있는 세팅 매뉴얼이 되었고, 포스터와 티켓, 굿즈까지 전시마다 한 톤으로 묶었습니다."]},
+  { t:"html", label:"01 · #HJD 2020", h:"성탄을 생일 축하처럼, 종로 스페이스코르", html: () => xrTime([
+    ["2020.11","홍대입구역 전광판","예수님 생일 축하 메시지",""],["2020.12","#HJD 전시","성탄의 여섯 가지 의미를 따라 도장을 모으는 스탬프 동선","hl"],
+    ["2020.12","셀라 다이어리","1,000부 독립 출판, 닷새 만에 거의 소진","hl"]])},
+  { t:"row", cls:"c3", ratio:"16/9", items:[[D+"01.jpg","포스터 420×297mm, 아트지 백색 150g",{tag:"MOCK-UP"}],[D+"02.jpg","3단 접지 브로슈어 200×318mm, 스노우지 180g",{tag:"MOCK-UP"}],[P+"diary.jpg","Selah 다이어리 148×210mm, 모조지 90g. 기획, 디자인, 업체 미팅, 감리, 판매",{tag:"MOCK-UP"}]]},
+  { t:"cards", label:"02 · 2021.03", h:"예수님과 함께한 마지막 7일, 여덟 날의 부스", cols:4, items: DAYS.map(([k,t,d])=>({k,t,d}))},
+  { t:"html", label:"Flow", h:"날짜를 따라 걷는 공간 동선도", html: xbBoard(plan, "<b>Plan</b>스페이스코르 전시장 동선도를 다시 그린 도면. 파란 선이 관람 동선입니다.", {ratio:"1420/760", bg:"#f6f4f0", st:"border:0"})},
+  { t:"html", label:"Booth sheet", h:"부스 한 칸을 한 장의 기획안으로", html: booth },
+  { t:"cards", label:"Goods", h:"제4일의 향낭에서 마지막 포장까지", cols:5, items:[
+    {k:"01",t:"향낭",d:"제4일 코스에서 직접 만든 향낭"},{k:"02",t:"십자가 브로치",d:"브로치에 끈을 달아 완성"},{k:"03",t:"도시락 꾸미기",d:"펄프 도시락 용기를 꾸미기"},
+    {k:"04",t:"편지",d:"용기 안쪽에 쓰는 편지"},{k:"05",t:"리본 포장",d:"리본끈으로 포장하며 전시를 마무리"}]},
+  { t:"row", label:"Manual", h:"다른 교회가 그대로 따라 세울 수 있도록", cls:"c1", ratio:"16/9", items:[[P+"manual.jpg","교사강습회용 체험형 전시 세팅 매뉴얼 제작과 배포"]]},
+  { t:"table", label:"03 · 2021.12", h:"HAPPY JESUS DAY, 대전의 성탄 체험 전시", head:["Course","주제","위치","활동","준비물"], rows:[
+    ["#2 Hope","희망 · 소망의 글을 남기는 벽이자 포토존","입구 오른쪽 벽","나의 소망과 비전, 기도제목을 적어 부착하는 참여형 전시","성화와 일러스트 메모지 A5 50종, 빅 레터링"],
+    ["#3 Lead","인도 · 예수님의 탄생을 큰 동화책처럼","입구 건너편 넓은 면","라인 일러스트와 유화 페인팅 콜라보 전시, 말씀뽑기 캡슐","작품, 토이캡슐, 아크릴박스"]],
+    note:"Lead 코스의 라인 일러스트 작품은 황윤희와 임성민 작가가 함께 그렸습니다."},
+  { t:"row", label:"Ticket", h:"티켓까지 포스터의 그림으로", cls:"c2", ratio:"16/9", items:[[P+"ticket-7d.jpg","마지막 7일 티켓 70×148mm, 띤또레또 250g",{tag:"MOCK-UP"}],[P+"ticket-hjd.jpg","HAPPY JESUS DAY 스탬프 투어 티켓 70×148mm, 띤또레또 250g",{tag:"MOCK-UP"}]]},
+  { t:"row", label:"Poster", h:"두 전시의 메인 포스터", cls:"c2", ratio:"1131/1600", contain:true, bg:"#efede9", items:[[P+"poster-7d.jpg","예수님과 함께한 마지막 7일 · 사순절 기념 십자가 전시회, 스페이스코르"],[P+"poster-hjd.jpg","HAPPY JESUS DAY · 성탄절 기념 전시, 대전 한밭제일교회"]]}
+];
+})();
+/* ---- Brand Marketing 2021-2023: HTML case ---- */
+(function(){
+const w = WORKS.find(x => x.id === "marketing"); if (!w) return;
+const P = "pf/marketing/x/";
+const spec = (title, date, target, usp, insight, press, uk="USP") => ({ t:"table", head:["", ""], rows:[["Title",title],["Upload",date],["Target",target],[uk,usp],["Insight",insight]].concat(press?[["Press",press]]:[]) });
+const strip = (label, h, img, ratio, cap) => ({ t:"row", label, h, cls:"c1", ratio, contain:true, bg:"#efefed", items:[[P+img, cap]] });
+w.heroSrc = P + "poster-udon.jpg"; w.heroTag = "MOCK-UP";
+w.cover = "images/pf/marketing/t01.jpg";
+w.link = "holly-jolly";
+w.sections = [
+  { t:"role", who:"황윤희", sub:"Art Director · Design & Marketing", items:[
+    ["Brands","포케올데이, 스윗머드, 브라운베이글, 홀리앤졸리, 스윗올데이"],["SNS","인스타그램 피드 운영과 리브랜딩"],["Content","신메뉴와 이벤트 카드뉴스"],
+    ["Campaign","식목일, 지구의 날 플로깅, 댓글 이벤트"],["Print","매장 포스터와 행잉 배너"],["Report","게시물마다 타깃, USP, 반응 기록"]]},
+  { t:"lead", label:"Approach", q:"매일 고객과 만나는 화면에서,\n브랜드를 다시 세웁니다.",
+    p:["외식과 식품 D2C 브랜드의 인스타그램 첫 화면을 다시 정리하고, 신메뉴와 매장 오픈, 캠페인을 카드뉴스와 포스터로 알렸습니다.",
+       "게시물마다 목표 고객과 USP를 먼저 정하고, 올린 뒤의 반응까지 같은 표에 기록하며 다음 콘텐츠를 정했습니다."]},
+  { t:"html", label:"Brands · 2023", h:"다섯 브랜드, 매달 이어진 오픈과 캠페인", html: () => `<div class="xi-split"><figure><img src="${XI(P+"brands.jpg")}" alt="포케올데이, 스윗머드, 브라운베이글, 홀리앤졸리, 스윗올데이 로고" loading="lazy"><figcaption>포케올데이, 스윗머드, 브라운베이글, 홀리앤졸리, 스윗올데이</figcaption></figure><div>${xrTime([
+    ["2023.02","매장 오픈","홍대점, 선정릉점, 성북구청점",""],["2023.03","리브랜딩","홀리앤졸리 리브랜딩","hl"],["2023.03","신메뉴","비건포케, 그릭요거트 출시",""],
+    ["2023.04","캠페인","식목일 온라인 나무 심기, 서울숲 플로깅 그린포니 3기","hl"],["2023.04","매장 오픈","화곡점",""],
+    ["2023.05","오픈 · 이벤트","수원망포점, 가정의 달 반려견 이벤트",""],["2023.06","신메뉴","프로틴쿠키, 랩샌드위치, 시즌메뉴 곤약냉우동",""]])}</div></div>`},
+  strip("Card news · Poke all day","비건포케 히스토리","cn-vegan.jpg","1500/380","D-10 티저와 ESG 메시지로 이어지는 출시 카드뉴스"),
+  spec("비건포케 히스토리","2023.03.31","비건 및 환경보호 신규 고객","샐러드 F&B 최초 비건 메뉴로 비건 고객층 신규 유입 · 맛이 없다는 비건 메뉴의 선입견 돌파","좋아요 474, 댓글 17","디지털타임스"),
+  strip("Campaign","식목일 이벤트 : 온라인 나무 심기 캠페인","cn-plant.jpg","1792/446","비건포케 서포터즈 모집과 댓글로 나무 심기"),
+  spec("식목일 이벤트 : 온라인 나무 심기 캠페인","2023.04.05","비건 및 기존 이용 고객","비건포케와 이어진 환경 보호 캠페인 · 온라인으로 쉽게 참여할 수 있는 이벤트","좋아요 837, 댓글 764"),
+  strip("Campaign","지구의 날 기념 플로깅 : 그린포니 3기","cn-pony.jpg","1800/564","서울숲 플로깅 코스 지도와 피크닉 도시락"),
+  spec("지구의 날 기념 플로깅 : 그린포니 3기","2023.04.07","비건 및 캠페인 추구 팔로워","서울숲 쓰담쓰담 캠페인과 콜라보 · 먹는 환경 보호, 피크닉으로 비건 포케와 다회용기 제공","좋아요 283, 댓글 45","스포츠월드"),
+  strip("New menu","신메뉴 그릭요거트 출시","cn-yogurt.jpg","1796/445","스윗머드 × 포케올데이 그릭요거트"),
+  spec("신메뉴 그릭요거트 출시","2023.04.12","단골 및 신규 고객","타 브랜드 대비 대용량 그릭요거트 150g, 한 끼 대체 가능 · 같은 브랜드 스토리로 연결된 다양한 상품","좋아요 301, 댓글 11","아주뉴스"),
+  strip("Event","스윗올데이 댓글 이벤트","cn-sweet.jpg","1796/444","캐릭터 비하인드와 댓글 이벤트, 홈 키트"),
+  spec("스윗올데이 댓글 이벤트","2023.04.17","브랜드를 모르는 신규 고객층","댓글 이벤트로 인플루언서 다수 유입 · 스토어팜 홍보와 세트 구입 독려","좋아요 281, 댓글 137",null,"Effect"),
+  strip("Store","화곡점 매장 오픈","cn-hwagok.jpg","1800/560","잡지 컨셉으로 바꾼 매장 오픈 콘텐츠"),
+  spec("화곡점 매장 오픈","2023.04.28","화곡점 주변 거주민과 직장인","매장 오픈 콘텐츠를 잡지 컨셉으로 리디자인 · 스냅 사진작가와 협업해 사진 퀄리티 향상","좋아요 160, 댓글 5"),
+  strip("Store","플레이리스트 5월 : play-eatlist","cn-playlist.jpg","1426/568","매장 전용 월간 플레이리스트"),
+  spec("플레이리스트 5월","2023.05.01","오프라인 매장 이용 고객","매장 전용 플레이리스트 DJ와 협업해 계절감에 맞춰 매달 변경 · 여행을 온 듯한 분위기","좋아요 95, 댓글 3"),
+  { t:"cards", label:"Print · 2023", h:"매장에 걸리는 포스터와 배너", cols:3, ratio:"16/9", items:[
+    {img:P+"poster-udon.jpg",k:"Poster",t:"Konjac Cold Udon",d:"420×297mm · 아트지 백색 180g. 여름 시즌메뉴 곤약냉우동"},
+    {img:P+"poster-cookie.jpg",k:"Poster",t:"Protein Soft Cookie",d:"420×297mm · 아트지 백색 180g. 신메뉴 프로틴쿠키"},
+    {img:P+"banner-yogurt.jpg",k:"Hanging banner",t:"Greek yogurt",d:"400×900mm · PET 유광. 매장 천장 행잉 배너"}]},
+  { t:"row", label:"Rebranding · 2021", h:"SPACE COR, 카페의 첫 화면을 다시", cls:"c2", ratio:"760/710", contain:true, bg:"#eeeeee", items:[[P+"spacecor-feed.jpg","인스타그램 피드 Before · After"],[P+"spacecor-poster.jpg","시즌 메뉴 포스터 · COR SUMMER ADE, MYDEAR KOMBUCHA",{tag:"MOCK-UP"}]]},
+  { t:"cards", h:"현황에서 개선까지", cols:3, items:[
+    {k:"a. 현황",t:"피드와 사진부터",d:"인스타그램 피드를 무드보드처럼 정리할 필요. 음료 자체에 대한 콘텐츠가 부족하고 전 메뉴 재촬영이 필요했습니다."},
+    {k:"b. 문제점",t:"따로 노는 사진",d:"제각각의 사진과 맛이 없어 보이는 플레이팅. 카페 홍보물이 없어 매장 유입이 어려웠습니다."},
+    {k:"c. 개선점",t:"직접 찍고, 로고로 묶기",d:"휴대폰으로 가능한 촬영과 보정 매뉴얼, 로고를 활용한 피드 이미지, 시즌별 메뉴 포스터, 공간과 대관 정보 어필."}]},
+  { t:"row", cls:"c1", ratio:"1072/655", contain:true, bg:"#eeeeee", items:[[P+"spacecor-laptop.jpg","로고를 얹은 메뉴 사진으로 다시 정리한 피드"]]}
+];
+})();
+/* ---- Holly & Jolly rebranding: HTML case ---- */
+(function(){
+const w = WORKS.find(x => x.id === "holly-jolly"); if (!w) return;
+const P = "pf/holly-jolly/x/";
+const RED = "#C01902", IV = "#FDF1E0", BR = "#563614";
+if (!document.getElementById("hj-css")) document.head.insertAdjacentHTML("beforeend", `<style id="hj-css">
+.hj-hero{position:absolute;inset:0;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:4%;padding:0 6%;background:${IV};color:${RED}}
+.hj-hero small{display:block;font-size:clamp(10px,1vw,13px);letter-spacing:.16em;text-transform:uppercase;color:${BR};margin-bottom:1.2em}
+.hj-hero b{display:block;font-weight:900;font-size:clamp(34px,7.4vw,108px);line-height:.9;letter-spacing:-.03em}
+.hj-hero i{display:block;font-style:normal;font-size:clamp(13px,1.5vw,20px);color:${BR};margin-top:1.1em}
+.hj-hero .dots{display:flex;gap:.6em;margin-top:1.6em}.hj-hero .dots span{width:clamp(16px,2.2vw,30px);aspect-ratio:1;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)}
+.hj-hero img{width:100%;height:auto;mix-blend-mode:multiply}
+@media (max-width:640px){.hj-hero{grid-template-columns:1.2fr .8fr;padding:0 5%}}</style>`);
+w.heroHTML = `<div class="hj-hero"><div><small>Rebranding 2023 · donut &amp; dessert cafe</small><b>HOLLY<br>&amp; JOLLY</b><i>so tasty so sweets, have a holly n jolly dessert.</i><div class="dots">${[BR,RED,IV,"#E7AD60","#FFFFFF"].map(c=>`<span style="background:${c}"></span>`).join("")}</div></div><img src="${XI(P+"feed.jpg")}" alt="인스타그램 Before · After"></div>`;
+w.cover = "images/pf/holly-jolly/t01.jpg";
+w.sections = [
+  { t:"role", who:"황윤희", sub:"Art Director · Rebranding", items:[
+    ["Character","홀리와 졸리 캐릭터 정비"],["Logo","로고 정리와 서체 시안"],["Color","레드와 아이보리 중심의 컬러"],
+    ["Package","박스, 컵홀더, 슬리브 최종 시안"],["SNS","인스타그램 첫 화면 Before · After"],["Poster","신메뉴와 프리오픈 포스터"]]},
+  { t:"lead", label:"Problem", q:"귀엽기만 한 캐릭터에서\n힘을 빼고,\n한 브랜드로 묶기.",
+    p:["기존 캐릭터는 홀리와 졸리의 연관성이 느껴지지 않고 귀여운 느낌만 강했습니다. 로고는 전체적으로 볼드해 산만하고 가독성이 떨어졌고, 패키지는 소재와 사이즈가 제각각이었습니다.",
+       "로고와 캐릭터에서 힘을 빼고 브랜드 스토리를 먼저 세운 뒤, 패키지 전체를 같은 규칙으로 다시 디자인했습니다."]},
+  { t:"cards", label:"Solution", h:"문제에서 아이디어까지", cols:3, items:[
+    {k:"a. 문제점",t:"힘을 빼야 할 로고와 캐릭터",d:"볼드하고 산만한 로고, 연관성이 약한 두 캐릭터. 패키지 소재와 사이즈도 통일이 필요했습니다."},
+    {k:"b. 개선점",t:"브랜드 스토리부터",d:"홀리와 졸리가 함께 사는 세계관을 정하고, 로고와 캐릭터를 그 이야기 안에서 다시 그렸습니다."},
+    {k:"c. 아이디어",t:"투 컬러 박스와 띠지",d:"박스를 단순화하고 시즌별 띠지를 더합니다. 아이보리와 레드 두 타입의 박스로 매장 포토존까지."}]},
+  { t:"palette", label:"Color", h:"채도를 낮추고, 레드와 아이보리로", items:[
+    ["#C01902","Holly Red","Main · after",1],["#FDF1E0","Ivory","Main · after",1],["#563614","Cocoa","Text and line"],["#E7AD60","Glaze","Point"],["#FFFFFF","White",""]],
+    note:"Before 483818 · D63A1C · FEDDCA · F0E549 → After 563614 · C01902 · FDF1E0 · E7AD60. 노란빛을 덜어내고 레드와 아이보리 두 색을 메인으로 정했습니다."},
+  { t:"row", label:"Brand book", h:"슬로건, 서체, 컬러, 디자인 샘플", cls:"c4", ratio:"438/270", contain:true, bg:"#fff", items:[
+    [P+"bk-character.jpg","슬로건과 브랜드 캐릭터"],[P+"bk-font.jpg","Type A Gothic, B Serif, C Fancy 서체 시안"],[P+"bk-color.jpg","브랜드 프로필 이미지와 컬러 Before · After"],[P+"bk-sample.jpg","시즌 디자인 샘플"]]},
+  { t:"row", label:"Package", h:"최종 시안: 박스, 컵홀더, 슬리브, 포스터", cls:"c4", ratio:"368/225", contain:true, bg:"#fff", items:[
+    [P+"pk-box.jpg","4개입 · 6개입 박스"],[P+"pk-cup.jpg","컵홀더 A–D"],[P+"pk-sleeve.jpg","슬리브 A · B, 레드와 아이보리"],[P+"pk-poster.jpg","신메뉴와 프리오픈 포스터"]]},
+  { t:"cards", label:"Instagram", h:"피드 첫 화면도 같은 얼굴로", cols:3, items:[
+    {k:"Account",t:"hollynjolly_official",d:"흩어진 계정 이름과 소개를 공식 계정 하나로 정리했습니다."},
+    {k:"Highlight",t:"메뉴, 가맹문의, 매장소개, 이벤트",d:"하이라이트를 고객이 찾는 네 가지 정보로 다시 묶었습니다."},
+    {k:"Feed",t:"브랜드 컬러 배경의 메뉴 사진",d:"메뉴 사진을 레드와 옐로 배경으로 통일해 첫 화면을 한 장의 포스터처럼."}]}
+];
+})();
 function initDyn(){
   const v = $(".view.active"); if (!v) return;
   $$(".car", v).forEach(initCar); $$(".bx", v).forEach(initBx); $$(".cmp", v).forEach(initCmp); $$(".dos", v).forEach(initDos); $$(".xf", v).forEach(initXf); $$(".stg", v).forEach(initStg); $$(".emb", v).forEach(initEmb); $$(".xs-plan", v).forEach(initPlan);
