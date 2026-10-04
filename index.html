@@ -1,0 +1,1155 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>EEH STUDIO | Every Experience, Humanized</title>
+<meta name="description" content="EEH STUDIO는 브랜드가 사람에게 닿는 모든 순간을 설계하는 브랜딩 스튜디오입니다. 브랜드 전략, 아이덴티티, 패키지, 공간과 팝업, 콘텐츠.">
+<meta name="keywords" content="EEH STUDIO, 이에스튜디오, 브랜딩 스튜디오, 브랜딩 에이전시, 브랜드 아이덴티티, BX 디자인, 팝업스토어 기획, 전시 부스, 패키지 디자인">
+<meta name="theme-color" content="#000000">
+<meta property="og:type" content="website">
+<meta property="og:title" content="EEH STUDIO">
+<meta property="og:description" content="Every Experience, Humanized. 브랜드가 사람에게 닿는 모든 순간을 설계합니다.">
+<meta property="og:url" content="https://eehstudio.kr/">
+<link rel="canonical" href="https://eehstudio.kr/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23000'/%3E%3Ctext x='32' y='41' font-family='Helvetica,Arial,sans-serif' font-size='22' font-weight='700' fill='%23fff' text-anchor='middle'%3EEEH%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{
+  --black:#000;
+  --white:#fff;
+  --gray:#8a8a8a;
+  --gray-2:#5a5a5a;
+  --line:#e2e2e2;
+  --line-dark:#2a2a2a;
+  --soft:#efefef;
+  --svm-red:#D50F19;
+  --svm-paper:#EDEDEC;
+  --gutter:clamp(16px,3vw,48px);
+  --header:72px;
+  --ease:cubic-bezier(.7,0,.2,1);
+  --ease-out:cubic-bezier(.2,.7,.2,1);
+  --mono:ui-monospace,"SFMono-Regular",Menlo,Consolas,"D2Coding",monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;
+  background:var(--white);color:var(--black);
+  font-size:16px;line-height:1.6;letter-spacing:-0.01em;font-weight:400;
+  word-break:keep-all;overflow-wrap:break-word;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+img{display:block;max-width:100%}
+:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+.wrap{padding-left:var(--gutter);padding-right:var(--gutter)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- Cursor ---------- */
+.has-cursor, .has-cursor *{cursor:none}
+.has-cursor input, .has-cursor textarea, .has-cursor select{cursor:text}
+.has-cursor select{cursor:pointer}
+.cur-dot,.cur-label{position:fixed;left:0;top:0;z-index:100;pointer-events:none;will-change:transform}
+.cur-dot{
+  width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;background:#fff;mix-blend-mode:difference;
+  transition:width .35s var(--ease-out),height .35s var(--ease-out),margin .35s var(--ease-out),opacity .2s;
+}
+.cur-dot.is-link{width:46px;height:46px;margin:-23px 0 0 -23px}
+.cur-dot.is-hidden,.cur-dot.is-label{opacity:0}
+.cur-label{
+  width:96px;height:96px;margin:-48px 0 0 -48px;border-radius:50%;
+  background:#000;color:#fff;display:flex;align-items:center;justify-content:center;
+  font-size:14px;font-weight:600;letter-spacing:0;
+  scale:0;transition:scale .4s var(--ease-out);
+}
+.cur-label.on{scale:1}
+.has-cursor:not(.cursor-ready) .cur-dot{opacity:0}
+
+/* ---------- Curtain ---------- */
+.curtain{position:fixed;inset:0;z-index:90;background:#000;transform:translateY(100%);pointer-events:none;visibility:hidden;display:flex;align-items:flex-end;padding:var(--gutter);color:#fff}
+.curtain span{font-size:clamp(28px,4vw,56px);font-weight:600;letter-spacing:-0.04em;opacity:0;transition:opacity .2s}
+.curtain.in{transform:translateY(0);visibility:visible;transition:transform .5s var(--ease)}
+.curtain.in span{opacity:1;transition-delay:.15s}
+.curtain.out{transform:translateY(-100%);transition:transform .6s var(--ease)}
+
+/* ---------- Header ---------- */
+.header{
+  position:fixed;inset:0 0 auto 0;height:var(--header);z-index:50;
+  display:flex;align-items:center;justify-content:space-between;
+  color:#fff;mix-blend-mode:difference;
+}
+.logo{font-weight:700;font-size:17px;letter-spacing:0.01em}
+.nav{display:flex;gap:clamp(18px,3vw,40px);font-size:15px;font-weight:500}
+.nav a{position:relative;padding:4px 0}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .45s var(--ease)}
+.nav a:hover::after,.nav a[aria-current="page"]::after{transform:scaleX(1);transform-origin:left}
+.menu-btn{display:none;background:none;border:0;font-weight:500;font-size:15px;padding:6px 0}
+
+.mobile-nav{
+  position:fixed;inset:0;z-index:60;background:#000;color:#fff;
+  display:flex;flex-direction:column;justify-content:space-between;
+  padding:calc(var(--header) + 24px) var(--gutter) 40px;
+  transform:translateY(-100%);transition:transform .55s var(--ease);visibility:hidden;
+}
+.mobile-nav.open{transform:none;visibility:visible}
+.mobile-nav nav{display:flex;flex-direction:column;gap:4px}
+.mobile-nav nav a{font-size:48px;font-weight:600;letter-spacing:-0.04em;line-height:1.15}
+.mobile-nav .close{position:absolute;top:18px;right:var(--gutter);background:none;border:0;color:#fff;font-size:15px;font-weight:500;padding:6px 0}
+.mobile-nav small{color:var(--gray);font-size:14px}
+
+/* ---------- Views ---------- */
+.view{display:none}
+.view.active{display:block}
+
+/* ---------- Hero ---------- */
+.hero{
+  background:#000;color:#fff;
+  min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;
+  padding-top:var(--header);padding-bottom:clamp(24px,3.5vw,48px);
+}
+.hero h1{font-size:clamp(58px,12.4vw,230px);font-weight:600;line-height:.9;letter-spacing:-0.055em}
+.hero h1 .line{display:block;white-space:nowrap}
+.hero h1 .rest{
+  display:inline-block;vertical-align:bottom;overflow:hidden;white-space:nowrap;
+  max-width:0;opacity:0;padding-bottom:.14em;margin-bottom:-.14em;
+  transition:max-width 1.3s cubic-bezier(.75,0,.15,1),opacity .9s ease;
+}
+.hero.on h1 .rest{max-width:9em;opacity:1}
+.hero.on h1 .line:nth-child(2) .rest{transition-delay:.12s}
+.hero.on h1 .line:nth-child(3) .rest{transition-delay:.24s}
+.hero-foot{
+  display:grid;grid-template-columns:1.3fr 1fr auto;align-items:end;gap:32px;
+  margin-top:clamp(28px,4vw,56px);padding-top:20px;border-top:1px solid var(--line-dark);
+}
+.hero-foot p{max-width:30em;font-size:clamp(15px,1.2vw,18px);font-weight:300;color:#d4d4d4}
+.hero-foot ul{list-style:none;font-size:14px;color:#9a9a9a;line-height:1.7}
+.hero-foot a{font-size:15px;font-weight:500;white-space:nowrap;border-bottom:1px solid currentColor;padding-bottom:2px}
+
+/* ---------- Common sections ---------- */
+.sec{padding-top:clamp(72px,9vw,140px);padding-bottom:clamp(72px,9vw,140px)}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:clamp(28px,3.5vw,48px)}
+.sec-title{font-size:clamp(36px,5.4vw,84px);font-weight:600;letter-spacing:-0.045em;line-height:1}
+.sec-title sup{font-size:.3em;font-weight:500;letter-spacing:0;vertical-align:top;margin-left:.3em;position:relative;top:.3em}
+.text-link{font-size:15px;font-weight:500;border-bottom:1px solid currentColor;padding-bottom:2px;white-space:nowrap}
+.band{background:#000;color:#fff}
+
+/* ---------- Thumbnails (16:9, 1920x1080) ---------- */
+.thumb{position:relative;aspect-ratio:16/9;overflow:hidden;background:var(--soft);container-type:inline-size}
+.thumb > img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ease-out)}
+.thumb-in{position:absolute;inset:0;transition:transform 1.1s var(--ease-out)}
+.card:hover .thumb > img,.card:hover .thumb-in{transform:scale(1.03)}
+
+/* CSES cover art (built in CSS, swap with a 1920x1080 image via cover:"") */
+.art-svm{position:absolute;inset:0;background:var(--svm-red);color:#fff;overflow:hidden}
+.art-svm .t{position:absolute;left:5cqw;top:6cqw;font-size:10.4cqw;font-weight:600;letter-spacing:-0.055em;line-height:.86}
+.art-svm .t span{display:block}
+.art-svm .t .o{color:transparent;-webkit-text-stroke:.16cqw #fff}
+.art-svm .by{position:absolute;left:5cqw;bottom:4.6cqw;font-size:1.35cqw;font-weight:500;letter-spacing:.02em;line-height:1.5}
+.art-svm .rc{position:absolute;right:9cqw;top:-2cqw;width:22cqw;transform:rotate(7deg)}
+.receipt{
+  background:#fff;color:#000;font-family:var(--mono);letter-spacing:0;
+  --zz:6px;
+  -webkit-mask:conic-gradient(from 135deg at top,#0000,#000 1deg 89deg,#0000 90deg) top/calc(var(--zz)*2) 51% repeat-x,conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) bottom/calc(var(--zz)*2) 51% repeat-x;
+          mask:conic-gradient(from 135deg at top,#0000,#000 1deg 89deg,#0000 90deg) top/calc(var(--zz)*2) 51% repeat-x,conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) bottom/calc(var(--zz)*2) 51% repeat-x;
+}
+.art-svm .receipt{--zz:.7cqw;padding:3.4cqw 1.8cqw 3cqw;font-size:.92cqw;line-height:1.55;box-shadow:0 1cqw 3cqw rgba(0,0,0,.18)}
+.art-svm .receipt b{font-weight:700}
+.art-svm .receipt .big{font-size:2.1cqw;font-weight:700;letter-spacing:-0.03em;line-height:1.1;margin:.6cqw 0}
+.art-svm .receipt hr{border:0;border-top:.12cqw dashed #000;margin:.8cqw 0}
+.art-svm .receipt .r{display:flex;justify-content:space-between}
+.art-svm .receipt svg{display:block;width:100%;height:3.6cqw;margin-top:.8cqw}
+
+.art-next{position:absolute;inset:0;background:var(--soft);color:#000;display:flex;flex-direction:column;justify-content:space-between;padding:4.6cqw 5cqw}
+.art-next .t{font-size:7.2cqw;font-weight:600;letter-spacing:-0.05em;line-height:.95}
+.art-next .s{font-size:1.6cqw;color:var(--gray-2)}
+.ph{position:absolute;inset:0;display:flex;align-items:flex-end;padding:4cqw;background:#111;color:#fff;font-size:5cqw;font-weight:300;letter-spacing:-0.04em}
+
+/* ---------- Work cards ---------- */
+.feature .card-meta{display:grid;grid-template-columns:1fr auto;gap:8px 24px;padding-top:18px;align-items:start}
+.card-meta h3{font-size:clamp(20px,2vw,30px);font-weight:600;letter-spacing:-0.03em;line-height:1.2}
+.card-meta p{grid-column:1/2;font-size:15px;color:var(--gray-2);max-width:42em}
+.card-meta .tags{grid-column:2/3;grid-row:1/3;display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end;max-width:320px}
+.tag{display:inline-block;font-size:12px;font-weight:600;letter-spacing:0.04em;border:1px solid currentColor;padding:3px 9px;border-radius:999px;white-space:nowrap}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(40px,4.5vw,72px) clamp(16px,1.6vw,24px)}
+.grid .card-meta{display:block;padding-top:16px}
+.grid .card-meta h3{font-size:clamp(18px,1.5vw,22px)}
+.grid .card-meta p{margin-top:6px;font-size:14.5px}
+.grid .card-meta .tags{justify-content:flex-start;margin-top:12px;max-width:none}
+
+.next-row{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;margin-top:clamp(40px,4vw,64px);padding-top:24px;border-top:1px solid var(--line)}
+.next-row p{font-size:clamp(20px,2vw,28px);font-weight:500;letter-spacing:-0.03em}
+
+/* view toggle */
+.toggle{display:flex;gap:18px;font-size:15px;font-weight:500}
+.toggle button{background:none;border:0;color:var(--gray);padding:4px 0}
+.toggle button[aria-pressed="true"]{color:#000;border-bottom:1px solid #000}
+
+/* index list */
+.index{border-top:1px solid #000}
+.index a{display:grid;grid-template-columns:64px 1.6fr 1.2fr 1fr 72px;gap:16px;align-items:baseline;padding:22px 0;border-bottom:1px solid var(--line);transition:padding .45s var(--ease-out),color .3s}
+.index a .n{font-size:14px;color:var(--gray)}
+.index a .tt{font-size:clamp(22px,2.6vw,40px);font-weight:600;letter-spacing:-0.04em;line-height:1.1}
+.index a .c{font-size:15px;color:var(--gray-2)}
+.index a .y{font-size:15px;text-align:right}
+.index:hover a{color:#b8b8b8}
+.index a:hover{color:#000;padding-left:12px}
+.index .head{display:grid;grid-template-columns:64px 1.6fr 1.2fr 1fr 72px;gap:16px;padding:12px 0;font-size:13px;color:var(--gray);border-bottom:1px solid var(--line)}
+.index .head span:last-child{text-align:right}
+.pv{position:fixed;left:0;top:0;z-index:40;width:min(34vw,520px);pointer-events:none;opacity:0;scale:.92;transition:opacity .3s,scale .45s var(--ease-out)}
+.pv.on{opacity:1;scale:1}
+
+/* marquee */
+.marquee{overflow:hidden;border-top:1px solid #000;border-bottom:1px solid #000;padding:clamp(14px,1.6vw,22px) 0;white-space:nowrap}
+.marquee-track{display:inline-flex;animation:mq 38s linear infinite}
+.marquee span{font-size:clamp(28px,4vw,64px);font-weight:500;letter-spacing:-0.04em;padding-right:.6em}
+.marquee span i{display:inline-block;width:.32em;height:.32em;border-radius:50%;background:#000;vertical-align:middle;margin-left:.6em;position:relative;top:-.06em}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* statement */
+.statement{font-size:clamp(28px,4.2vw,64px);font-weight:500;letter-spacing:-0.04em;line-height:1.18;max-width:17em}
+.statement-sub{margin-top:clamp(28px,3vw,44px);display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,64px);max-width:1080px}
+.statement-sub p{font-size:clamp(15px,1.15vw,17px);font-weight:300;color:#cfcfcf;line-height:1.85}
+
+/* services */
+.svc{border-top:1px solid #000}
+.svc-row{border-bottom:1px solid var(--line)}
+.svc-row button{width:100%;background:none;border:0;text-align:left;display:grid;grid-template-columns:1fr auto;align-items:center;gap:24px;padding:clamp(18px,2vw,28px) 0}
+.svc-name{font-size:clamp(24px,3.2vw,48px);font-weight:500;letter-spacing:-0.04em;line-height:1.1;transition:transform .45s var(--ease-out)}
+.svc-row button:hover .svc-name{transform:translateX(10px)}
+.svc-ko{font-size:15px;color:var(--gray);margin-left:14px;font-weight:400;letter-spacing:-0.01em;vertical-align:middle}
+.sign{font-size:28px;font-weight:300;line-height:1;transition:transform .35s}
+.svc-row[data-open="true"] .sign{transform:rotate(45deg)}
+.svc-detail{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s var(--ease-out)}
+.svc-row[data-open="true"] .svc-detail{grid-template-rows:1fr}
+.svc-detail > div{overflow:hidden}
+.svc-detail p{padding:0 0 clamp(18px,2vw,26px);max-width:36em;font-weight:300;font-size:16px;color:var(--gray-2)}
+.svc-detail ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px;padding-bottom:clamp(22px,2.4vw,32px)}
+.svc-detail li{font-size:13px;border:1px solid var(--line);padding:5px 11px;border-radius:999px}
+
+/* process */
+.process{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line-dark)}
+.step{padding:28px clamp(16px,1.6vw,24px) 0 0;border-right:1px solid var(--line-dark);min-height:280px;display:flex;flex-direction:column}
+.step + .step{padding-left:clamp(16px,1.6vw,24px)}
+.step:last-child{border-right:0}
+.step .n{font-size:14px;color:var(--gray)}
+.step h3{margin-top:auto;font-size:clamp(28px,2.8vw,40px);font-weight:500;letter-spacing:-0.04em;line-height:1.05}
+.step h3 span{display:block;font-size:15px;font-weight:400;color:var(--gray);letter-spacing:-0.01em;margin-top:8px}
+.step p{margin-top:14px;font-size:14.5px;font-weight:300;color:#cfcfcf;padding-bottom:28px}
+
+/* clients */
+.clients{display:flex;flex-wrap:wrap;gap:10px 40px;font-size:clamp(22px,2.6vw,40px);font-weight:500;letter-spacing:-0.03em}
+.clients .muted{color:#c4c4c4}
+
+/* CTA */
+.cta{background:#000;color:#fff}
+.cta a.big{display:inline-block;font-size:clamp(44px,9vw,148px);font-weight:600;letter-spacing:-0.055em;line-height:.95}
+.cta a.big span{display:inline-block;transition:transform .5s var(--ease-out)}
+.cta a.big:hover span{transform:translateX(.12em)}
+.cta p{margin-top:24px;color:#bdbdbd;font-weight:300;font-size:clamp(15px,1.2vw,18px)}
+
+/* page heads */
+.page-head{padding-top:calc(var(--header) + clamp(56px,8vw,120px));padding-bottom:clamp(36px,4vw,56px)}
+.page-head h1{font-size:clamp(64px,13vw,220px);font-weight:600;letter-spacing:-0.06em;line-height:.88}
+.page-head h1 sup{font-size:.22em;font-weight:500;letter-spacing:0;vertical-align:top;margin-left:.25em;position:relative;top:.35em}
+.page-head p{margin-top:24px;max-width:32em;color:var(--gray-2);font-weight:300;font-size:clamp(15px,1.2vw,18px)}
+.page-head.dark{background:#000;color:#fff}
+.page-head.dark p{color:#cfcfcf}
+.page-tools{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:clamp(24px,3vw,40px)}
+.page-tools small{font-size:13px;color:var(--gray)}
+
+/* ---------- Case study ---------- */
+.cs-head{padding-top:calc(var(--header) + clamp(40px,5vw,80px))}
+.back{font-size:14px;color:var(--gray);display:inline-block;margin-bottom:24px}
+.back:hover{color:#000}
+.cs-head .kicker{font-size:15px;color:var(--gray-2);margin-bottom:12px}
+.cs-head h1{font-size:clamp(44px,8vw,140px);font-weight:600;letter-spacing:-0.055em;line-height:.92}
+.meta{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:clamp(28px,3vw,44px);padding:20px 0;border-top:1px solid #000;border-bottom:1px solid var(--line)}
+.meta dt{font-size:13px;color:var(--gray)}
+.meta dd{margin-top:4px;font-size:15px;font-weight:500;line-height:1.5}
+.cs-hero{margin-top:clamp(28px,3vw,44px)}
+.cs-block{padding:clamp(56px,7vw,112px) 0 0}
+.cs-label{font-size:14px;color:var(--gray);margin-bottom:16px}
+.cs-intro{display:grid;grid-template-columns:1fr 1.3fr;gap:clamp(24px,5vw,80px)}
+.cs-intro h2{font-size:clamp(26px,3vw,44px);font-weight:500;letter-spacing:-0.04em;line-height:1.25}
+.cs-intro p{font-weight:300;font-size:clamp(16px,1.25vw,18px);line-height:1.9;color:#2b2b2b}
+.cs-intro .quote{margin-top:28px;padding-top:20px;border-top:1px solid var(--line);font-size:15px;color:var(--gray-2);line-height:1.8}
+
+.steps4{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #000}
+.steps4 div{padding:22px clamp(14px,1.4vw,22px) 26px 0;border-right:1px solid var(--line)}
+.steps4 div + div{padding-left:clamp(14px,1.4vw,22px)}
+.steps4 div:last-child{border-right:0}
+.steps4 .n{font-size:13px;color:var(--gray)}
+.steps4 h3{font-size:clamp(20px,1.9vw,28px);font-weight:600;letter-spacing:-0.03em;margin:28px 0 8px}
+.steps4 p{font-size:14.5px;color:var(--gray-2);font-weight:400}
+.flow{margin-top:20px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-size:13px;font-weight:600;letter-spacing:.06em}
+.flow span{border:1px solid #000;border-radius:999px;padding:5px 12px}
+.flow i{width:24px;height:1px;background:#000;display:inline-block}
+
+.stats{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid #000}
+.stats div{padding:20px 0 0}
+.stats b{display:block;font-size:clamp(36px,4.4vw,72px);font-weight:600;letter-spacing:-0.05em;line-height:1}
+.stats span{display:block;margin-top:10px;font-size:14px;color:var(--gray-2)}
+
+.panel{position:relative;aspect-ratio:16/9;overflow:hidden;container-type:inline-size}
+.panel-cap{display:flex;justify-content:space-between;gap:24px;margin-top:14px;font-size:14px;color:var(--gray-2)}
+.panel-cap b{color:#000;font-weight:600}
+
+/* receipt panel */
+.p-receipt{background:var(--svm-paper);display:flex;align-items:flex-start;justify-content:center}
+.p-receipt .receipt{--zz:.5cqw;width:25cqw;margin-top:-3.5cqw;transform:rotate(-3deg);padding:4.2cqw 1.9cqw 2.2cqw;font-size:.84cqw;line-height:1.5;box-shadow:0 1.2cqw 3cqw rgba(0,0,0,.12)}
+.p-receipt .receipt .c{text-align:center}
+.p-receipt .receipt .logo-t{font-family:"Pretendard Variable",Pretendard,sans-serif;font-size:2.1cqw;font-weight:600;letter-spacing:-0.05em;line-height:.95;text-align:center;margin-bottom:.8cqw}
+.p-receipt .receipt hr{border:0;border-top:.1cqw dashed #000;margin:.6cqw 0}
+.p-receipt .receipt .bar{background:#000;color:#fff;display:flex;justify-content:space-between;padding:.15cqw .5cqw;margin:.6cqw 0}
+.p-receipt .receipt .r{display:flex;justify-content:space-between;gap:1cqw}
+.p-receipt .receipt .tot{font-size:1.5cqw;font-weight:700}
+.p-receipt .receipt svg{display:block;width:100%;height:3.2cqw;margin:.7cqw 0 .3cqw}
+.p-receipt .receipt .slogan{border:.15cqw solid #000;padding:.6cqw;text-align:center;margin-top:.7cqw;font-weight:700}
+.p-receipt .side{position:absolute;left:4cqw;bottom:4cqw;font-size:1.3cqw;line-height:1.6;color:#000}
+.p-receipt .side b{display:block;font-size:4.4cqw;font-weight:600;letter-spacing:-0.05em;line-height:1;margin-bottom:1cqw}
+.p-receipt .side2{position:absolute;right:4cqw;bottom:4cqw;text-align:right;font-size:1.3cqw;line-height:1.6}
+
+/* goods board */
+.goods{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #000}
+.goods .col{border-right:1px solid var(--line);padding:0 clamp(12px,1.2vw,20px) 0 0}
+.goods .col + .col{padding-left:clamp(12px,1.2vw,20px)}
+.goods .col:last-child{border-right:0}
+.goods h3{font-size:15px;font-weight:600;padding:16px 0 14px;display:flex;justify-content:space-between;gap:8px;border-bottom:1px solid var(--line)}
+.goods h3 span{color:var(--gray);font-weight:400}
+.goods li{list-style:none;padding:14px 0;border-bottom:1px solid var(--line)}
+.goods li:last-child{border-bottom:0}
+.goods li b{display:block;font-size:clamp(18px,1.7vw,26px);font-weight:600;letter-spacing:-0.03em;line-height:1.15}
+.goods li span{display:block;margin-top:4px;font-size:14px}
+.goods li small{display:block;font-size:13px;color:var(--gray)}
+
+/* wall strip */
+.p-walls{background:#f4f4f2;display:flex;align-items:center;justify-content:center}
+.walls{display:flex;gap:.25cqw;height:78%}
+.walls > div{aspect-ratio:950/2200;height:100%;position:relative;overflow:hidden;padding:1.4cqw 1.2cqw;display:flex;flex-direction:column}
+.walls .w{background:#fff;color:#000;box-shadow:inset 0 0 0 .08cqw #ddd;padding-bottom:4.6cqw}
+.walls .r{background:var(--svm-red);color:#fff}
+.walls .wm{font-size:6.6cqw;font-weight:600;letter-spacing:-0.06em;line-height:.85}
+.walls .wm.s{font-size:4cqw}
+.walls .sm{font-size:.82cqw;line-height:1.5;margin-top:auto}
+.walls .band-b{position:absolute;left:0;right:0;bottom:0;height:3.2cqw;background:var(--svm-red);color:#fff;font-size:.8cqw;padding:.8cqw 1.2cqw;font-weight:600}
+.walls .r .decl{font-size:2.3cqw;font-weight:600;letter-spacing:-0.04em;line-height:1.05}
+.walls .r p{font-size:.82cqw;line-height:1.55;margin-top:1.2cqw}
+.walls .r ol{list-style:none;font-size:.9cqw;line-height:1.5;margin-top:1cqw}
+.walls .r ol li{padding:.5cqw 0;border-top:.08cqw solid rgba(255,255,255,.6)}
+.walls .pn{position:absolute;top:.6cqw;right:.8cqw;font-size:.75cqw;opacity:.55}
+
+/* system list */
+.sys{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,1.6vw,24px)}
+.sys div{border-top:1px solid #000;padding-top:16px}
+.sys h3{font-size:clamp(18px,1.6vw,22px);font-weight:600;letter-spacing:-0.02em}
+.sys small{display:block;font-size:13px;color:var(--gray);margin:2px 0 10px}
+.sys p{font-size:14.5px;color:var(--gray-2)}
+
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.4vw,20px)}
+.gallery .full{grid-column:1/-1}
+.gallery figure{aspect-ratio:16/9;overflow:hidden;background:var(--soft)}
+.gallery img{width:100%;height:100%;object-fit:cover}
+
+.credits{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;border-top:1px solid #000;padding-top:20px}
+.credits dt{font-size:13px;color:var(--gray)}
+.credits dd{margin-top:4px;font-size:15px;font-weight:500}
+
+.cs-next{display:block;margin-top:clamp(72px,9vw,140px);background:#000;color:#fff;padding:clamp(40px,5vw,80px) var(--gutter)}
+.cs-next small{font-size:14px;color:#9a9a9a}
+.cs-next strong{display:block;margin-top:10px;font-size:clamp(40px,7vw,120px);font-weight:600;letter-spacing:-0.055em;line-height:.95}
+
+/* ---------- Contact ---------- */
+.contact-grid{display:grid;grid-template-columns:1fr 1.35fr;gap:clamp(36px,6vw,104px)}
+.contact-info dl{display:grid;gap:22px}
+.contact-info dt{font-size:13px;color:var(--gray)}
+.contact-info dd{margin-top:4px;font-size:17px;font-weight:500}
+.contact-info dd a{border-bottom:1px solid var(--line)}
+.contact-info dd a:hover{border-color:#000}
+.mail-big{display:inline-block;font-size:clamp(24px,3vw,46px);font-weight:600;letter-spacing:-0.04em;border-bottom:2px solid #000;line-height:1.15;margin-bottom:clamp(32px,4vw,56px);word-break:break-all}
+form .field{border-bottom:1px solid var(--line);padding:18px 0 10px}
+form .field:focus-within{border-color:#000}
+form label,form legend{display:block;font-size:13px;color:var(--gray);margin-bottom:6px}
+form .req{color:#000}
+form input,form select,form textarea{width:100%;border:0;background:none;font-size:18px;outline:none;padding:4px 0}
+form textarea{min-height:140px;resize:vertical;line-height:1.7}
+form select{appearance:none;-webkit-appearance:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23000'/%3E%3C/svg%3E") no-repeat right 4px center}
+form fieldset{border:0;border-bottom:1px solid var(--line);padding:18px 0 16px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.chips label{margin:0;color:#000;font-size:14px}
+.chips input{position:absolute;opacity:0;width:1px;height:1px}
+.chips span{display:inline-block;border:1px solid var(--line);padding:7px 14px;border-radius:999px;transition:background .2s,color .2s,border-color .2s}
+.chips input:checked + span{background:#000;color:#fff;border-color:#000}
+.chips input:focus-visible + span{outline:2px solid #000;outline-offset:2px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:0 24px}
+.form-foot{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:32px;flex-wrap:wrap}
+.form-foot small{color:var(--gray);font-size:13px;max-width:28em}
+.submit{background:#000;color:#fff;border:0;font-size:16px;font-weight:600;padding:16px 30px;border-radius:999px;transition:opacity .2s}
+.submit:hover{opacity:.82}
+.form-msg{margin-top:16px;font-size:14px;min-height:1.4em}
+.form-msg.err{color:#c00}
+
+/* ---------- Footer ---------- */
+.footer{background:#000;color:#fff;padding-top:clamp(56px,6vw,96px);padding-bottom:28px}
+.footer-top{display:flex;justify-content:space-between;align-items:flex-start;gap:32px;flex-wrap:wrap}
+.footer .wordmark{font-size:clamp(48px,10.6vw,176px);font-weight:700;letter-spacing:-0.05em;line-height:.85}
+.footer-links{display:grid;grid-template-columns:auto auto;gap:6px 48px;font-size:15px}
+.footer-links a:hover{color:var(--gray)}
+.footer-bottom{margin-top:clamp(48px,5vw,80px);padding-top:18px;border-top:1px solid var(--line-dark);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12.5px;color:var(--gray);line-height:1.8}
+
+/* ---------- Responsive ---------- */
+@media (max-width:1024px){
+  .process{grid-template-columns:repeat(2,1fr)}
+  .step:nth-child(2){border-right:0}
+  .step:nth-child(3){padding-left:0}
+  .step:nth-child(3),.step:nth-child(4){border-top:1px solid var(--line-dark)}
+  .stats{grid-template-columns:repeat(3,1fr);row-gap:28px}
+  .sys{grid-template-columns:repeat(2,1fr);row-gap:32px}
+  .goods{grid-template-columns:repeat(2,1fr)}
+  .goods .col:nth-child(2){border-right:0}
+  .goods .col:nth-child(3){padding-left:0}
+  .hero-foot{grid-template-columns:1fr auto}
+  .hero-foot ul{display:none}
+}
+@media (max-width:720px){
+  :root{--header:60px}
+  .nav{display:none}
+  .menu-btn{display:block}
+  .hero-foot{grid-template-columns:1fr;align-items:start}
+  .grid{grid-template-columns:1fr}
+  .feature .card-meta{grid-template-columns:1fr}
+  .card-meta .tags{grid-column:1/2;grid-row:auto;justify-content:flex-start;margin-top:8px}
+  .statement-sub{grid-template-columns:1fr}
+  .process{grid-template-columns:1fr}
+  .step,.step + .step{padding-left:0;border-right:0;border-top:1px solid var(--line-dark);min-height:0}
+  .step:first-child{border-top:0}
+  .step h3{margin-top:28px}
+  .index .head{display:none}
+  .index a{grid-template-columns:40px 1fr;row-gap:4px}
+  .index a .c,.index a .cat,.index a .y{grid-column:2/3;text-align:left}
+  .meta{grid-template-columns:1fr 1fr}
+  .cs-intro{grid-template-columns:1fr}
+  .steps4{grid-template-columns:1fr 1fr}
+  .steps4 div:nth-child(2){border-right:0}
+  .steps4 div:nth-child(3){padding-left:0}
+  .steps4 div:nth-child(3),.steps4 div:nth-child(4){border-top:1px solid var(--line)}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .sys{grid-template-columns:1fr}
+  .goods{grid-template-columns:1fr}
+  .goods .col,.goods .col + .col{padding-left:0;border-right:0}
+  .panel-scroll{overflow-x:auto;margin:0 calc(var(--gutter) * -1);padding:0 var(--gutter)}
+  .panel-scroll .panel{width:640px}
+  .panel-cap{flex-direction:column;gap:4px}
+  .gallery{grid-template-columns:1fr}
+  .credits{grid-template-columns:1fr 1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .row2{grid-template-columns:1fr}
+  .svc-ko{display:block;margin:6px 0 0}
+  .footer-links{grid-template-columns:1fr 1fr;gap:6px 24px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important}
+  .hero h1 .rest{max-width:9em;opacity:1}
+}
+</style>
+</head>
+<body>
+
+<a class="sr" href="#app">본문으로 건너뛰기</a>
+<div class="cur-dot" aria-hidden="true"></div>
+<div class="cur-label" aria-hidden="true"></div>
+<div class="curtain" aria-hidden="true"><span class="js-curtain-t"></span></div>
+<div class="pv" aria-hidden="true"><div class="thumb js-pv"></div></div>
+
+<header class="header wrap">
+  <a class="logo" href="#/" aria-label="EEH STUDIO 홈">EEH STUDIO</a>
+  <nav class="nav" aria-label="주요 메뉴">
+    <a href="#/work" data-nav="work">Work</a>
+    <a href="#/about" data-nav="about">About</a>
+    <a href="#/contact" data-nav="contact">Contact</a>
+  </nav>
+  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobileNav">Menu</button>
+</header>
+
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <button class="close" type="button">Close</button>
+  <nav aria-label="모바일 메뉴">
+    <a href="#/">Home</a>
+    <a href="#/work">Work</a>
+    <a href="#/about">About</a>
+    <a href="#/contact">Contact</a>
+  </nav>
+  <small class="js-email"></small>
+</div>
+
+<main id="app">
+
+  <!-- HOME -->
+  <section class="view" data-view="home">
+    <div class="hero wrap" id="hero">
+      <h1 aria-label="Every Experience, Humanized.">
+        <span class="line" aria-hidden="true">E<span class="rest">very</span></span>
+        <span class="line" aria-hidden="true">E<span class="rest">xperience,</span></span>
+        <span class="line" aria-hidden="true">H<span class="rest">umanized.</span></span>
+      </h1>
+      <div class="hero-foot">
+        <p>EEH STUDIO는 브랜드가 사람에게 닿는 모든 순간을 설계하는 브랜딩 스튜디오입니다. 전략과 디자인, 공간과 콘텐츠를 하나의 경험으로 묶습니다.</p>
+        <ul>
+          <li>Brand Strategy, Identity</li>
+          <li>Space, Pop-up, Exhibition</li>
+          <li>Package, Content, Film</li>
+        </ul>
+        <a href="#/contact" data-cursor="Talk">프로젝트 문의하기</a>
+      </div>
+    </div>
+
+    <div class="sec wrap">
+      <div class="sec-head">
+        <h2 class="sec-title">Selected Work<sup class="js-count"></sup></h2>
+        <a class="text-link" href="#/work">전체 작업 보기</a>
+      </div>
+      <div class="js-feature"></div>
+      <div class="next-row">
+        <p>다음 케이스는 당신의 브랜드입니다.</p>
+        <a class="text-link" href="#/contact" data-cursor="Talk">프로젝트 문의하기</a>
+      </div>
+    </div>
+
+    <div class="marquee" aria-hidden="true"><div class="marquee-track js-marquee"></div></div>
+
+    <div class="band">
+      <div class="sec wrap">
+        <p class="statement">브랜드는 결국 사람이 겪는 경험으로 기억됩니다.</p>
+        <div class="statement-sub">
+          <p>로고 하나, 패키지 한 장, 부스의 동선 하나까지 사람의 감각에서 출발해 설계합니다. 보기 좋은 결과물보다 오래 기억에 남는 경험을 먼저 생각합니다.</p>
+          <p>전략과 디자인, 공간과 디지털을 따로 나누지 않습니다. 처음 만나는 순간부터 다시 찾게 되는 순간까지, 기획부터 제작과 현장 운영까지 끝까지 함께합니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec wrap">
+      <div class="sec-head">
+        <h2 class="sec-title">Services</h2>
+        <a class="text-link" href="#/about">스튜디오 소개</a>
+      </div>
+      <div class="svc js-svc-home"></div>
+    </div>
+
+    <div class="cta">
+      <div class="sec wrap">
+        <a class="big" href="#/contact" data-cursor="Talk"><span>Let's talk.</span></a>
+        <p>새로운 브랜드를 시작하거나, 지금의 브랜드를 다시 정리하고 싶다면 편하게 이야기해 주세요.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section class="view" data-view="work">
+    <div class="page-head wrap">
+      <h1>Work<sup class="js-count"></sup></h1>
+      <p>브랜드 전략부터 공간, 디지털, 굿즈와 현장 운영까지. EEH STUDIO가 설계한 경험들입니다.</p>
+    </div>
+    <div class="wrap" style="padding-bottom:clamp(72px,9vw,140px)">
+      <div class="page-tools">
+        <small class="js-work-note"></small>
+        <div class="toggle" role="group" aria-label="보기 방식">
+          <button type="button" data-mode="grid" aria-pressed="true">Grid</button>
+          <button type="button" data-mode="index" aria-pressed="false">Index</button>
+        </div>
+      </div>
+      <div class="js-work"></div>
+    </div>
+  </section>
+
+  <!-- CASE -->
+  <section class="view" data-view="case">
+    <div class="js-case"></div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="view" data-view="about">
+    <div class="page-head dark wrap">
+      <h1>About</h1>
+      <p>Every Experience, Humanized. 모든 경험을 사람의 언어로 바꾸는 브랜딩 스튜디오.</p>
+    </div>
+    <div class="band">
+      <div class="wrap" style="padding-bottom:clamp(72px,9vw,140px)">
+        <p class="statement">우리는 브랜드를 만드는 일이 사람을 이해하는 일에서 시작된다고 믿습니다.</p>
+        <div class="statement-sub">
+          <p>EEH는 Every Experience, Humanized의 약자입니다. 이름과 로고, 패키지를 여는 순간, 부스에 들어서는 첫걸음, 화면 속 한 장면까지 브랜드가 사람과 만나는 모든 접점을 하나의 경험으로 보고 설계합니다.</p>
+          <p>D2C 브랜드의 마케팅과 MD, 콘텐츠와 디자인, 영상을 직접 운영해 온 경험을 바탕으로, 보기 좋은 디자인을 넘어 실제로 작동하고 기억되는 브랜드 경험을 만듭니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec wrap">
+      <div class="sec-head"><h2 class="sec-title">Services</h2></div>
+      <div class="svc js-svc-about"></div>
+    </div>
+
+    <div class="band">
+      <div class="sec wrap">
+        <div class="sec-head"><h2 class="sec-title">Process<sup>04</sup></h2></div>
+        <div class="process js-process"></div>
+      </div>
+    </div>
+
+    <div class="sec wrap">
+      <div class="sec-head"><h2 class="sec-title">Clients</h2></div>
+      <div class="clients js-clients"></div>
+    </div>
+
+    <div class="cta">
+      <div class="sec wrap">
+        <a class="big" href="#/contact" data-cursor="Talk"><span>Let's talk.</span></a>
+        <p>함께 만들 브랜드 이야기를 기다립니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="view" data-view="contact">
+    <div class="page-head wrap">
+      <h1>Contact</h1>
+      <p>브랜드의 현재 상황과 고민을 들려주세요. 영업일 기준 2일 안에 회신드립니다.</p>
+    </div>
+    <div class="wrap" style="padding-bottom:clamp(72px,9vw,140px)">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <a class="mail-big js-mail-big" href="#" data-cursor="Mail"></a>
+          <dl class="js-info"></dl>
+        </div>
+        <form class="js-form" novalidate>
+          <div class="row2">
+            <div class="field"><label for="f-company">회사 / 브랜드명 <span class="req">*</span></label><input id="f-company" name="company" autocomplete="organization" required></div>
+            <div class="field"><label for="f-name">담당자 성함 <span class="req">*</span></label><input id="f-name" name="name" autocomplete="name" required></div>
+          </div>
+          <div class="row2">
+            <div class="field"><label for="f-email">이메일 <span class="req">*</span></label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+            <div class="field"><label for="f-phone">연락처</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+          </div>
+          <fieldset>
+            <legend>문의 분야 (복수 선택)</legend>
+            <div class="chips js-chips"></div>
+          </fieldset>
+          <div class="row2">
+            <div class="field"><label for="f-budget">예산 범위</label>
+              <select id="f-budget" name="budget">
+                <option value="">선택해 주세요</option>
+                <option>500만 원 미만</option>
+                <option>500만~1,000만 원</option>
+                <option>1,000만~3,000만 원</option>
+                <option>3,000만 원 이상</option>
+                <option>협의 필요</option>
+              </select>
+            </div>
+            <div class="field"><label for="f-date">희망 일정</label><input id="f-date" name="schedule" placeholder="예: 12월 오픈 목표"></div>
+          </div>
+          <div class="field"><label for="f-msg">프로젝트 내용 <span class="req">*</span></label><textarea id="f-msg" name="message" required placeholder="브랜드 소개, 현재 고민, 기대하는 결과를 자유롭게 적어 주세요."></textarea></div>
+          <div class="form-foot">
+            <small>보내기를 누르면 작성한 내용이 담긴 메일 창이 열립니다. 메일 앱에서 전송을 눌러 마무리해 주세요.</small>
+            <button class="submit" type="submit">문의 메일 보내기</button>
+          </div>
+          <p class="form-msg" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer wrap">
+  <div class="footer-top">
+    <div class="wordmark">EEH STUDIO</div>
+    <div class="footer-links js-footer-links"></div>
+  </div>
+  <div class="footer-bottom">
+    <div class="js-biz"></div>
+    <div><span class="js-clock"></span> &nbsp; &copy; <span class="js-year"></span> EEH STUDIO</div>
+  </div>
+</footer>
+
+<script>
+/* =========================================================
+   1. 스튜디오 정보 (빈 값은 화면에 표시되지 않음)
+   ========================================================= */
+const STUDIO = {
+  email: "eehstudio.kr@gmail.com",   // 도메인 메일 개설 후 hello@eehstudio.kr 등으로 교체
+  instagram: "eeh_studio",           // @ 없이
+  phone: "",
+  address: "",
+  ceo: "",
+  bizNumber: "",
+  profilePdf: ""                     // 회사소개서 PDF 경로
+};
+
+/* =========================================================
+   2. 작업물
+   - 썸네일은 1920x1080(16:9) 가로형 이미지. cover에 경로를 넣으면 이미지로 교체됩니다.
+     예: cover:"images/svm-cover.jpg"
+   - photos: 상세 페이지 하단 현장 사진(16:9 권장). 비어 있으면 섹션이 숨겨집니다.
+   ========================================================= */
+const WORKS = [
+  {
+    id: "social-value-market",
+    title: "SOCIAL VALUE MARKET",
+    client: "CSES 사회적가치연구원",
+    year: "2026",
+    category: "Pop-up Booth",
+    tags: ["Concept","Space","Graphic","Goods","Digital","Operation"],
+    summary: "2026 대한민국 사회적가치 페스타 홍보부스. 일상 속 실천을 사회적 가치로 측정하고, 굿즈로 교환하는 체험형 마켓.",
+    cover: "",
+    art: "svm",
+    photos: [],
+    meta: [
+      ["Client","CSES 사회적가치연구원"],
+      ["Event","2026 대한민국 사회적가치 페스타"],
+      ["Place","코엑스 A홀, 부스 D-43"],
+      ["Date","2026.09.21 – 09.22"]
+    ],
+    kicker: "CSES 사회적가치연구원 홍보부스",
+    headline: "일상의 선의에 값을 매기는 가게",
+    body: "누군가를 돕고, 컵을 다시 채우고, 동네 가게를 찾는 평범한 하루는 이미 사회적 가치로 가득 차 있습니다. 우리는 그 사실을 장보기의 언어로 옮겨, 실천을 측정하고 가치로 환산해 교환하는 마켓을 만들었습니다. 방문자는 자신의 일상도 충분히 가치 있다는 것을 영수증 한 장으로 가져갔습니다.",
+    quote: "측정에서 보상으로, 보상에서 제도로. 사회적 성과를 측정하고 화폐화해 보상으로 잇는 CSES의 메시지를, 누구나 3분 안에 겪을 수 있는 경험으로 바꾸는 것이 과제였습니다."
+  }
+];
+
+/* =========================================================
+   3. 서비스 / 프로세스 / 클라이언트
+   ========================================================= */
+const SERVICES = [
+  { en:"Brand Strategy", ko:"브랜드 전략", desc:"브랜드가 왜 존재하는지, 누구에게 어떤 말을 해야 하는지부터 정리합니다. 고객과 시장을 들여다보고 흔들리지 않는 기준을 만듭니다.",
+    items:["브랜드 철학","네이밍","슬로건","메시지 체계","타깃 정의"] },
+  { en:"Brand Identity", ko:"브랜드 아이덴티티", desc:"정리된 전략을 눈에 보이는 언어로 바꿉니다. 어디에 놓여도 같은 브랜드로 읽히도록 시스템으로 설계합니다.",
+    items:["로고","컬러","타이포그래피","그래픽 시스템","브랜드 가이드"] },
+  { en:"Space & Pop-up", ko:"공간과 팝업", desc:"브랜드를 직접 걸어 들어갈 수 있는 경험으로 만듭니다. 컨셉과 동선, 벽면 그래픽, 집기와 현장 운영까지 하나로 기획합니다.",
+    items:["팝업스토어","전시 부스","공간 그래픽","3D 시뮬레이션","현장 운영"] },
+  { en:"Digital Experience", ko:"디지털 경험", desc:"현장과 화면을 잇는 장치를 만듭니다. 참여형 웹앱, 바코드와 POS, 영수증 출력까지 경험이 끊기지 않게 설계하고 직접 구현합니다.",
+    items:["참여형 웹앱","POS·바코드","영수증 디자인","사이니지 화면"] },
+  { en:"Package & Goods", ko:"패키지와 굿즈", desc:"고객이 브랜드를 손에 쥐는 순간을 디자인합니다. 네이밍부터 행택, 제작 관리까지 실물로 완성될 때까지 함께합니다.",
+    items:["패키지","굿즈 기획","행택·라벨","제작 관리"] },
+  { en:"Content & Film", ko:"콘텐츠와 영상", desc:"브랜드가 매일 고객과 만나는 화면을 만듭니다. 상세페이지와 캠페인 비주얼, 숏폼 영상까지 한 톤으로 제작합니다.",
+    items:["캠페인 비주얼","상세페이지","SNS 콘텐츠","숏폼 영상"] }
+];
+
+const PROCESS = [
+  { en:"Listen", ko:"듣기", desc:"브랜드 담당자와 고객의 이야기를 듣고, 시장과 현장의 조건을 살핍니다." },
+  { en:"Define", ko:"정의", desc:"브랜드가 사람에게 남겨야 할 경험을 한 문장으로 정리합니다." },
+  { en:"Design", ko:"설계", desc:"아이덴티티, 공간, 디지털, 굿즈로 경험을 구체화합니다." },
+  { en:"Deliver", ko:"구현", desc:"제작과 설치, 현장 운영까지 함께하며 실제 반응을 확인합니다." }
+];
+
+const CLIENTS = ["CSES 사회적가치연구원"];
+
+/* ========================================================= */
+const $ = (s, el=document) => el.querySelector(s);
+const $$ = (s, el=document) => [...el.querySelectorAll(s)];
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const pad = n => String(n).padStart(2,"0");
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* deterministic barcode (decorative) */
+function barcode(seed, n=64){
+  let h=0; for (const c of seed) h=(h*31+c.charCodeAt(0))>>>0;
+  let x=0, rects="";
+  for (let i=0;i<n;i++){
+    h=(h*1103515245+12345)>>>0;
+    const w = 1 + (h>>>16)%3;
+    if (i%2===0) rects += `<rect x="${x}" y="0" width="${w}" height="40"/>`;
+    x += w;
+  }
+  return `<svg viewBox="0 0 ${x} 40" preserveAspectRatio="none" aria-hidden="true">${rects}</svg>`;
+}
+
+/* ---------- Art ---------- */
+function artSVM(){
+  return `<div class="art-svm">
+    <div class="t"><span>SOCIAL</span><span class="o">VALUE</span><span>MARKET</span></div>
+    <div class="by">CSES 사회적가치연구원 × EEH STUDIO<br>KSVF 2026, COEX HALL A, BOOTH D-43</div>
+    <div class="rc"><div class="receipt">
+      <div><b>CSES OFFICIAL VALUE RECEIPT</b></div>
+      <div>2026.09.21 COEX HALL A</div>
+      <hr>
+      <div class="r"><span>CHECKED</span><span>12/20</span></div>
+      <div class="big">38,500 SV</div>
+      <div>CARE VALUE MAKER</div>
+      <hr>
+      <div class="r"><span>REWARD</span><span>20,000</span></div>
+      <div class="r"><span>ITEMS</span><span>2</span></div>
+      ${barcode("svm-cover",72)}
+      <div style="margin-top:.6cqw">BUY YOUR SOCIAL VALUE</div>
+    </div></div>
+  </div>`;
+}
+function thumbHTML(w){
+  if (w.cover) return `<img src="${esc(w.cover)}" alt="${esc(w.title)} 대표 이미지" loading="lazy">`;
+  if (w.art === "svm") return `<div class="thumb-in">${artSVM()}</div>`;
+  return `<div class="thumb-in"><div class="ph">${esc(w.title)}</div></div>`;
+}
+function nextArt(){
+  return `<div class="thumb-in"><div class="art-next"><span class="s">Next case</span><div class="t">Your brand,<br>next.</div><span class="s">프로젝트 문의하기</span></div></div>`;
+}
+
+/* ---------- Cards ---------- */
+function featureCard(w){
+  return `<a class="card feature" href="#/work/${esc(w.id)}" data-cursor="View">
+    <div class="thumb">${thumbHTML(w)}</div>
+    <div class="card-meta">
+      <h3>${esc(w.title)}</h3>
+      <div class="tags">${w.tags.map(t=>`<span class="tag">${esc(t)}</span>`).join("")}</div>
+      <p>${esc(w.client)}, ${esc(w.year)}. ${esc(w.summary)}</p>
+    </div></a>`;
+}
+function gridCard(w){
+  return `<a class="card" href="#/work/${esc(w.id)}" data-cursor="View">
+    <div class="thumb">${thumbHTML(w)}</div>
+    <div class="card-meta">
+      <h3>${esc(w.title)}</h3>
+      <p>${esc(w.client)}, ${esc(w.year)}</p>
+      <div class="tags">${w.tags.slice(0,4).map(t=>`<span class="tag">${esc(t)}</span>`).join("")}</div>
+    </div></a>`;
+}
+function nextCard(){
+  return `<a class="card" href="#/contact" data-cursor="Talk">
+    <div class="thumb">${nextArt()}</div>
+    <div class="card-meta"><h3>다음 프로젝트</h3><p>브랜드의 다음 장면을 함께 설계합니다.</p></div></a>`;
+}
+
+/* ---------- Static renders ---------- */
+function svcRow(s, i, key){
+  return `<div class="svc-row" data-open="false">
+    <button type="button" aria-expanded="false" aria-controls="svc-${key}-${i}">
+      <span><span class="svc-name">${esc(s.en)}</span><span class="svc-ko">${esc(s.ko)}</span></span>
+      <span class="sign" aria-hidden="true">+</span>
+    </button>
+    <div class="svc-detail" id="svc-${key}-${i}"><div>
+      <p>${esc(s.desc)}</p>
+      <ul>${s.items.map(t=>`<li>${esc(t)}</li>`).join("")}</ul>
+    </div></div></div>`;
+}
+function renderStatic(){
+  $$(".js-count").forEach(el => el.textContent = pad(WORKS.length));
+  $(".js-feature").innerHTML = WORKS.slice(0,1).map(featureCard).join("");
+  $(".js-svc-home").innerHTML = SERVICES.map((s,i)=>svcRow(s,i,"h")).join("");
+  $(".js-svc-about").innerHTML = SERVICES.map((s,i)=>svcRow(s,i,"a")).join("");
+  $(".js-process").innerHTML = PROCESS.map((p,i)=>`<div class="step"><span class="n">${pad(i+1)}</span><h3>${esc(p.en)}<span>${esc(p.ko)}</span></h3><p>${esc(p.desc)}</p></div>`).join("");
+  $(".js-clients").innerHTML = CLIENTS.map(c=>`<span>${esc(c)}</span>`).join("") + `<span class="muted">and your brand</span>`;
+  const mq = SERVICES.map(s=>`<span>${esc(s.en)}<i></i></span>`).join("");
+  $(".js-marquee").innerHTML = mq + mq;
+  $(".js-work-note").textContent = `${WORKS.length}개 프로젝트`;
+
+  const info = [];
+  if (STUDIO.instagram) info.push(["Instagram", `<a href="https://www.instagram.com/${esc(STUDIO.instagram)}" target="_blank" rel="noopener">@${esc(STUDIO.instagram)}</a>`]);
+  if (STUDIO.phone) info.push(["Tel", `<a href="tel:${esc(STUDIO.phone)}">${esc(STUDIO.phone)}</a>`]);
+  if (STUDIO.address) info.push(["Studio", esc(STUDIO.address)]);
+  if (STUDIO.profilePdf) info.push(["Company profile", `<a href="${esc(STUDIO.profilePdf)}" download>회사소개서 다운로드</a>`]);
+  info.push(["Services", SERVICES.map(s=>esc(s.ko)).join(", ")]);
+  $(".js-info").innerHTML = info.map(([k,v])=>`<div><dt>${k}</dt><dd>${v}</dd></div>`).join("");
+  const mb = $(".js-mail-big"); mb.textContent = STUDIO.email; mb.href = `mailto:${STUDIO.email}`;
+  $(".js-email").textContent = STUDIO.email;
+  $(".js-chips").innerHTML = SERVICES.map(s => `<label><input type="checkbox" name="service" value="${esc(s.ko)}"><span>${esc(s.ko)}</span></label>`).join("");
+
+  const links = [`<a href="#/work">Work</a>`,`<a href="#/about">About</a>`,`<a href="#/contact">Contact</a>`,`<a href="mailto:${esc(STUDIO.email)}">Email</a>`];
+  if (STUDIO.instagram) links.push(`<a href="https://www.instagram.com/${esc(STUDIO.instagram)}" target="_blank" rel="noopener">Instagram</a>`);
+  $(".js-footer-links").innerHTML = links.join("");
+  const biz = ["이에스튜디오"];
+  if (STUDIO.ceo) biz.push(`대표 ${esc(STUDIO.ceo)}`);
+  if (STUDIO.bizNumber) biz.push(`사업자등록번호 ${esc(STUDIO.bizNumber)}`);
+  if (STUDIO.address) biz.push(esc(STUDIO.address));
+  biz.push(esc(STUDIO.email));
+  $(".js-biz").innerHTML = biz.join(" | ");
+  $(".js-year").textContent = new Date().getFullYear();
+}
+
+/* clock (KST) */
+function tick(){
+  const t = new Intl.DateTimeFormat("en-GB",{timeZone:"Asia/Seoul",hour:"2-digit",minute:"2-digit",hour12:false}).format(new Date());
+  $(".js-clock").textContent = `KST ${t}`;
+}
+
+/* ---------- Work page ---------- */
+let mode = "grid";
+function renderWork(){
+  const box = $(".js-work");
+  if (mode === "grid"){
+    box.innerHTML = `<div class="grid">${WORKS.map(gridCard).join("")}${nextCard()}</div>`;
+  } else {
+    box.innerHTML = `<div class="index">
+      <div class="head"><span>No.</span><span>Project</span><span>Client</span><span>Category</span><span>Year</span></div>
+      ${WORKS.map((w,i)=>`<a href="#/work/${esc(w.id)}" data-pv="${i}" data-cursor="View">
+        <span class="n">${pad(i+1)}</span><span class="tt">${esc(w.title)}</span><span class="c">${esc(w.client)}</span><span class="c cat">${esc(w.category)}</span><span class="y">${esc(w.year)}</span>
+      </a>`).join("")}
+    </div>`;
+  }
+}
+
+/* ---------- Case study (SOCIAL VALUE MARKET) ---------- */
+const SVM = {
+  steps: [
+    ["QR 스캔하기","휴대폰으로 부스의 QR을 찍어 설문 앱에 들어갑니다."],
+    ["가치 측정하기","환경, 돌봄, 나눔, 지역사회 4개 영역 20문항 중 해 온 실천을 체크하면 사회적 가치가 금액으로 환산됩니다."],
+    ["가치 교환하기","측정을 마치면 20,000 VALUE 바코드를 받아 굿즈 최대 2개로 교환하고, 80mm 영수증을 출력합니다."],
+    ["일상에서 실천하기","영수증 인증샷 이벤트로 이어져, 부스 밖의 일상에서도 실천이 계속되도록 했습니다."]
+  ],
+  stats: [["20","실천 문항, 4개 영역 × 5문항"],["63,000","문항별 지급액 합계(SV)"],["16","가치 키워드 굿즈"],["1,300","제작한 굿즈 수량"],["80mm","현장에서 출력한 가치 영수증"]],
+  goods: [
+    ["ENVIRONMENT","환경",[["REFILL","레몬 키링","텀블러·다회용기"],["RECYCLE","머쉬룸 펜던트","분리배출"],["WALK","감자 키링","대중교통·도보"],["CLEAN PLATE","양파 키링","음식 남기지 않기"]]],
+    ["CARE","돌봄",[["WARMTH","군고구마 펜던트","병원 동행·돌봄"],["HELP","생강 키링","어르신 돕기"],["SWEET","딸기 동전지갑","아이 돌봄"],["LIFE","토마토 카드 홀더","헌혈 참여"]]],
+    ["SHARING","나눔",[["TREAT","토스트 동전지갑","미리 결제"],["CIRCLE","당근 동전지갑","중고거래"],["GIVE","버터 스틱 말랑이","기부·재능 나눔"],["HANDS","마늘 키링","봉사활동"]]],
+    ["COMMUNITY","지역사회",[["LOCAL","노란 감자 동전지갑","전통시장·지역화폐"],["FAIR","가지 동전지갑","사회적기업 구매"],["TOGETHER","찹쌀 경단 동전지갑","마을 가꾸기"],["VOICE","고추 키링","지역 공청회 참여"]]]
+  ],
+  system: [
+    ["Survey App","참여자 휴대폰","20문항 체크와 함께 누적 가치가 실시간으로 올라가고, SV TYPE 5종과 16자리 VALUE 바코드를 발급합니다. 휴대폰 1대 1회 참여."],
+    ["Counter POS","카운터 노트북","굿즈 행택과 VALUE 바코드를 스캔하면 자동으로 결제되고 영수증이 출력됩니다. 중복 사용 차단과 판매 데이터 집계까지."],
+    ["Value Receipt","80mm 감열 영수증","실천 항목, 환산 가치, SV TYPE, 교환한 굿즈를 한 장에 담았습니다. 같은 영수증을 휴대폰에서도 저장할 수 있습니다."],
+    ["Standby Screen","1080×1920 세로 화면","부스 앞 세로형 화면에 설문 QR과 참여 방법 4 STEP을 크게 띄워 멀리서도 참여를 유도했습니다."]
+  ]
+};
+
+function receiptPanel(){
+  return `<div class="panel p-receipt">
+    <div class="receipt">
+      <div class="logo-t">SOCIAL<br>VALUE<br>MARKET</div>
+      <div class="c">CSES OFFICIAL VALUE RECEIPT</div>
+      <div class="c">COEX HALL A, BOOTH D-43</div>
+      <div class="bar"><span>CREATED</span><span>VALUE</span><span>20 ITEMS</span></div>
+      <div class="r"><span>ENVIRONMENT 3/5</span><span>7,500</span></div>
+      <div class="r"><span>CARE 5/5</span><span>23,000</span></div>
+      <div class="r"><span>SHARING 1/5</span><span>2,000</span></div>
+      <div class="r"><span>COMMUNITY 3/5</span><span>6,000</span></div>
+      <hr>
+      <div class="r"><span>CHECKED</span><span>12/20</span></div>
+      <div class="r tot"><span>TOTAL</span><span>38,500 SV</span></div>
+      <div class="bar"><span>SV TYPE</span><span>RESULT</span><span>1 OF 5</span></div>
+      <div class="c"><b>CARE VALUE MAKER</b></div>
+      <div class="bar"><span>SV CHECKOUT</span><span></span><span>2 ITEMS</span></div>
+      <div class="r"><span>WARMTH 군고구마 펜던트</span><span>10,000</span></div>
+      <div class="r"><span>SWEET 딸기 동전지갑</span><span>10,000</span></div>
+      <hr>
+      <div class="r"><span>REWARD</span><span>20,000</span></div>
+      <div class="r"><span>BALANCE</span><span>0</span></div>
+      ${barcode("svm-receipt-detail",96)}
+      <div class="c">2 3 8 0 9 6 1 5 &nbsp;2 0 1 4 &nbsp;7 2 0 3</div>
+      <div class="slogan">당신의 일상도 충분히 가치 있습니다<br>BUY YOUR SOCIAL VALUE</div>
+    </div>
+    <div class="side"><b>Value Receipt</b>체크한 실천이<br>한 장의 기념품이 되도록</div>
+    <div class="side2">80mm 감열 영수증<br>예시: 12/20 체크, 38,500 SV</div>
+  </div>`;
+}
+function wallsPanel(){
+  return `<div class="panel p-walls"><div class="walls">
+    <div class="w"><span class="pn">P1</span><div class="wm">SO</div><div class="sm">SOCIAL PROGRESS CREDIT<br>ENVIRONMENTAL PROTECTION CREDIT<br>DOUBLE BOTTOM LINE</div><div class="band-b">CSES</div></div>
+    <div class="w"><span class="pn">P2</span><div class="wm">CIAL</div><div class="wm s">VALUE<br>MARK</div><div class="sm">CENTER FOR SOCIAL VALUE<br>ENHANCEMENT STUDIES<br>사회적가치연구원</div><div class="band-b">CSES</div></div>
+    <div class="w"><span class="pn">P3</span><div class="wm">ET</div><div class="sm">BUY YOUR<br>SOCIAL VALUE<br>@CSES.OFFICIAL</div><div class="band-b">BOOTH D-43</div></div>
+    <div class="r"><span class="pn">P4</span><div class="decl">DO<br>MEASURE<br>VALUE<br>EXPERIENCE</div><p>측정으로 밝히고,<br>화폐로 환산하고,<br>세상에 보상합니다.</p></div>
+    <div class="r"><span class="pn">P5</span><div class="decl">MISSION<br>STEP</div><ol><li>01 QR 스캔하기</li><li>02 가치 측정하기</li><li>03 가치 교환하기</li><li>04 일상에서 실천하기</li><li>FOLLOW, EVENT</li></ol></div>
+  </div></div>`;
+}
+
+function renderCase(w){
+  const i = WORKS.indexOf(w);
+  const isSVM = w.art === "svm";
+  let html = `<div class="wrap cs-head">
+    <a class="back" href="#/work">전체 작업으로 돌아가기</a>
+    <div class="kicker">${esc(w.kicker || w.client)}</div>
+    <h1>${esc(w.title)}</h1>
+    <dl class="meta">${w.meta.map(([k,v])=>`<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>
+    <div class="cs-hero"><div class="thumb">${thumbHTML(w)}</div></div>
+
+    <div class="cs-block cs-intro">
+      <h2>${esc(w.headline)}</h2>
+      <div><p>${esc(w.body)}</p>${w.quote?`<p class="quote">${esc(w.quote)}</p>`:""}</div>
+    </div>`;
+
+  if (isSVM){
+    html += `
+    <div class="cs-block">
+      <div class="cs-label">How it works</div>
+      <div class="steps4">${SVM.steps.map(([t,d],k)=>`<div><span class="n">STEP ${pad(k+1)}</span><h3>${esc(t)}</h3><p>${esc(d)}</p></div>`).join("")}</div>
+      <div class="flow" aria-label="부스 동선"><span>IN</span><i></i><span>TEST</span><i></i><span>GIFT</span><i></i><span>COUNTER</span><i></i><span>OUT</span></div>
+    </div>
+
+    <div class="cs-block">
+      <div class="cs-label">In numbers</div>
+      <div class="stats">${SVM.stats.map(([b,s])=>`<div><b>${esc(b)}</b><span>${esc(s)}</span></div>`).join("")}</div>
+    </div>
+
+    <div class="cs-block">
+      <div class="cs-label">Value receipt</div>
+      <div class="panel-scroll">${receiptPanel()}</div>
+      <div class="panel-cap"><span><b>측정, 환산, 교환이 한 장에.</b> 실천 항목과 SV TYPE, 교환한 굿즈가 영수증에 남아 인증샷과 기념품이 됩니다.</span><span>모노스페이스 한 벌, 픽셀 아이콘, 전폭 바코드</span></div>
+    </div>
+
+    <div class="cs-block">
+      <div class="cs-label">16 goods, 16 values</div>
+      <div class="goods">${SVM.goods.map(([en,ko,items])=>`<div class="col"><h3>${en}<span>${ko}</span></h3><ul>${items.map(([k,g,a])=>`<li><b>${esc(k)}</b><span>${esc(g)}</span><small>${esc(a)}</small></li>`).join("")}</ul></div>`).join("")}</div>
+      <div class="panel-cap"><span><b>인형이 아니라 가치를 사는 경험.</b> 굿즈마다 실천 키워드를 이름으로 붙이고, 개당 10,000 VALUE로 통일했습니다.</span><span>EAN-13 행택 바코드 16종</span></div>
+    </div>
+
+    <div class="cs-block">
+      <div class="cs-label">Space</div>
+      <div class="panel-scroll">${wallsPanel()}</div>
+      <div class="panel-cap"><span><b>3면으로 이어지는 워드마크.</b> ㄴ자 개방형 부스의 뒷벽 3면에 SOCIAL VALUE MARKET을 나눠 걸고, 우측 2면은 레드로 선언문과 참여 방법을 담았습니다.</span><span>벽면 5면, 각 950×2,200mm</span></div>
+    </div>
+
+    <div class="cs-block">
+      <div class="cs-label">System</div>
+      <div class="sys">${SVM.system.map(([t,s,d])=>`<div><h3>${esc(t)}</h3><small>${esc(s)}</small><p>${esc(d)}</p></div>`).join("")}</div>
+    </div>`;
+  }
+
+  if (w.photos && w.photos.length){
+    html += `<div class="cs-block"><div class="cs-label">On site</div><div class="gallery">${w.photos.map((src,k)=>`<figure class="${k===0?"full":""}"><img src="${esc(src)}" alt="${esc(w.title)} 현장 사진 ${k+1}" loading="lazy"></figure>`).join("")}</div></div>`;
+  }
+
+  html += `<div class="cs-block"><dl class="credits">
+      <div><dt>Client</dt><dd>${esc(w.client)}</dd></div>
+      <div><dt>Studio</dt><dd>EEH STUDIO</dd></div>
+      <div><dt>Scope</dt><dd>${esc(w.tags.join(", "))}</dd></div>
+      <div><dt>Year</dt><dd>${esc(w.year)}</dd></div>
+    </dl></div>
+  </div>`;
+
+  const next = WORKS[i+1];
+  html += next
+    ? `<a class="cs-next" href="#/work/${esc(next.id)}" data-cursor="Next"><small>다음 프로젝트</small><strong>${esc(next.title)}</strong></a>`
+    : `<a class="cs-next" href="#/contact" data-cursor="Talk"><small>다음 프로젝트</small><strong>Your brand, next.</strong></a>`;
+
+  $(".js-case").innerHTML = html;
+  document.title = `${w.title} | EEH STUDIO`;
+}
+
+/* ---------- Router + curtain ---------- */
+const TITLES = { home:"EEH STUDIO | Every Experience, Humanized", work:"Work | EEH STUDIO", about:"About | EEH STUDIO", contact:"Contact | EEH STUDIO" };
+const LABELS = { home:"EEH STUDIO", work:"Work", about:"About", contact:"Contact" };
+let first = true, busy = false;
+
+function parse(){
+  const parts = location.hash.replace(/^#\/?/, "").split("/");
+  let view = parts[0] || "home", w = null;
+  if (view === "work" && parts[1]){ w = WORKS.find(x => x.id === parts[1]); view = w ? "case" : "work"; }
+  if (!["home","work","case","about","contact"].includes(view)) view = "home";
+  return { view, w };
+}
+function show({view, w}){
+  $$(".view").forEach(v => v.classList.toggle("active", v.dataset.view === view));
+  const navKey = view === "case" ? "work" : view;
+  $$("[data-nav]").forEach(a => a.dataset.nav === navKey ? a.setAttribute("aria-current","page") : a.removeAttribute("aria-current"));
+  if (view === "case") renderCase(w); else document.title = TITLES[view];
+  if (view === "work") renderWork();
+  const hero = $("#hero");
+  if (view === "home"){ hero.classList.remove("on"); setTimeout(()=>hero.classList.add("on"), first ? 250 : 450); }
+  closeMenu(); hidePreview(); setCursor(null);
+  window.scrollTo(0,0);
+}
+function route(){
+  const r = parse();
+  if (first || reduce){ show(r); first = false; return; }
+  if (busy) return; busy = true;
+  const c = $(".curtain");
+  $(".js-curtain-t").textContent = r.view === "case" ? r.w.title : LABELS[r.view];
+  c.classList.remove("out"); void c.offsetWidth; c.classList.add("in");
+  setTimeout(()=>{
+    show(r);
+    c.classList.add("out");
+    setTimeout(()=>{ c.classList.remove("in","out"); busy = false; }, 650);
+  }, 560);
+}
+
+/* ---------- Mobile menu ---------- */
+const menuBtn = $(".menu-btn"), mnav = $("#mobileNav");
+function openMenu(){ mnav.classList.add("open"); mnav.setAttribute("aria-hidden","false"); menuBtn.setAttribute("aria-expanded","true"); }
+function closeMenu(){ mnav.classList.remove("open"); mnav.setAttribute("aria-hidden","true"); menuBtn.setAttribute("aria-expanded","false"); }
+menuBtn.addEventListener("click", openMenu);
+$(".mobile-nav .close").addEventListener("click", closeMenu);
+document.addEventListener("keydown", e => { if (e.key === "Escape") closeMenu(); });
+
+/* ---------- Cursor ---------- */
+const dot = $(".cur-dot"), lab = $(".cur-label"), pv = $(".pv");
+const fine = matchMedia("(hover: hover) and (pointer: fine)").matches;
+let mx = innerWidth/2, my = innerHeight/2, dx = mx, dy = my, lx = mx, ly = my, px = mx, py = my;
+let pvOn = false;
+function setCursor(label){
+  if (!fine) return;
+  if (label){ lab.textContent = label; lab.classList.add("on"); dot.classList.add("is-label"); }
+  else { lab.classList.remove("on"); dot.classList.remove("is-label"); }
+}
+function hidePreview(){ pvOn = false; pv.classList.remove("on"); }
+if (fine){
+  document.documentElement.classList.add("has-cursor");
+  addEventListener("mousemove", e => {
+    mx = e.clientX; my = e.clientY;
+    document.documentElement.classList.add("cursor-ready");
+    const t = e.target;
+    const lbl = t.closest && t.closest("[data-cursor]");
+    const link = t.closest && t.closest("a,button,label,.svc-row button");
+    const field = t.closest && t.closest("input,textarea,select");
+    setCursor(lbl ? lbl.dataset.cursor : null);
+    dot.classList.toggle("is-link", !lbl && !!link);
+    dot.classList.toggle("is-hidden", !!field);
+    const row = t.closest && t.closest("[data-pv]");
+    if (row){
+      const w = WORKS[+row.dataset.pv];
+      const box = $(".js-pv");
+      if (box.dataset.id !== w.id){ box.innerHTML = thumbHTML(w); box.dataset.id = w.id; }
+      pvOn = true; pv.classList.add("on");
+    } else if (pvOn) hidePreview();
+  }, {passive:true});
+  document.addEventListener("mouseleave", () => { dot.classList.add("is-hidden"); setCursor(null); });
+  document.addEventListener("mouseenter", () => dot.classList.remove("is-hidden"));
+  (function loop(){
+    const k = reduce ? 1 : .22, k2 = reduce ? 1 : .14, k3 = reduce ? 1 : .1;
+    dx += (mx-dx)*k; dy += (my-dy)*k;
+    lx += (mx-lx)*k2; ly += (my-ly)*k2;
+    px += (mx-px)*k3; py += (my-py)*k3;
+    dot.style.transform = `translate3d(${dx}px,${dy}px,0)`;
+    lab.style.transform = `translate3d(${lx}px,${ly}px,0)`;
+    const pw = pv.offsetWidth, ph = pv.offsetHeight;
+    pv.style.transform = `translate3d(${Math.min(px+28, innerWidth-pw-16)}px,${Math.min(Math.max(py-ph/2,16), innerHeight-ph-16)}px,0)`;
+    requestAnimationFrame(loop);
+  })();
+}
+
+/* ---------- Interactions ---------- */
+document.addEventListener("click", e => {
+  const b = e.target.closest(".svc-row button");
+  if (b){
+    const row = b.parentElement, open = row.dataset.open !== "true";
+    row.dataset.open = open; b.setAttribute("aria-expanded", open);
+  }
+  const m = e.target.closest(".toggle button");
+  if (m){
+    mode = m.dataset.mode;
+    $$(".toggle button").forEach(x => x.setAttribute("aria-pressed", x === m));
+    renderWork(); hidePreview();
+  }
+});
+
+/* ---------- Contact form -> mailto ---------- */
+$(".js-form").addEventListener("submit", e => {
+  e.preventDefault();
+  const fm = e.target, msg = $(".form-msg", fm);
+  const missing = [...fm.querySelectorAll("[required]")].filter(el => !el.value.trim());
+  const email = fm.email.value.trim();
+  msg.className = "form-msg err";
+  if (missing.length){ msg.textContent = "필수 항목을 입력해 주세요: " + missing.map(el => el.previousElementSibling.textContent.replace("*","").trim()).join(", "); missing[0].focus(); return; }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ msg.textContent = "이메일 주소 형식을 확인해 주세요."; fm.email.focus(); return; }
+  const services = $$("input[name=service]:checked", fm).map(x => x.value).join(", ") || "-";
+  const body = [
+    `회사/브랜드명: ${fm.company.value}`, `담당자: ${fm.name.value}`, `이메일: ${email}`,
+    `연락처: ${fm.phone.value || "-"}`, `문의 분야: ${services}`, `예산 범위: ${fm.budget.value || "-"}`,
+    `희망 일정: ${fm.schedule.value || "-"}`, "", "프로젝트 내용:", fm.message.value
+  ].join("\n");
+  location.href = `mailto:${STUDIO.email}?subject=${encodeURIComponent("[프로젝트 문의] " + fm.company.value)}&body=${encodeURIComponent(body)}`;
+  msg.className = "form-msg";
+  msg.textContent = `메일 창을 열었습니다. 메일 앱에서 전송을 눌러 주세요. 창이 열리지 않으면 ${STUDIO.email}로 직접 보내 주세요.`;
+});
+
+renderStatic();
+tick(); setInterval(tick, 20000);
+window.addEventListener("hashchange", route);
+route();
+</script>
+</body>
+</html>
