@@ -477,6 +477,27 @@ a.ul{color:#000;border-bottom:1px solid #000}
   .walls-strip{gap:4px}
 }
 
+
+/* editor */
+.ed-entry{background:none;border:0;color:inherit;font-size:12.5px;padding:0;text-decoration:underline;text-underline-offset:3px;opacity:.6}
+.ed-entry:hover{opacity:1}
+.ed-bar{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);z-index:95;display:flex;align-items:center;gap:12px;background:#111;color:#fff;border-radius:999px;padding:10px 12px 10px 18px;font-size:13.5px;box-shadow:0 10px 30px rgba(0,0,0,.25);max-width:calc(100vw - 32px)}
+.ed-bar[hidden]{display:none}
+.ed-dot{width:8px;height:8px;border-radius:50%;background:#3ccf6e;flex:none}
+.ed-status{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ed-bar button{background:#fff;color:#000;border:0;border-radius:999px;padding:7px 14px;font-weight:600;font-size:13px;flex:none}
+.ed-bar .ed-logout{background:transparent;color:#bbb;border:1px solid #444}
+.editing [contenteditable=true]{outline:1px dashed rgba(0,120,255,.55);outline-offset:3px;cursor:text!important;border-radius:2px}
+.editing [contenteditable=true]:hover{background:rgba(0,120,255,.06)}
+.editing [contenteditable=true]:focus{outline:2px solid #0a6cff;background:rgba(0,120,255,.06)}
+.editing img.ed-img{outline:2px dashed rgba(0,120,255,.6);outline-offset:-2px;cursor:pointer!important}
+.editing .cur-dot,.editing .cur-label{display:none}
+.editing, .editing *{cursor:auto}
+.ed-pop{position:fixed;z-index:96;background:#fff;border:1px solid #000;display:flex;flex-direction:column;min-width:170px}
+.ed-pop[hidden]{display:none}
+.ed-pop button{background:none;border:0;border-bottom:1px solid #eee;text-align:left;padding:11px 14px;font-size:14px}
+.ed-pop button:hover{background:#f2f2f2}
+
 /* ---------- Contact ---------- */
 .contact-grid{display:grid;grid-template-columns:1fr 1.35fr;gap:clamp(36px,6vw,104px)}
 .contact-info dl{display:grid;gap:22px}
@@ -577,6 +598,8 @@ form fieldset{border:0;border-bottom:1px solid var(--line);padding:18px 0 16px}
 <div class="cur-dot" aria-hidden="true"></div>
 <div class="cur-label" aria-hidden="true"></div>
 <div class="curtain" aria-hidden="true"><span class="js-curtain-t"></span></div>
+<div class="ed-bar" hidden><span class="ed-dot"></span><span class="ed-status">편집 꺼짐</span><button type="button" class="ed-toggle">편집 시작</button><button type="button" class="ed-logout">로그아웃</button></div>
+<input type="file" class="ed-file" accept="image/*" hidden>
 <div class="pv" aria-hidden="true"><div class="thumb js-pv"></div></div>
 
 <header class="header wrap">
@@ -783,7 +806,7 @@ form fieldset{border:0;border-bottom:1px solid var(--line);padding:18px 0 16px}
   </div>
   <div class="footer-bottom">
     <div class="js-biz"></div>
-    <div><span class="js-clock"></span> &nbsp; &copy; <span class="js-year"></span> EEH STUDIO</div>
+    <div><span class="js-clock"></span> &nbsp; &copy; <span class="js-year"></span> EEH STUDIO &nbsp; <button type="button" class="ed-entry">관리자</button></div>
   </div>
 </footer>
 
@@ -1266,6 +1289,7 @@ function show({view, w}){
   const hero = $("#hero");
   if (view === "home"){ hero.classList.remove("on"); setTimeout(()=>hero.classList.add("on"), first ? 250 : 450); }
   closeMenu(); hidePreview(); setCursor(null);
+  applyEdits(document);
   window.scrollTo(0,0);
 }
 function route(){
@@ -1347,7 +1371,7 @@ document.addEventListener("click", e => {
   if (m){
     mode = m.dataset.mode;
     $$(".toggle button").forEach(x => x.setAttribute("aria-pressed", x === m));
-    renderWork(); hidePreview();
+    renderWork(); hidePreview(); applyEdits(document);
   }
 });
 
@@ -1371,7 +1395,157 @@ $(".js-form").addEventListener("submit", e => {
   msg.textContent = `메일 창을 열었습니다. 메일 앱에서 전송을 눌러 주세요. 창이 열리지 않으면 ${STUDIO.email}로 직접 보내 주세요.`;
 });
 
+/* =========================================================
+   4. 페이지 편집 (실시간 동기화 · Firebase)
+   - FIREBASE_CONFIG를 채우면 켜집니다. 비어 있으면 편집 기능은 숨겨집니다.
+   - EDITORS에 있는 구글 계정으로 로그인한 사람만 수정할 수 있습니다.
+     (실제 권한은 Firebase 데이터베이스 규칙이 막습니다.)
+   ========================================================= */
+const FIREBASE_CONFIG = {
+  apiKey: "AIzaSyBhZuGoS3353DWorn2uMN9xu66_1kxY1RU",
+  authDomain: "eehstudio-web.firebaseapp.com",
+  databaseURL: "https://eehstudio-web-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "eehstudio-web",
+  storageBucket: "eehstudio-web.firebasestorage.app",
+  messagingSenderId: "570120627326",
+  appId: "1:570120627326:web:ac1e38bb854b931296242f"
+};
+const EDITORS = ["home.business.kr@gmail.com"];
+
+const ED = { on:false, user:null, db:null, text:{}, img:{}, timers:{}, ready:false };
+const EDIT_TEXT = "main h1:not(.hero h1), main h2, main h3, main p, main li, main dd, main dt, main figcaption, main .cap, main .kicker, main .svc-name, main .svc-ko, main .tag, main .text-link, main .cs-label, main .en, main .n, main .d, footer .wordmark";
+const EDIT_SKIP = ".marquee, .curtain, .hero h1, .receipt, .flow, .press-card .src, .toggle, form, .js-filter";
+const hashKey = s => { let h = 5381; for (let i=0;i<s.length;i++) h = ((h<<5)+h + s.charCodeAt(i))>>>0; return "k" + h.toString(36) + s.length.toString(36); };
+const ALLOWED = { B:1, STRONG:1, I:1, EM:1, BR:1, A:1, SPAN:1 };
+function clean(html){
+  const t = document.createElement("template"); t.innerHTML = html;
+  (function walk(n){ [...n.childNodes].forEach(c=>{
+    if (c.nodeType === 1){
+      if (!ALLOWED[c.tagName]){ c.replaceWith(...c.childNodes); return walk(n); }
+      [...c.attributes].forEach(a=>{ if (!(c.tagName==="A" && a.name==="href" && /^(https?:|mailto:|#)/.test(a.value)) && a.name!=="class") c.removeAttribute(a.name); });
+      walk(c);
+    } else if (c.nodeType !== 3) c.remove();
+  }); })(t.content);
+  return t.innerHTML;
+}
+function editTargets(root){
+  return [...root.querySelectorAll(EDIT_TEXT)].filter(el => !el.closest(EDIT_SKIP) && !el.querySelector("h1,h2,h3,p,li,dd,dt,figure,img,iframe,ul,ol,div") && el.textContent.trim());
+}
+function applyEdits(root){
+  root = root || document;
+  editTargets(root).forEach(el=>{
+    if (!el.dataset.ek){ el.dataset.orig = el.innerHTML; el.dataset.ek = hashKey(el.innerHTML.replace(/\s+/g," ").trim()); }
+    const v = ED.text[el.dataset.ek];
+    const want = v != null ? clean(v) : el.dataset.orig;
+    if (document.activeElement !== el && el.innerHTML !== want) el.innerHTML = want;
+    if (ED.on) el.setAttribute("contenteditable","true"); else el.removeAttribute("contenteditable");
+  });
+  root.querySelectorAll("main img, .js-pv img").forEach(im=>{
+    if (!im.dataset.ik){ im.dataset.osrc = im.getAttribute("src"); im.dataset.ik = hashKey(im.dataset.osrc); }
+    const v = ED.img[im.dataset.ik];
+    const want = v ? v : im.dataset.osrc;
+    if (im.getAttribute("src") !== want) im.setAttribute("src", want);
+    im.classList.toggle("ed-img", ED.on);
+  });
+}
+function edStatus(t){ const s = $(".ed-status"); if (s) s.textContent = t; }
+function saveText(el){
+  const k = el.dataset.ek; clearTimeout(ED.timers[k]);
+  ED.timers[k] = setTimeout(()=>{
+    const v = clean(el.innerHTML);
+    const ref = ED.db.ref("site/text/"+k);
+    (v === el.dataset.orig ? ref.remove() : ref.set(v)).then(()=>edStatus("저장됨 · 모든 방문자에게 반영")).catch(e=>edStatus("저장 실패: 권한을 확인해 주세요"));
+    edStatus("저장 중…");
+  }, 500);
+}
+function resizeImage(file){
+  return new Promise((res, rej)=>{
+    const r = new FileReader();
+    r.onload = () => { const im = new Image(); im.onload = () => {
+      const max = 1920, s = Math.min(1, max / Math.max(im.width, im.height));
+      const c = document.createElement("canvas"); c.width = Math.round(im.width*s); c.height = Math.round(im.height*s);
+      c.getContext("2d").drawImage(im, 0, 0, c.width, c.height);
+      let q = .82, out = c.toDataURL("image/webp", q);
+      while (out.length > 900000 && q > .4){ q -= .1; out = c.toDataURL("image/webp", q); }
+      res(out);
+    }; im.onerror = rej; im.src = r.result; };
+    r.onerror = rej; r.readAsDataURL(file);
+  });
+}
+let edPick = null;
+function pickImage(im){
+  edPick = im; const f = $(".ed-file"); f.value = ""; f.click();
+}
+function setEditing(on){
+  ED.on = on; document.documentElement.classList.toggle("editing", on);
+  $(".ed-bar").hidden = !ED.user;
+  $(".ed-toggle").textContent = on ? "편집 끝내기" : "편집 시작";
+  applyEdits(document);
+  edStatus(on ? "글자를 눌러 고치고, 이미지를 눌러 바꾸세요. 자동 저장됩니다." : "편집 꺼짐");
+}
+function initEditor(){
+  const cfg = FIREBASE_CONFIG;
+  const entry = $(".ed-entry");
+  if (!cfg){ if (entry) entry.hidden = true; return; }
+  const load = src => new Promise(r=>{ const s=document.createElement("script"); s.src=src; s.onload=r; document.head.appendChild(s); });
+  const V = "https://www.gstatic.com/firebasejs/10.12.2/";
+  load(V+"firebase-app-compat.js").then(()=>Promise.all([load(V+"firebase-database-compat.js"), load(V+"firebase-auth-compat.js")])).then(()=>{
+    firebase.initializeApp(cfg);
+    ED.db = firebase.database();
+    ED.db.ref("site/text").on("value", s=>{ ED.text = s.val() || {}; applyEdits(document); });
+    ED.db.ref("site/img").on("value", s=>{ ED.img = s.val() || {}; applyEdits(document); });
+    firebase.auth().onAuthStateChanged(u=>{
+      ED.user = u && EDITORS.includes((u.email||"").toLowerCase()) ? u : null;
+      if (u && !ED.user){ edStatus(""); alertMsg(`${u.email} 계정은 편집 권한이 없습니다.`); firebase.auth().signOut(); }
+      $(".ed-bar").hidden = !ED.user;
+      if (entry) entry.textContent = ED.user ? "편집 모드" : "관리자";
+      if (!ED.user) setEditing(false);
+    });
+    ED.ready = true;
+  });
+  entry.addEventListener("click", ()=>{
+    if (!ED.ready) return;
+    if (ED.user){ setEditing(!ED.on); return; }
+    firebase.auth().signInWithPopup(new firebase.auth.GoogleAuthProvider()).then(()=>{ if (ED.user) setEditing(true); }).catch(e=>alertMsg("로그인하지 못했습니다. 팝업 차단을 확인해 주세요."));
+  });
+  $(".ed-toggle").addEventListener("click", ()=>setEditing(!ED.on));
+  $(".ed-logout").addEventListener("click", ()=>{ setEditing(false); firebase.auth().signOut(); });
+  $(".ed-file").addEventListener("change", async e=>{
+    const file = e.target.files[0]; if (!file || !edPick) return;
+    edStatus("이미지 줄이는 중…");
+    try{
+      const data = await resizeImage(file);
+      edStatus("이미지 저장 중…");
+      await ED.db.ref("site/img/"+edPick.dataset.ik).set(data);
+      edStatus("이미지 교체됨 · 모든 방문자에게 반영");
+    }catch(err){ edStatus("이미지 저장 실패"); }
+  });
+  /* 편집 중에는 링크 이동 대신 편집 */
+  document.addEventListener("click", e=>{
+    if (!ED.on) return;
+    if (e.target.closest(".ed-bar, .ed-entry, .ed-pop")) return;
+    const im = e.target.closest("img.ed-img");
+    if (im){ e.preventDefault(); e.stopPropagation(); edMenu(im, e); return; }
+    if (e.target.closest("[contenteditable=true]") || e.target.closest("a")){ if (e.target.closest("a")) e.preventDefault(); }
+  }, true);
+  document.addEventListener("input", e=>{ const el = e.target.closest && e.target.closest("[contenteditable=true]"); if (el && ED.on) saveText(el); });
+  document.addEventListener("keydown", e=>{ if (ED.on && e.key === "Enter" && !e.shiftKey && e.target.closest && e.target.closest("[contenteditable=true]")){ e.preventDefault(); document.execCommand("insertLineBreak"); } });
+  document.addEventListener("paste", e=>{ if (!ED.on || !e.target.closest || !e.target.closest("[contenteditable=true]")) return; e.preventDefault(); document.execCommand("insertText", false, (e.clipboardData||window.clipboardData).getData("text/plain")); });
+}
+function edMenu(im, e){
+  let m = $(".ed-pop"); if (!m){ m = document.createElement("div"); m.className = "ed-pop"; document.body.appendChild(m); }
+  m.innerHTML = `<button type="button" data-a="swap">이미지 바꾸기</button>${ED.img[im.dataset.ik]?`<button type="button" data-a="reset">원래 이미지로</button>`:""}<button type="button" data-a="close">닫기</button>`;
+  m.style.left = Math.min(e.clientX, innerWidth-200)+"px"; m.style.top = Math.min(e.clientY, innerHeight-140)+"px"; m.hidden = false;
+  m.onclick = ev=>{
+    const a = ev.target.dataset.a; m.hidden = true;
+    if (a === "swap") pickImage(im);
+    if (a === "reset") ED.db.ref("site/img/"+im.dataset.ik).remove().then(()=>edStatus("원래 이미지로 돌렸습니다"));
+  };
+}
+function alertMsg(t){ edStatus(t); const b = $(".ed-bar"); if (b){ b.hidden = false; setTimeout(()=>{ if(!ED.user) b.hidden = true; }, 4000); } }
+
 renderStatic();
+initEditor();
 tick(); setInterval(tick, 20000);
 window.addEventListener("hashchange", route);
 route();
