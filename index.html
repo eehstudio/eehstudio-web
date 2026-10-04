@@ -884,6 +884,395 @@ form fieldset{border:0;border-bottom:1px solid var(--line);padding:18px 0 16px}
   *{transition:none!important;animation:none!important}
   .hero h1 .rest{max-width:9em;opacity:1}
 }
+
+/* ===== v9: readability, motion, divisions, booth explorer, dossier ===== */
+:root{--gray:#737373}
+p,li,dd{text-wrap:pretty}
+h1,h2,h3{text-wrap:balance}
+.cap{font-size:15.5px;line-height:1.75}
+.cs-intro p,.story-t p{line-height:1.9}
+.grid .card-meta p{font-size:15px}
+
+/* numbered section labels */
+.js-case{counter-reset:cs}
+.js-case .cs-block > .cs-label{display:flex;align-items:center;gap:12px;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:#000;margin-bottom:20px}
+.js-case .cs-block > .cs-label::before{counter-increment:cs;content:counter(cs,decimal-leading-zero);color:var(--gray);font-weight:500}
+.js-case .cs-block > .cs-label::after{content:"";flex:1;height:1px;background:var(--line)}
+
+/* reveal */
+.rv{opacity:0;transform:translate3d(0,36px,0);transition:opacity .9s var(--ease-out),transform 1.1s var(--ease-out)}
+.rv.in{opacity:1;transform:none}
+.rv-img{overflow:hidden}
+.rv-img img{transform:scale(1.08);transition:transform 1.6s var(--ease-out)}
+.rv-img.in img{transform:scale(1)}
+@media (prefers-reduced-motion:reduce){.rv,.rv-img img{opacity:1;transform:none;transition:none}}
+
+/* badges */
+.thumb .badge{position:absolute;left:12px;top:12px;z-index:2;font-size:11.5px;font-weight:600;letter-spacing:.02em;padding:4px 9px;border-radius:999px;background:#fff;color:#000;box-shadow:0 1px 0 rgba(0,0,0,.06)}
+.thumb .badge.b-Built{background:#000;color:#fff}
+.thumb .badge.b-Proposal{background:#fff;color:#000;border:1px solid #000}
+.card .thumb > img{transition:transform 1.4s var(--ease-out),filter .6s}
+.card:hover .thumb > img{transform:scale(1.05)}
+
+/* work divisions */
+.divtabs{display:flex;gap:6px;flex-wrap:wrap}
+.divtabs button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 16px;font-size:14px;font-weight:500;color:var(--gray-2);transition:background .3s,color .3s,border-color .3s}
+.divtabs button:hover{border-color:#000;color:#000}
+.divtabs button[aria-pressed="true"]{background:#000;border-color:#000;color:#fff}
+.divtabs button small{font-size:11px;margin-left:6px;opacity:.6}
+.wdiv + .wdiv{margin-top:clamp(72px,9vw,140px)}
+.wdiv-h{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;padding-bottom:16px;margin-bottom:clamp(24px,3vw,40px);border-bottom:1px solid #000}
+.wdiv-h h2{font-size:clamp(30px,4vw,60px);font-weight:600;letter-spacing:-.045em;line-height:1}
+.wdiv-h span{font-size:14px;color:var(--gray-2);text-align:right}
+.work-note2{margin-top:clamp(48px,6vw,88px);padding-top:18px;border-top:1px solid var(--line);font-size:14px;color:var(--gray-2);max-width:60em}
+.index .idx-h{display:block;padding:36px 0 12px;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid #000}
+.index .st{font-size:12px;color:var(--gray);margin-left:10px;font-weight:500;letter-spacing:0}
+
+/* home rails */
+.rails .rail-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin:0 0 22px}
+.rails .rail-head h3{font-size:clamp(24px,2.6vw,40px);font-weight:600;letter-spacing:-.04em;line-height:1.05}
+.rails .rail-head p{font-size:14.5px;color:var(--gray-2);margin-top:6px}
+.rail-wrap + .rail-wrap{margin-top:clamp(56px,7vw,104px)}
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:clamp(260px,30vw,460px);gap:clamp(12px,1.4vw,20px);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:6px;cursor:grab;-webkit-overflow-scrolling:touch}
+.rail::-webkit-scrollbar{display:none}
+.rail.drag{cursor:grabbing;scroll-snap-type:none}
+.rail.drag a{pointer-events:none}
+.rail > a{scroll-snap-align:start;display:block}
+.rail .card-meta{padding-top:12px}
+.rail .card-meta h3{font-size:clamp(16px,1.3vw,20px)}
+.rail .card-meta p{font-size:13.5px;color:var(--gray-2);margin-top:4px}
+.rail-ui{display:flex;align-items:center;gap:14px;margin-top:16px}
+.rail-ui button{width:40px;height:40px;border-radius:50%;border:1px solid #000;background:#fff;font-size:16px;transition:background .3s,color .3s}
+.rail-ui button:hover{background:#000;color:#fff}
+.rail-ui .bar{flex:1;height:1px;background:var(--line);position:relative}
+.rail-ui .bar i{position:absolute;left:0;top:-1px;height:3px;background:#000;width:20%;transition:left .2s,width .2s}
+
+/* why */
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.4vw,20px)}
+.why-card{display:flex;flex-direction:column;border-top:1px solid #000;padding-top:18px}
+.why-card .n{font-size:12.5px;color:var(--gray);letter-spacing:.06em}
+.why-card h3{font-size:clamp(20px,1.8vw,27px);font-weight:600;letter-spacing:-.03em;line-height:1.25;margin:14px 0 10px}
+.why-card p{font-size:15px;color:var(--gray-2);line-height:1.75}
+.why-card .fig{margin-top:auto;padding-top:20px}
+.why-card .fig .ph-fig{aspect-ratio:4/3}
+.why-card .proof{display:flex;justify-content:space-between;gap:12px;align-items:baseline;margin-top:12px;font-size:13.5px;font-weight:600}
+.why-card .proof b{font-size:clamp(26px,2.4vw,36px);letter-spacing:-.04em;font-weight:600}
+.why-card:hover .ph-fig img{transform:scale(1.04)}
+.why-card .ph-fig img{transition:transform 1.2s var(--ease-out)}
+
+/* workflow stepper */
+.wf{margin-top:clamp(56px,7vw,104px)}
+.wf-h{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:22px}
+.wf-h h3{font-size:clamp(24px,2.6vw,40px);font-weight:600;letter-spacing:-.04em;line-height:1.05}
+.wf-h p{font-size:14.5px;color:var(--gray-2);max-width:34em}
+.wf-steps{display:grid;grid-template-columns:repeat(9,1fr);border-top:1px solid #000;border-bottom:1px solid var(--line)}
+.wf-steps button{position:relative;text-align:left;background:none;border:0;border-right:1px solid var(--line);padding:14px 10px 18px;min-height:96px;color:var(--gray-2);transition:background .3s,color .3s}
+.wf-steps button:last-child{border-right:0}
+.wf-steps button .n{display:block;font-size:12px;color:var(--gray)}
+.wf-steps button .t{display:block;margin-top:10px;font-size:14px;font-weight:600;line-height:1.3;letter-spacing:-.01em}
+.wf-steps button i{position:absolute;left:0;bottom:-1px;height:3px;width:0;background:#000}
+.wf-steps button[aria-selected="true"]{color:#000;background:#f6f6f4}
+.wf-steps button[aria-selected="true"] i{width:100%;transition:width var(--wf-ms,5200ms) linear}
+.wf-steps.paused button[aria-selected="true"] i{transition:none;width:100%}
+.wf-panel{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(20px,4vw,64px);padding:28px 0 0;min-height:200px}
+.wf-panel h4{font-size:clamp(28px,3.4vw,52px);font-weight:600;letter-spacing:-.05em;line-height:1}
+.wf-panel h4 small{display:block;font-size:14px;font-weight:500;letter-spacing:0;color:var(--gray);margin-bottom:12px}
+.wf-panel .who{display:flex;gap:6px;flex-wrap:wrap;margin-top:16px}
+.wf-panel p{font-size:16px;line-height:1.85;color:#2b2b2b}
+.wf-panel .ev{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-size:14px;color:var(--gray-2)}
+.wf-panel .ev b{color:#000}
+.wf-panel > *{animation:wfIn .6s var(--ease-out)}
+@keyframes wfIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.band .wf-steps{border-top-color:#fff;border-bottom-color:var(--line-dark)}
+.band .wf-steps button{border-right-color:var(--line-dark);color:#9a9a9a}
+.band .wf-steps button[aria-selected="true"]{background:#141414;color:#fff}
+.band .wf-steps button i{background:#fff}
+.band .wf-panel p{color:#d8d8d8}
+.band .wf-panel .ev{border-top-color:var(--line-dark);color:#a8a8a8}
+.band .wf-panel .ev b{color:#fff}
+
+/* booth explorer */
+.bx{border:1px solid var(--line);background:#F1F0EC}
+.bx-stage{position:relative;aspect-ratio:16/10;overflow:hidden;cursor:grab;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.bx-stage.drag{cursor:grabbing}
+.bx-img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+.bx-hs{position:absolute;inset:0;pointer-events:none}
+.bx-hs .hs{position:absolute;left:calc(var(--x)*100%);top:calc(var(--y)*100%);transform:translate(-50%,-50%);pointer-events:auto;width:34px;height:34px;border-radius:50%;border:0;background:#000;color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;transition:left .12s linear,top .12s linear,opacity .3s,transform .3s;box-shadow:0 0 0 6px rgba(0,0,0,.08)}
+.bx-hs .hs::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:1px solid #000;opacity:.5;animation:hsP 2.4s infinite var(--ease-out)}
+.bx-hs .hs.off{opacity:.28}
+.bx-hs .hs.on{background:#00AF66;transform:translate(-50%,-50%) scale(1.15)}
+.bx-hs .hs.on::after{border-color:#00AF66}
+@keyframes hsP{0%{transform:scale(.8);opacity:.6}100%{transform:scale(1.6);opacity:0}}
+.bx-hint{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);background:rgba(0,0,0,.78);color:#fff;font-size:12.5px;padding:7px 14px;border-radius:999px;pointer-events:none;transition:opacity .5s;white-space:nowrap}
+.bx.touched .bx-hint{opacity:0}
+.bx-deg{position:absolute;right:14px;top:12px;font-family:var(--mono);font-size:12px;color:#555;background:rgba(255,255,255,.8);padding:4px 8px;border-radius:6px}
+.bx-load{position:absolute;left:14px;top:12px;font-size:12px;color:#555;background:rgba(255,255,255,.8);padding:4px 8px;border-radius:6px;transition:opacity .4s}
+.bx-load.done{opacity:0}
+.bx-bar{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:12px 14px;border-top:1px solid var(--line);background:#fff}
+.bx-bar .chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 12px;font-size:13px;font-weight:500;color:var(--gray-2);transition:all .25s}
+.bx-bar .chip b{font-weight:700;color:#000;margin-right:6px}
+.bx-bar .chip:hover{border-color:#000;color:#000}
+.bx-bar .chip[aria-pressed="true"]{background:#000;color:#fff;border-color:#000}
+.bx-bar .chip[aria-pressed="true"] b{color:#00AF66}
+.bx-bar .sp{flex:1}
+.bx-bar .ctl{border:1px solid #000;background:#fff;border-radius:999px;padding:6px 12px;font-size:13px;font-weight:600}
+.bx-bar .ctl[aria-pressed="true"]{background:#000;color:#fff}
+.bx-bar a.ctl{display:inline-block}
+.bx-panel{display:grid;grid-template-columns:1fr 1.2fr;gap:0;border-top:1px solid var(--line);background:#fff}
+.bx-panel:empty{display:none}
+.bx-panel .t{padding:clamp(18px,2.2vw,32px)}
+.bx-panel .k{font-size:12.5px;letter-spacing:.06em;color:var(--gray);font-weight:600}
+.bx-panel h3{font-size:clamp(24px,2.6vw,38px);font-weight:600;letter-spacing:-.04em;line-height:1.1;margin:10px 0 4px}
+.bx-panel .en{font-size:12.5px;letter-spacing:.06em;color:var(--gray)}
+.bx-panel p{font-size:15.5px;line-height:1.8;color:#2b2b2b;margin-top:14px}
+.bx-panel .dim{margin-top:14px;font-family:var(--mono);font-size:12.5px;color:var(--gray-2)}
+.bx-panel .imgs{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border-left:1px solid var(--line)}
+.bx-panel .imgs figure{margin:0;background:#fff;display:flex;flex-direction:column}
+.bx-panel .imgs img{width:100%;aspect-ratio:4/3;object-fit:contain;background:#f6f6f4}
+.bx-panel .imgs figcaption{font-size:12.5px;color:var(--gray-2);padding:8px 10px}
+.bx-panel > *{animation:wfIn .5s var(--ease-out)}
+
+/* plan -> built compare */
+.cmps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.4vw,20px)}
+.cmp{position:relative}
+.cmp-box{position:relative;aspect-ratio:4/3;overflow:hidden;background:#f6f6f4;border:1px solid var(--line);cursor:ew-resize;touch-action:pan-y}
+.cmp-box img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;pointer-events:none}
+.cmp-box .top{clip-path:inset(0 calc(100% - var(--p,50%)) 0 0)}
+.cmp-box .ln{position:absolute;top:0;bottom:0;left:var(--p,50%);width:2px;margin-left:-1px;background:#000;pointer-events:none}
+.cmp-box .ln::after{content:"↔";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:36px;height:36px;border-radius:50%;background:#000;color:#fff;font-size:15px;display:flex;align-items:center;justify-content:center}
+.cmp-box .tl{position:absolute;top:10px;font-size:11.5px;font-weight:700;letter-spacing:.06em;padding:4px 8px;background:#fff;border:1px solid #000;pointer-events:none}
+.cmp-box .tl.l{left:10px}.cmp-box .tl.r{right:10px;background:#000;color:#fff}
+.cmp input{position:absolute;inset:0;opacity:0;width:100%;height:100%;cursor:ew-resize;margin:0}
+.cmp figcaption{font-size:13.5px;color:var(--gray-2);margin-top:10px}
+.cmp figcaption b{color:#000}
+.trail{list-style:none;display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid #000;margin-top:clamp(28px,3vw,44px)}
+.trail li{padding:18px 14px 6px 0;border-right:1px solid var(--line);position:relative}
+.trail li + li{padding-left:14px}
+.trail li:last-child{border-right:0}
+.trail .d{font-family:var(--mono);font-size:12px;color:var(--gray)}
+.trail h3{font-size:clamp(17px,1.4vw,21px);font-weight:600;letter-spacing:-.02em;margin:10px 0 6px}
+.trail p{font-size:14px;color:var(--gray-2);line-height:1.7}
+.trail li::before{content:"";position:absolute;top:-5px;left:0;width:9px;height:9px;border-radius:50%;background:#000}
+.trail li + li::before{left:14px}
+
+/* dossier dashboard */
+.dos{border:1px solid #000;background:#fff;display:grid;grid-template-columns:220px 1fr;min-height:560px}
+.dos-side{border-right:1px solid var(--line);background:#fafaf8;display:flex;flex-direction:column}
+.dos-side .hd{padding:16px 16px 14px;border-bottom:1px solid var(--line)}
+.dos-side .hd b{display:block;font-size:13px;letter-spacing:.06em}
+.dos-side .hd span{display:block;font-size:12px;color:var(--gray);margin-top:4px}
+.dos-side nav{display:flex;flex-direction:column;padding:6px 0}
+.dos-side button{display:flex;gap:10px;align-items:baseline;text-align:left;background:none;border:0;padding:10px 16px;font-size:14px;color:var(--gray-2);border-left:3px solid transparent;transition:all .2s}
+.dos-side button span{font-family:var(--mono);font-size:11.5px;color:var(--gray)}
+.dos-side button:hover{color:#000;background:#f1f1ee}
+.dos-side button[aria-selected="true"]{color:#000;font-weight:600;border-left-color:#000;background:#fff}
+.dos-side .ft{margin-top:auto;padding:14px 16px;border-top:1px solid var(--line);font-size:11.5px;color:var(--gray);line-height:1.6}
+.dos-main{padding:clamp(18px,2.4vw,36px);min-width:0}
+.dos-main .ph{position:static;background:none;color:#000;font-size:inherit;padding:0;display:block}
+.dos-pane{animation:wfIn .45s var(--ease-out)}
+.dos-pane h3{font-size:clamp(22px,2.2vw,32px);font-weight:600;letter-spacing:-.035em;line-height:1.2}
+.dos-pane .sub{font-size:14.5px;color:var(--gray-2);margin-top:8px;max-width:46em;line-height:1.75}
+.kp{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:22px}
+.kp div{background:#fff;padding:16px}
+.kp b{display:block;font-size:clamp(26px,2.6vw,40px);font-weight:600;letter-spacing:-.045em;line-height:1}
+.kp span{display:block;font-size:13px;color:var(--gray-2);margin-top:8px;line-height:1.5}
+.ctab{width:100%;border-collapse:collapse;margin-top:22px;font-size:14px}
+.ctab th{text-align:left;font-size:12px;letter-spacing:.06em;color:var(--gray);font-weight:600;padding:10px 12px 10px 0;border-bottom:1px solid #000}
+.ctab td{vertical-align:top;padding:14px 12px 14px 0;border-bottom:1px solid var(--line);line-height:1.6}
+.ctab td b{display:block;font-size:14.5px}
+.ctab td small{display:block;color:var(--gray-2);font-size:13px;margin-top:3px}
+.ctab td.arr{color:var(--gray);font-size:18px;padding-top:12px}
+.ctab td.fin b{color:#00875a}
+.cal{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,28px);margin-top:22px}
+.cal h4{font-size:13px;letter-spacing:.06em;font-weight:600;margin-bottom:8px}
+.cal .g{display:grid;grid-template-columns:repeat(7,1fr);gap:3px}
+.cal .g span{font-size:10.5px;color:var(--gray);text-align:center;padding-bottom:4px}
+.cal .g button{aspect-ratio:1;border:0;background:#f4f4f2;font-size:12.5px;border-radius:4px;color:#999;position:relative}
+.cal .g button.ms{background:#fff;color:#000;font-weight:600;box-shadow:inset 0 0 0 1px #000}
+.cal .g button.run{background:#e3f4ec;color:#000}
+.cal .g button.run.ms{background:#00AF66;color:#fff;box-shadow:none}
+.cal .g button.hol{background:#fde8e6}
+.cal .g button.sel{outline:2px solid #000;outline-offset:1px}
+.cal .g button.ms::after{content:"";position:absolute;right:4px;top:4px;width:4px;height:4px;border-radius:50%;background:currentColor}
+.cal .g i{display:block}
+.cal-legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--gray-2);margin-top:12px}
+.cal-legend em{font-style:normal;display:inline-flex;align-items:center;gap:6px}
+.cal-legend em::before{content:"";width:12px;height:12px;border-radius:3px;background:var(--c)}
+.cal-out{margin-top:16px;padding:14px 16px;background:#fafaf8;border-left:3px solid #000;min-height:58px;font-size:14.5px;line-height:1.7}
+.cal-out b{display:block;font-family:var(--mono);font-size:12px;color:var(--gray);font-weight:500;margin-bottom:2px}
+.log{list-style:none;margin-top:18px;border-top:1px solid #000}
+.log li{border-bottom:1px solid var(--line)}
+.log button{width:100%;display:grid;grid-template-columns:96px 1fr 120px 20px;gap:12px;align-items:baseline;text-align:left;background:none;border:0;padding:14px 0;font-size:14.5px}
+.log button .d{font-family:var(--mono);font-size:12px;color:var(--gray)}
+.log button .w{font-size:12.5px;color:var(--gray-2)}
+.log button .s{font-size:15px;color:var(--gray);transition:transform .3s}
+.log li.open button .s{transform:rotate(45deg)}
+.log .bd{display:none;padding:0 0 16px 108px;font-size:14px;color:var(--gray-2);line-height:1.75}
+.log li.open .bd{display:block;animation:wfIn .35s var(--ease-out)}
+.dl2{margin-top:18px;border-top:1px solid #000}
+.dl2 > div{display:grid;grid-template-columns:150px 1fr 70px;gap:14px;padding:13px 0;border-bottom:1px solid var(--line);font-size:14.5px;align-items:baseline}
+.dl2 dt{font-weight:600}
+.dl2 dd{color:#2b2b2b;line-height:1.6}
+.dl2 .dt{font-family:var(--mono);font-size:12px;color:var(--gray);text-align:right}
+.spec{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:18px}
+.spec div{background:#fff;padding:16px}
+.spec b{font-size:15px}
+.spec code{display:block;font-family:var(--mono);font-size:12.5px;margin-top:8px;color:#000}
+.spec span{display:block;font-size:13px;color:var(--gray-2);margin-top:6px;line-height:1.55}
+.wk{margin-top:18px;display:grid;gap:6px}
+.wk button{display:grid;grid-template-columns:44px 1fr 120px 64px;gap:12px;align-items:center;text-align:left;background:#fff;border:1px solid var(--line);padding:12px 14px;font-size:14px;transition:border-color .2s}
+.wk button:hover,.wk button[aria-expanded="true"]{border-color:#000}
+.wk .w{font-family:var(--mono);font-size:12px;font-weight:700}
+.wk .dt{font-family:var(--mono);font-size:11.5px;color:var(--gray)}
+.wk .bar{height:6px;background:#eee;position:relative;border-radius:3px;overflow:hidden}
+.wk .bar i{position:absolute;inset:0 auto 0 0;background:#000;width:var(--w)}
+.wk ul{margin:0 0 6px;padding:10px 16px 12px 70px;font-size:13.5px;color:var(--gray-2);line-height:1.8;border:1px solid #000;border-top:0;margin-top:-7px}
+.risk{margin-top:18px;display:grid;gap:8px}
+.risk div{display:grid;grid-template-columns:1fr 92px 1.4fr;gap:14px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+.risk b{font-weight:600}
+.risk .lv{font-size:12px;font-weight:700;text-align:center;border-radius:999px;padding:3px 8px;border:1px solid #000}
+.risk .lv.h{background:#000;color:#fff}
+.risk span:last-child{color:var(--gray-2);line-height:1.6}
+.fun{margin-top:22px;display:grid;gap:10px}
+.fun div{display:grid;grid-template-columns:150px 1fr 90px;gap:14px;align-items:center;font-size:14px}
+.fun .bar{height:30px;background:#f1f1ee;position:relative}
+.fun .bar i{position:absolute;inset:0 auto 0 0;width:0;background:#000;transition:width 1.4s var(--ease-out)}
+.fun.go .bar i{width:var(--w)}
+.fun b{font-size:18px;letter-spacing:-.02em;text-align:right}
+
+/* carousel */
+.car{position:relative}
+.car-track{display:grid;grid-auto-flow:column;grid-auto-columns:86%;gap:clamp(10px,1.2vw,18px);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;cursor:grab;-webkit-overflow-scrolling:touch}
+.car-track::-webkit-scrollbar{display:none}
+.car-track.drag{cursor:grabbing;scroll-snap-type:none}
+.car-s{margin:0;scroll-snap-align:center}
+.car-s .im{aspect-ratio:16/9;background:#f3f3f1;overflow:hidden}
+.car-s img{width:100%;height:100%;object-fit:contain;display:block;transition:transform 6s linear;cursor:zoom-in}
+.car-s.cur img{transform:scale(1.035)}
+.car-s figcaption{display:flex;gap:10px;font-size:14px;color:var(--gray-2);margin-top:10px}
+.car-s figcaption span{font-family:var(--mono);font-size:12px;color:var(--gray)}
+.car-ui{display:flex;align-items:center;gap:14px;margin-top:16px}
+.car-ui button{width:42px;height:42px;border-radius:50%;border:1px solid #000;background:#fff;font-size:16px;transition:background .3s,color .3s}
+.car-ui button:hover{background:#000;color:#fff}
+.car-c{font-family:var(--mono);font-size:13px;min-width:70px}
+.car-c b{font-weight:700}
+.car-ui .bar{flex:1;height:1px;background:var(--line);position:relative}
+.car-ui .bar i{position:absolute;left:0;top:-1px;height:3px;background:#000;transition:width .4s var(--ease-out)}
+.car-thumbs{display:flex;gap:6px;margin-top:14px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+.car-thumbs::-webkit-scrollbar{display:none}
+.car-thumbs button{flex:0 0 auto;width:92px;aspect-ratio:16/9;border:0;padding:0;background-color:#eee;background-repeat:no-repeat;opacity:.45;transition:opacity .3s,outline-color .3s;outline:2px solid transparent;outline-offset:1px}
+.car-thumbs button img{width:100%;height:100%;object-fit:cover}
+.car-thumbs button:hover{opacity:.8}
+.car-thumbs button.on{opacity:1;outline-color:#000}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:120;background:rgba(10,10,10,.96);display:none;align-items:center;justify-content:center;flex-direction:column;padding:56px 16px 24px}
+.lb.on{display:flex;animation:lbIn .35s var(--ease-out)}
+@keyframes lbIn{from{opacity:0}to{opacity:1}}
+.lb img{max-width:min(1600px,100%);max-height:calc(100vh - 140px);object-fit:contain;user-select:none}
+.lb .lb-c{color:#ccc;font-size:14px;margin-top:14px;text-align:center;max-width:60em}
+.lb button{position:absolute;background:none;border:1px solid #555;color:#fff;border-radius:50%;width:46px;height:46px;font-size:18px}
+.lb .x{top:12px;right:16px}
+.lb .p{left:16px;top:50%;transform:translateY(-50%)}
+.lb .n{right:16px;top:50%;transform:translateY(-50%)}
+.lb button:hover{background:#fff;color:#000}
+.lb .ct{position:absolute;top:24px;left:20px;color:#aaa;font-family:var(--mono);font-size:13px}
+.js-case .ph-fig img,.js-case .deck-strip img,.js-case .trio img,.js-note .ph-fig img,.js-case .prod img{cursor:zoom-in}
+
+/* lite case */
+.pts{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid #000}
+.pts div{padding:20px clamp(12px,1.4vw,22px) 18px 0;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.pts div:nth-child(3n){border-right:0}
+.pts div:not(:nth-child(3n+1)){padding-left:clamp(12px,1.4vw,22px)}
+.pts .n{font-size:12px;color:var(--gray);letter-spacing:.04em}
+.pts h3{font-size:clamp(18px,1.5vw,22px);font-weight:600;letter-spacing:-.025em;margin:12px 0 8px;line-height:1.3}
+.pts p{font-size:14.5px;color:var(--gray-2);line-height:1.75}
+.lite-status{display:flex;gap:14px;align-items:flex-start;margin-top:clamp(28px,3vw,44px);padding:16px 18px;background:#f6f6f4;font-size:14.5px;line-height:1.7;color:#2b2b2b}
+.lite-status b{flex:0 0 auto;font-size:12px;font-weight:700;letter-spacing:.04em;padding:4px 9px;border-radius:999px;background:#000;color:#fff;margin-top:1px}
+.lite-status b.Proposal{background:#fff;color:#000;border:1px solid #000}
+.lite-status b.System,.lite-status b.Archive{background:#fff;color:#000;border:1px solid var(--gray)}
+.rel{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.4vw,20px)}
+.rel a{display:grid;grid-template-columns:160px 1fr;gap:16px;align-items:center;border-top:1px solid #000;padding-top:14px}
+.rel a img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.rel small{font-size:12.5px;color:var(--gray)}
+.rel b{display:block;font-size:clamp(17px,1.4vw,21px);letter-spacing:-.02em;margin-top:4px}
+
+/* notes v9 */
+.note-facts{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid #000;border-bottom:1px solid var(--line);margin:clamp(28px,3vw,44px) 0}
+.note-facts div{padding:16px 14px 16px 0}
+.note-facts div + div{padding-left:14px;border-left:1px solid var(--line)}
+.note-facts b{display:block;font-size:clamp(30px,3.4vw,52px);font-weight:600;letter-spacing:-.05em;line-height:1}
+.note-facts span{display:block;font-size:13.5px;color:var(--gray-2);margin-top:8px}
+.note-gal{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:clamp(28px,3vw,44px) 0}
+.note-gal figure{margin:0}
+.note-gal .ph-fig{aspect-ratio:4/3}
+.note-gal figcaption{font-size:13px;color:var(--gray-2);margin-top:8px}
+.note-read{font-size:13px;color:var(--gray)}
+
+@media (max-width:1100px){
+  .why-grid{grid-template-columns:1fr 1fr;row-gap:44px}
+  .wf-steps{grid-template-columns:repeat(9,minmax(104px,1fr));overflow-x:auto;scrollbar-width:none}
+  .wf-steps::-webkit-scrollbar{display:none}
+  .cmps{grid-template-columns:1fr 1fr}
+  .trail{grid-template-columns:1fr 1fr 1fr}
+}
+@media (max-width:860px){
+  .dos{grid-template-columns:1fr}
+  .dos-side{border-right:0;border-bottom:1px solid var(--line)}
+  .dos-side nav{flex-direction:row;overflow-x:auto;scrollbar-width:none;padding:0}
+  .dos-side nav::-webkit-scrollbar{display:none}
+  .dos-side button{flex:0 0 auto;border-left:0;border-bottom:3px solid transparent;padding:12px 12px}
+  .dos-side button[aria-selected="true"]{border-bottom-color:#000}
+  .dos-side .ft{display:none}
+  .bx-panel{grid-template-columns:1fr}
+  .bx-panel .imgs{border-left:0;border-top:1px solid var(--line)}
+}
+@media (max-width:720px){
+  .why-grid{grid-template-columns:1fr}
+  .wf-panel{grid-template-columns:1fr}
+  .cmps,.rel{grid-template-columns:1fr}
+  .trail{grid-template-columns:1fr}
+  .trail li,.trail li + li{padding-left:18px;border-right:0;border-left:1px solid var(--line);padding-bottom:16px}
+  .trail li::before,.trail li + li::before{left:-5px;top:22px}
+  .trail{border-top:0}
+  .pts{grid-template-columns:1fr}
+  .pts div,.pts div:not(:nth-child(3n+1)){padding-left:0;border-right:0}
+  .kp{grid-template-columns:1fr 1fr}
+  .cal{grid-template-columns:1fr}
+  .log button{grid-template-columns:76px 1fr 20px}
+  .log button .w{display:none}
+  .log .bd{padding-left:0}
+  .dl2 > div{grid-template-columns:1fr;gap:4px}
+  .dl2 .dt{text-align:left}
+  .wk button{grid-template-columns:40px 1fr 54px}
+  .wk .dt{display:none}
+  .wk ul{padding-left:16px}
+  .risk div{grid-template-columns:1fr 76px}
+  .risk span:last-child{grid-column:1/3}
+  .fun div{grid-template-columns:96px 1fr 64px;font-size:13px}
+  .car-track{grid-auto-columns:92%}
+  .rail{grid-auto-columns:78%}
+  .note-facts,.note-gal{grid-template-columns:1fr}
+  .note-facts div + div{padding-left:0;border-left:0;border-top:1px solid var(--line)}
+  .rel a{grid-template-columns:110px 1fr}
+  .bx-bar .chip{font-size:12px;padding:5px 10px}
+  .bx-hs .hs{width:28px;height:28px;font-size:10px}
+  .wdiv-h{flex-direction:column;align-items:flex-start}
+  .wdiv-h span{text-align:left}
+  .lb .p,.lb .n{top:auto;bottom:16px;transform:none}
+}
+
+
+.dos > *{min-width:0}
+.dos-side nav{min-width:0}
+@media (max-width:720px){
+  .ctab thead{display:none}
+  .ctab tr{display:grid;grid-template-columns:1fr;padding:12px 0;border-bottom:1px solid var(--line)}
+  .ctab td{border:0;padding:2px 0}
+  .ctab td.arr{display:none}
+  .ctab td.fin{padding-top:8px}
+  .rails .sec-head{flex-direction:column;align-items:flex-start;gap:8px}
+}
 </style>
 </head>
 <body>
@@ -961,6 +1350,11 @@ form fieldset{border:0;border-bottom:1px solid var(--line);padding:18px 0 16px}
       </div>
     </div>
 
+    <div class="sec wrap rails" style="padding-top:0">
+      <div class="sec-head"><h2 class="sec-title">Two Practices</h2><small class="muted-s">현장에서 겪는 브랜드, 화면과 손에 남는 브랜드</small></div>
+      <div class="js-rails"></div>
+    </div>
+
     <div class="marquee" aria-hidden="true"><div class="marquee-track js-marquee"></div></div>
 
     <div class="band">
@@ -974,6 +1368,12 @@ form fieldset{border:0;border-bottom:1px solid var(--line);padding:18px 0 16px}
     </div>
 
     <div class="sec wrap">
+      <div class="sec-head"><h2 class="sec-title">Why EEH</h2><small class="muted-s">함께해야 하는 이유를 결과물로 답합니다</small></div>
+      <div class="why-grid js-why"></div>
+      <div class="js-wf"></div>
+    </div>
+
+    <div class="sec wrap" style="padding-top:0">
       <div class="sec-head">
         <h2 class="sec-title">Notes<sup class="js-note-count"></sup></h2>
         <a class="text-link" href="#/notes">전체 노트 보기</a>
@@ -1001,7 +1401,7 @@ form fieldset{border:0;border-bottom:1px solid var(--line);padding:18px 0 16px}
   <section class="view" data-view="work">
     <div class="page-head wrap">
       <h1>Work<sup class="js-count"></sup></h1>
-      <p>브랜드 전략부터 공간, 디지털, 굿즈와 현장 운영까지. EEH STUDIO가 설계한 경험들입니다.</p>
+      <p>현장에서 겪는 브랜드와, 화면과 손에 남는 브랜드. 팝업과 공간, 브랜딩과 마케팅의 두 갈래로 나눠 보여드립니다.</p>
     </div>
     <div class="wrap" style="padding-bottom:clamp(72px,9vw,140px)">
       <div class="page-tools">
@@ -1058,6 +1458,7 @@ form fieldset{border:0;border-bottom:1px solid var(--line);padding:18px 0 16px}
       <div class="sec wrap">
         <div class="sec-head"><h2 class="sec-title">Process<sup>04</sup></h2></div>
         <div class="process js-process"></div>
+        <div class="js-wf"></div>
       </div>
     </div>
 
@@ -2294,7 +2695,7 @@ const EDITORS = ["home.business.kr@gmail.com"];
 
 const ED = { on:false, user:null, db:null, text:{}, img:{}, timers:{}, ready:false };
 const EDIT_TEXT = "main h1:not(.hero h1), main h2, main h3, main p, main li, main dd, main dt, main figcaption, main .cap, main .kicker, main .svc-name, main .svc-ko, main .tag, main .text-link, main .cs-label, main .en, main .n, main .d, footer .wordmark";
-const EDIT_SKIP = ".marquee, .curtain, .hero h1, .receipt, .flow, .press-card .src, .toggle, form, .js-filter, .js-filters, .js-reel, .cs-toc, .js-clock2";
+const EDIT_SKIP = ".marquee, .curtain, .hero h1, .receipt, .flow, .press-card .src, .toggle, form, .js-filter, .js-filters, .js-reel, .cs-toc, .js-clock2, .bx, .dos, .car, .cmp, .wf, .rail-ui, .lb, .divtabs, .badge, .lite-status b, .note-read";
 const hashKey = s => { let h = 5381; for (let i=0;i<s.length;i++) h = ((h<<5)+h + s.charCodeAt(i))>>>0; return "k" + h.toString(36) + s.length.toString(36); };
 const ALLOWED = { B:1, STRONG:1, I:1, EM:1, BR:1, A:1, SPAN:1 };
 function clean(html){
@@ -2430,8 +2831,684 @@ function edMenu(im, e){
 }
 function alertMsg(t){ edStatus(t); const b = $(".ed-bar"); if (b){ b.hidden = false; setTimeout(()=>{ if(!ED.user) b.hidden = true; }, 4000); } }
 
+
+/* =========================================================
+   v9: 두 갈래 작업(현장 팝업 / 브랜딩·마케팅), 아카이브 프로젝트,
+   3D 부스 360°, 기획→구현, 프로젝트 도시에, Why, 모션
+   ========================================================= */
+const BX_HS=[[[0.137,0.333,1],[0.772,0.404,1],[0.667,0.419,1],[0.528,0.491,1],[0.4,0.28,1],[0.321,0.595,1],[0.565,0.375,0]],[[0.118,0.366,1],[0.755,0.379,1],[0.658,0.403,1],[0.534,0.488,1],[0.379,0.289,1],[0.342,0.614,1],[0.545,0.37,0]],[[0.105,0.403,1],[0.735,0.357,1],[0.648,0.389,1],[0.54,0.484,1],[0.36,0.3,1],[0.367,0.631,1],[0.525,0.367,0]],[[0.098,0.442,1],[0.712,0.337,1],[0.635,0.376,1],[0.545,0.479,1],[0.342,0.313,1],[0.396,0.645,1],[0.504,0.365,1]],[[0.098,0.482,1],[0.688,0.319,1],[0.621,0.364,1],[0.549,0.474,1],[0.326,0.327,1],[0.428,0.656,1],[0.483,0.366,1]],[[0.105,0.524,1],[0.661,0.304,1],[0.605,0.354,0],[0.552,0.469,1],[0.312,0.343,1],[0.461,0.662,1],[0.463,0.368,1]],[[0.122,0.567,1],[0.632,0.291,1],[0.587,0.345,0],[0.555,0.464,1],[0.301,0.361,1],[0.495,0.665,1],[0.443,0.373,1]],[[0.148,0.608,1],[0.603,0.282,1],[0.569,0.338,0],[0.556,0.458,1],[0.293,0.379,1],[0.53,0.664,1],[0.423,0.379,1]],[[0.183,0.647,1],[0.573,0.274,1],[0.55,0.333,0],[0.556,0.453,1],[0.288,0.399,1],[0.564,0.658,1],[0.405,0.387,1]],[[0.228,0.683,1],[0.542,0.27,1],[0.53,0.329,0],[0.556,0.447,1],[0.287,0.419,0],[0.596,0.648,1],[0.387,0.397,1]],[[0.282,0.713,1],[0.51,0.268,1],[0.51,0.327,0],[0.554,0.442,1],[0.289,0.44,0],[0.625,0.635,1],[0.371,0.408,1]],[[0.343,0.737,1],[0.479,0.268,1],[0.49,0.327,0],[0.552,0.436,1],[0.296,0.461,0],[0.651,0.619,1],[0.357,0.421,1]],[[0.409,0.753,1],[0.448,0.271,1],[0.47,0.329,0],[0.548,0.431,1],[0.306,0.481,0],[0.674,0.6,1],[0.344,0.436,0]],[[0.479,0.76,1],[0.417,0.277,0],[0.45,0.333,0],[0.544,0.427,1],[0.321,0.501,0],[0.693,0.58,1],[0.334,0.452,0]],[[0.55,0.758,1],[0.387,0.285,0],[0.431,0.338,0],[0.54,0.423,1],[0.339,0.519,0],[0.707,0.557,1],[0.326,0.469,0]],[[0.619,0.747,1],[0.358,0.295,0],[0.412,0.345,1],[0.534,0.419,1],[0.362,0.535,0],[0.717,0.534,1],[0.321,0.487,0]],[[0.684,0.728,1],[0.33,0.309,0],[0.395,0.354,1],[0.528,0.416,1],[0.387,0.548,0],[0.723,0.51,1],[0.319,0.506,0]],[[0.742,0.701,1],[0.304,0.325,0],[0.379,0.364,1],[0.522,0.414,0],[0.416,0.559,1],[0.724,0.487,1],[0.32,0.525,0]],[[0.792,0.668,1],[0.28,0.343,0],[0.365,0.376,1],[0.515,0.412,0],[0.446,0.567,1],[0.722,0.464,1],[0.324,0.544,0]],[[0.833,0.631,1],[0.258,0.364,0],[0.352,0.389,1],[0.508,0.411,0],[0.478,0.571,1],[0.716,0.442,1],[0.332,0.564,0]],[[0.864,0.591,0],[0.239,0.388,0],[0.342,0.404,1],[0.501,0.41,0],[0.511,0.572,1],[0.706,0.422,1],[0.343,0.582,0]],[[0.886,0.549,0],[0.223,0.413,0],[0.333,0.419,1],[0.494,0.411,0],[0.543,0.569,0],[0.694,0.402,1],[0.357,0.599,0]],[[0.899,0.506,0],[0.211,0.441,0],[0.328,0.436,1],[0.487,0.411,0],[0.574,0.562,0],[0.679,0.385,1],[0.374,0.614,0]],[[0.903,0.465,0],[0.204,0.47,0],[0.325,0.453,0],[0.48,0.413,0],[0.604,0.552,0],[0.662,0.369,1],[0.394,0.628,0]],[[0.9,0.425,0],[0.201,0.501,0],[0.325,0.471,0],[0.474,0.415,0],[0.63,0.539,0],[0.643,0.355,1],[0.417,0.639,0]],[[0.89,0.387,0],[0.204,0.533,0],[0.328,0.489,0],[0.468,0.418,0],[0.653,0.524,0],[0.622,0.343,1],[0.442,0.647,0]],[[0.875,0.352,0],[0.213,0.565,0],[0.334,0.506,0],[0.462,0.421,0],[0.673,0.507,0],[0.6,0.333,1],[0.468,0.653,0]],[[0.854,0.32,0],[0.227,0.596,0],[0.344,0.523,0],[0.457,0.425,0],[0.689,0.488,0],[0.577,0.326,1],[0.494,0.655,0]],[[0.83,0.29,0],[0.248,0.626,0],[0.357,0.54,0],[0.453,0.43,0],[0.701,0.468,1],[0.553,0.32,1],[0.522,0.654,0]],[[0.801,0.264,0],[0.275,0.655,0],[0.373,0.554,0],[0.449,0.434,1],[0.709,0.447,1],[0.528,0.316,1],[0.548,0.65,0]],[[0.77,0.241,0],[0.308,0.68,0],[0.392,0.568,0],[0.447,0.44,1],[0.713,0.426,1],[0.503,0.315,1],[0.573,0.643,0]],[[0.737,0.221,0],[0.347,0.701,0],[0.413,0.579,0],[0.445,0.445,1],[0.712,0.406,1],[0.478,0.316,1],[0.597,0.633,0]],[[0.702,0.204,0],[0.39,0.718,0],[0.436,0.587,0],[0.444,0.451,1],[0.709,0.386,1],[0.454,0.319,1],[0.618,0.62,0]],[[0.665,0.19,0],[0.436,0.729,0],[0.461,0.593,0],[0.444,0.456,0],[0.702,0.367,1],[0.43,0.324,1],[0.637,0.605,0]],[[0.628,0.179,0],[0.484,0.734,0],[0.487,0.596,0],[0.445,0.462,0],[0.692,0.349,1],[0.406,0.331,1],[0.652,0.589,0]],[[0.59,0.172,0],[0.533,0.733,0],[0.513,0.596,0],[0.447,0.467,0],[0.679,0.332,1],[0.384,0.34,1],[0.664,0.571,0]],[[0.551,0.166,0],[0.58,0.726,0],[0.539,0.593,0],[0.45,0.473,0],[0.664,0.317,1],[0.363,0.352,1],[0.673,0.552,0]],[[0.511,0.164,0],[0.625,0.713,0],[0.564,0.587,1],[0.453,0.478,0],[0.646,0.304,1],[0.343,0.365,1],[0.679,0.533,0]],[[0.472,0.165,0],[0.667,0.695,0],[0.587,0.578,1],[0.458,0.482,0],[0.627,0.292,1],[0.325,0.38,1],[0.681,0.514,0]],[[0.433,0.168,0],[0.704,0.672,0],[0.609,0.567,1],[0.464,0.486,0],[0.607,0.282,1],[0.31,0.398,1],[0.68,0.495,0]],[[0.394,0.174,1],[0.735,0.645,0],[0.627,0.554,1],[0.47,0.49,1],[0.585,0.274,1],[0.297,0.416,1],[0.676,0.476,0]],[[0.356,0.184,1],[0.76,0.616,1],[0.643,0.539,1],[0.476,0.492,1],[0.563,0.268,1],[0.287,0.437,1],[0.669,0.459,0]],[[0.319,0.196,1],[0.778,0.586,1],[0.656,0.523,1],[0.483,0.495,1],[0.539,0.264,1],[0.28,0.458,1],[0.66,0.442,0]],[[0.283,0.211,1],[0.791,0.554,1],[0.666,0.506,1],[0.491,0.496,1],[0.516,0.262,1],[0.276,0.481,1],[0.648,0.427,0]],[[0.249,0.229,1],[0.798,0.522,1],[0.672,0.488,1],[0.498,0.496,1],[0.492,0.262,1],[0.277,0.504,1],[0.635,0.413,0]],[[0.216,0.25,1],[0.798,0.49,1],[0.675,0.471,1],[0.506,0.496,1],[0.468,0.263,1],[0.281,0.528,1],[0.619,0.401,0]],[[0.186,0.275,1],[0.794,0.46,1],[0.675,0.453,1],[0.514,0.495,1],[0.445,0.267,1],[0.29,0.551,1],[0.602,0.391,0]],[[0.16,0.302,1],[0.785,0.431,1],[0.672,0.436,1],[0.521,0.493,1],[0.422,0.272,1],[0.303,0.574,1],[0.584,0.382,0]]];
+const BX_BEST=[13, 10, 46, 44, 20, 30, 3];
+
+const PF = "images/pf/";
+const DIVS = { space:["Space & Pop-up","현장 팝업 · 공간 · 행사"], brand:["Branding & Marketing","브랜드 아이덴티티 · 그래픽 · 마케팅"] };
+const STATUS = { Built:"현장 운영", Proposal:"제안 · 기획", System:"아이덴티티 시스템", Archive:"아카이브" };
+const STATUS_NOTE = {
+  Built:"실제로 제작하고 현장에서 운영한 프로젝트입니다.",
+  Proposal:"제안·기획 단계의 작업입니다. 장표 속 공간과 목업은 시뮬레이션입니다.",
+  System:"브랜드가 계속 쓰도록 정리한 아이덴티티 시스템과 가이드입니다.",
+  Archive:"디렉터가 직접 운영하고 디자인한 작업을 연도별로 모은 기록입니다."
+};
+WORKS[0].div = "space"; WORKS[0].status = "Built";
+WORKS[1].div = "space"; WORKS[1].status = "Built";
+
+const ARCHIVE = [
+  { id:"recette-booth", div:"space", status:"Built", title:"RECETTE @ SEOUL CAFE SHOW", client:"신세계푸드 RECETTE", year:"2023", category:"Exhibition Booth",
+    tags:["Booth Graphic","ISP","Editorial","Goods","Uniform"],
+    summary:"2023 서울카페쇼의 신세계푸드 베이커리 브랜드 RECETTE 부스. 사인과 라이팅 패널부터 POP, 레시피북, 컵과 유니폼까지 아치 하나로 묶었습니다.",
+    meta:[["Client","신세계푸드 RECETTE"],["Event","2023 서울카페쇼"],["Scope","Booth Graphic, ISP, Editorial, Goods"],["Year","2023"]],
+    headline:"아치 하나로, 부스 전체를 한 브랜드로.",
+    body:["프레임 그래픽은 르쎄떼의 심볼을 모티브로, 브랜드 이야기의 배경인 벨에포크 시대의 아르누보 양식을 단순한 아치로 다듬었습니다. 공간에서 맛있는 음식이 만들어진다는 뜻을 담은 이 아치를 부스 사인, 메뉴보드, 카테고리 포스터, 쿠폰, 컵 슬리브까지 반복했습니다.",
+          "타이틀은 Abril Fatface와 210 처음처럼, 본문은 산돌고딕 Neo1. 오렌지 한 가지 메인 컬러와 크림 계열 서브 컬러로, 멀리서도 가까이서도 같은 브랜드로 읽히게 했습니다."],
+    points:[["Booth Graphic","부스 사인과 라이팅 패널, 메뉴보드, 입면 그래픽"],["ISP","베이커리·음료·원밀 카테고리 포스터, 이벤트 POP, 가격 표시"],["Editorial","레시피북 표지와 내지, 리플렛"],["Goods","리유저블 텀블러와 컵 슬리브, 보틀 라벨"],["Uniform","스태프 셔츠와 점퍼에 같은 아치 그래픽"],["On site","부스 현장 사진으로 마지막까지 확인"]],
+    slides:["현장 전경","진열 선반과 카테고리 POP","현장 사진","현장 사진","현장 사진","현장 사진","부스 그래픽 설계","메뉴보드","부스 사인","라이팅 패널","입면 그래픽","카테고리 포스터","이벤트 POP","가격 POP","그래픽 적용","이벤트 배너","보틀 라벨","레시피북 표지","레시피북 내지","리유저블 텀블러","컵 슬리브","유니폼","유니폼 후면"],
+    link:"recette-bi" },
+  { id:"lifemeal-yeonnam", div:"space", status:"Built", title:"LIFEMEAL MY WELLNESS ROUTINE", client:"이롬 라이프밀", year:"2026", category:"Pop-up Store",
+    tags:["Concept","Space","Program","WBTI","Goods"],
+    summary:"연남동 편집숍 팔시보 스토어 안에 연 라이프밀의 첫 브랜드 팝업. WBTI 웰니스 유형 진단과 웰니스 오마카세로 일상 속 건강 루틴을 직접 겪게 한 공간.",
+    meta:[["Client","이롬 라이프밀"],["Place","팔시보 스토어, 서울 마포구 동교로38안길 17"],["Date","2026.02"],["Scope","Concept, Space, Program, MD"]],
+    headline:"제품 전시를 넘어, 나의 하루 루틴을 체험하는 편집숍.",
+    body:["작은 편집숍 형태의 푸드 팝업은 선별된 제품만으로 브랜드의 취향과 기준을 또렷하게 보여줄 수 있습니다. 공간과 콘텐츠가 많지 않아 시선이 흩어지지 않고, 각 제품의 이야기에 집중할 수 있도록 설계했습니다.",
+          "방문객은 웰니스 체크리스트와 WBTI 진단으로 자신의 유형을 확인하고, 생식부터 하루견과, 그래놀라 요거트로 이어지는 웰니스 오마카세로 성분과 섭취 방식을 맛보았습니다. 이 경험은 일곱 달 뒤 용산 FREEZE LAB의 연구원 코스로 확장되었습니다."],
+    points:[["Mission 1","웰니스 체크리스트로 오늘의 상태를 적기"],["Mission 2","WBTI 진단으로 나의 웰니스 유형 찾기"],["Mission 3","2026 웰니스 루틴 카드 받아 가기"],["Wellness Omakase","생식, 하루견과, 프로틴바, 그래놀라 요거트로 이어지는 시식 코스"],["Gift","마지막 기프트는 닥터샐러드"],["Next chapter","2026.09 용산 FREEZE LAB으로 이어진 첫 번째 챕터"]],
+    slides:["팔시보 스토어 외관 시뮬레이션","운영 개요","동선 시뮬레이션","팔시보 스토어 공간","Mission 1 웰니스 체크리스트","Mission 2 WBTI","Mission 3 2026 웰니스 루틴","MD","Program II 웰니스 오마카세","Course 1 생식","Course 2 하루견과","Course 3 영양식 with 프로틴바","Course 4 그래놀라 요거트","Gift Dr.샐러드"],
+    link:"freeze-lab" },
+  { id:"king-of-kings", div:"space", status:"Proposal", title:"KING OF KINGS POP-UP", client:"팔시보 스토어 × 영화 <킹 오브 킹스>", year:"2025", category:"Immersive Pop-up",
+    tags:["Concept","Stamp Tour","Goods","Space"],
+    summary:"영화 <킹 오브 킹스>의 인물들 ID 카드를 모아 나의 이야기를 완성하는 연남동 팔시보 스토어 몰입형 팝업 기획.",
+    meta:[["Client","팔시보 스토어"],["Place","팔시보 스토어, 연남동"],["Year","2025"],["Scope","Concept, Program, Goods, Space"]],
+    headline:"영화 속 인물들과 함께 떠나는 스탬프 투어.",
+    body:["주요 인물들의 ID 카드를 앞면과 뒷면으로 나눠, 인물의 정체성과 메시지를 직접 채워 가며 투어하도록 설계했습니다. 마지막에는 나의 이야기가 담긴 카드가 완성됩니다.",
+          "공식 굿즈샵, 미공개 스케치와 비하인드 공개, 연남동 골목에서 누구나 들를 수 있는 따뜻한 공간까지. 관람보다 참여가 먼저 기억에 남도록 동선을 짰습니다."],
+    points:[["Stamp Tour","인물별 ID 카드를 모아 나의 이야기를 완성"],["Reward Goods","투어 완주 리워드 KOK Fan"],["Goods Shop","영화 장면과 캐릭터를 담은 공식 굿즈"],["Behind","미공개 스케치와 콘셉트 아트 공개"],["Event","스탬프 완주, My ID 인증, 구매 이벤트"],["Space","연남동 골목에 열린 누구나 들를 수 있는 공간"]],
+    slides:["표지","팔시보 스토어","공간","ID 카드 구성","스탬프 투어 운영","리워드 굿즈 KOK Fan","공간 동선","MD 리스트","굿즈 라인업","이벤트","포인트"] },
+  { id:"hotel-1997", div:"space", status:"Proposal", title:"THE HOTEL 1997 LOBBY BRANDING", client:"THE HOTEL 1997", year:"2025", category:"Space Branding",
+    tags:["Space","Furniture","Signage","Mock-up"],
+    summary:"호텔 로비와 입구 통로를 브랜드 공간으로 바꾸는 로비 브랜딩 제안. 실측 사진 위에 가구와 조명, 러그의 치수와 배치를 올려 바로 발주할 수 있게 정리했습니다.",
+    meta:[["Client","THE HOTEL 1997"],["Area","실내 로비 3030×2180 · 입구 통로 2160×3030"],["Year","2025"],["Scope","Space, Furniture, Signage"]],
+    headline:"사진 위에 치수를 올리면, 제안이 곧 발주서가 됩니다.",
+    body:["현재 로비와 입구 통로를 그대로 찍고, 그 위에 선반과 소파, 거실 테이블, 스탠딩 조명, 러그를 실제 치수로 배치했습니다. 먼지 없는 러그처럼 운영까지 생각한 선택도 함께 적었습니다.",
+          "입구 통로는 사인 위치를 비워 두고, 윈도우 데칼 목업으로 거리에서 보이는 첫인상을 확인했습니다."],
+    points:[["Part 1","실내 로비 3030×2180 배치와 가구 치수"],["Part 2","입구 통로 2160×3030 사인 위치"],["Furniture","선반 875×1800, 소파 1000×720, 거실 테이블 1200×500"],["Lighting","스탠딩 조명과 레터링 거울"],["Window","거리에서 보이는 윈도우 데칼 목업"],["Ops","워셔블 러그처럼 운영까지 고려한 선택"]],
+    slides:["표지","실내 로비 현황","입구 통로 현황","실내 로비 배치 3030×2180","선반 디테일","입구 통로 사인 위치","윈도우 데칼 목업"] },
+  { id:"red-sky", div:"space", status:"Proposal", title:"RED SKY · 1ST FAN MEETING", client:"조하늘 팬미팅", year:"2025", category:"Event",
+    tags:["Concept","Program","Goods","Space"],
+    summary:"붉게 물드는 감정의 하늘이라는 한 문장으로 짠 첫 팬미팅 기획. 오프닝부터 토크, 게임, 포토 타임, 굿즈와 공간까지 하나의 무드로 묶었습니다.",
+    meta:[["Event","1st Fan Meeting"],["Date","2025.08.29 20:00"],["Place","Space Hong"],["Scope","Concept, Program, Goods"]],
+    headline:"붉게 물드는 감정의 하늘, 그리고 그 하늘을 함께 만드는 구름들.",
+    body:["하늘이 붉어지는 시간은 하루 중 가장 아름답고 짧은 순간입니다. 팬들의 마음을 구름에, 공연과 소통의 열기를 노을에 빗대어 모든 순서를 Red Sky라는 한 장면으로 이었습니다.",
+          "Red Hour로 문을 열고, 감정 예보 토크와 Red Signal 게임, Sunset Snapshot 포토 타임으로 이어지는 흐름에 맞춰 스페셜 공간과 굿즈 아이디어까지 같은 색으로 맞췄습니다."],
+    points:[["Opening","Red Hour Begins"],["Talk","Emotion Forecast, 감정 예보 Q&A"],["Lounge","Cloud Lounge 소통 타임"],["Game","Red Signal"],["Photo","Sunset Snapshot"],["Space & Goods","Red Sky Cafe와 기념품 아이디어"]],
+    slides:["표지","콘셉트 Red Sky","키 비주얼 무드","프로그램 1","프로그램 2","공간 Space Hong"] },
+  { id:"recette-bi", div:"brand", status:"System", title:"RECETTE BASIC SYSTEM", client:"신세계푸드 RECETTE", year:"2026", category:"Brand Identity",
+    tags:["Wordmark","Symbol","Color","Typography","Guideline"],
+    summary:"프렌치 클래식 베이커리 RECETTE의 기본 아이덴티티 가이드. 워드마크와 아치 심볼, 시그니처 조합, 컬러와 서체, 응용 규정을 한 권으로 정리했습니다.",
+    meta:[["Client","신세계푸드 RECETTE"],["Slogan","French Classic Bakery"],["Scope","Identity, Guideline, Application"],["Year","2026"]],
+    headline:"어디에 놓여도 같은 빵집으로 읽히도록.",
+    body:["워드마크의 그리드와 아치 모티프, 슬로건과의 시그니처 조합을 정하고, 오렌지와 그레이 두 축의 컬러 시스템과 배경 단계를 만들었습니다.",
+          "잘못된 사용 예와 명함, 봉투, X배너 같은 응용까지 규정해, 매장과 행사, 인쇄물 어디서나 같은 기준으로 쓰이게 했습니다. 카페쇼 부스의 아치 그래픽도 이 시스템에서 나왔습니다."],
+    points:[["Wordmark","워드마크와 그리드 시스템"],["Visual motif","아치 심볼"],["Signature","심볼·워드마크·슬로건 조합"],["Color","오렌지와 그레이, 배경 단계"],["Typeface","영문 Futura 패밀리와 국문 서체"],["Application","명함, 봉투, X배너, 잘못된 사용 예"]],
+    slides:["표지","워드마크","비주얼 모티프","시그니처","슬로건 조합","컬러 시스템","배경 컬러","영문 서체","잘못된 사용 예","명함","봉투"],
+    link:"recette-booth" },
+  { id:"kcycf", div:"brand", status:"System", title:"KCYCF BRANDING", client:"한국기독청년문화재단", year:"2025", category:"Brand Identity",
+    tags:["Values","Logo","Symbol","Color","Instagram"],
+    summary:"청년과 청년, 교회와 세상을 잇는 기독교 청년 문화 재단의 아이덴티티. 네 가지 가치를 로고와 심볼, 블랙 앤 화이트 컬러, 인스타그램 운영 보드로 정리했습니다.",
+    meta:[["Client","한국기독청년문화재단 KCYCF"],["Values","Connection, Center, Forward, Variety"],["Scope","Identity, Guideline, Instagram"],["Year","2025"]],
+    headline:"연결이라는 한 단어에서 시작한 아이덴티티.",
+    body:["KCYCF를 나타내는 핵심 키워드는 Connection, 연결입니다. 여기에 Center, Forward, Variety를 더해 브랜드가 누구인지, 어디로 가려 하는지에 대한 기준을 먼저 세웠습니다.",
+          "로고와 심볼은 블랙 앤 화이트 두 가지로 단단하게, 서체는 카카오 글씨로 친근하게. 인스타그램 하이라이트와 피드 운영 보드까지 같은 규칙으로 이어지게 했습니다."],
+    points:[["Values","Connection, Center, Forward, Variety"],["Logo","대표 로고와 서비스 로고, 여백과 최소 크기"],["Symbol","보조 로고 심볼"],["Color","KCYCF Black과 White, 그레이 단계"],["Typeface","카카오 큰글씨·작은글씨"],["Instagram","하이라이트와 피드 운영 보드"]],
+    slides:["표지","가치 Connection","로고","심볼","컬러","서체","인스타그램 보드","하이라이트","피드 KCYCF","피드 HOME"] },
+  { id:"ghs-2025", div:"brand", status:"Proposal", title:"GLOBAL HARVEST SUMMIT 2025", client:"Global Harvest Summit 2025", year:"2025", category:"Event Identity",
+    tags:["Logo","Graphic","Signage","Stage"],
+    summary:"제주에서 열리는 국제 서밋의 아이덴티티와 행사장 그래픽 제안. 수확의 물결을 닮은 그라데이션 하나로 빌보드, 배너, 사인, 무대, 부스까지 확장했습니다.",
+    meta:[["Event","Global Harvest Summit 2025"],["Place","제주"],["Scope","Logo, Graphic System, Signage, Stage"],["Year","2025"]],
+    headline:"하나의 물결이 빌보드에서 무대까지.",
+    body:["Global Billion Soul, Harvest, Jeju 세 단어를 원 세 개로 풀었습니다. 많은 이들의 영혼, 물결처럼 흔들리며 익어가는 수확, 그리고 제주의 하늘과 바다입니다.",
+          "Bright Soul Orange와 Bright Sky Blue 두 가지 무드로 빌보드, 폴 플래그, 광고 벽, 롤업 스탠드, 방향 사인, 천장 배너, 무대와 전시 스탠드까지 목업으로 확인했습니다."],
+    points:[["Logo","프라이머리·세컨더리 로고"],["Concept","Global Billion Soul, Harvest, Jeju"],["Color","Bright Soul Orange와 Bright Sky Blue"],["Outdoor","빌보드, 폴 플래그, 광고 벽"],["Wayfinding","방향 사인과 세션 사인"],["Stage","무대 그래픽과 컨퍼런스 스탠드"]],
+    slides:["무대 그래픽","브랜드 로고","콘셉트","컬러","무드","빌보드","폴 플래그","메인 포스터","광고 벽","롤업 스탠드","방향 사인","천장 배너","컨퍼런스 스탠드","플래그 A","플래그 B","전시 스탠드"] },
+  { id:"siaff", div:"brand", status:"Proposal", title:"2025 SIAFF KEY VISUAL", client:"서울국제사랑영화제", year:"2025", category:"Key Visual",
+    tags:["Poster","Key Visual","Typography"],
+    summary:"2025 서울국제사랑영화제 메인 포스터 제안. 주제 LIGHT UP [ ]을 시네마, 심플리시티, 전구 세 가지 안으로 풀었습니다.",
+    meta:[["Client","서울국제사랑영화제"],["Date","2025.10.28 – 11.02"],["Scope","Key Visual, Poster"],["Year","2025"]],
+    headline:"LIGHT UP [ ], 비어 있는 괄호를 관객이 채우는 포스터.",
+    body:["A안은 붉은 빛이 가득한 사각형 공간을 열린 무대로 그렸습니다. 관객 각자가 자신의 이야기와 해석을 채워 넣을 수 있는 창의적 표현의 캔버스이자, 극장의 몰입감입니다.",
+          "B안은 단순한 타이포그래피로, C안은 전구 한 개로 같은 주제를 풀어 세 가지 방향을 비교할 수 있게 했습니다."],
+    points:[["A · Cinema","붉은 빛의 열린 공간, 극장의 몰입감"],["B · Simplicity","타이포그래피 중심의 단순한 구성"],["C · Light bulb","전구 하나로 표현한 LIGHT UP"]],
+    slides:["A·B·C 세 가지 안","A안 목업","A안 Cinema","B안 Simplicity","C안 Light bulb","옥외 목업"] },
+  { id:"marketing", div:"brand", status:"Archive", title:"BRAND MARKETING 2021–2023", client:"외식·식품 D2C 브랜드", year:"2021–2023", category:"Marketing",
+    tags:["SNS","Rebranding","Poster","Card News"],
+    summary:"외식·식품 D2C 브랜드의 SNS 리브랜딩, 프로젝트 제안, 포스터와 카드뉴스, 행잉 배너까지. 디렉터가 직접 운영한 브랜드 마케팅 기록입니다.",
+    meta:[["Brands","포케올데이 외"],["Period","2021 – 2023"],["Scope","SNS, Rebranding, Content, Print"],["Role","Art Director, Design & Marketing"]],
+    headline:"매일 고객과 만나는 화면에서, 브랜드를 다시 세웁니다.",
+    body:["인스타그램 피드의 첫 화면을 다시 정리하는 리브랜딩부터, 매장 포스터와 행잉 배너, 신메뉴와 이벤트를 알리는 카드뉴스까지. 각 게시물마다 목표와 타깃, 결과를 함께 기록하며 운영했습니다.",
+          "이 경험이 EEH STUDIO가 디자인을 실제로 작동하는 마케팅으로 보는 이유입니다."],
+    points:[["Rebranding","SNS 첫 화면 Before · After"],["Poster","신메뉴와 제품 포스터"],["Banner","매장 행잉 배너"],["Card News","이벤트·메뉴 카드뉴스와 성과 기록"]],
+    slides:["SNS 리브랜딩 2021","리브랜딩 솔루션","브랜드 운영 2023","리브랜딩 Before·After","리브랜딩 2023","리브랜딩 적용","포스터","포스터","행잉 배너","카드뉴스","카드뉴스","카드뉴스","카드뉴스","카드뉴스"] },
+  { id:"design-archive", div:"brand", status:"Archive", title:"GRAPHIC DESIGN 2020–2022", client:"전시 · 공연 · 공공 공간", year:"2020–2022", category:"Graphic Design",
+    tags:["Poster","Ticket","Brochure","Card News"],
+    summary:"전시와 공연, 공공 공간을 위한 포스터, 티켓, 브로슈어, 카드뉴스. 2020년부터 쌓아 온 그래픽 디자인 기록입니다.",
+    meta:[["Clients","전시 · 공연 · 공공 공간"],["Period","2020 – 2022"],["Scope","Poster, Ticket, Brochure, SNS"],["Role","Designer, Exhibition Manager"]],
+    headline:"한 장의 포스터에서 공간의 경험까지.",
+    body:["행사의 첫인상이 되는 포스터와 티켓, 손에 남는 브로슈어와 엽서, 행사 전후를 잇는 카드뉴스를 한 사람이 같은 톤으로 만들었습니다.",
+          "인쇄물의 크기와 재질까지 정해 온 이 기록이 지금의 공간 그래픽과 부스 디자인의 바탕이 되었습니다."],
+    points:[["Poster","전시·공연 메인 포스터"],["Ticket","공연 티켓과 엽서"],["Brochure","전시 브로슈어"],["SNS","카드뉴스와 인스타그램 세팅"]],
+    slides:["포스터","브로슈어","포스터","포스터","포스터","포스터","포스터","포스터","티켓","포스터 월","카드뉴스","브로슈어","카드뉴스","엽서","카드뉴스","포스터","포스터","배너"] }
+];
+REEL.push(["images/pf/recette-booth/01.jpg","RECETTE @ SEOUL CAFE SHOW","On site 2023","#/work/recette-booth"],["images/fl/turn/f10.jpg","LIFEMEAL FREEZE LAB","360° booth","#/work/freeze-lab"],["images/pf/ghs-2025/01.jpg","GLOBAL HARVEST SUMMIT 2025","Event identity","#/work/ghs-2025"]);
+ARCHIVE.forEach(p => { p.lite = true; p.cover = PF + p.id + "/t01.jpg"; p.hero = null; p.photos = []; WORKS.push(p); });
+CLIENTS.splice(0, CLIENTS.length, ...new Set(WORKS.map(w => w.client)));
+
+/* ---------- carousel ---------- */
+function carHTML(folder, caps, label){
+  return `<div class="car" data-label="${esc(label||"")}">
+    <div class="car-track">${caps.map((c,i)=>`<figure class="car-s${i?"":" cur"}"><div class="im"><img src="${PF}${folder}/${pad(i+1)}.jpg" alt="${esc(c)}" loading="lazy" draggable="false" data-lb="${esc(c)}"></div><figcaption><span>${pad(i+1)}</span>${esc(c)}</figcaption></figure>`).join("")}</div>
+    <div class="car-ui"><button type="button" class="car-p" aria-label="이전 장표">←</button><span class="car-c"><b>01</b> / ${pad(caps.length)}</span><button type="button" class="car-n" aria-label="다음 장표">→</button><span class="bar"><i style="width:${(100/caps.length).toFixed(2)}%"></i></span></div>
+    <div class="car-thumbs">${caps.map((c,i)=>`<button type="button" class="${i?"":"on"}" aria-label="${pad(i+1)} ${esc(c)}" style="background-image:url(${PF}${folder}/thumbs.jpg);background-size:${caps.length*100}% 100%;background-position:${caps.length>1?(i/(caps.length-1)*100).toFixed(3):0}% 0"></button>`).join("")}</div>
+  </div>`;
+}
+function initCar(car){
+  if (car.dataset.ready) return; car.dataset.ready = "1";
+  const tr = $(".car-track", car), ss = $$(".car-s", car), th = $$(".car-thumbs button", car), c = $(".car-c b", car), bar = $(".car-ui .bar i", car);
+  let cur = 0;
+  const go = i => { i = Math.max(0, Math.min(ss.length-1, i)); const s = ss[i]; tr.scrollTo({left: s.offsetLeft - (tr.clientWidth - s.clientWidth)/2, behavior: reduce?"auto":"smooth"}); };
+  const upd = () => {
+    const mid = tr.scrollLeft + tr.clientWidth/2; let best = 0, bd = 1e9;
+    ss.forEach((s,i)=>{ const d = Math.abs(s.offsetLeft + s.clientWidth/2 - mid); if (d < bd){ bd = d; best = i; } });
+    if (best === cur && c.textContent === pad(best+1)) return;
+    cur = best; c.textContent = pad(cur+1);
+    ss.forEach((s,i)=>s.classList.toggle("cur", i===cur)); th.forEach((b,i)=>b.classList.toggle("on", i===cur));
+    bar.style.width = ((cur+1)/ss.length*100).toFixed(2)+"%";
+    const tb = th[cur]; if (tb){ const p = tb.parentElement; p.scrollTo({left: tb.offsetLeft - p.clientWidth/2 + tb.clientWidth/2, behavior:"smooth"}); }
+  };
+  tr.addEventListener("scroll", () => requestAnimationFrame(upd), {passive:true});
+  $(".car-p", car).onclick = () => go(cur-1); $(".car-n", car).onclick = () => go(cur+1);
+  th.forEach((b,i)=> b.onclick = () => go(i));
+  dragScroll(tr);
+  car.tabIndex = 0; car.addEventListener("keydown", e => { if (e.key === "ArrowRight") go(cur+1); if (e.key === "ArrowLeft") go(cur-1); });
+}
+function dragScroll(el){
+  let down = false, sx = 0, sl = 0, moved = false;
+  el.addEventListener("pointerdown", e => { if (e.pointerType !== "mouse") return; down = true; moved = false; sx = e.clientX; sl = el.scrollLeft; });
+  addEventListener("pointermove", e => { if (!down) return; const d = e.clientX - sx; if (Math.abs(d) > 4){ moved = true; el.classList.add("drag"); } el.scrollLeft = sl - d; });
+  addEventListener("pointerup", () => { if (!down) return; down = false; setTimeout(()=>el.classList.remove("drag"), 0); if (moved){ el.dataset.moved = "1"; setTimeout(()=>delete el.dataset.moved, 60); } });
+}
+
+/* ---------- lightbox ---------- */
+const LB = { list:[], i:0 };
+document.body.insertAdjacentHTML("beforeend", `<div class="lb" role="dialog" aria-modal="true" aria-label="이미지 크게 보기"><span class="ct"></span><button type="button" class="x" aria-label="닫기">✕</button><button type="button" class="p" aria-label="이전">←</button><img alt=""><p class="lb-c"></p><button type="button" class="n" aria-label="다음">→</button></div>`);
+const lbEl = $(".lb");
+function lbShow(){ const it = LB.list[LB.i]; $("img", lbEl).src = it.src; $("img", lbEl).alt = it.cap; $(".lb-c", lbEl).textContent = it.cap; $(".ct", lbEl).textContent = `${pad(LB.i+1)} / ${pad(LB.list.length)}`; }
+function lbOpen(img){
+  const scope = img.closest(".car, .cs-block, .note-body, .cs-hero, .js-note") || document;
+  const imgs = $$("img", scope).filter(x => !x.closest(".car-thumbs, .bx-stage, .rel"));
+  LB.list = imgs.map(x => ({src: x.currentSrc || x.src, cap: x.dataset.lb || x.alt || ""}));
+  LB.i = Math.max(0, imgs.indexOf(img)); lbShow(); lbEl.classList.add("on"); document.documentElement.style.overflow = "hidden";
+}
+function lbClose(){ lbEl.classList.remove("on"); document.documentElement.style.overflow = ""; }
+lbEl.addEventListener("click", e => {
+  if (e.target.closest(".x") || e.target === lbEl) return lbClose();
+  if (e.target.closest(".p")){ LB.i = (LB.i - 1 + LB.list.length) % LB.list.length; lbShow(); }
+  if (e.target.closest(".n")){ LB.i = (LB.i + 1) % LB.list.length; lbShow(); }
+});
+addEventListener("keydown", e => { if (!lbEl.classList.contains("on")) return; if (e.key === "Escape") lbClose(); if (e.key === "ArrowRight"){ LB.i = (LB.i+1)%LB.list.length; lbShow(); } if (e.key === "ArrowLeft"){ LB.i = (LB.i-1+LB.list.length)%LB.list.length; lbShow(); } });
+(function(){ let sx = null; lbEl.addEventListener("touchstart", e => { sx = e.touches[0].clientX; }, {passive:true}); lbEl.addEventListener("touchend", e => { if (sx === null) return; const d = e.changedTouches[0].clientX - sx; if (Math.abs(d) > 50){ LB.i = (LB.i + (d < 0 ? 1 : -1) + LB.list.length) % LB.list.length; lbShow(); } sx = null; }); })();
+document.addEventListener("click", e => {
+  if (typeof ED !== "undefined" && ED.on) return;
+  const img = e.target.closest && e.target.closest(".js-case .ph-fig img, .js-case .deck-strip img, .js-case .trio img, .js-case .prod img, .js-case .car-s img, .js-note .ph-fig img, .js-case .bx-panel img");
+  if (!img) return;
+  const tr = img.closest(".car-track"); if (tr && tr.dataset.moved) return;
+  e.preventDefault(); lbOpen(img);
+});
+
+/* ---------- cards / work page ---------- */
+gridCard = function(w){
+  return `<a class="card" href="#/work/${esc(w.id)}" data-cursor="View">
+    <div class="thumb">${thumbHTML(w)}<span class="badge b-${esc(w.status)}">${esc(STATUS[w.status]||"")}</span></div>
+    <div class="card-meta"><h3>${esc(w.title)}</h3><p>${esc(w.client)}, ${esc(w.year)}</p>
+    <div class="tags">${w.tags.slice(0,3).map(t=>`<span class="tag">${esc(t)}</span>`).join("")}</div></div></a>`;
+};
+function railCard(w){
+  return `<a class="card" href="#/work/${esc(w.id)}" data-cursor="View" draggable="false">
+    <div class="thumb">${w.cover?`<img src="${esc(w.cover)}" alt="${esc(w.title)}" loading="lazy" draggable="false">`:thumbHTML(w)}<span class="badge b-${esc(w.status)}">${esc(STATUS[w.status]||"")}</span></div>
+    <div class="card-meta"><h3>${esc(w.title)}</h3><p>${esc(w.category)} · ${esc(w.year)}</p></div></a>`;
+}
+let workDiv = "all";
+const ARCHIVE_NOTE = "SOCIAL VALUE MARKET과 LIFEMEAL FREEZE LAB 이전의 작업은 디렉터 황윤희가 MIRACLE AD와 이전 소속에서 기획하고 디자인한 프로젝트입니다. 각 프로젝트에 현장 운영, 제안·기획, 아이덴티티 시스템, 아카이브 중 어떤 단계의 작업인지 함께 적었습니다.";
+renderWork = function(){
+  const box = $(".js-work");
+  const groups = workDiv === "all" ? ["space","brand"] : [workDiv];
+  if (mode === "grid"){
+    box.innerHTML = groups.map(g => {
+      const items = WORKS.filter(w => w.div === g);
+      return `<section class="wdiv"><div class="wdiv-h"><h2>${DIVS[g][0]}</h2><span>${DIVS[g][1]}<br>${pad(items.length)} projects</span></div>
+        <div class="grid">${items.map(gridCard).join("")}${g===groups[groups.length-1]?nextCard():""}</div></section>`;
+    }).join("") + `<p class="work-note2">${ARCHIVE_NOTE}</p>`;
+  } else {
+    box.innerHTML = `<div class="index"><div class="head"><span>No.</span><span>Project</span><span>Client</span><span>Category</span><span>Year</span></div>
+      ${groups.map(g => `<div class="idx-h">${DIVS[g][0]}</div>` + WORKS.map((w,i)=> w.div!==g ? "" : `<a href="#/work/${esc(w.id)}" data-pv="${i}" data-cursor="View">
+        <span class="n">${pad(i+1)}</span><span class="tt">${esc(w.title)}</span><span class="c">${esc(w.client)}</span><span class="c cat">${esc(w.category)}<span class="st">${esc(STATUS[w.status]||"")}</span></span><span class="y">${esc(w.year)}</span></a>`).join("")).join("")}
+    </div><p class="work-note2">${ARCHIVE_NOTE}</p>`;
+  }
+  rvScan();
+};
+matchFilter = function(w){ return workDiv === "all" || w.div === workDiv; };
+(function(){
+  const fb = $(".js-filters"); if (!fb) return;
+  fb.dataset.ready = "1"; fb.className = "divtabs js-filters";
+  const opts = [["all","All", WORKS.length],["space",DIVS.space[0], WORKS.filter(w=>w.div==="space").length],["brand",DIVS.brand[0], WORKS.filter(w=>w.div==="brand").length]];
+  fb.innerHTML = opts.map(([k,t,n])=>`<button type="button" data-d="${k}" aria-pressed="${k===workDiv}">${esc(t)}<small>${pad(n)}</small></button>`).join("");
+  fb.addEventListener("click", e => { const b = e.target.closest("button"); if (!b) return; workDiv = b.dataset.d; $$("button", fb).forEach(x=>x.setAttribute("aria-pressed", x===b)); renderWork(); applyEdits(document); });
+})();
+document.addEventListener("click", e => {
+  const a = e.target.closest && e.target.closest("[data-div]"); if (!a) return;
+  workDiv = a.dataset.div; $$(".js-filters button").forEach(x=>x.setAttribute("aria-pressed", x.dataset.d===workDiv));
+});
+
+/* ---------- lite case ---------- */
+function renderLite(w){
+  const i = WORKS.indexOf(w), rel = w.link && WORKS.find(x=>x.id===w.link);
+  let html = `<div class="wrap cs-head">
+    <a class="back" href="#/work" data-div="${esc(w.div)}">${esc(DIVS[w.div][0])} 목록으로</a>
+    <div class="kicker">${esc(w.category)} · ${esc(w.client)}</div>
+    <h1>${esc(w.title)}</h1>
+    <dl class="meta">${w.meta.map(([k,v])=>`<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>
+    <div class="cs-hero">${`<figure class="ph-fig wide169"><img src="${PF}${esc(w.id)}/01.jpg" alt="${esc(w.title)} 대표 장표" decoding="async"></figure>`}</div>
+    <div class="lite-status"><b class="${esc(w.status)}">${esc(STATUS[w.status])}</b><span>${esc(STATUS_NOTE[w.status])}</span></div>
+    <div class="cs-block cs-intro"><h2>${esc(w.headline)}</h2><div>${w.body.map(p=>`<p>${esc(p)}</p>`).join("")}<div class="keys">${w.tags.map(t=>`<span class="tag">${esc(t)}</span>`).join("")}</div></div></div>
+    ${w.points ? `<div class="cs-block"><div class="cs-label">Highlights</div><div class="pts">${w.points.map(([t,d],k)=>`<div><span class="n">${pad(k+1)}</span><h3>${esc(t)}</h3><p>${esc(d)}</p></div>`).join("")}</div></div>` : ""}
+    <div class="cs-block"><div class="cs-label">Slides</div><h2 class="cs-h2">장표로 보는 ${esc(w.title)}</h2>${carHTML(w.id, w.slides, w.title)}<p class="cap">드래그하거나 화살표로 넘기고, 장표를 누르면 크게 볼 수 있습니다.</p></div>
+    ${rel ? `<div class="cs-block"><div class="cs-label">Related</div><div class="rel"><a href="#/work/${esc(rel.id)}" data-cursor="View"><img src="${esc(rel.cover)}" alt="${esc(rel.title)}" loading="lazy"><span><small>함께 보면 좋은 프로젝트</small><b>${esc(rel.title)}</b></span></a></div></div>` : ""}
+    <div class="cs-block"><dl class="credits">
+      <div><dt>Client</dt><dd>${esc(w.client)}</dd></div>
+      <div><dt>Director</dt><dd>황윤희</dd></div>
+      <div><dt>Stage</dt><dd>${esc(STATUS[w.status])}</dd></div>
+      <div><dt>Year</dt><dd>${esc(w.year)}</dd></div>
+    </dl><p class="cap">${esc(ARCHIVE_NOTE)}</p></div>
+  </div>`;
+  const next = WORKS[i+1];
+  html += next ? `<a class="cs-next" href="#/work/${esc(next.id)}" data-cursor="Next"><small>다음 프로젝트</small><strong>${esc(next.title)}</strong></a>`
+               : `<a class="cs-next" href="#/contact" data-cursor="Talk"><small>다음 프로젝트</small><strong>Your brand, next.</strong></a>`;
+  $(".js-case").innerHTML = html;
+  document.title = `${w.title} | EEH STUDIO`;
+}
+const _renderCase = renderCase;
+renderCase = function(w){
+  if (w.lite) return renderLite(w);
+  _renderCase(w);
+  if (w.id === "freeze-lab") enhanceFL();
+  if (w.id === "social-value-market") enhanceSVM();
+};
+
+/* ---------- FREEZE LAB: 360° booth ---------- */
+const BX_Z = [
+  { k:"Z00", ko:"입구 브랜드존", en:"ENTRANCE / BRAND WALL", step:"1", stepT:"STEP 1 연구원 등록하기", img:"fl/view_z00_front.jpg", deck:"fl/deck/entry.jpg",
+    d:"라이팅패널과 브랜드 월, 차단봉 동선으로 입구를 열었습니다. 연구원 목걸이를 받고 QR로 체크인하면 체험이 시작되고, 인스타그램을 팔로우하면 사진이 들어간 연구원증이 현장에서 바로 나옵니다.", dim:"라이팅패널 출력 880×1480 / 프레임 900×1500" },
+  { k:"Z05", ko:"연구복 행거존", en:"LAB COAT RACK", step:"1", stepT:"STEP 1 연구원 등록하기", img:"fl/deck/coat.jpg", deck:"fl/deck/coat.jpg",
+    d:"랩코트를 걸어 두고 갈아입는 자리. 손님이 연구원이 되는 순간을 공간 한쪽에 남겼습니다.", dim:"" },
+  { k:"Z03", ko:"미션 체험존", en:"MISSION EXPERIENCE", step:"2", stepT:"STEP 2 좋은 것을 발견하기", img:"fl/view_z03_iso.jpg", deck:"fl/deck/mission.jpg",
+    d:"중앙 이중 가벽에 미션, 게임, 연구원증을 차례로 두었습니다. 원물을 고르고 얼리고 수분을 덜어내는 동결건조 과정을 벽면과 미션으로 따라가고, WBTI로 나의 웰니스 타입을 확인합니다.", dim:"체험벽 3,660 · 높이 1,820 · 미션 작업대 1,200×600×800 ×3 · 상부선반 높이 770" },
+  { k:"Z04", ko:"시식대", en:"TASTING STAND", step:"3", stepT:"STEP 3 나의 연구 결과 받기", img:"fl/view_z04_iso.jpg", deck:"fl/deck/tasting.jpg",
+    d:"저울과 플라스크, 스텐 작업대가 놓인 연구실의 한 칸. 동결건조 칩을 맛보고 결과 카드와 추천 루틴으로 오늘의 연구 기록을 완성합니다.", dim:"가벽·매대 마감 RM004 헤어라인 스텐 시트" },
+  { k:"Z01", ko:"제품 진열벽", en:"MAIN PRODUCT WALL", step:"4", stepT:"STEP 4 좋은 마음으로 건네기", img:"fl/view_z01_iso.jpg", deck:"fl/deck/mainwall.jpg",
+    d:"FREEZE THE FRESH, KEEP THE BEST 레터링 아래 단품과 선물세트를 진열한 메인 벽. 실험 끝에 고른 좋은 것을 소중한 사람에게 건네는 장면으로 마무리합니다.", dim:"L자 목공 백월 · 솔벤 인쇄와 레터링 컷팅 시트" },
+  { k:"Z06", ko:"제품 아일랜드", en:"PRODUCT ISLANDS", step:"4", stepT:"STEP 4 좋은 마음으로 건네기", img:"fl/view_z06_iso.jpg", deck:"fl/deck/plan.jpg",
+    d:"입구 쪽 유리 쇼케이스 매대. 추석 선물세트를 단품 존과 분리해 별도 구획으로 보여줬습니다.", dim:"제품매대 A · B" },
+  { k:"Z04C", ko:"카운터", en:"COUNTER", step:"$", stepT:"결제 · 포장", img:"fl/fl-top.jpg", deck:"fl/deck/plan.jpg",
+    d:"결제와 포장이 이뤄진 자리. 운영 2주차에는 고객이 고른 대로 세트를 다시 담고, 추석 보자기 포장을 넓혔습니다.", dim:"" }
+];
+function bxHTML(){
+  return `<div class="bx">
+    <div class="bx-stage" aria-label="FREEZE LAB 부스 3D 360도 보기. 좌우로 끌어 돌릴 수 있습니다." role="img">
+      <img class="bx-img" src="${IMG}fl/turn/f00.jpg" alt="" draggable="false">
+      <div class="bx-hs">${BX_Z.map((z,i)=>`<button type="button" class="hs" data-z="${i}" aria-label="${esc(z.ko)} 보기" style="--x:${BX_HS[0][i][0]};--y:${BX_HS[0][i][1]}">${esc(z.step)}</button>`).join("")}</div>
+      <span class="bx-load">3D 프레임 불러오는 중 <b>0</b>%</span><span class="bx-deg">0°</span>
+      <span class="bx-hint">← 좌우로 끌어서 돌려 보세요 →</span>
+    </div>
+    <div class="bx-bar">${BX_Z.map((z,i)=>`<button type="button" class="chip" data-z="${i}" aria-pressed="false"><b>${esc(z.step)}</b>${esc(z.ko)}</button>`).join("")}<span class="sp"></span>
+      <button type="button" class="ctl bx-play" aria-pressed="true">자동 회전</button><a class="ctl" href="fl/booth3d.html" target="_blank" rel="noopener">실시간 3D 열기</a></div>
+    <div class="bx-panel" aria-live="polite"></div>
+  </div>`;
+}
+function initBx(bx){
+  if (bx.dataset.ready) return; bx.dataset.ready = "1";
+  const N = BX_HS.length, stage = $(".bx-stage", bx), img = $(".bx-img", bx), hs = $$(".hs", bx), chips = $$(".chip", bx), deg = $(".bx-deg", bx), play = $(".bx-play", bx), panel = $(".bx-panel", bx), ld = $(".bx-load", bx);
+  const frames = []; let loaded = 0, f = 0, auto = !reduce, sel = -1, raf = null, target = null, inView = false;
+  for (let i=0;i<N;i++){ const im = new Image(); im.decoding = "async"; im.onload = im.onerror = () => { loaded++; $("b", ld).textContent = Math.round(loaded/N*100); if (loaded === N) ld.classList.add("done"); }; frames.push(im); }
+  const load = () => { if (frames[0].src) return; frames.forEach((im,i)=> im.src = `${IMG}fl/turn/f${pad(i)}.jpg`); };
+  const set = i => {
+    f = ((Math.round(i) % N) + N) % N;
+    if (frames[f].complete && frames[f].naturalWidth) img.src = frames[f].src; else img.src = `${IMG}fl/turn/f${pad(f)}.jpg`;
+    deg.textContent = Math.round(f/N*360) + "°";
+    hs.forEach((h,k)=>{ const p = BX_HS[f][k]; h.style.setProperty("--x", p[0]); h.style.setProperty("--y", p[1]); h.classList.toggle("off", !p[2]); });
+  };
+  const stopAuto = () => { auto = false; play.setAttribute("aria-pressed","false"); };
+  const tick = t => {
+    if (target !== null){
+      let d = ((target - f + N/2) % N + N) % N - N/2;
+      if (Math.abs(d) < 1){ set(target); target = null; } else set(f + Math.sign(d));
+    } else if (auto && inView && !document.hidden){
+      if (!tick.l || t - tick.l > 110){ set(f + 1); tick.l = t; }
+    }
+    raf = requestAnimationFrame(tick);
+  };
+  const pick = k => {
+    sel = k; const z = BX_Z[k];
+    hs.forEach((h,i)=>h.classList.toggle("on", i===k)); chips.forEach((c,i)=>c.setAttribute("aria-pressed", i===k));
+    stopAuto(); target = BX_BEST[k];
+    panel.innerHTML = `<div class="t"><span class="k">${esc(z.stepT)}</span><h3>${esc(z.ko)}</h3><span class="en">${esc(z.en)}</span><p>${esc(z.d)}</p>${z.dim?`<p class="dim">${esc(z.dim)}</p>`:""}</div>
+      <div class="imgs"><figure><img src="${IMG}${z.img}" alt="${esc(z.ko)} 3D 렌더" loading="lazy" data-lb="${esc(z.ko)} · 3D 모델"><figcaption>3D 모델 R02</figcaption></figure><figure><img src="${IMG}${z.deck}" alt="${esc(z.ko)} 기획 장표" loading="lazy" data-lb="${esc(z.ko)} · 공간기획 덱"><figcaption>공간기획 덱</figcaption></figure></div>`;
+  };
+  hs.forEach(h => h.addEventListener("click", e => { e.stopPropagation(); pick(+h.dataset.z); }));
+  chips.forEach(c => c.addEventListener("click", () => pick(+c.dataset.z)));
+  play.onclick = () => { auto = !auto; play.setAttribute("aria-pressed", auto); target = null; };
+  let down = false, sx = 0, sf = 0;
+  stage.addEventListener("pointerdown", e => { if (e.target.closest(".hs")) return; down = true; sx = e.clientX; sf = f; stage.classList.add("drag"); bx.classList.add("touched"); stopAuto(); target = null; stage.setPointerCapture(e.pointerId); });
+  stage.addEventListener("pointermove", e => { if (!down) return; const d = (e.clientX - sx) / stage.clientWidth; set(sf - d * N * 0.9); });
+  const up = () => { down = false; stage.classList.remove("drag"); };
+  stage.addEventListener("pointerup", up); stage.addEventListener("pointercancel", up);
+  stage.addEventListener("keydown", e => { if (e.key === "ArrowRight"){ stopAuto(); set(f+1); } if (e.key === "ArrowLeft"){ stopAuto(); set(f-1); } });
+  stage.tabIndex = 0;
+  const io = new IntersectionObserver(es => es.forEach(en => { inView = en.isIntersecting; if (inView) load(); }), {rootMargin:"200px"});
+  io.observe(bx);
+  raf = requestAnimationFrame(tick);
+}
+
+/* ---------- compare slider ---------- */
+function cmpHTML(a, b, la, lb, cap){
+  return `<figure class="cmp"><div class="cmp-box" style="--p:50%"><img src="${IMG}${b}" alt="${esc(lb)}" loading="lazy"><img class="top" src="${IMG}${a}" alt="${esc(la)}" loading="lazy"><span class="ln"></span><span class="tl l">${esc(la)}</span><span class="tl r">${esc(lb)}</span>
+    <input type="range" min="0" max="100" value="50" aria-label="${esc(la)}와 ${esc(lb)} 비교"></div><figcaption>${cap}</figcaption></figure>`;
+}
+function initCmp(c){
+  if (c.dataset.ready) return; c.dataset.ready = "1";
+  const box = $(".cmp-box", c), r = $("input", c);
+  r.addEventListener("input", () => box.style.setProperty("--p", r.value + "%"));
+  if (!reduce){ let t0 = null; const io = new IntersectionObserver(es => { if (!es[0].isIntersecting || c.dataset.played) return; c.dataset.played = "1";
+    const run = ts => { t0 = t0 || ts; const k = Math.min(1, (ts - t0) / 1600); const v = 50 + Math.sin(k * Math.PI * 2) * 30 * (1-k); box.style.setProperty("--p", v + "%"); r.value = v; if (k < 1) requestAnimationFrame(run); }; requestAnimationFrame(run); }, {threshold:.6}); io.observe(c); }
+}
+
+/* ---------- FREEZE LAB: dossier ---------- */
+const DOS = {
+  log:[
+    ["6/30","최초 제안","몰 바이어","리빙파크 4F 더 팝업을 제안서로 먼저 소개받았습니다. 2주 운영 시 품목별 매출 사례가 함께 왔습니다."],
+    ["7/2","조건·제출물 일괄 안내","몰 바이어","고지물 규격, 입점 자료, 정산, 법적 요건이 모두 담긴 메일. 프로젝트 전체 요구사항의 출처가 되었습니다."],
+    ["7/7","일정 연기 요청","우리","단순 판매 행사가 아니라 브랜드를 제대로 소개하는 자리로 쓰기 위해 준비 기간 확보를 요청했습니다."],
+    ["7/8","22평 단독 운영 우려","몰 바이어","라이프밀만으로 22평을 채우기에 SKU가 충분하냐는 질문. FREEZE LAB 콘셉트가 답해야 할 첫 번째 과제가 되었습니다."],
+    ["7/14","일정 확정 9.10 – 9.23","몰 바이어","2주 일정 확정과 함께, 기획안에 인플루언서·연예인 협업 일정을 넣겠다고 우리가 약속했습니다."],
+    ["8/25","종합 준비사항 회신","우리","Behance 콘셉트, 포스터 가안, 앱 광고 일정, 거래 조건 공문을 한 번에 보냈습니다."],
+    ["8/31","고지물 제출","우리","온라인 광고 7종과 라이팅패널, 스탠딩배너, 판매 상품과 가격표. 하드 마감보다 4일 늦은 제출이었고, 기록으로 남겼습니다."],
+    ["9/1","장소명 표기 수정","몰 바이어","모든 제작물을 리빙파크 4F 더 팝업으로 통일. 다음 날 수정본을 다시 전달했습니다."],
+    ["9/5","시공사 확정","시공사","매대, 시식대, L자 목공 백월, 백월 인쇄와 레터링, 바닥, 운반부터 해체·폐기까지 일괄 계약했습니다."],
+    ["9/4 – 9/8","연구원증 현장 발급 준비","장비사","카드프린터를 렌탈하고 양면 베이스카드를 제작해, 현장에서 사진과 이름만 2차 인쇄하도록 했습니다."],
+    ["9/5 – 9/8","품목별 수량·입고 계획","본사","9/9, 9/11, 9/14, 9/18 네 차례 분산 입고로 확정했습니다."]
+  ],
+  decide:[
+    ["행사 성격","단순 판매가 아닌 브랜드 소개형 팝업","7/7"],
+    ["면적","22평 단독 운영, 면적 공유안 미채택","7/14"],
+    ["품목","전 품목 일반식품, 기능성 문구 사용 금지","8월"],
+    ["현수막","바이어 비권장, 벽체 집기와 가벽 그래픽으로 대체","7/2"],
+    ["운영 방식","음료 제조 없이 완제품 시식, 시식 인력 위생 장구","8/31"],
+    ["사전예약","네이버 예약 오픈, 방문 시 웰컴 키트 100%와 우선 입장","9/1"],
+    ["QR 룰렛","키트에 넣어 배포, 참여 시점에 개인별 쿠폰 실시간 발급","8월"],
+    ["공간 제작","자체 제작 → 종이 가벽 검토 → 목공 시공 일괄 계약","9/5"],
+    ["연구원증","현장 2차 인쇄로 약 1,800매 발급","9/8"],
+    ["입고","네 차례 분산 입고","9/8"]
+  ],
+  spec:[
+    ["DID 광고","가로 1920×1080 · 세로 1080×1920 px","몰 내 100여 개소 송출, 공간명은 리빙파크 4F 더 팝업으로 표기"],
+    ["라이팅패널","출력 880×1480 mm · 프레임 900×1500","직접 출력해 지참, 백라이트 색 보정"],
+    ["디지털 사인간판","1500×750 px","정지 이미지 또는 영상, USB 지참"],
+    ["스탠딩배너","365×1100 mm","PSD·AI 원본 제출, 몰에서 출력"],
+    ["APP 광고","썸네일 · 앱 메인 · 앱 상세","브랜드 소개, 위치, 프로모션, 정상가와 할인가"],
+    ["우리가 만든 것","2D 레이아웃 · 3D 연출 시안 · 가벽 그래픽","POP와 가격택, 선물세트 패키지, 유니폼, 굿즈와 리플렛, SNS 콘텐츠"]
+  ],
+  weeks:[
+    ["W1","제안서 제출 & 조건 확정","8/8 – 8/16",12,["종합 기획안 정리 후 바이어 전체 회신","기획안 구성 확정: 브랜드 소개, 공간 연출, 상품 구성, 프로모션, 협업 일정","22평 진열 볼륨 확보 계획 명시","건강기능식품 판매 가능 여부 서면 확인","디지털 사인간판 규격 확정 요청","판매 SKU 롱리스트","현장 실측 일정 협의","실사용 면적 확정","현장 운영 방식 결정"]],
+    ["W2","공간 설계 & 상품·가격 확정","8/17 – 8/23",12],
+    ["W3","고지물 마감 주","8/24 – 8/30",11],
+    ["W4","제작 · 발주 · 사전 마케팅","8/31 – 9/6",15],
+    ["W5","최종 점검 & 설치","9/7 – 9/9",7],
+    ["W6","팝업 1주차 운영","9/10 – 9/16",7],
+    ["W7","팝업 2주차 & 추석 피크","9/17 – 9/23",7],
+    ["W8","마감 · 정산 · 성과 리포트","9/24 – 10/25",6]
+  ],
+  risk:[
+    ["기획안 지연","높음","미확정 항목은 확인 요청으로 남기고 기획안부터 발송"],
+    ["D-14 고지물 마감","높음","시안 확정과 발송 일정을 마감에서 역산"],
+    ["22평 진열 볼륨","중간","진열 대신 공정 라인으로 공간을 채우는 콘셉트"],
+    ["온·오프라인 최저가 조건","중간","자사몰·스마트스토어 가격 동기화 선행"],
+    ["건기식 판매 불가","중간","전 품목 일반식품으로 구성"],
+    ["현장 제조로 해석될 위험","중간","완제품 시식 중심, 장비는 목업과 전시"],
+    ["영업신고 리드타임","낮음~중간","제조 없이 운영"],
+    ["추석 피크 인력·재고","낮음","차수별 분산 입고"],
+    ["사인간판 규격 오작","낮음","규격 확인 전 제작 보류"]
+  ],
+  cal:{
+    "8-24":"사전예약 캠페인 시작. 댓글로 예약 링크를 받는 캐러셀, 카카오 채널, 메타 광고",
+    "8-25":"종합 준비사항 회신. 콘셉트와 포스터 가안 전달",
+    "8-27":"몰 고지물 하드 마감 (D-14)",
+    "8-31":"온라인 광고 7종, 라이팅패널, 스탠딩배너 제출",
+    "9-1":"네이버 사전예약 오픈. 첫날 551건, 이틀 만에 761건",
+    "9-2":"장소명 수정본 재전달",
+    "9-5":"시공사 확정, 일괄 계약",
+    "9-6":"배치 확정, 3D 모델 R02",
+    "9-9":"설치와 연출",
+    "9-10":"오픈. 첫날 예약 방문 111명",
+    "9-11":"가격표를 2배로 키우고 시식 동선 추가. 다음 날 매출 전일 대비 2.9배",
+    "9-12":"3층 에스컬레이터 앞에서 4층으로 유도. 첫 주말 방문객 약 500명",
+    "9-13":"과일칩 시식 집중. 칩 8봉 세트 판매 1위",
+    "9-14":"몰 임직원 현장 영업, 선물세트 라인업 확대",
+    "9-17":"골라 담기 세트와 1:1 상담. 일매출 첫 신기록",
+    "9-18":"추석 보자기 포장 확대. 팝업 최고 매출일",
+    "9-23":"마지막 날. 폐점 후 해체와 철수"
+  },
+  fun:[["사전예약 신청",1464],["순 예약 인원",1094],["예약 후 방문",1047],["QR 룰렛 참여",586],["현장 혜택 사용",244]]
+};
+function calMonth(y, m){
+  const first = new Date(y, m-1, 1).getDay(), days = new Date(y, m, 0).getDate();
+  let h = `<div><h4>${y}.${pad(m)}</h4><div class="g">${["일","월","화","수","목","금","토"].map(d=>`<span>${d}</span>`).join("")}`;
+  for (let i=0;i<first;i++) h += `<i></i>`;
+  for (let d=1; d<=days; d++){
+    const key = `${m}-${d}`, ms = DOS.cal[key], run = m===9 && d>=10 && d<=23, hol = m===9 && d>=24 && d<=27;
+    h += `<button type="button" class="${ms?"ms":""} ${run?"run":""} ${hol?"hol":""}" data-k="${key}" aria-label="${m}월 ${d}일${ms?", "+esc(ms):""}">${d}</button>`;
+  }
+  return h + `</div></div>`;
+}
+function dosHTML(){
+  const tabs = [["01","개요"],["02","콘셉트"],["03","캘린더"],["04","커뮤니케이션"],["05","결정 로그"],["06","제작물 명세"],["07","실행 체크리스트"],["08","리스크"],["09","성과"]];
+  const panes = [
+    `<h3>지금 어디에 있고, 무엇이 남았나</h3><p class="sub">몰 바이어와 본사, 제작사와 주고받은 메일 전체와 예약 명단, 현장 기록을 근거로 확정된 조건과 운영 결과, 제작물 명세, 실행 체크리스트를 한 문서로 유지했습니다. 팀은 매일 이 화면을 보고 움직였습니다.</p>
+     <div class="kp"><div><b>14일</b><span>운영 2026.9.10(목) – 9.23(수)</span></div><div><b>22평</b><span>리빙파크 4F 더 팝업, 창고 포함, 코너 벽체</span></div><div><b>6.30</b><span>몰의 첫 제안 메일에서 시작</span></div><div><b>9.9</b><span>시공 설치, 다음 날 오픈</span></div><div><b>1,094명</b><span>사전예약 인원, 목표 대비 109%</span></div><div><b>159건</b><span>스마트플레이스 방문자 리뷰</span></div></div>`,
+    `<h3>기획안의 Z1 – Z4가, 현장의 STEP 1 – 4가 되기까지</h3><p class="sub">초기 콘셉트 문서의 네 개 존은 실측과 운영 조건을 거치며 이름과 장치가 바뀌었습니다. 뼈대는 그대로 두고, 고객이 실제로 할 수 있는 행동으로 다시 썼습니다.</p>
+     <table class="ctab"><thead><tr><th>기획안</th><th></th><th>현장에서 구현한 것</th></tr></thead><tbody>
+      ${[["Z1 REGISTER","연구원 등록. 랩코트, 연구원 뱃지, 실험노트를 받고 오늘의 미션을 부여","STEP 1 연구원 등록하기","연구원 목걸이와 QR 체크인, 인스타그램 팔로우로 사진 연구원증 현장 발급"],
+         ["Z2 FREEZE","동결건조 실험. 원물, 급속 동결, 진공 승화, 완성 4단계 전시","STEP 2 좋은 것을 발견하기","벽면과 미션으로 공정을 따라가고 WBTI로 웰니스 타입 확인"],
+         ["Z3 COMPARE","비교와 시식. 생과일과 동결건조칩 비교, 4종 시식","STEP 3 나의 연구 결과 받기","결과 카드와 추천 루틴, 미션 완료 시 체험 키트와 QR 룰렛 혜택"],
+         ["Z4 PRESCRIBE","추석 처방. 실험 결과로 선물세트를 처방전처럼","STEP 4 좋은 마음으로 건네기","추천 루틴과 추석 선물세트, 구매 금액별 혜택과 보자기 포장"]]
+        .map(([a,b,c,d])=>`<tr><td><b>${esc(a)}</b><small>${esc(b)}</small></td><td class="arr">→</td><td class="fin"><b>${esc(c)}</b><small>${esc(d)}</small></td></tr>`).join("")}
+     </tbody></table>`,
+    `<h3>날짜를 누르면 그날 한 일이 보입니다</h3><p class="sub">사전예약 캠페인부터 철수까지의 마일스톤. 초록은 운영 기간, 분홍은 추석 연휴입니다.</p>
+     <div class="cal">${calMonth(2026,8)}${calMonth(2026,9)}</div>
+     <div class="cal-legend"><em style="--c:#fff;box-shadow:inset 0 0 0 1px #000">마일스톤</em><em style="--c:#e3f4ec">운영 기간</em><em style="--c:#fde8e6">추석 연휴</em></div>
+     <div class="cal-out"><b>9월 10일</b>오픈. 첫날 예약 방문 111명</div>`,
+    `<h3>메일 한 통이 결정이 되기까지</h3><p class="sub">바이어 스레드와 본사, 제작사, 장비사 메일을 시간순으로 이어 붙였습니다. 제목을 누르면 내용이 펼쳐집니다. 개인 정보와 금액은 이 화면에서 뺐습니다.</p>
+     <ul class="log">${DOS.log.map(([d,t,w,b],i)=>`<li class="${i===3?"open":""}"><button type="button" aria-expanded="${i===3}"><span class="d">${esc(d)}</span><span>${esc(t)}</span><span class="w">${esc(w)}</span><span class="s">+</span></button><div class="bd">${esc(b)}</div></li>`).join("")}</ul>`,
+    `<h3>확정된 것</h3><p class="sub">메일 원문 기준으로 명시적으로 합의되거나 통보된 사항만 적었습니다.</p>
+     <dl class="dl2">${DOS.decide.map(([k,v,d])=>`<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd><span class="dt">${esc(d)}</span></div>`).join("")}</dl>`,
+    `<h3>몰에 제출한 고지물, 그리고 우리가 만든 것</h3><p class="sub">몰 안내 메일의 고지물 규격 원문 기준입니다. 필수 항목을 제출하지 못하면 연출 자체가 불가능했습니다.</p>
+     <div class="spec">${DOS.spec.map(([t,c,s])=>`<div><b>${esc(t)}</b><code>${esc(c)}</code><span>${esc(s)}</span></div>`).join("")}</div>`,
+    `<h3>77개의 실행 항목을 8주로</h3><p class="sub">제안서 회신부터 정산까지. 주차를 누르면 항목이 펼쳐집니다. 막대는 전체 77개 중 해당 주차가 차지하는 비중입니다.</p>
+     <div class="wk">${DOS.weeks.map(([w,t,d,n,items],i)=>`<button type="button" aria-expanded="${i===0}" data-w="${i}"><span class="w">${esc(w)}</span><span>${esc(t)}</span><span class="dt">${esc(d)}</span><span class="bar" style="--w:${Math.round(n/15*100)}%"><i></i></span></button>${items?`<ul ${i===0?"":"hidden"}>${items.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`:`<ul hidden><li>세부 항목 ${n}개</li></ul>`}`).join("")}</div>`,
+    `<h3>리스크와 미리 적어 둔 대응</h3><p class="sub">발생 가능성과 영향도를 기준으로 정리했습니다. 대부분은 콘셉트와 운영 방식을 정하는 단계에서 해소되었습니다.</p>
+     <div class="risk">${DOS.risk.map(([t,l,r])=>`<div><b>${esc(t)}</b><span class="lv ${l==="높음"?"h":""}">${esc(l)}</span><span>${esc(r)}</span></div>`).join("")}</div>`,
+    `<h3>예약 한 번이 관계로 이어진 흐름</h3><p class="sub">네이버 예약과 오모플레이 룰렛 기준, 9월 23일 집계. 2주차 일평균 매출은 1주차의 1.6배였고, 9월 네이버 검색량은 8월의 2.0배였습니다.</p>
+     <div class="fun">${DOS.fun.map(([t,v])=>`<div><span>${esc(t)}</span><span class="bar"><i style="--w:${(v/DOS.fun[0][1]*100).toFixed(1)}%"></i></span><b>${v.toLocaleString()}</b></div>`).join("")}</div>
+     <div class="kp" style="margin-top:22px"><div><b>96%</b><span>예약자의 실제 방문율</span></div><div><b>83%</b><span>키트 QR로 들어와 룰렛에 참여</span></div><div><b>1.6×</b><span>2주차 일평균 매출, 1주차 대비</span></div></div>`
+  ];
+  return `<div class="dos">
+    <aside class="dos-side"><div class="hd"><b>PROJECT DOSSIER</b><span>LIFEMEAL × 리빙파크 4F 더 팝업</span></div>
+      <nav role="tablist" aria-label="프로젝트 도시에">${tabs.map(([n,t],i)=>`<button type="button" role="tab" aria-selected="${i===0}" data-t="${i}"><span>${n}</span>${esc(t)}</button>`).join("")}</nav>
+      <div class="ft">팀 작업용 대시보드에서 공개 가능한 내용만 옮겼습니다. 업데이트 2026.09.23</div></aside>
+    <div class="dos-main">${panes.map((p,i)=>`<div class="dos-pane" role="tabpanel" ${i?"hidden":""}>${p}</div>`).join("")}</div>
+  </div>`;
+}
+function initDos(d){
+  if (d.dataset.ready) return; d.dataset.ready = "1";
+  const tabs = $$(".dos-side button", d), panes = $$(".dos-pane", d);
+  const open = i => { tabs.forEach((t,k)=>t.setAttribute("aria-selected", k===i)); panes.forEach((p,k)=>{ p.hidden = k!==i; }); const f = $(".fun", panes[i]); if (f){ f.classList.remove("go"); void f.offsetWidth; setTimeout(()=>f.classList.add("go"), 60); } };
+  tabs.forEach((t,i)=> t.onclick = () => open(i));
+  d.addEventListener("click", e => {
+    const b = e.target.closest(".cal .g button");
+    if (b){ $$(".cal .g button", d).forEach(x=>x.classList.toggle("sel", x===b)); const [m,dd] = b.dataset.k.split("-"); const ms = DOS.cal[b.dataset.k];
+      $(".cal-out", d).innerHTML = `<b>${m}월 ${dd}일</b>${esc(ms || (m==="9" && dd>=10 && dd<=23 ? "운영 중" : m==="9" && dd>=24 && dd<=27 ? "추석 연휴" : "기록된 마일스톤이 없습니다"))}`; }
+    const l = e.target.closest(".log button");
+    if (l){ const li = l.parentElement; const on = !li.classList.contains("open"); li.classList.toggle("open", on); l.setAttribute("aria-expanded", on); }
+    const w = e.target.closest(".wk button");
+    if (w){ const ul = w.nextElementSibling; const on = w.getAttribute("aria-expanded") !== "true"; w.setAttribute("aria-expanded", on); if (ul) ul.hidden = !on; }
+  });
+}
+
+const FL_DECK = ["키 비주얼","원물 무드","FREEZE THE FRESH 무드","인터랙티브 팝업","코스 시뮬레이션","디지털 연결","팝업 위치","2D 시뮬레이션","기프트 세트 & 패키지","SET 1 데일리 루틴","아우터 패키지 전개도","이너 패키지","패키지 샘플과 레퍼런스","SET 2 프리미엄 루틴","SET 3 동결건조 세트","SET 4 해밀리 세트","트라이얼 키트","쿨러백","쇼핑백"];
+function enhanceFL(){
+  const root = $(".js-case");
+  const blocks = $$(".cs-block", root);
+  const b3 = blocks.find(b => /Booth in 3D/.test(($(".cs-label", b)||{}).textContent||""));
+  if (b3){
+    const fr = $(".b3frame", b3); if (fr) fr.outerHTML = bxHTML();
+    const cap = $(".cap", b3); if (cap) cap.innerHTML = `<b>12,287 × 9,170mm, 실제 치수로 먼저 지은 실험실.</b> 좌우로 끌어 360°로 돌려 보고, 번호를 누르면 코스 순서대로 존별 3D 렌더와 기획 장표가 열립니다. 3D 모델 R02에서 48개 시점을 직접 렌더링해, WebGL이 막힌 환경에서도 바로 보입니다. 가벽과 매대는 헤어라인 스텐 시트, 미션존 집기는 SUS201 기준으로 마감을 맞췄습니다.`;
+    b3.insertAdjacentHTML("afterend", `
+      <div class="cs-block">
+        <div class="cs-label">Plan to site</div>
+        <h2 class="cs-h2">기획 장표에서 3D로, 3D에서 시공 계약까지<br>같은 숫자로 이어졌습니다</h2>
+        <div class="cmps">
+          ${cmpHTML("fl/deck/entry.jpg","fl/view_z00_front.jpg","PLAN","3D","<b>입구 브랜드존.</b> 라이팅패널과 브랜드 월, 차단봉 동선")}
+          ${cmpHTML("fl/deck/mission.jpg","fl/view_z03_iso.jpg","PLAN","3D","<b>미션 체험존.</b> 체험벽 3,660 · 높이 1,820")}
+          ${cmpHTML("fl/deck/mainwall.jpg","fl/view_z01_iso.jpg","PLAN","3D","<b>제품 진열벽.</b> FREEZE THE FRESH, KEEP THE BEST")}
+        </div>
+        <p class="cap">가운데 선을 끌어 공간기획 덱의 입면과 3D 모델을 겹쳐 보세요.</p>
+        <ol class="trail">
+          <li><span class="d">07 – 08</span><h3>콘셉트 문서</h3><p>22평을 상품 대신 공정 라인으로 채운다는 결정과 Z1 – Z4 존 구성</p></li>
+          <li><span class="d">08.25</span><h3>공간기획 덱</h3><p>브랜드 선언문, 코스 시뮬레이션, 2D 평면과 입면을 바이어에게 회신</p></li>
+          <li><span class="d">09.06</span><h3>3D 모델 R02</h3><p>9/6 배치도를 반영해 실제 치수로 확정, 존별 도면집으로 공유</p></li>
+          <li><span class="d">09.05</span><h3>시공 계약</h3><p>제품매대 A · B, 시식대, L자 목공 백월, 백월 인쇄와 레터링, 바닥</p></li>
+          <li><span class="d">09.09 – 10</span><h3>설치와 오픈</h3><p>하루 만에 설치하고 다음 날 문을 열었습니다. 첫날 예약 방문 111명</p></li>
+        </ol>
+      </div>
+      <div class="cs-block">
+        <div class="cs-label">Project dossier</div>
+        <h2 class="cs-h2">기획안이 어떻게 현장이 되었는지,<br>팀이 매일 보던 대시보드 그대로</h2>
+        ${dosHTML()}
+        <p class="cap">팀 작업용 프로젝트 대시보드에서 메일 기록, 결정 사항, 제작물 명세, 체크리스트, 리스크, 성과를 옮겼습니다. 왼쪽 메뉴를 눌러 보세요.</p>
+      </div>`);
+  }
+  const idb = blocks.find(b => /Identity/.test(($(".cs-label", b)||{}).textContent||""));
+  if (idb) idb.insertAdjacentHTML("afterend", `<div class="cs-block"><div class="cs-label">Deck &amp; package</div><h2 class="cs-h2">공간기획 덱부터 선물세트 패키지, 굿즈까지</h2>${carHTML("fl-deck", FL_DECK, "FREEZE LAB")}<p class="cap"><b>한 장의 덱에서 시작한 언어.</b> 키 비주얼과 코스 시뮬레이션, 2D 평면, 그리고 네 가지 추석 선물세트의 아우터·이너 패키지 전개도와 트라이얼 키트, 쿨러백, 쇼핑백까지 같은 그린과 워드마크로 이어집니다.</p></div>`);
+}
+const CSES_DECK = ["첫 제안 The better, the more","콘셉트","콘텐츠","부스 디자인","부스 3D","정면 그래픽","그래픽 상세","조명","테이블","보관함"];
+function enhanceSVM(){
+  const root = $(".js-case"); const blocks = $$(".cs-block", root);
+  const anchor = blocks[2] || blocks[blocks.length-1];
+  if (!anchor) return;
+  anchor.insertAdjacentHTML("afterend", `<div class="cs-block"><div class="cs-label">Proposal to market</div>
+    <div class="cs-intro"><h2>같은 질문, 더 선명해진 답.<br>첫 제안에서 마켓까지</h2><div><p>첫 제안의 이름은 The better, the more였습니다. 미션을 수행하고 코인을 모아 굿즈로 바꾸는 구조를, 옐로 그래픽과 종이 집기, 캡슐 뽑기로 3,000 × 3,000 부스에 담은 안이었습니다.</p><p>측정한 가치를 보상으로 돌려준다는 뼈대는 그대로 두고, 논의를 거쳐 누구나 아는 장보기와 계산대, 영수증의 언어로 다시 썼습니다. 그렇게 SOCIAL VALUE MARKET이 되었습니다.</p></div></div>
+    <div class="mt" style="margin-top:clamp(28px,3vw,44px)">${carHTML("cses-proposal", CSES_DECK, "CSES 첫 제안")}</div>
+    <p class="cap">첫 제안 장표 10장. 최종 부스와 비교해 보면 무엇을 남기고 무엇을 바꿨는지 보입니다.</p></div>`);
+}
+
+/* ---------- home: rails + why + workflow ---------- */
+const WHY = [
+  ["한 팀이 기획부터 철수까지","콘셉트 문장, 3D 도면, 제작물 명세, 시공 발주, 현장 운영, 결과 리포트까지 한 팀이 끝까지 맡습니다. 메일 첫 통부터 정산까지 하나의 문서로 관리합니다.","77","실행 항목, 8주","pf/fl-deck/05.jpg","#/work/freeze-lab"],
+  ["먼저 짓고, 같은 그림으로 말합니다","실제 치수 3D 모델로 부스를 먼저 짓고, 도면과 렌더를 같은 모델에서 뽑아 클라이언트, 시공사와 같은 화면을 봅니다.","48","시점의 360° 부스","fl/turn/f05.jpg","#/work/freeze-lab"],
+  ["숫자로 확인하는 경험","사전예약 1,094명 중 96%가 실제로 방문했고, 현장에서 매일 고친 끝에 2주차 일평균 매출은 1주차의 1.6배가 되었습니다.","96%","예약자의 실제 방문율","fl/deck/tasting.jpg","#/work/freeze-lab"],
+  ["브랜드와 현장을 같은 손으로","아이덴티티 가이드와 패키지, 부스 그래픽을 따로 맡기지 않아도 됩니다. RECETTE는 BI 가이드의 아치 하나로 카페쇼 부스 전체를 묶었습니다.","13","Space · Brand 프로젝트","pf/recette-booth/01.jpg","#/work/recette-booth"]
+];
+const WF = [
+  ["Client Briefing","브리핑","목적과 규모, 장소, 날짜, 예산을 확인하고 무대, 조명, 포토존, 부스, 촬영 같은 필수 요소를 체크합니다.",["기획"],"FREEZE LAB · 6/30 몰의 첫 제안부터 7/14 일정 확정까지"],
+  ["Concept & Program","콘셉트 · 프로그램","테마와 키워드, 메시지를 정하고 프로그램 구성과 운영 동선, 플로우 차트, 카피를 만듭니다.",["기획"],"FREEZE LAB · 진열 대신 공정 라인, 손님 대신 연구원"],
+  ["Design & Spatial","디자인 · 공간 설계","키 비주얼과 공간 그래픽을 디자인하고 부스, 가벽, 조형물을 3D로 설계합니다. 시안은 1차, 2차, 최종으로 검수합니다.",["디자인","3D"],"FREEZE LAB · 3D 모델 R02와 존별 도면집"],
+  ["Budget & Timeline","예산 · 일정","3D 최종본 기준으로 출력, 목공, 도색, 조립 단가와 시공, 철거, 운송, 인력 비용을 산출하고 전체 일정표를 확정합니다.",["기획","디자인"],"FREEZE LAB · 77개 실행 항목을 8주로"],
+  ["Production","제작 준비","패널과 가벽, 부스를 발주하고 목공, 출력, 조립을 진행합니다. 장비와 물류, 운송 계획, 설치 체크리스트를 만듭니다.",["제작"],"SOCIAL VALUE MARKET · 굿즈 16종, 행택과 사인"],
+  ["On-site Setup","현장 세팅","구조물과 장비를 반입해 부스와 포토존을 설치하고 그래픽을 부착합니다. 조명과 사운드, LED를 세팅하고 최종 검수합니다.",["제작","운영"],"FREEZE LAB · 9/9 설치, 9/10 오픈"],
+  ["Rehearsal & Operation","리허설 · 운영","전체 흐름을 리허설하고 스태프를 브리핑합니다. 본행사를 운영하며 실시간으로 대응하고 고칩니다.",["운영"],"FREEZE LAB · 현장에서 다시 설계한 일곱 가지"],
+  ["Strike-down","철수","구조물과 장비를 회수하고 현장을 복구합니다. 폐기와 보관 항목을 나눕니다.",["제작"],"FREEZE LAB · 9/23 폐점 후 해체와 렌탈 반납"],
+  ["Closing & Review","정산 · 리포트","비용을 정산하고 운영 리포트를 냅니다. 회고로 개선점을 정리해 다음 제안을 준비합니다.",["기획"],"FREEZE LAB · 9/23 성과 보고와 다음 팝업을 위한 기록"]
+];
+function wfHTML(){
+  return `<div class="wf"><div class="wf-h"><h3>9 Steps, One Team</h3><p>브리핑에서 정산까지 아홉 단계. 단계마다 무엇을 하고, 실제 프로젝트에서 어떻게 했는지 함께 적었습니다.</p></div>
+    <div class="wf-steps" role="tablist" aria-label="진행 단계">${WF.map(([e],i)=>`<button type="button" role="tab" aria-selected="${i===0}" data-i="${i}"><span class="n">${pad(i+1)}</span><span class="t">${esc(e)}</span><i></i></button>`).join("")}</div>
+    <div class="wf-panel" role="tabpanel"></div></div>`;
+}
+function initWf(el){
+  if (el.dataset.ready) return; el.dataset.ready = "1";
+  const bs = $$(".wf-steps button", el), steps = $(".wf-steps", el), panel = $(".wf-panel", el); let i = 0, timer = null, paused = reduce;
+  const ms = 5200; steps.style.setProperty("--wf-ms", ms + "ms");
+  const show = k => { i = k; const [e,ko,d,who,ev] = WF[k];
+    bs.forEach((b,j)=>{ b.setAttribute("aria-selected", j===k); const ii = $("i", b); ii.style.transition = "none"; ii.style.width = "0"; });
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{ const ii = $("i", bs[k]); ii.style.transition = paused ? "none" : ""; ii.style.width = "100%"; }));
+    panel.innerHTML = `<div><h4><small>STEP ${pad(k+1)} · ${esc(ko)}</small>${esc(e)}</h4><div class="who">${who.map(w=>`<span class="tag">${esc(w)}</span>`).join("")}</div></div><div><p>${esc(d)}</p><p class="ev"><b>실제로는</b> ${esc(ev)}</p></div>`;
+  };
+  const loop = () => { clearTimeout(timer); if (paused) return; timer = setTimeout(()=>{ if (!document.hidden && inV) show((i+1)%WF.length); loop(); }, ms); };
+  let inV = false; new IntersectionObserver(es=>{ inV = es[0].isIntersecting; }).observe(el);
+  bs.forEach((b,k)=> b.onclick = () => { paused = true; steps.classList.add("paused"); clearTimeout(timer); show(k); });
+  show(0); loop();
+}
+function initRail(w){
+  if (w.dataset.ready) return; w.dataset.ready = "1";
+  const r = $(".rail", w), bar = $(".rail-ui .bar i", w);
+  const upd = () => { const max = r.scrollWidth - r.clientWidth; const vis = r.clientWidth / r.scrollWidth; bar.style.width = (vis*100).toFixed(1)+"%"; bar.style.left = (max>0 ? r.scrollLeft/max*(1-vis)*100 : 0).toFixed(1)+"%"; };
+  r.addEventListener("scroll", () => requestAnimationFrame(upd), {passive:true}); addEventListener("resize", upd); upd();
+  $(".rp", w).onclick = () => r.scrollBy({left:-r.clientWidth*0.8, behavior:"smooth"});
+  $(".rn", w).onclick = () => r.scrollBy({left: r.clientWidth*0.8, behavior:"smooth"});
+  dragScroll(r);
+  r.addEventListener("click", e => { if (r.dataset.moved){ e.preventDefault(); e.stopPropagation(); } }, true);
+}
+function renderV9Home(){
+  const rails = $(".js-rails");
+  if (rails) rails.innerHTML = ["space","brand"].map(g => { const items = WORKS.filter(w=>w.div===g);
+    return `<div class="rail-wrap"><div class="rail-head"><div><h3>${DIVS[g][0]}</h3><p>${DIVS[g][1]} · ${pad(items.length)}</p></div><a class="text-link" href="#/work" data-div="${g}">전체 보기</a></div>
+      <div class="rail">${items.map(railCard).join("")}</div>
+      <div class="rail-ui"><button type="button" class="rp" aria-label="이전">←</button><span class="bar"><i></i></span><button type="button" class="rn" aria-label="다음">→</button></div></div>`; }).join("");
+  const why = $(".js-why");
+  if (why) why.innerHTML = WHY.map(([t,d,b,s,img,u],i)=>`<a class="why-card" href="${u}" data-cursor="View"><span class="n">${pad(i+1)}</span><h3>${esc(t)}</h3><p>${esc(d)}</p><div class="fig">${fig(img, t)}<div class="proof"><b>${esc(b)}</b><span>${esc(s)}</span></div></div></a>`).join("");
+  $$(".js-wf").forEach(el => { if (!el.innerHTML.trim()) el.innerHTML = wfHTML(); });
+}
+
+/* ---------- notes v9 ---------- */
+Object.assign(NOTES[0], { facts:[["21 / 30","공개 게시물 중 FREEZE LAB·동결건조 언급"],["17 / 30","연구원·연구소라는 역할 언급"],["71%","브랜드 투표 참여자 중 20~30대"]],
+  gallery:[["pf/fl-deck/01.jpg","키 비주얼. 연구원의 손과 원물"],["pf/fl-deck/04.jpg","인터랙티브 팝업 콘셉트"],["fl/poster-badge.jpg","연구원증 발급 안내 포스터"]] });
+Object.assign(NOTES[1], { facts:[["20,000","모두에게 같은 VALUE 지급"],["16종","가치의 이름을 단 굿즈"],["1,300","현장에서 건넨 굿즈"]],
+  gallery:[["svm-receipt.jpg","가치가 찍힌 영수증"],["svm-tags.jpg","가치의 이름을 단 행택"],["svm-queue.jpg","계산대 앞의 줄"]] });
+Object.assign(NOTES[2], { facts:[["7","현장에서 바꾼 것"],["2.9×","가격표·시식 동선 다음 날 매출"],["1.6×","2주차 일평균 매출, 1주차 대비"]],
+  gallery:[["fl/deck/tasting.jpg","시식존 입면"],["fl/deck/mainwall.jpg","제품 진열벽 입면"],["fl/poster-set.jpg","구매 혜택 POP"]] });
+NOTES.push({ id:"plan-to-site", date:"2026.10", tag:"Process", case:"freeze-lab",
+  title:"기획안이 현장이 되기까지",
+  img:"pf/fl-deck/08.jpg",
+  sum:"메일 첫 통에서 철수까지, 하나의 문서로 움직인 14일짜리 실험실의 준비 과정.",
+  facts:[["77","실행 항목을 8주로"],["9","리스크와 미리 적어 둔 대응"],["6","몰에 제출한 고지물 종류"]],
+  gallery:[["fl/deck/plan.jpg","메인 존 평면 배치"],["fl/turn/f06.jpg","3D 모델 R02"],["fl/view_w02_iso.jpg","중앙 가벽 도면"]],
+  body:[
+    ["p","FREEZE LAB은 6월 30일 몰의 첫 제안 메일에서 시작해 9월 23일 철수까지 하나의 문서로 움직였습니다. 바이어와 본사, 제작사와 주고받은 메일을 모두 이어 붙이고, 그 안에서 확정된 것과 아직 답이 없는 것을 매일 나눴습니다."],
+    ["h2","조건이 적혀 있으면, 디자인이 빨라집니다"],
+    ["p","라이프밀만으로 22평을 채울 수 있겠냐는 바이어의 질문에 콘셉트 문서는 진열 대신 공정 라인으로 답했습니다. 체험이 현장 제조로 보이면 영업신고 대상이 된다는 조건에는 완제품 시식으로, 기능성 표현 금지에는 경험의 언어로 답했습니다. 조건이 문서에 적혀 있으니 디자인은 그 안에서 바로 결정될 수 있었습니다."],
+    ["blockquote","확정된 것과 아직 답이 없는 것을 매일 나눴습니다."],
+    ["h2","장표와 3D, 그리고 계약서까지 같은 숫자로"],
+    ["p","3D 모델 R02에서 존별 렌더와 도면을 뽑고, 그 치수로 시공사와 계약했습니다. 중앙 가벽 외측 3,890, 체험벽 3,660, 높이 1,820, 미션 작업대 1,200×600×800. 9월 9일 하루 만에 설치하고 다음 날 문을 열기까지 같은 숫자가 이어졌습니다."],
+    ["p","77개의 실행 항목은 8주로 나눴고, 아홉 가지 리스크에는 대응을 미리 적어 두었습니다. 고지물 마감처럼 지키지 못한 날짜도 그대로 기록했습니다. 다음 프로젝트를 더 빨리, 더 정확하게 시작하기 위해서입니다."]
+  ]});
+renderNote = function(n){
+  const w = WORKS.find(x=>x.id===n.case);
+  const i = NOTES.indexOf(n), nx = NOTES[(i+1)%NOTES.length];
+  const words = n.body.map(b=>b[1]).join(" ").length, mins = Math.max(2, Math.round(words/500));
+  let body = n.body.map(([t,x])=> t==="h2"?`<h2>${esc(x)}</h2>`: t==="blockquote"?`<blockquote>${esc(x)}</blockquote>`:`<p>${esc(x)}</p>`);
+  if (n.gallery){ const at = Math.min(3, body.length); body.splice(at, 0, `<div class="note-gal">${n.gallery.map(([s,c])=>`<figure>${fig(s,c)}<figcaption>${esc(c)}</figcaption></figure>`).join("")}</div>`); }
+  $(".js-note").innerHTML = `
+    <div class="cs-head">
+      <a class="back" href="#/notes">노트 목록으로</a>
+      <div class="kicker">${esc(n.tag)}</div>
+      <h1 style="font-size:clamp(36px,5.2vw,80px)">${esc(n.title)}</h1>
+      <div class="note-meta"><span>${esc(n.date)}</span><span>EEH STUDIO</span><span class="note-read">${mins}분 읽기</span>${w?`<a class="ul" href="#/work/${esc(w.id)}">${esc(w.title)}</a>`:""}</div>
+      <div class="cs-hero note-hero">${fig(n.img, n.title, "wide169")}</div>
+    </div>
+    <div class="note-body" style="margin-top:clamp(36px,5vw,72px)">
+      <p class="lede" style="font-size:clamp(19px,1.7vw,24px);line-height:1.7;letter-spacing:-.02em;font-weight:500">${esc(n.sum)}</p>
+      ${n.facts?`<div class="note-facts">${n.facts.map(([b,s])=>`<div><b>${esc(b)}</b><span>${esc(s)}</span></div>`).join("")}</div>`:""}
+      ${body.join("")}
+      <div class="note-cta">${w?`<a class="text-link" href="#/work/${esc(w.id)}" data-cursor="View">케이스 보기, ${esc(w.title)}</a>`:""}<a class="text-link" href="#/notes/${esc(nx.id)}" data-cursor="Next">다음 노트, ${esc(nx.title)}</a></div>
+    </div>`;
+  document.title = `${n.title} | EEH STUDIO`;
+};
+
+/* ---------- reveal + parallax + init ---------- */
+let rvIO = null;
+function rvScan(){
+  if (reduce) return;
+  rvIO = rvIO || new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add("in"); rvIO.unobserve(e.target); } }), {rootMargin:"0px 0px -8% 0px", threshold:.06});
+  const v = $(".view.active"); if (!v) return;
+  $$(".cs-block, .card, .why-card, .rail-wrap, .wf, .sec-head, .note-card, .note-facts, .note-gal, .stats, .nums, .wdiv-h, .pts > div, .caps > a, .clients2 > a", v).forEach(el => {
+    if (el.classList.contains("rv")) return;
+    if (el.getBoundingClientRect().top < innerHeight * 0.92){ el.classList.add("rv","in"); return; }
+    el.classList.add("rv"); rvIO.observe(el);
+  });
+  $$(".cs-hero .ph-fig, .story-row .ph-fig, .why-card .ph-fig", v).forEach(el => { if (el.classList.contains("rv-img")) return; el.classList.add("rv-img"); if (el.getBoundingClientRect().top < innerHeight) el.classList.add("in"); else rvIO.observe(el); });
+}
+function initDyn(){
+  const v = $(".view.active"); if (!v) return;
+  $$(".car", v).forEach(initCar); $$(".bx", v).forEach(initBx); $$(".cmp", v).forEach(initCmp); $$(".dos", v).forEach(initDos);
+  $$(".rail-wrap", v).forEach(initRail); $$(".wf", v).forEach(initWf);
+}
+(function(){
+  if (reduce) return;
+  let tk = false;
+  const run = () => { tk = false; const v = $(".view.active"); if (!v) return;
+    $$(".cs-hero .ph-fig img", v).forEach(im => { const r = im.parentElement.getBoundingClientRect(); if (r.bottom < 0 || r.top > innerHeight) return; im.style.transform = `translate3d(0,${(r.top * -0.08).toFixed(1)}px,0) scale(1.08)`; }); };
+  addEventListener("scroll", () => { if (!tk){ tk = true; requestAnimationFrame(run); } }, {passive:true});
+})();
+const _show9 = show;
+show = function(r){ _show9(r); if (r.view === "case") buildToc(); rvScan(); initDyn(); };
+
 renderStatic();
 renderV8Static();
+renderV9Home();
 initEditor();
 tick(); setInterval(tick, 20000);
 window.addEventListener("hashchange", route);
