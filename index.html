@@ -66,6 +66,23 @@ img{display:block;max-width:100%}
 }
 .cur-label.on{scale:1}
 .has-cursor:not(.cursor-ready) .cur-dot{opacity:0}
+html:not(.has-cursor) .cur-dot,html:not(.has-cursor) .cur-label,html:not(.has-cursor) .pv{display:none}
+
+
+.js-feature{display:grid;gap:clamp(56px,7vw,112px)}
+.js-feature > .card{display:block}
+.prod{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.4vw,20px);margin-top:clamp(28px,3vw,44px)}
+.prod figure{margin:0}
+.prod img{width:100%;aspect-ratio:1;object-fit:contain;background:#F2F2EF;display:block}
+.prod figcaption{font-size:13px;color:var(--gray);margin-top:8px}
+@media (max-width:720px){.prod{grid-template-columns:1fr 1fr}}
+/* ---------- Touch: embedded frames ---------- */
+.tap-guard{position:absolute;inset:0;z-index:2;display:none;align-items:flex-end;justify-content:center;padding:16px;background:transparent;border:0;width:100%;cursor:pointer;font:inherit}
+.tap-guard span{background:#000;color:#fff;font-size:13px;font-weight:600;padding:10px 16px;border-radius:999px;letter-spacing:-0.01em}
+.is-touch .tap-guard{display:flex}
+.is-touch .tap-on > .tap-guard{display:none}
+.phone{position:relative}
+.phone .tap-guard{border-radius:34px;inset:12px;width:auto}
 
 /* ---------- Curtain ---------- */
 .curtain{position:fixed;inset:0;z-index:90;background:#000;transform:translateY(100%);pointer-events:none;visibility:hidden;display:flex;align-items:flex-end;padding:var(--gutter);color:#fff}
@@ -454,12 +471,12 @@ a.ul{color:#000;border-bottom:1px solid #000}
 .timeline p{font-size:15px;color:var(--gray-2);max-width:48em}
 .press{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(12px,1.4vw,20px)}
 .press-card{display:flex;flex-direction:column;gap:12px;padding:22px;border:1px solid #000;min-height:280px;transition:background .3s,color .3s}
-.press-card:hover{background:#000;color:#fff}
+@media (hover:hover){.press-card:hover{background:#000;color:#fff}}
 .press-card .src{font-size:13px;font-weight:600;display:flex;justify-content:space-between}
 .press-card .src i{font-style:normal;color:var(--gray);font-weight:400}
 .press-card h3{font-size:clamp(17px,1.4vw,20px);font-weight:600;letter-spacing:-0.02em;line-height:1.4}
 .press-card p{font-size:14px;color:var(--gray-2);flex:1}
-.press-card:hover p{color:#cfcfcf}
+@media (hover:hover){.press-card:hover p{color:#cfcfcf}}
 .press-card .tag{align-self:flex-start;margin-top:0}
 @media (max-width:1024px){
   .ideas{grid-template-columns:1fr 1fr}
@@ -585,6 +602,24 @@ form fieldset{border:0;border-bottom:1px solid var(--line);padding:18px 0 16px}
   .row2{grid-template-columns:1fr}
   .svc-ko{display:block;margin:6px 0 0}
   .footer-links{grid-template-columns:1fr 1fr;gap:6px 24px}
+}
+
+
+@media (max-width:720px){
+  .header{transition:background .3s,color .3s}
+  .header.solid{mix-blend-mode:normal;color:#000;background:rgba(255,255,255,.94);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(0,0,0,.08)}
+  .tap-guard{align-items:center}
+}
+/* ---------- Touch targets & small screens ---------- */
+@media (pointer:coarse){
+  .back,.ed-entry{padding:12px 0;margin-top:-12px;margin-bottom:12px}
+  .ed-entry{margin:-12px 0}
+  a.ul,.text-link{padding-top:10px;padding-bottom:4px}
+}
+@media (max-width:480px){
+  .ed-bar{left:12px;right:12px;transform:none;max-width:none;bottom:12px;padding:8px 8px 8px 14px;gap:8px}
+  .ed-bar .ed-status{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:12.5px}
+  .ed-bar button{padding:8px 12px;font-size:12.5px}
 }
 @media (prefers-reduced-motion:reduce){
   *{transition:none!important;animation:none!important}
@@ -815,7 +850,7 @@ form fieldset{border:0;border-bottom:1px solid var(--line);padding:18px 0 16px}
    1. 스튜디오 정보 (빈 값은 화면에 표시되지 않음)
    ========================================================= */
 const STUDIO = {
-  email: "eehstudio.kr@gmail.com",   // 도메인 메일 개설 후 hello@eehstudio.kr 등으로 교체
+  email: "contact@eehstudio.kr",
   instagram: "eeh_studio",           // @ 없이
   phone: "",
   address: "",
@@ -854,6 +889,30 @@ const WORKS = [
     body: "텀블러를 챙기고, 안부를 묻고, 동네 시장에 들르는 평범한 하루는 이미 세상을 바꾸는 자산입니다. 우리는 그 사실을 장보기의 언어로 옮겨, 실천을 측정하고 가치로 환산해 교환하는 마켓을 열었습니다. 방문자는 자신의 일상도 충분히 가치 있다는 것을 영수증 한 장으로 가져갔습니다.",
     quote: "스쳐 지나간 오늘 하루의 다정함, 숫자로 측정할 때 세상을 바꾸는 자산이 됩니다. 일상 속 작은 행동을 하고(DO), 그 행동이 만든 가치를 측정하고(MEASURE), 금액으로 환산된 가치를 확인하고(VALUE), 리워드로 직접 경험합니다(EXPERIENCE).",
     keys: ["DO","MEASURE","VALUE","EXPERIENCE"]
+  },
+  {
+    id: "freeze-lab",
+    title: "LIFEMEAL FREEZE LAB",
+    client: "라이프밀 LIFEMEAL",
+    year: "2026",
+    category: "Pop-up Store",
+    tags: ["Concept","Space","3D","Graphic","Digital","Operation"],
+    summary: "용산 아이파크몰 리빙파크 4F에서 14일간 연 라이프밀 추석 선물 팝업. 방문객을 연구원으로 세우고, 진공동결건조 공정을 그대로 동선으로 옮긴 실험실형 스토어.",
+    cover: "images/fl/fl-cover.jpg",
+    hero: "fl/fl-hero.jpg",
+    art: "fl",
+    photos: [],
+    meta: [
+      ["Client","라이프밀 LIFEMEAL"],
+      ["Project","2026 LIFEMEAL FREEZE LAB"],
+      ["Place","용산 아이파크몰 리빙파크 4F 더 팝업"],
+      ["Date","2026.09.10 – 09.23"]
+    ],
+    kicker: "라이프밀 추석 선물 팝업스토어",
+    headline: "가장 좋은 영양은, 가장 신선한 순간을 얼려 지킨 것입니다.",
+    body: "좋은 것을 오래 지키는 방법은 생각보다 단순합니다. 가장 신선한 순간에 얼리고, 수분만 조용히 덜어내는 것입니다. 우리는 라이프밀이 매일 쓰는 진공동결건조 공정을 공간으로 꺼내, 방문객이 연구원이 되어 그 과정을 걷고 맛본 뒤 추석 선물을 처방받아 가는 실험실을 열었습니다.",
+    quote: "FREEZE THE FRESH, KEEP THE BEST. 원물에서 급속 동결, 진공 승화, 완성까지. 동결건조의 네 단계가 그대로 이 팝업의 동선이 됩니다.",
+    keys: ["REGISTER","FREEZE","COMPARE","PRESCRIBE"]
   }
 ];
 
@@ -882,7 +941,7 @@ const PROCESS = [
   { en:"Deliver", ko:"구현", desc:"제작과 설치, 현장 운영까지 함께하며 실제 반응을 확인합니다." }
 ];
 
-const CLIENTS = ["CSES 사회적가치연구원"];
+const CLIENTS = ["CSES 사회적가치연구원","라이프밀 LIFEMEAL"];
 
 /* ========================================================= */
 const $ = (s, el=document) => el.querySelector(s);
@@ -972,7 +1031,7 @@ function svcRow(s, i, key){
 }
 function renderStatic(){
   $$(".js-count").forEach(el => el.textContent = pad(WORKS.length));
-  $(".js-feature").innerHTML = WORKS.slice(0,1).map(featureCard).join("");
+  $(".js-feature").innerHTML = WORKS.slice(0,2).map(featureCard).join("");
   $(".js-svc-home").innerHTML = SERVICES.map((s,i)=>svcRow(s,i,"h")).join("");
   $(".js-svc-about").innerHTML = SERVICES.map((s,i)=>svcRow(s,i,"a")).join("");
   $(".js-process").innerHTML = PROCESS.map((p,i)=>`<div class="step"><span class="n">${pad(i+1)}</span><h3>${esc(p.en)}<span>${esc(p.ko)}</span></h3><p>${esc(p.desc)}</p></div>`).join("");
@@ -1141,7 +1200,7 @@ function svmBody(){
 
     <div class="cs-block">
       <div class="cs-label">Booth in 3D</div>
-      <div class="b3frame"><iframe src="svm/booth3d.html" title="SOCIAL VALUE MARKET 3D 부스" loading="lazy"></iframe></div>
+      <div class="b3frame"><iframe src="svm/booth3d.html" title="SOCIAL VALUE MARKET 3D 부스" loading="lazy"></iframe><button type="button" class="tap-guard" aria-label="3D 부스 조작 시작"><span>눌러서 3D 돌려보기</span></button></div>
       <p class="cap"><b>3,000 × 3,000mm, ㄴ자 개방형 부스를 3D로 먼저 지었습니다.</b> 드래그해서 돌려 보거나 ISO, FRONT, TOP 시점으로 바꿔 볼 수 있습니다. 레드 크레이트 34개와 화이트 7개, 벽면 5면, 코너의 초대형 영수증까지 실제 시공과 같은 배치입니다. <a class="ul" href="svm/booth3d.html" target="_blank" rel="noopener">크게 보기</a></p>
       <div class="walls-strip">${["p1","p2","p3","p4","p5"].map((p,i)=>`<figure><img src="${IMG}walls/wall${p}.webp" alt="벽면 ${p.toUpperCase()} 인쇄 시안" loading="lazy"><figcaption>${p.toUpperCase()}</figcaption></figure>`).join("")}</div>
       <p class="cap"><b>벽면 5면 인쇄 시안, 각 950 × 2,200mm.</b> 뒷벽 3면에 SOCIAL Value MARKET 워드마크가 이어지고, 우측 레드 2면에는 브랜드 선언문과 MISSION을 담았습니다.</p>
@@ -1159,7 +1218,7 @@ function svmBody(){
     <div class="cs-block">
       <div class="cs-label">Live app</div>
       <div class="demo">
-        <div class="phone"><iframe src="svm/app.html" title="SOCIAL VALUE MARKET 설문 앱 체험" loading="lazy"></iframe></div>
+        <div class="phone"><iframe src="svm/app.html" title="SOCIAL VALUE MARKET 설문 앱 체험" loading="lazy"></iframe><button type="button" class="tap-guard" aria-label="앱 체험 시작"><span>눌러서 앱 체험하기</span></button></div>
         <div class="demo-t">
           <h2 class="cs-h2">현장에서 쓴 앱을<br>그대로 해볼 수 있습니다</h2>
           <p>카트를 누르면 시작됩니다. 지난 한 달의 실천을 체크할 때마다 가치 미터가 올라가고, 환산 금액과 SV TYPE, 실제 POS에서 스캔되던 16자리 VALUE 바코드까지 받을 수 있습니다.</p>
@@ -1230,24 +1289,127 @@ function svmBody(){
     </div>`;
 }
 
+
+/* ---------- Case study (LIFEMEAL FREEZE LAB) ---------- */
+const FL = {
+  ideas: [
+    ["손님이 아니라 연구원","입구에서 랩코트와 연구원증, 실험노트를 받고 오늘의 미션을 부여받습니다. 등록하는 순간 구경꾼이 참여자가 되고, 그 장면이 그대로 포토존이 됩니다."],
+    ["진열 대신 공정 라인","22평을 상품 수로 채우지 않았습니다. 원물, 급속 동결, 진공 승화, 완성으로 이어지는 공정이 벽과 집기를 요구하니, 공간은 이야기로 채워집니다."],
+    ["실험의 끝이 곧 선물","실험 끝에 찾은 가장 좋은 영양을 추석 선물세트로 처방합니다. 종료일이 연휴 바로 전날이라, 서사가 그대로 구매의 이유가 됩니다."],
+    ["이미 가진 언어를 키우다","라이프밀은 이미 원료를 진공동결건조로 가공하고, 과일칩 패키지에도 Freeze-Dried를 쓰고 있었습니다. 새로 만든 것이 아니라 브랜드의 말을 공간 크기로 키웠습니다."],
+    ["예약이 입장권이 되다","네이버 사전예약을 하면 웰컴 키트를 받고, 키트 속 QR 룰렛에서 혜택이 실시간으로 발급됩니다. 오프라인 방문이 온라인 관계로 이어지는 구조입니다."]
+  ],
+  zones: [
+    ["REGISTER","연구원 등록","fl/view_z00_front.jpg","입구 브랜드존","라이프밀 로고 사인과 연구원 안내 패널, 쇼케이스로 첫인상을 만들었습니다. 연구원증을 받고 미션 카드를 펼치는 자리입니다.","줄을 서는 시간조차 체험의 일부가 되도록, 차단봉 동선 안에 브랜드 이야기를 배치했습니다."],
+    ["FREEZE","동결건조 실험","fl/view_z01_iso.jpg","제품 진열벽","FREEZE THE FRESH, KEEP THE BEST. 헤어라인 스텐 시트로 마감한 진열벽에 공정 그래픽과 제품을 함께 걸었습니다.","차가운 금속과 형광 그린, 검은 띠 하나로 실험실의 온도를 정했습니다."],
+    ["COMPARE","비교와 시식","fl/view_z03_iso.jpg","미션 체험존","생과일과 동결건조칩의 수분, 부피, 맛을 비교하고 실험노트에 기록합니다. 저울과 플라스크, 스텐 작업대가 놓인 연구실의 한 칸입니다.","시식은 완제품 중심으로 설계해, 체험은 실험처럼 느끼되 운영은 안전하게 했습니다."],
+    ["PRESCRIBE","추석 처방","fl/view_z06_iso.jpg","제품 아일랜드","실험 결과를 바탕으로 선물세트를 처방전처럼 구성해 건넵니다. 유리 쇼케이스 안의 세트가 마지막 장면을 맡습니다.","선물세트는 단품 존과 분리해 별도 구획으로 두었습니다."]
+  ],
+  timeline: [
+    ["06.30","공간 제안","리빙파크 4F 더 팝업, 22평 코너형 벽체 공간을 제안받고 조건을 검토했습니다."],
+    ["07월","FREEZE LAB 콘셉트","22평을 상품으로 채우는 대신 동결건조 공정으로 채우자는 결정. 방문객을 연구원으로 세우는 4막 구조를 세웠습니다."],
+    ["08.24","사전예약 캠페인","예약하면 100% 웰컴 키트. 인스타그램 캐러셀과 카카오 채널, 메타 광고로 사전 수요를 모았습니다."],
+    ["09.01","네이버 예약 오픈","오픈 첫날 551건, 이틀 만에 761건. 예약이 곧 입장권이 되는 동선을 열었습니다."],
+    ["09.06","배치 확정, 3D R02","실측과 배치도를 반영해 실제 치수 3D 모델을 확정하고, 존별 도면집으로 시공과 공유했습니다."],
+    ["09.10","오픈","연구원 등록부터 추석 처방까지, 14일간의 실험실이 문을 열었습니다."],
+    ["09.17","현장에서 다시 설계","가격표 확대, 시식 강화, 골라담기 세트, 보자기 포장 등 7가지를 현장에서 바꿨고, 2주차 일평균 매출이 1주차의 1.6배로 올랐습니다."],
+    ["09.23","클로징","추석 연휴 전날까지 운영하고, 결과를 다음 팝업을 위한 데이터로 정리했습니다."]
+  ],
+  stats: [
+    ["1,094","사전예약 인원, 목표 대비 109%"],
+    ["96%","예약자의 실제 방문율"],
+    ["586","QR 룰렛 참여, 신규 고객 DB 576"],
+    ["159","스마트플레이스 방문자 리뷰"],
+    ["2.0×","9월 네이버 검색량, 8월 대비"]
+  ],
+  buzz: [
+    ["블로그 · 요즘 전시 요즘 팝업","09.01","용산 팝업 사전예약 라이프밀 FREEZE LAB 선물 혜택","https://blog.naver.com/pleen25/224397814121","사전 소개"],
+    ["블로그 · 뽀곰","09.03","라이프밀 FREEZE LAB 팝업, 사전예약부터 웰컴키트와 연구원 체험","https://blog.naver.com/ppo-gom/224398074144","사전 소개"],
+    ["블로그 · Scene Record","09.06","라이프밀 팝업 FREEZE LAB, 용산 아이파크몰 추석선물 연구소","https://blog.naver.com/vuswl57/224402208894","사전 소개"],
+    ["블로그 · 아기랑 오늘도","09.13","용산 아이파크몰 팝업 라이프밀 추석 선물 연구소 예약 체험","https://blog.naver.com/dahee3838/224410103687","방문 후기"],
+    ["블로그 · 매일 감사하자","09.20","용산 아이파크 팝업, 황성주 라이프밀 과일칩 후기","https://blog.naver.com/newstart2201/224418058083","방문 후기"],
+    ["블로그 · 김힌둥블로그","09.21","라이프밀 팝업 9월 용산 아이파크몰 방문만 해도 선물","https://blog.naver.com/sweet9294/224418305264","방문 후기"]
+  ]
+};
+
+function flBody(){
+  return `
+    <div class="cs-block">
+      <div class="cs-label">Key ideas</div>
+      <h2 class="cs-h2">이 실험실을 움직인 다섯 가지 아이디어</h2>
+      <div class="ideas">${FL.ideas.map(([t,d],i)=>`<div class="idea"><span class="n">IDEA ${pad(i+1)}</span><h3>${esc(t)}</h3><p>${esc(d)}</p></div>`).join("")}</div>
+    </div>
+
+    <div class="cs-block">
+      <div class="cs-label">Four acts</div>
+      <h2 class="cs-h2">동결건조의 네 단계가,<br>그대로 네 개의 장면이 되었습니다</h2>
+      <div class="story">${FL.zones.map(([e,k,img,z,a,b],i)=>`<div class="story-row ${i%2?"rev":""}">
+        ${fig(img, z+" 도면")}
+        <div class="story-t"><span class="en">${pad(i+1)} ${e}</span><h3>${esc(k)}</h3><p>${esc(a)}</p><p>${esc(b)}</p></div>
+      </div>`).join("")}</div>
+    </div>
+
+    <div class="cs-block">
+      <div class="cs-label">Booth in 3D</div>
+      <div class="b3frame"><iframe src="fl/booth3d.html" title="FREEZE LAB 3D 부스" loading="lazy"></iframe><button type="button" class="tap-guard" aria-label="3D 부스 조작 시작"><span>눌러서 3D 돌려보기</span></button></div>
+      <p class="cap"><b>12,287 × 9,170mm, 실제 치수로 먼저 지은 실험실.</b> 드래그해서 돌려 보고, 오른쪽 목록에서 존별로 따로 볼 수 있습니다. 가벽과 매대는 헤어라인 스텐 시트, 미션존 집기는 SUS201 기준으로 마감을 맞췄습니다. <a class="ul" href="fl/booth3d.html" target="_blank" rel="noopener">크게 보기</a></p>
+      <div class="pair mt">${fig("fl/fl-wall.jpg","제품 진열벽 3D 렌더","wide169")}${fig("fl/fl-mission.jpg","미션 체험존 3D 렌더","wide169")}</div>
+      <div class="pair mt">${fig("fl/fl-top.jpg","부스 탑뷰 3D 렌더","wide169")}${fig("fl/view_w02_iso.jpg","중앙 가벽 도면","wide169")}</div>
+      <p class="cap"><b>렌더와 도면을 같은 모델에서.</b> 3D 모델 하나에서 존별 사시도와 평행투영 도면을 뽑아, 시공사와 현장이 같은 그림을 보며 움직이게 했습니다.</p>
+      <div class="flow" aria-label="부스 동선"><span>REGISTER</span><i></i><span>FREEZE</span><i></i><span>COMPARE</span><i></i><span>PRESCRIBE</span></div>
+    </div>
+
+    <div class="cs-block">
+      <div class="cs-label">Product</div>
+      <div class="cs-intro">
+        <h2>얼려서 지킨 맛을,<br>손에 쥘 수 있는 크기로</h2>
+        <div><p>국산 과일 100%를 진공동결건조한 사과, 딸기, 감귤, 방울토마토칩 네 가지가 실험실의 결과물입니다. 패키지마다 원물의 색을 그대로 바탕에 깔아, 진열벽에서도 시식대에서도 무엇을 얼렸는지 한눈에 읽히게 했습니다.</p>
+        <p class="quote">실험노트에 적은 결과가, 선물 상자 안에서 다시 만납니다.</p></div>
+      </div>
+      <div class="prod">${[["chip-apple","Apple"],["chip-strawberry","Strawberry"],["chip-mandarin","Mandarin"],["chip-tomato","Cherry Tomato"]].map(([f,n])=>`<figure><img src="${IMG}fl/${f}.webp" alt="동결건조 ${n} 칩 패키지" loading="lazy"><figcaption>${n}</figcaption></figure>`).join("")}</div>
+      <div class="pair mt">${fig("fl/gift-daily.webp","추석 선물세트 데일리 세트")}${fig("fl/gift-family.webp","추석 선물세트 패밀리 세트")}</div>
+      <p class="cap"><b>추석 처방, 두 가지 세트.</b> 하루를 채우는 데일리 세트와 온 가족을 위한 패밀리 세트를 마지막 존에서 처방전처럼 건넸습니다.</p>
+    </div>
+
+    <div class="cs-block">
+      <div class="cs-label">Build-up</div>
+      <h2 class="cs-h2">제안부터 클로징까지, 이렇게 움직였습니다</h2>
+      <ol class="timeline">${FL.timeline.map(([d,t,x])=>`<li><span class="d">${esc(d)}</span><div><h3>${esc(t)}</h3><p>${esc(x)}</p></div></li>`).join("")}</ol>
+    </div>
+
+    <div class="cs-block">
+      <div class="cs-label">In numbers</div>
+      <div class="stats">${FL.stats.map(([b,t])=>`<div><b>${esc(b)}</b><span>${esc(t)}</span></div>`).join("")}</div>
+      <p class="cap">네이버 예약, QR 룰렛, 스마트플레이스, 네이버 데이터랩 기준. 2026년 9월 23일 집계.</p>
+    </div>
+
+    <div class="cs-block">
+      <div class="cs-label">Buzz</div>
+      <h2 class="cs-h2">현장 밖에서 먼저 시작된 반응</h2>
+      <div class="press">${FL.buzz.map(([src,date,title,url,tag])=>`<a class="press-card" href="${url}" target="_blank" rel="noopener" data-cursor="Read">
+        <span class="src">${esc(src)}<i>${esc(date)}</i></span><h3>${esc(title)}</h3><span class="tag">${esc(tag)}</span></a>`).join("")}</div>
+      <p class="cap">행사 기간 인스타그램 19건, 블로그 11건, 영상과 기타 SNS 6건, 모두 36건의 공개 게시물이 올라왔습니다.</p>
+    </div>`;
+}
+
 function renderCase(w){
   const i = WORKS.indexOf(w);
-  const isSVM = w.art === "svm";
+  const isSVM = w.art === "svm", isFL = w.art === "fl";
   let html = `<div class="wrap cs-head">
     <a class="back" href="#/work">전체 작업으로 돌아가기</a>
     <div class="kicker">${esc(w.kicker || w.client)}</div>
     <h1>${esc(w.title)}</h1>
     <dl class="meta">${w.meta.map(([k,v])=>`<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>
-    <div class="cs-hero">${w.hero ? fig(w.hero, w.title+" 부스 전경") : `<div class="thumb">${thumbHTML(w)}</div>`}</div>
+    <div class="cs-hero">${w.hero ? fig(w.hero, w.title+(isFL?" 3D 부스 정면":" 부스 전경")) : `<div class="thumb">${thumbHTML(w)}</div>`}</div>
 
     <div class="cs-block cs-intro">
       <h2>${esc(w.headline)}</h2>
       <div><p>${esc(w.body)}</p>${w.quote?`<p class="quote">${esc(w.quote)}</p>`:""}
       ${w.keys?`<div class="keys">${w.keys.map(k=>`<span class="tag">${esc(k)}</span>`).join("")}</div>`:""}</div>
     </div>
-    ${isSVM ? svmBody() : ""}`;
+    ${isSVM ? svmBody() : isFL ? flBody() : ""}`;
 
-  if (!isSVM && w.photos && w.photos.length){
+  if (!isSVM && !isFL && w.photos && w.photos.length){
     html += `<div class="cs-block"><div class="cs-label">On site</div><div class="gallery">${w.photos.map((src,k)=>`<figure class="${k===0?"full":""}"><img src="${esc(src)}" alt="${esc(w.title)} 현장 사진 ${k+1}" loading="lazy"></figure>`).join("")}</div></div>`;
   }
 
@@ -1317,6 +1479,23 @@ document.addEventListener("keydown", e => { if (e.key === "Escape") closeMenu();
 /* ---------- Cursor ---------- */
 const dot = $(".cur-dot"), lab = $(".cur-label"), pv = $(".pv");
 const fine = matchMedia("(hover: hover) and (pointer: fine)").matches;
+if (!fine) document.documentElement.classList.add("is-touch");
+(function(){
+  const hd = document.querySelector(".header"); if (!hd) return;
+  const mq = matchMedia("(max-width:720px)");
+  const upd = () => {
+    if (!mq.matches){ hd.classList.remove("solid"); return; }
+    const hero = document.querySelector("main .hero");
+    const th = hero ? Math.max(40, hero.offsetHeight - hd.offsetHeight) : 40;
+    hd.classList.toggle("solid", scrollY > th);
+  };
+  addEventListener("scroll", upd, {passive:true}); addEventListener("resize", upd); addEventListener("hashchange", () => setTimeout(upd, 900));
+  window.__hdUpd = upd; upd();
+})();
+document.addEventListener("click", e => {
+  const g = e.target.closest && e.target.closest(".tap-guard");
+  if (g){ e.preventDefault(); g.parentElement.classList.add("tap-on"); }
+});
 let mx = innerWidth/2, my = innerHeight/2, dx = mx, dy = my, lx = mx, ly = my, px = mx, py = my;
 let pvOn = false;
 function setCursor(label){
@@ -1490,6 +1669,7 @@ function initEditor(){
   const load = src => new Promise(r=>{ const s=document.createElement("script"); s.src=src; s.onload=r; document.head.appendChild(s); });
   const V = "https://www.gstatic.com/firebasejs/10.12.2/";
   load(V+"firebase-app-compat.js").then(()=>Promise.all([load(V+"firebase-database-compat.js"), load(V+"firebase-auth-compat.js")])).then(()=>{
+    if (typeof firebase === "undefined"){ if (entry) entry.hidden = true; return; }
     firebase.initializeApp(cfg);
     ED.db = firebase.database();
     ED.db.ref("site/text").on("value", s=>{ ED.text = s.val() || {}; applyEdits(document); });
@@ -1506,7 +1686,12 @@ function initEditor(){
   entry.addEventListener("click", ()=>{
     if (!ED.ready) return;
     if (ED.user){ setEditing(!ED.on); return; }
-    firebase.auth().signInWithPopup(new firebase.auth.GoogleAuthProvider()).then(()=>{ if (ED.user) setEditing(true); }).catch(e=>alertMsg("로그인하지 못했습니다. 팝업 차단을 확인해 주세요."));
+    const prov = new firebase.auth.GoogleAuthProvider();
+    firebase.auth().signInWithPopup(prov).then(()=>{ if (ED.user) setEditing(true); }).catch(e=>{
+      if (e && /popup-blocked|operation-not-supported/.test(e.code||"")) return firebase.auth().signInWithRedirect(prov);
+      if (e && /popup-closed|cancelled-popup/.test(e.code||"")) return;
+      alertMsg("로그인하지 못했습니다. 팝업 차단을 확인해 주세요.");
+    });
   });
   $(".ed-toggle").addEventListener("click", ()=>setEditing(!ED.on));
   $(".ed-logout").addEventListener("click", ()=>{ setEditing(false); firebase.auth().signOut(); });
