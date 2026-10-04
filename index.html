@@ -1327,6 +1327,9 @@ h1,h2,h3{text-wrap:balance}
 .ig-w{min-height:540px}
 .ig-w.measured{min-height:0}
 .yt-w{aspect-ratio:9/16;background:#000}
+.yt-w.wide{aspect-ratio:16/9}
+.emb.vids{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:760px){.emb.vids{grid-template-columns:minmax(0,1fr)}}
 .emb-w iframe{display:block;width:100%;border:0;background:transparent;position:relative;z-index:1}
 .ig-w iframe{height:620px;min-width:0}
 .yt-w iframe{position:absolute;inset:0;height:100%}
@@ -2958,6 +2961,8 @@ const ARCHIVE = [
     summary:"연남동 편집숍 팔시보 스토어 안에 연 라이프밀의 첫 단독 브랜드 팝업. WBTI 웰니스 유형 진단과 웰니스 오마카세로 일상 속 건강 루틴을 직접 겪게 했고, 사전예약은 이틀 만에 1,000명을 넘었습니다.",
     meta:[["Client","라이프밀 LIFEMEAL"],["Place","팔시보 스토어, 서울 마포구 동교로38안길 17"],["Date","2026.02.13 – 02.22"],["Scope","Concept, Space, Program, MD, Content"]],
     results:[["1,000+","사전예약, 오픈 이틀 만에"],["10일","연남동 팔시보 스토어 운영"],["4","보도 매체, 헤럴드경제 · 데일리시큐 · 내외경제TV · 한국경제"]],
+    press:[["헤럴드경제","2026.02.11","해밀리그룹, ‘라이프밀’ 앞세워 웰니스 시장 공략… 연남동 체험형 팝업 운영","https://biz.heraldcorp.com/article/10674594","사명 변경 후 첫 고객 접점으로 연 연남동 체험형 팝업. WBTI 진단과 웰니스 오마카세로 이어지는 동선을 다뤘습니다.","오픈 기사"],
+      ["데일리시큐","2026.02.11","해밀리그룹 라이프밀, 연남동서 첫 브랜드 팝업스토어 개설","https://www.dailysecu.com/news/articleView.html?idxno=205115","2월 13일부터 22일까지, 설 연휴에도 문을 연 열흘간의 팝업. 미션 증정과 리뷰 스타터 패키지, 이틀 만에 1,000건을 넘긴 사전예약을 전했습니다.","오픈 기사"]],
     headline:"제품 전시를 넘어, 나의 하루 루틴을 체험하는 편집숍.",
     body:["작은 편집숍 형태의 푸드 팝업은 선별된 제품만으로 브랜드의 취향과 기준을 또렷하게 보여줄 수 있습니다. 공간과 콘텐츠가 많지 않아 시선이 흩어지지 않고, 각 제품의 이야기에 집중할 수 있도록 설계했습니다.",
           "방문객은 웰니스 체크리스트와 WBTI 진단으로 자신의 유형을 확인하고, 생식부터 하루견과, 그래놀라 요거트로 이어지는 웰니스 오마카세로 성분과 섭취 방식을 맛보았습니다. 마지막에는 럭키드로우와 인증 리뷰 스타터 패키지로 다음 방문을 약속했습니다.",
@@ -2968,9 +2973,16 @@ const ARCHIVE = [
   { id:"king-of-kings", div:"space", status:"Built", studio:true, title:"KING OF KINGS POP-UP", client:"팔시보 스토어 × 영화 <킹 오브 킹스>", year:"2025", category:"Immersive Pop-up",
     tags:["Concept","Stamp Tour","Goods","Space"],
     summary:"애니메이션 <킹 오브 킹스> 개봉과 함께 연남동 팔시보 스토어에 연 몰입형 팝업. 인물들의 ID 카드를 모아 나의 이야기를 완성하는 스탬프 투어와 리워드 굿즈, MD, 공간 동선까지 전체 디렉팅을 맡았습니다.",
-    meta:[["Client","팔시보 스토어"],["Place","팔시보 스토어, 연남동"],["Year","2025"],["Scope","Concept, Program, Goods, MD, Space"]],
+    meta:[["Client","팔시보 스토어"],["Place","팔시보 스토어, 서울 마포구 동교로38안길 17"],["Date","2025.08.01 – 08.31"],["Scope","Concept, Program, Goods, MD, Space"]],
+    results:[["1개월","2025.08.01 – 08.31 운영"],["30여 종","공식 굿즈 라인업"],["4","보도 매체, CBS · GOODTV · 크리스천투데이 · 고신뉴스"]],
+    media:[{kind:"ytw", h:"CBS 뉴스", c:"-JR6MUEqbHc", tag:"방송 뉴스", m:"2025.08 · 킹오브킹스 누적관객 117만, 연남동에 팝업스토어 개설"},{kind:"ytw", h:"GOODTV NEWS", c:"JaqGWtlawkg", tag:"방송 리포트", m:"2025.08.05 · 영화 속 메시지 ‘팝업스토어에서도’"}],
+    press:[["크리스천투데이","2025.07.31","‘킹 오브 킹스’, 서울 홍대 인근에 ‘팝업 스토어’ 개설","https://www.christiantoday.co.kr/news/369763","오픈 전 기사. 등장인물들의 ID 카드를 모으며 인물의 정체성과 메시지를 겪는 스탬프 투어, 공식 굿즈, 미공개 스케치와 비하인드 공개를 소개했습니다.","오픈 기사"],
+      ["GOODTV","2025.08.05","100만 흥행 ‘킹 오브 킹스’…영화 속 메시지 ‘팝업스토어에서도’","https://news.goodtv.co.kr/news/articleView.html?idxno=23290","캐릭터 카드 모으기와 영화 대사 따라 쓰기 같은 체험을 다룬 리포트. 방문객은 비신자도 부담 없이 즐길 수 있다고 말했습니다.","방송 리포트"],
+      ["CBS노컷뉴스","2025.08.12","애니메이션 ‘킹오브킹스’ 누적관객 116만 … 연남동에선 팝업스토어 개장","https://christian.nocutnews.co.kr/news/6384118","30여 종의 굿즈와 캐릭터 스탬프로 ID 카드를 모으는 체험, 그리고 장성호 감독의 팝업 방문과 사인회 소식을 전했습니다.","방송 기사"],
+      ["고신뉴스 KNC","2025.08.17","영화 ‘킹오브킹스’ 누적 관객 117만 명…서울 연남동에 공식 팝업 개설","http://www.kosinnews.com/news/articleView.html?idxno=34577","스탬프 투어와 티셔츠, 피규어, 우산, 캔들 같은 굿즈, 구매 금액별 포스터 증정 이벤트를 소개했습니다.","기사"]],
     headline:"영화 속 인물들과 함께 떠나는 스탬프 투어.",
-    body:["주요 인물들의 ID 카드를 앞면과 뒷면으로 나눠, 인물의 정체성과 메시지를 직접 채워 가며 투어하도록 설계했습니다. 마지막에는 나의 이야기가 담긴 카드가 완성됩니다.",
+    body:["애니메이션 <킹 오브 킹스>가 개봉 19일 만에 100만 관객을 넘기던 2025년 8월, 연남동 팔시보 스토어에서 한 달 동안 공식 팝업을 운영했습니다. 운영 중에는 장성호 감독의 방문과 사인회도 열렸습니다.",
+          "주요 인물들의 ID 카드를 앞면과 뒷면으로 나눠, 인물의 정체성과 메시지를 직접 채워 가며 투어하도록 설계했습니다. 마지막에는 나의 이야기가 담긴 카드가 완성됩니다.",
           "공식 굿즈샵, 미공개 스케치와 비하인드 공개, 연남동 골목에서 누구나 들를 수 있는 따뜻한 공간까지. 관람보다 참여가 먼저 기억에 남도록 동선을 짰습니다.",
           "같은 편집숍에서 이듬해 2월 라이프밀의 첫 브랜드 팝업을 다시 열었습니다. 방문객이 직접 채우는 카드 한 장으로 작은 공간의 동선을 묶는 방식은 WBTI 루틴 카드와 FREEZE LAB의 연구원증으로 이어졌습니다."],
     points:[["Stamp Tour","인물별 ID 카드를 모아 나의 이야기를 완성"],["Reward Goods","투어 완주 리워드 KOK Fan"],["Goods Shop","영화 장면과 캐릭터를 담은 공식 굿즈"],["Behind","미공개 스케치와 콘셉트 아트 공개"],["Event","스탬프 완주, My ID 인증, 구매 이벤트"],["Space","연남동 골목에 열린 누구나 들를 수 있는 공간"]],
@@ -2984,16 +2996,24 @@ const ARCHIVE = [
     body:["청년들이 함께 사는 집이 동네의 문화 공간이 되도록, 한 해의 프로그램을 달력처럼 짰습니다. 랜선 버스킹 폰서트, 라운지를 서재로 바꾼 북콘서트, 사진전과 셀프 스튜디오, 플리마켓까지 매달 다른 방식으로 입주민과 이웃을 불러 모았습니다.",
           "프로그램마다 카드뉴스와 포스터, 인스타그램 운영, 예산과 섭외, 현장 운영과 결과 보고서까지 혼자 진행했습니다. 기획서 한 장이 현장과 기록으로 끝까지 이어지는 방식은 지금 EEH STUDIO가 일하는 방식의 출발점입니다."],
     points:[["Phone concert","랜선 버스킹 폰서트"],["Book concert","라운지를 서재로 바꾼 북콘서트 공간 기획"],["Exhibition","사진전 About time과 Feeling 전시"],["Market","청신호 명동 플리마켓"],["SNS","카드뉴스, 포스터, 인스타그램 운영"],["Report","예산, 섭외, 광고, 집행, 결과 보고서"]],
-    slides:["연간 프로그램과 인스타그램 운영","카드뉴스 2021","폰서트 카드뉴스","카드뉴스 2022","북콘서트 공간","북콘서트 일러스트 포스터"] },
-  { id:"immersive-2021", div:"space", status:"Built", title:"IMMERSIVE EXHIBITIONS 2021", client:"교회친구다모여 × 스페이스코르 · 한밭제일교회", year:"2021", category:"Immersive Exhibition",
+    slides:["연간 프로그램과 인스타그램 운영","카드뉴스 2021","폰서트 카드뉴스","카드뉴스 2022","북콘서트 공간","북콘서트 일러스트 포스터"],
+    press:[["디스커버리뉴스","2021.10","청신호 명동, 언택트 시대에 맞춘 ‘청신호 폰서트’ 개최","https://www.discoverynews.kr/news/articleView.html?idxno=659528","10월 11일부터 11월 26일까지 유튜브 채널과 카페 아랫집에서 연 랜선 버스킹. 관람하던 공연을 비대면으로 옮긴 프로그램을 소개했습니다.","프로그램 기사"]] },
+  { id:"immersive-2021", div:"space", status:"Built", title:"IMMERSIVE EXHIBITIONS 2020–2021", client:"교회친구다모여 × 스페이스코르 · 한밭제일교회", year:"2020–2021", category:"Immersive Exhibition",
     tags:["Exhibition","Space","Storytelling","Poster","Goods"],
-    summary:"이야기를 날짜와 코스로 나눠 관람객이 직접 걸으며 겪게 한 두 편의 체험 전시. 「예수님과 함께한 마지막 7일」과 대전 성탄 체험 전시 「HAPPY JESUS DAY」.",
-    meta:[["Exhibitions","마지막 7일 · HAPPY JESUS DAY"],["Place","스페이스코르 · 대전 한밭제일교회"],["Year","2021"],["Scope","Concept, Space, Poster, Ticket, Goods"]],
+    summary:"이야기를 날짜와 코스로 나눠 관람객이 직접 걸으며 겪게 한 세 편의 체험 전시. 2020 성탄 전시 #HJD, 「예수님과 함께한 마지막 7일」, 대전 성탄 체험 전시 「HAPPY JESUS DAY」.",
+    meta:[["Exhibitions","#HJD 2020 · 마지막 7일 · HAPPY JESUS DAY 2021"],["Place","종로 스페이스코르 · 대전 한밭제일교회"],["Year","2020 – 2021"],["Scope","Concept, Space, Poster, Ticket, Goods"]],
+    results:[["3","2020 – 2021 체험 전시"],["6","성탄의 의미를 따라 도장을 모으는 포인트, #HJD 2020"],["1,000","셀라 다이어리 제작, 닷새 만에 거의 소진"]],
+    media:[{kind:"ytw", h:"CBS 뉴스", c:"7oVgcyesKBA", tag:"방송 뉴스", m:"2020.12 · 성탄 축하하는 ‘HJD 프로젝트’전"}],
+    press:[["국민일보","2020.11.09","서울 홍대입구역에 ‘예수님 생일 축하’ 전광판 뜬다","https://www.kmib.co.kr/article/view.asp?arcid=0924163661","HJD 프로젝트를 덕질 문화로 풀어 16~30세를 겨냥했다는 기사. 함께 만든 셀라 다이어리 1,000부가 닷새 만에 거의 소진되었다고 전했습니다.","프로젝트 기사"],
+      ["한국기독공보","2020.12.11","라떼는 말이야~","https://m.pckworld.com/article.php?aid=8753181149","옛 성탄 사진으로 만든 트리, 작가들의 일러스트 전시, 성탄의 여섯 가지 의미를 따라 도장을 모으는 스탬프 인증 이벤트를 다뤘습니다.","전시 기사"],
+      ["기독일보","2020.12.16","예수님 생일 축하 성탄 전시회… 코로나 가운데 위로의 빛","https://www.christiandaily.co.kr/news/98110","스페이스코르의 #HJD 전시. 묵상 메시지를 담은 바닥 화살표와 리스 포토존, 성탄의 의미 포인트, 참여형 팬아트 공간을 소개했습니다.","전시 기사"]],
+    pressNote:"기사와 영상은 전시를 공동 주최한 교회친구다모여와 스페이스코르의 프로젝트로 보도되었고, 디렉터 황윤희는 전시 기획과 디자인을 맡았습니다.",
     headline:"보는 전시보다, 걸으며 겪는 이야기.",
-    body:["「예수님과 함께한 마지막 7일」은 일주일의 이야기를 날짜별 체험 부스로 나눴습니다. 하루마다 부스 콘셉트와 활동, 준비물을 정리한 기획안과 공간 동선도를 만들고, 포스터와 티켓, 날짜별 스토리텔링 포스터로 이어 붙였습니다.",
+    body:["시작은 2020년 겨울 종로 스페이스코르의 성탄 전시 #HJD였습니다. 코로나로 조용해진 성탄절을 생일 축하처럼 풀고, 성탄의 여섯 가지 의미를 따라 도장을 모으는 동선과 포스터, 3단 브로슈어, 셀라 다이어리까지 한 톤으로 만들었습니다.",
+          "이듬해 「예수님과 함께한 마지막 7일」은 일주일의 이야기를 날짜별 체험 부스로 나눴습니다. 하루마다 부스 콘셉트와 활동, 준비물을 정리한 기획안과 공간 동선도를 만들고, 포스터와 티켓, 날짜별 스토리텔링 포스터로 이어 붙였습니다.",
           "같은 해 겨울에는 코로나 시기의 성탄절을 오감 체험 전시로 풀었습니다. Hope, Lead 같은 코스마다 공간과 활동을 정하고, 포스터와 티켓, 스티커와 달력, 무드등 굿즈까지 한 톤으로 묶었습니다. 이야기를 동선으로 옮기는 이 방식이 FREEZE LAB의 연구원 코스까지 이어졌습니다."],
-    points:[["7 Days","날짜별 체험 부스 구성"],["Plan","부스별 콘셉트, 활동, 준비물 기획안"],["Flow","공간 동선도"],["Courses","Hope, Lead 등 코스별 체험"],["Print","포스터, 티켓, 스토리텔링 포스터"],["Goods","스티커, 달력, 무드등"]],
-    slides:["마지막 7일 포스터","마지막 7일 티켓","공간 동선 기획","Day 2 부스 기획","전시 기획안","마지막 7일 메인 포스터","HAPPY JESUS DAY 전시 기획안","코스 #2 Hope","코스 #3 Lead","HAPPY JESUS DAY 포스터","HAPPY JESUS DAY 티켓","HAPPY JESUS DAY 메인 포스터"],
+    points:[["#HJD 2020","성탄의 여섯 의미를 따라 도장을 모으는 스탬프 동선"],["7 Days","날짜별 체험 부스 구성"],["Plan","부스별 콘셉트, 활동, 준비물 기획안"],["Flow","공간 동선도"],["Courses","Hope, Lead 등 코스별 체험"],["Print","포스터, 티켓, 스토리텔링 포스터"],["Goods","스티커, 달력, 무드등"]],
+    slides:["마지막 7일 포스터","마지막 7일 티켓","공간 동선 기획","Day 2 부스 기획","전시 기획안","마지막 7일 메인 포스터","HAPPY JESUS DAY 전시 기획안","코스 #2 Hope","코스 #3 Lead","HAPPY JESUS DAY 포스터","HAPPY JESUS DAY 티켓","HAPPY JESUS DAY 메인 포스터","#HJD 2020 포스터","#HJD 2020 브로슈어","셀라 다이어리 2021"],
     link:"freeze-lab" },
   { id:"creator-festival", div:"space", status:"Built", title:"CREATOR FESTIVAL 2025", client:"넥스트엠(next M)", year:"2025", category:"Festival",
     tags:["Key Visual","Program","Signage","Goods","Report"],
@@ -3215,6 +3235,10 @@ function renderLite(w){
     <div class="cs-block cs-intro"><h2>${esc(w.headline)}</h2><div>${w.body.map(p=>`<p>${esc(p)}</p>`).join("")}<div class="keys">${w.tags.map(t=>`<span class="tag">${esc(t)}</span>`).join("")}</div></div></div>
     ${w.points ? `<div class="cs-block"><div class="cs-label">Highlights</div><div class="pts">${w.points.map(([t,d],k)=>`<div><span class="n">${pad(k+1)}</span><h3>${esc(t)}</h3><p>${esc(d)}</p></div>`).join("")}</div></div>` : ""}
     <div class="cs-block"><div class="cs-label">Slides</div><h2 class="cs-h2">장표로 보는 ${esc(w.title)}</h2>${carHTML(w.id, w.slides, w.title)}<p class="cap">드래그하거나 화살표로 넘기고, 장표를 누르면 크게 볼 수 있습니다.</p></div>
+    ${(w.press||w.media) ? `<div class="cs-block"><div class="cs-label">Press &amp; Media</div><h2 class="cs-h2">${esc(w.pressH||"보도와 영상으로 남은 현장")}</h2>
+      ${w.media ? embHTML(w.media, 99, false).replace('class="emb"','class="emb vids"') : ""}
+      ${w.press ? `<div class="press${w.media?" mt":""}">${w.press.map(([src,date,title,url,sum,tag])=>`<a class="press-card" href="${url}" target="_blank" rel="noopener" data-cursor="Read"><span class="src">${esc(src)}<i>${esc(date)}</i></span><h3>${esc(title)}</h3><p>${esc(sum)}</p><span class="tag">${esc(tag)}</span></a>`).join("")}</div>` : ""}
+      ${w.pressNote ? `<p class="cap">${esc(w.pressNote)}</p>` : ""}</div>` : ""}
     ${rel ? `<div class="cs-block"><div class="cs-label">Related</div><div class="rel"><a href="#/work/${esc(rel.id)}" data-cursor="View"><img src="${esc(rel.cover)}" alt="${esc(rel.title)}" loading="lazy"><span><small>함께 보면 좋은 프로젝트</small><b>${esc(rel.title)}</b></span></a></div></div>` : ""}
     <div class="cs-block"><dl class="credits">
       <div><dt>Client</dt><dd>${esc(w.client)}</dd></div>
@@ -3582,13 +3606,14 @@ NOTES.push({ id:"palsibo-store", date:"2026.10", tag:"Space", case:"lifemeal-yeo
   title:"한 편집숍에서 연 두 번의 팝업",
   img:"pf/lifemeal-yeonnam/04.jpg",
   sum:"연남동 팔시보 스토어에서 연 킹 오브 킹스와 라이프밀. 작은 공간을 카드 한 장으로 묶은 방법이 FREEZE LAB까지 이어지기까지.",
-  facts:[["2","팔시보 스토어에서 연 팝업"],["1,000+","라이프밀 사전예약, 이틀 만에"],["7개월","연남동에서 용산 FREEZE LAB까지"]],
+  facts:[["2","팔시보 스토어에서 연 팝업"],["1,000+","라이프밀 사전예약, 이틀 만에"],["4","킹 오브 킹스 팝업을 보도한 매체"]],
   gallery:[["pf/king-of-kings/04.jpg","킹 오브 킹스, 인물 ID 카드"],["pf/lifemeal-yeonnam/03.jpg","라이프밀, 동선 시뮬레이션"],["pf/lifemeal-yeonnam/17.jpg","라이프밀, 루틴 도어행어 카드"]],
   body:[
     ["p","연남동 골목의 편집숍 팔시보 스토어에서 두 번의 팝업을 열었습니다. 2025년에는 애니메이션 <킹 오브 킹스>, 2026년 2월에는 라이프밀의 첫 단독 브랜드 팝업이었습니다. 두 프로젝트 모두 콘셉트부터 공간, 굿즈, 현장 운영까지 전체 디렉팅을 맡았습니다."],
     ["h2","작은 공간에는 많이 놓을 수 없습니다"],
     ["p","편집숍 한쪽을 빌려 쓰는 팝업은 가벽을 세우거나 집기를 늘리기 어렵습니다. 그래서 공간을 채우는 대신 방문객의 손에 카드 한 장을 쥐여 주기로 했습니다. 킹 오브 킹스에서는 인물들의 ID 카드를 모아 나의 이야기를 완성하는 스탬프 투어였고, 라이프밀에서는 웰니스 체크리스트와 WBTI 진단으로 받는 나의 웰니스 루틴 카드였습니다."],
     ["blockquote","공간을 채우는 대신, 방문객의 손에 카드 한 장을 쥐여 주었습니다."],
+    ["p","돌아보면 이 방법은 2020년 종로 스페이스코르의 성탄 전시 #HJD에서 시작됐습니다. 성탄의 여섯 가지 의미를 따라 도장을 모으는 카드 한 장이 작은 카페 전시의 동선이 되었습니다."],
     ["p","카드가 있으면 동선이 생깁니다. 어디서 시작해 어디서 끝나는지, 무엇을 모으고 무엇을 가져가는지가 분명해집니다. 라이프밀 팝업의 사전예약은 이틀 만에 1,000명을 넘었고, 이 방식은 일곱 달 뒤 용산 FREEZE LAB에서 연구원증과 네 단계 코스로 커졌습니다."]
   ]});
 NOTES.push({ id:"plan-to-site", date:"2026.10", tag:"Process", case:"freeze-lab",
@@ -3674,12 +3699,12 @@ function initStg(s){
 /* social embeds (Instagram / YouTube), lazy */
 const EMB_YT = id => `https://www.youtube-nocookie.com/embed/${id}?rel=0&playsinline=1&modestbranding=1`;
 function embCard(o, i){
-  const ig = o.kind !== "yt";
-  const href = ig ? `https://www.instagram.com/${o.t}/${o.c}/` : `https://www.youtube.com/shorts/${o.c}`;
+  const ig = o.kind === "ig", wide = o.kind === "ytw";
+  const href = ig ? `https://www.instagram.com/${o.t}/${o.c}/` : wide ? `https://www.youtube.com/watch?v=${o.c}` : `https://www.youtube.com/shorts/${o.c}`;
   const src = ig ? `https://www.instagram.com/${o.t}/${o.c}/embed/?cr=1&v=14#${encodeURIComponent(JSON.stringify({ci:i,os:0}))}` : EMB_YT(o.c);
   return `<article class="emb-c" data-k="${ig?(o.t==="reel"?"reel":"feed"):"yt"}">
     <div class="emb-h"><span class="t">${esc(o.tag)}</span><b>${esc(o.h)}</b><span class="m">${esc(o.m)}</span></div>
-    <div class="emb-w ${ig?"ig-w":"yt-w"}" data-src="${esc(src)}" data-title="${esc(o.h)} ${esc(o.m)}"><span class="emb-ph"><i></i>${ig?"Instagram":"YouTube"} 불러오는 중</span></div>
+    <div class="emb-w ${ig?"ig-w":"yt-w"}${wide?" wide":""}" data-src="${esc(src)}" data-title="${esc(o.h)} ${esc(o.m)}"><span class="emb-ph"><i></i>${ig?"Instagram":"YouTube"} 불러오는 중</span></div>
     <a class="emb-l" href="${href}" target="_blank" rel="noopener">${ig?"Instagram":"YouTube"}에서 보기 ↗</a></article>`;
 }
 function embHTML(list, show, filters){
