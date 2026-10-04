@@ -1356,6 +1356,130 @@ h1,h2,h3{text-wrap:balance}
   .bx-panel .imgs.n3 figure:last-child{grid-column:1/3}
 }
 @media (prefers-reduced-motion:reduce){.xf img,.stg-box img{transition:none}}
+/* ---------- v13: HTML case sections ---------- */
+.xs{padding:clamp(56px,7vw,112px) 0 0}
+.xs-lab{display:flex;align-items:center;gap:12px;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:#000;margin-bottom:20px}
+.xs-lab::before{content:"";width:18px;height:1px;background:#000}
+.xs-h{font-size:clamp(26px,3vw,44px);font-weight:500;letter-spacing:-0.04em;line-height:1.25;margin-bottom:clamp(20px,2.6vw,36px);max-width:22em}
+.xs-p{font-size:clamp(15px,1.12vw,17px);line-height:1.8;color:#2b2b2b;max-width:40em}
+.xs-p + .xs-p{margin-top:.9em}
+/* role */
+.xs-role{display:grid;grid-template-columns:minmax(220px,1fr) 2.2fr;gap:clamp(20px,4vw,64px);border-top:1px solid #000;padding-top:22px}
+.xs-role .who b{display:block;font-size:clamp(20px,1.8vw,26px);font-weight:600;letter-spacing:-0.03em}
+.xs-role .who span{display:block;margin-top:6px;font-size:14px;color:var(--gray-2);line-height:1.6}
+.xs-role ul{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:0 clamp(16px,3vw,40px);margin:0;padding:0}
+.xs-role li{display:grid;grid-template-columns:112px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);font-size:14.5px;line-height:1.6}
+.xs-role li b{font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;padding-top:2px}
+/* lead */
+.xs-lead{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(24px,5vw,80px);align-items:start}
+.xs-lead blockquote{margin:0;font-size:clamp(26px,3.1vw,46px);font-weight:500;letter-spacing:-0.045em;line-height:1.28;white-space:pre-line}
+/* media */
+.xs-fig{margin:0}
+.xs-fig .im{position:relative;overflow:hidden;background:#f3f3f1}
+.xs-fig img{display:block;width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease-out);cursor:zoom-in}
+.xs-fig.contain img{object-fit:contain}
+.xs-fig figcaption{font-size:13.5px;color:var(--gray-2);margin-top:10px;line-height:1.6}
+.xs-fig figcaption b{color:#000;font-weight:600}
+.xs-tag{position:absolute;left:12px;top:12px;font-size:11px;font-weight:700;letter-spacing:.06em;padding:5px 9px;background:#fff;color:#000;border:1px solid #000;z-index:2}
+.xs-tag.sim{background:#000;color:#fff}
+.xs-row{display:grid;gap:clamp(10px,1.2vw,18px)}
+.xs-row.c2{grid-template-columns:1fr 1fr}.xs-row.c3{grid-template-columns:repeat(3,1fr)}.xs-row.c4{grid-template-columns:repeat(4,1fr)}.xs-row.c6{grid-template-columns:repeat(6,1fr)}
+.xs-row.w12{grid-template-columns:1.3fr 1fr}
+/* cards */
+.xs-cards{display:grid;gap:0;border-top:1px solid #000}
+.xs-cards.c2{grid-template-columns:repeat(2,1fr)}.xs-cards.c3{grid-template-columns:repeat(3,1fr)}.xs-cards.c4{grid-template-columns:repeat(4,1fr)}
+.xs-card{padding:22px clamp(14px,1.6vw,26px) 26px 0;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:10px;min-width:0}
+.xs-cards .xs-card + .xs-card{padding-left:clamp(14px,1.6vw,26px);border-left:1px solid var(--line)}
+.xs-card .k{font-family:var(--mono);font-size:12px;color:var(--gray)}
+.xs-card h3{font-size:clamp(17px,1.4vw,21px);font-weight:600;letter-spacing:-0.03em;line-height:1.35}
+.xs-card p{font-size:14.5px;line-height:1.75;color:#2b2b2b}
+.xs-card .pt{font-size:13px;color:var(--gray-2);border-top:1px dashed var(--line);padding-top:10px;margin-top:auto}
+.xs-card .im{aspect-ratio:4/3;background:#f3f3f1;overflow:hidden;margin-bottom:6px}
+.xs-card .im img{width:100%;height:100%;object-fit:cover;display:block;cursor:zoom-in}
+/* table */
+.xs-tbl{width:100%;border-collapse:collapse;font-size:14.5px}
+.xs-tbl th{text-align:left;font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;padding:10px 12px 10px 0;border-bottom:1px solid #000}
+.xs-tbl td{padding:13px 12px 13px 0;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.6}
+.xs-tbl td:first-child{font-family:var(--mono);font-size:13px;color:var(--gray);width:64px}
+.xs-tbl td b{font-weight:600}
+.xs-note{font-size:13px;color:var(--gray);margin-top:12px;line-height:1.6}
+/* strip */
+.xs-strip{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(260px,32%);gap:clamp(10px,1.2vw,18px);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin;padding-bottom:10px}
+.xs-strip .xs-fig{scroll-snap-align:start}
+/* specs */
+.xs-specs{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid #000}
+.xs-spec{padding:20px 18px 22px 0;border-bottom:1px solid var(--line)}
+.xs-specs .xs-spec:not(:nth-child(3n+1)){padding-left:18px;border-left:1px solid var(--line)}
+.xs-spec small{display:block;font-size:12.5px;color:var(--gray)}
+.xs-spec b{display:block;margin-top:6px;font-size:clamp(22px,2vw,30px);font-weight:500;letter-spacing:-0.04em}
+.xs-spec span{display:block;margin-top:6px;font-size:13.5px;color:var(--gray-2);line-height:1.6}
+/* plan */
+.xs-plan{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(16px,2.4vw,36px);align-items:start}
+.xs-plan .pl{position:relative;background:#fafaf8;border:1px solid var(--line)}
+.xs-plan svg{display:block;width:100%;height:auto}
+.xs-plan svg .wall{fill:none;stroke:#000;stroke-width:3}
+.xs-plan svg .room{fill:#fff;stroke:#000;stroke-width:1.5}
+.xs-plan svg .fx{fill:#ecebe6;stroke:#b9b7ae;stroke-width:1}
+.xs-plan svg .lbl{font-size:15px;fill:#6b6b6b;font-family:inherit}
+.xs-plan svg .lbl.dk{fill:#000;font-weight:600}
+.xs-plan svg .z{cursor:pointer}
+.xs-plan svg .z circle{fill:#fff;stroke:#000;stroke-width:2;transition:fill .3s}
+.xs-plan svg .z text{font-size:16px;font-weight:700;fill:#000;text-anchor:middle;dominant-baseline:central;pointer-events:none}
+.xs-plan svg .z.on circle{fill:#000}
+.xs-plan svg .z.on text{fill:#fff}
+.xs-plan svg .z .ring{fill:none;stroke:#000;stroke-width:1.5;opacity:0}
+.xs-plan svg .z.on .ring{animation:xsring 1.8s ease-out infinite}
+@keyframes xsring{0%{opacity:.7;r:20}100%{opacity:0;r:42}}
+.xs-plan svg .flow{fill:none;stroke:#000;stroke-width:1.5;stroke-dasharray:6 6;opacity:.45}
+.xs-tabs{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.xs-tabs button{font-size:13px;padding:7px 12px;border:1px solid #000;background:#fff;color:#000;border-radius:999px;transition:background .25s,color .25s}
+.xs-tabs button b{font-family:var(--mono);margin-right:6px}
+.xs-tabs button.on{background:#000;color:#fff}
+.xs-zp .im{aspect-ratio:4/3;background:#f3f3f1;overflow:hidden;position:relative}
+.xs-zp .im img{width:100%;height:100%;object-fit:cover;display:block;cursor:zoom-in;animation:xsfade .6s ease}
+@keyframes xsfade{from{opacity:0;transform:scale(1.02)}to{opacity:1;transform:none}}
+.xs-zp .t{padding-top:16px}
+.xs-zp .t .en{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gray)}
+.xs-zp .t h3{font-size:clamp(20px,1.8vw,26px);font-weight:600;letter-spacing:-0.03em;margin:4px 0 10px}
+.xs-zp .t p{font-size:14.5px;line-height:1.75;color:#2b2b2b}
+.xs-zp dl{display:grid;grid-template-columns:72px 1fr;gap:6px 12px;margin-top:14px;font-size:13.5px;line-height:1.6;border-top:1px solid var(--line);padding-top:12px}
+.xs-zp dt{font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--gray-2);padding-top:2px}
+.xs-zp .sub{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+.xs-zp .sub img{width:100%;aspect-ratio:1;object-fit:cover;display:block;background:#f3f3f1;cursor:zoom-in}
+/* grid gallery */
+.xs-grid{display:grid;gap:clamp(8px,1vw,14px)}
+.xs-grid.c4{grid-template-columns:repeat(4,1fr)}.xs-grid.c5{grid-template-columns:repeat(5,1fr)}.xs-grid.c6{grid-template-columns:repeat(6,1fr)}.xs-grid.c3{grid-template-columns:repeat(3,1fr)}
+.xs-grid figure{margin:0}
+.xs-grid .im{aspect-ratio:1;background:#f5f5f3;overflow:hidden}
+.xs-grid .im img{width:100%;height:100%;object-fit:contain;display:block;cursor:zoom-in;transition:transform .8s var(--ease-out)}
+.xs-grid.cover .im img{object-fit:cover}
+.xs-grid figcaption{font-size:12.5px;color:var(--gray-2);margin-top:6px;line-height:1.5}
+@media (hover:hover){.xs-grid figure:hover img,.xs-fig:hover img{transform:scale(1.03)}}
+/* deck */
+.xs-deck .car-s .im{background:#fff;box-shadow:0 0 0 1px var(--line)}
+@media (max-width:1100px){
+  .xs-specs{grid-template-columns:repeat(2,1fr)}
+  .xs-specs .xs-spec:not(:nth-child(3n+1)){padding-left:0;border-left:0}
+  .xs-specs .xs-spec:nth-child(2n){padding-left:18px;border-left:1px solid var(--line)}
+  .xs-cards.c4{grid-template-columns:repeat(2,1fr)}
+  .xs-grid.c6{grid-template-columns:repeat(4,1fr)}.xs-grid.c5{grid-template-columns:repeat(4,1fr)}
+  .xs-plan{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+  .xs-role,.xs-lead{grid-template-columns:1fr}
+  .xs-role ul{grid-template-columns:1fr}
+  .xs-role li{grid-template-columns:96px 1fr}
+  .xs-cards.c2,.xs-cards.c3,.xs-cards.c4{grid-template-columns:1fr}
+  .xs-cards .xs-card + .xs-card{padding-left:0;border-left:0}
+  .xs-row.c2,.xs-row.c3,.xs-row.w12{grid-template-columns:1fr}
+  .xs-row.c4,.xs-row.c6{grid-template-columns:1fr 1fr}
+  .xs-grid.c4,.xs-grid.c5,.xs-grid.c6{grid-template-columns:repeat(3,1fr)}
+  .xs-grid.c3{grid-template-columns:1fr 1fr}
+  .xs-strip{grid-auto-columns:78%}
+  .xs-specs{grid-template-columns:1fr 1fr}
+  .xs-tbl{font-size:13.5px}
+  .xs-tbl th:nth-child(n+4),.xs-tbl td:nth-child(n+4){display:none}
+}
 </style>
 </head>
 <body>
@@ -3155,7 +3279,7 @@ document.body.insertAdjacentHTML("beforeend", `<div class="lb" role="dialog" ari
 const lbEl = $(".lb");
 function lbShow(){ const it = LB.list[LB.i]; $("img", lbEl).src = it.src; $("img", lbEl).alt = it.cap; $(".lb-c", lbEl).textContent = it.cap; $(".ct", lbEl).textContent = `${pad(LB.i+1)} / ${pad(LB.list.length)}`; }
 function lbOpen(img){
-  const scope = img.closest(".car, .cs-block, .note-body, .cs-hero, .js-note") || document;
+  const scope = img.closest(".car, .xs-zp, .xs, .cs-block, .note-body, .cs-hero, .js-note") || document;
   const imgs = $$("img", scope).filter(x => !x.closest(".car-thumbs, .bx-stage, .rel"));
   LB.list = imgs.map(x => ({src: x.currentSrc || x.src, cap: x.dataset.lb || x.alt || ""}));
   LB.i = Math.max(0, imgs.indexOf(img)); lbShow(); lbEl.classList.add("on"); document.documentElement.style.overflow = "hidden";
@@ -3170,7 +3294,7 @@ addEventListener("keydown", e => { if (!lbEl.classList.contains("on")) return; i
 (function(){ let sx = null; lbEl.addEventListener("touchstart", e => { sx = e.touches[0].clientX; }, {passive:true}); lbEl.addEventListener("touchend", e => { if (sx === null) return; const d = e.changedTouches[0].clientX - sx; if (Math.abs(d) > 50){ LB.i = (LB.i + (d < 0 ? 1 : -1) + LB.list.length) % LB.list.length; lbShow(); } sx = null; }); })();
 document.addEventListener("click", e => {
   if (typeof ED !== "undefined" && ED.on) return;
-  const img = e.target.closest && e.target.closest(".js-case .ph-fig img, .js-case .deck-strip img, .js-case .trio img, .js-case .prod img, .js-case .car-s img, .js-note .ph-fig img, .js-case .bx-panel img, .js-case .stg img, .js-note .note-gal img");
+  const img = e.target.closest && e.target.closest(".js-case .ph-fig img, .js-case .deck-strip img, .js-case .trio img, .js-case .prod img, .js-case .car-s img, .js-note .ph-fig img, .js-case .bx-panel img, .js-case .stg img, .js-note .note-gal img, .js-case .xs-fig img, .js-case .xs-grid img, .js-case .xs-card img, .js-case .xs-zp img");
   if (!img) return;
   const tr = img.closest(".car-track"); if (tr && tr.dataset.moved) return;
   e.preventDefault(); lbOpen(img);
@@ -3229,12 +3353,12 @@ function renderLite(w){
     <div class="kicker">${esc(w.category)} · ${esc(w.client)}</div>
     <h1>${esc(w.title)}</h1>
     <dl class="meta">${w.meta.map(([k,v])=>`<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>
-    <div class="cs-hero">${`<figure class="ph-fig wide169"><img src="${PF}${esc(w.id)}/01.jpg" alt="${esc(w.title)} 대표 장표" decoding="async"></figure>`}</div>
+    <div class="cs-hero">${w.heroSrc ? `<figure class="ph-fig wide169" style="position:relative">${w.heroTag?`<span class="xs-tag${w.heroTag==="SIMULATION"?" sim":""}">${esc(w.heroTag)}</span>`:""}<img src="${XI(w.heroSrc)}" alt="${esc(w.title)} 대표 이미지" decoding="async"></figure>` : `<figure class="ph-fig wide169"><img src="${PF}${esc(w.id)}/01.jpg" alt="${esc(w.title)} 대표 장표" decoding="async"></figure>`}</div>
     <div class="lite-status"><b class="${esc(w.status)}">${esc(STATUS[w.status])}</b><span>${esc(w.studio ? STUDIO_NOTE : STATUS_NOTE[w.status])}</span></div>
     ${w.results ? `<div class="cs-block"><div class="cs-label">In numbers</div><div class="stats">${w.results.map(([b,t])=>`<div><b>${esc(b)}</b><span>${esc(t)}</span></div>`).join("")}</div></div>` : ""}
-    <div class="cs-block cs-intro"><h2>${esc(w.headline)}</h2><div>${w.body.map(p=>`<p>${esc(p)}</p>`).join("")}<div class="keys">${w.tags.map(t=>`<span class="tag">${esc(t)}</span>`).join("")}</div></div></div>
+    ${w.sections ? secsHTML(w) : `<div class="cs-block cs-intro"><h2>${esc(w.headline)}</h2><div>${w.body.map(p=>`<p>${esc(p)}</p>`).join("")}<div class="keys">${w.tags.map(t=>`<span class="tag">${esc(t)}</span>`).join("")}</div></div></div>
     ${w.points ? `<div class="cs-block"><div class="cs-label">Highlights</div><div class="pts">${w.points.map(([t,d],k)=>`<div><span class="n">${pad(k+1)}</span><h3>${esc(t)}</h3><p>${esc(d)}</p></div>`).join("")}</div></div>` : ""}
-    <div class="cs-block"><div class="cs-label">Slides</div><h2 class="cs-h2">장표로 보는 ${esc(w.title)}</h2>${carHTML(w.id, w.slides, w.title)}<p class="cap">드래그하거나 화살표로 넘기고, 장표를 누르면 크게 볼 수 있습니다.</p></div>
+    <div class="cs-block"><div class="cs-label">Slides</div><h2 class="cs-h2">장표로 보는 ${esc(w.title)}</h2>${carHTML(w.id, w.slides, w.title)}<p class="cap">드래그하거나 화살표로 넘기고, 장표를 누르면 크게 볼 수 있습니다.</p></div>`}
     ${(w.press||w.media) ? `<div class="cs-block"><div class="cs-label">Press &amp; Media</div><h2 class="cs-h2">${esc(w.pressH||"보도와 영상으로 남은 현장")}</h2>
       ${w.media ? embHTML(w.media, 99, false).replace('class="emb"','class="emb vids"') : ""}
       ${w.press ? `<div class="press${w.media?" mt":""}">${w.press.map(([src,date,title,url,sum,tag])=>`<a class="press-card" href="${url}" target="_blank" rel="noopener" data-cursor="Read"><span class="src">${esc(src)}<i>${esc(date)}</i></span><h3>${esc(title)}</h3><p>${esc(sum)}</p><span class="tag">${esc(tag)}</span></a>`).join("")}</div>` : ""}
@@ -3660,7 +3784,7 @@ function rvScan(){
   if (reduce) return;
   rvIO = rvIO || new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add("in"); rvIO.unobserve(e.target); } }), {rootMargin:"0px 0px -8% 0px", threshold:.06});
   const v = $(".view.active"); if (!v) return;
-  $$(".cs-block, .card, .why-card, .rail-wrap, .wf, .sec-head, .note-card, .note-facts, .note-gal, .stats, .nums, .wdiv-h, .pts > div, .caps > a, .clients2 > a", v).forEach(el => {
+  $$(".cs-block, .xs, .card, .why-card, .rail-wrap, .wf, .sec-head, .note-card, .note-facts, .note-gal, .stats, .nums, .wdiv-h, .pts > div, .caps > a, .clients2 > a", v).forEach(el => {
     if (el.classList.contains("rv")) return;
     if (el.getBoundingClientRect().top < innerHeight * 0.92){ el.classList.add("rv","in"); return; }
     el.classList.add("rv"); rvIO.observe(el);
@@ -3745,9 +3869,146 @@ const FL_EMB = () => {
 };
 const SVM_EMB = () => SVM.social.map(([h,d,t,u,k]) => { const m = u.match(/instagram\.com\/(p|reel)\/([^/]+)/); return {kind:"ig", h, t:m[1], c:m[2], tag:k, m:`${m[1]==="reel"?"릴스":"피드"} · ${d.slice(5)}`}; });
 
+/* ---------- v13: HTML case sections ---------- */
+const XI = s => s ? (/^(https?:|images\/)/.test(s) ? s : IMG + s) : "";
+const xsLab = (l) => l ? `<div class="xs-lab">${esc(l)}</div>` : "";
+const xsHead = (s) => `${xsLab(s.label)}${s.h ? `<h2 class="xs-h">${esc(s.h)}</h2>` : ""}${(s.p||[]).map(t=>`<p class="xs-p">${esc(t)}</p>`).join("")}`;
+function xsFig(src, cap, o={}){
+  const tag = o.tag ? `<span class="xs-tag${o.tag==="SIMULATION"?" sim":""}">${esc(o.tag)}</span>` : "";
+  return `<figure class="xs-fig${o.contain?" contain":""}"><div class="im" style="aspect-ratio:${o.ratio||"16/9"}${o.bg?`;background:${o.bg}`:""}">${tag}<img src="${XI(src)}" alt="${esc(cap||"")}" loading="lazy" decoding="async" data-lb="${esc(cap||"")}"></div>${cap?`<figcaption>${o.capHTML?cap:esc(cap)}</figcaption>`:""}</figure>`;
+}
+const XS = {
+  role: s => `${xsLab(s.label||"Role")}<div class="xs-role"><div class="who"><b>${esc(s.who)}</b><span>${esc(s.sub||"")}</span></div><ul>${s.items.map(([k,v])=>`<li><b>${esc(k)}</b><span>${esc(v)}</span></li>`).join("")}</ul></div>`,
+  lead: s => `${xsLab(s.label)}<div class="xs-lead"><blockquote>${esc(s.q)}</blockquote><div>${(s.p||[]).map(t=>`<p class="xs-p">${esc(t)}</p>`).join("")}</div></div>`,
+  media: s => `${xsHead(s)}${xsFig(s.src, s.cap, s)}`,
+  row: s => `${xsHead(s)}<div class="xs-row ${s.cls||"c2"}">${s.items.map(([src,cap,o])=>xsFig(src,cap,Object.assign({ratio:s.ratio,contain:s.contain,bg:s.bg},o||{}))).join("")}</div>${s.note?`<p class="xs-note">${esc(s.note)}</p>`:""}`,
+  cards: s => `${xsHead(s)}<div class="xs-cards c${s.cols||3}">${s.items.map((c,i)=>`<div class="xs-card">${c.img?`<div class="im"><img src="${XI(c.img)}" alt="${esc(c.t)}" loading="lazy" data-lb="${esc(c.t)}"></div>`:""}<span class="k">${esc(c.k||pad(i+1))}</span><h3>${esc(c.t)}</h3><p>${esc(c.d)}</p>${c.pt?`<span class="pt">${esc(c.pt)}</span>`:""}</div>`).join("")}</div>`,
+  table: s => `${xsHead(s)}<div style="overflow-x:auto"><table class="xs-tbl"><thead><tr>${s.head.map(h=>`<th>${esc(h)}</th>`).join("")}</tr></thead><tbody>${s.rows.map(r=>`<tr>${r.map((c,i)=>`<td>${i===1?`<b>${esc(c)}</b>`:esc(c)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>${s.note?`<p class="xs-note">${esc(s.note)}</p>`:""}`,
+  strip: s => `${xsHead(s)}<div class="xs-strip">${s.items.map(([src,cap])=>xsFig(src,cap,{ratio:s.ratio||"3/2",contain:s.contain,bg:s.bg})).join("")}</div>`,
+  specs: s => `${xsHead(s)}<div class="xs-specs">${s.items.map(([a,b,c])=>`<div class="xs-spec"><small>${esc(a)}</small><b>${esc(b)}</b>${c?`<span>${esc(c)}</span>`:""}</div>`).join("")}</div>`,
+  grid: s => `${xsHead(s)}<div class="xs-grid c${s.cols||4}${s.cover?" cover":""}">${s.items.map(([src,cap])=>`<figure><div class="im" style="${s.ratio?`aspect-ratio:${s.ratio};`:""}${s.bg?`background:${s.bg}`:""}"><img src="${XI(src)}" alt="${esc(cap||"")}" loading="lazy" data-lb="${esc(cap||"")}"></div>${cap?`<figcaption>${esc(cap)}</figcaption>`:""}</figure>`).join("")}</div>${s.note?`<p class="xs-note">${esc(s.note)}</p>`:""}`,
+  plan: s => `${xsHead(s)}<div class="xs-plan" data-n="${s.zones.length}"><div><div class="pl">${s.svg.replace("</svg>", s.zones.map((z,i)=>`<g class="z${i?"":" on"}" data-i="${i}" transform="translate(${z.x},${z.y})"><circle class="ring" r="20"></circle><circle r="19"></circle><text>${esc(z.n)}</text></g>`).join("") + "</svg>")}</div>
+      <div class="xs-tabs">${s.zones.map((z,i)=>`<button type="button" class="${i?"":"on"}" data-i="${i}"><b>${esc(z.n)}</b>${esc(z.name)}</button>`).join("")}</div></div>
+      <div class="xs-zp" aria-live="polite"></div></div>
+      <script type="application/json" class="xs-zd">${JSON.stringify(s.zones).replace(/</g,"\\u003c")}<\/script>`,
+  deck: s => `${xsHead(s)}<div class="xs-deck">${carHTML(s.folder, s.caps, s.h||"")}</div>${s.note?`<p class="cap">${esc(s.note)}</p>`:""}`
+};
+function secsHTML(w){ return w.sections.map(s => `<div class="xs xs--${s.t}">${XS[s.t](s)}</div>`).join(""); }
+function zoneHTML(z){
+  return `<div class="im">${z.tag?`<span class="xs-tag${z.tag==="SIMULATION"?" sim":""}">${esc(z.tag)}</span>`:""}<img src="${XI(z.photo)}" alt="${esc(z.name)}" data-lb="${esc(z.n+" "+z.name)}"></div>
+    <div class="t"><span class="en">${esc(z.en||"")}</span><h3>${esc(z.n)}. ${esc(z.name)}</h3>${(z.p||[]).map(t=>`<p>${esc(t)}</p>`).join("")}
+    ${z.dl?`<dl>${z.dl.map(([k,v])=>`<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("")}</dl>`:""}
+    ${z.sub?`<div class="sub">${z.sub.map(([src,cap])=>`<img src="${XI(src)}" alt="${esc(cap)}" loading="lazy" data-lb="${esc(cap)}">`).join("")}</div>`:""}</div>`;
+}
+function initPlan(p){
+  if (p.dataset.ready) return; p.dataset.ready = "1";
+  const box = p.closest(".xs"), zs = JSON.parse($(".xs-zd", box).textContent), panel = $(".xs-zp", p);
+  const pins = $$(".z", p), tabs = $$(".xs-tabs button", p); let cur = 0, man = false, tm = null;
+  const set = i => { cur = i; pins.forEach((g,k)=>g.classList.toggle("on", k===i)); tabs.forEach((b,k)=>b.classList.toggle("on", k===i)); panel.innerHTML = zoneHTML(zs[i]); };
+  const stop = () => { man = true; clearInterval(tm); };
+  pins.forEach(g => g.addEventListener("click", () => { stop(); set(+g.dataset.i); }));
+  tabs.forEach(b => b.addEventListener("click", () => { stop(); set(+b.dataset.i); }));
+  set(0);
+  const io = new IntersectionObserver(es => { clearInterval(tm); if (es[0].isIntersecting && !man && !reduce) tm = setInterval(()=> set((cur+1) % zs.length), 4200); }, {threshold:.4});
+  io.observe(p);
+  zs.forEach(z => { const im = new Image(); im.src = XI(z.photo); });
+}
+
+/* ---- KING OF KINGS: HTML case ---- */
+(function(){
+const w = WORKS.find(x => x.id === "king-of-kings"); if (!w) return;
+const P = "pf/king-of-kings/x/";
+w.heroSrc = P + "facade.jpg"; w.heroTag = "SIMULATION";
+w.cover = "images/pf/king-of-kings/t01.jpg";
+const svg = `<svg viewBox="200 150 1620 930" role="img" aria-label="팔시보 스토어 평면도와 존 배치">
+  <rect x="200" y="150" width="1620" height="930" fill="#fafaf8"/>
+  <rect class="room" x="220" y="177" width="1558" height="863"/>
+  <rect class="fx" x="221" y="178" width="468" height="284"/><text class="lbl" x="455" y="325" text-anchor="middle">창고</text>
+  <path class="wall" d="M690 178 V540 M789 178 V540 M690 540 H789"/>
+  <rect class="fx" x="1491" y="178" width="286" height="349"/>
+  <rect class="fx" x="1011" y="342" width="478" height="53"/><text class="lbl dk" x="1250" y="376" text-anchor="middle">Cashier</text>
+  <rect class="fx" x="977" y="708" width="546" height="170"/><rect x="1042" y="745" width="417" height="95" fill="none" stroke="#b9b7ae"/><text class="lbl dk" x="1250" y="800" text-anchor="middle">MD</text>
+  <path class="wall" d="M690 720 V1040 M221 462 H440"/>
+  <path class="wall" d="M220 1040 H780 M985 1040 H1778 V177 H220 V1040"/>
+  <rect x="1003" y="1027" width="765" height="22" fill="#fff" stroke="#000"/><text class="lbl" x="1385" y="1070" text-anchor="middle">Window</text>
+  <text class="lbl dk" x="883" y="1070" text-anchor="middle">IN &amp; OUT</text>
+  <text class="lbl" x="307" y="700" text-anchor="middle">Message Wall</text>
+  <text class="lbl" x="1707" y="900" text-anchor="middle">Story 스틸컷</text>
+  <text class="lbl" x="470" y="1010" text-anchor="middle">등신대 포토존</text>
+  <text class="lbl" x="1740" y="680" text-anchor="end">벽면 거울</text>
+  <text class="lbl" x="780" y="890" text-anchor="middle">거울 포토존</text>
+</svg>`;
+w.sections = [
+  { t:"role", who:"황윤희", sub:"Art Director, 전체 디렉팅", items:[
+    ["Concept","스탬프 투어와 ID 카드로 영화 속 인물을 따라가는 체험 설계"],
+    ["Space","팔시보 스토어 실측, 존별 데코 플랜과 동선"],
+    ["Graphic","ID 카드 6종, 입구 현수막, 라이팅 패널, 색칠 도안"],
+    ["Goods","리워드 부채, 증정 엽서, 공식 굿즈 30여 종 라인업"],
+    ["Production","제작물 사양과 수량, 발주 일정 관리"],
+    ["Operation","2025.08.01 – 08.31 한 달 현장 운영과 이벤트"]]},
+  { t:"lead", label:"Concept", q:"한 사람, 한 사람의 얼굴을 찍고\n그들의 목소리를 따라 적는 순간들.\n그리고 마지막엔,\n내 이름으로 시작되는 이야기.",
+    p:["<킹 오브 킹스>는 찰스 디킨스가 막내아들 월터에게 예수의 이야기를 들려주는 애니메이션입니다. 팝업은 그 구조를 그대로 빌려, 방문객이 디킨스 가족과 함께 이야기 속을 걷도록 설계했습니다.",
+       "편집숍 한쪽을 빌려 쓰는 작은 공간에서는 가벽을 세우거나 집기를 늘리기 어렵습니다. 그래서 공간을 채우는 대신 손에 카드 한 장을 쥐여 주었습니다. 인물마다 스탬프를 찍고 대사를 따라 적다 보면, 마지막 장에는 나의 ID 카드가 남습니다."]},
+  { t:"cards", label:"Stamp Tour", h:"ID 카드 한 장으로 완성하는 여섯 개의 이야기", cols:3, items:[
+    {k:"FRONT", t:"인물의 정체성을 모으다", d:"존마다 인물의 스탬프 부스가 있습니다. 방문객은 인물의 정보를 적고 포토 스탬프를 사진 칸에 직접 찍어, 이름과 정보가 정리된 카드 앞면을 완성합니다."},
+    {k:"BACK", t:"인물의 목소리를 따라 적다", d:"인물마다 영화 속 핵심 대사 한 줄을 남깁니다. 뒷면 미션으로 그 대사를 직접 적으며, 스탬프 수집을 넘어 인물의 감정에 공감하게 됩니다."},
+    {k:"LAST", t:"마지막 스탬프는 나 자신", d:"모든 인물의 ID를 채우면 마지막 장에 복음을 전하는 월터의 장면과 함께 나의 ID 카드가 나옵니다. 내 이름과 전하고 싶은 메시지를 적어 투어를 마칩니다."}]},
+  { t:"row", cls:"c2", label:"ID Card", h:"인물별 ID 카드, 앞면과 뒷면", ratio:"1228/366", contain:true, bg:"#fff", items:[
+    [P+"id4.jpg","01 찰스 디킨스. 이야기를 들려주는 아버지"],[P+"id2.jpg","02 캐서린 디킨스. 어머니"],[P+"id1.jpg","03 고양이 윌라. 뒷면은 색칠 미션"],
+    [P+"id6.jpg","04 월터 디킨스. 이야기를 듣는 막내"],[P+"id3.jpg","05 예수. 두려워하지 마라"],[P+"id5.jpg","06 나. 비어 있는 마지막 카드"]]},
+  { t:"plan", label:"Deco Plan", h:"팔시보 스토어 한 층을 일곱 개의 장면으로", p:["번호를 누르면 존별 실측 사진과 데코 플랜이 열립니다. 사진은 설치 전 공간을 직접 찍은 것입니다."], svg, zones:[
+    {n:"0", name:"Collect Start", en:"Entrance · Counter", x:1370, y:430, photo:P+"z0b.jpg", tag:"BEFORE",
+      p:["입구 커튼을 지나면 카운터에서 스탬프 투어 카드와 집게형 명찰을 받습니다. 카운터는 투어의 시작점이자 미션을 마치고 돌아오는 자리입니다."],
+      dl:[["DP","입구 커튼, 입구 현수막, 행잉 스틸"],["Kit","스탬프 투어 카드, 집게형 명찰"]], sub:[[P+"z0.jpg","입구 실측"],[P+"z0-curtain.jpg","커튼 샘플"],[P+"z0-banner.jpg","입구 현수막 디자인"]]},
+    {n:"1·2", name:"Dickens Family", en:"Charles & Catherine", x:1615, y:610, photo:P+"z1.jpg", tag:"BEFORE",
+      p:["이야기를 들려주는 아버지 찰스와 어머니 캐서린의 존. 영화 스틸을 걸고 티셔츠를 종류별로 모듈 가구에 진열해, 첫 스탬프와 첫 굿즈 동선을 겹쳤습니다."],
+      dl:[["DP","행잉 스틸, 롤링 트라이비전, 옷걸이 20개"],["MD","티셔츠, 목걸이와 키링은 가구 뒷면 후크"],["Stamp","찰스, 캐서린 ID"]], sub:[[P+"z1b.jpg","디킨스 패밀리 DP 벽면"],[P+"z1c.jpg","전체 굿즈 DP 3단"],[P+"story.jpg","영화 스틸컷 롤링"]]},
+    {n:"3·4", name:"Walter’s Room", en:"Willa & Walter · Coloring", x:620, y:825, photo:P+"z3.jpg", tag:"BEFORE",
+      p:["막내 월터의 방을 색칠 공간으로 꾸몄습니다. 접이식 테이블과 롤 도화지에서 윌라 카드와 포스터를 색칠하고, 완성작은 벽에 붙여 함께 만드는 전시가 됩니다. 공간 곳곳에 숨은 고양이 윌라를 찾는 미션도 이어집니다."],
+      dl:[["Set","접이식 테이블 2, 크레용과 롤 도화지, A4 도안"],["Wall","색칠을 마친 포스터, 등신대"]], sub:[[P+"z3-mola.jpg","색칠 키트 레퍼런스"],[P+"col2.jpg","색칠 도안"],[P+"col3.jpg","색칠 도안"]]},
+    {n:"5", name:"Message Wall", en:"Jesus Christ", x:307, y:752, photo:P+"z5.jpg", tag:"BEFORE",
+      p:["투명 PET에 드로잉 스케치를 출력해 창에 붙이고, 빛이 그림을 통과하는 라이팅 패널로 만들었습니다. 아래에는 등신대를, 맞은편 흰 벽에는 방문객이 메시지를 남기고 스티커로 투표하는 테이블을 두었습니다."],
+      dl:[["Size","안쪽 창 95×50cm, 흰 벽 500×155cm"],["Play","가장 나쁜 빌런, 최애 제자 스티커 투표"]], sub:[[P+"z5-wall.jpg","흰 벽 투표존 계획"],[P+"z5-mock.jpg","라이팅 패널 위치"],[P+"v9.jpg",""]]},
+    {n:"6", name:"Myself", en:"Drawing Sketch", x:355, y:486, photo:P+"z6.jpg", tag:"BEFORE",
+      p:["마지막 존에서는 나의 ID 카드를 완성합니다. 복음을 전하는 월터의 장면 앞에서 내 이름과 전하고 싶은 메시지를 적고, 마지막 스탬프를 찍습니다."],
+      dl:[["DP","드로잉 스케치 투명 PET, 접이식 테이블"]], sub:[[P+"c-walter.jpg",""],[P+"id5.jpg","나의 ID 카드"],[P+"z5-strip.jpg","드로잉 스케치"]]},
+    {n:"✓", name:"Mission Complete", en:"Reward · Photo zone", x:850, y:380, photo:P+"fan.jpg",
+      p:["모든 ID를 완성하면 팝업 한정 리워드 KOK Fan을 받고, 집게 카드걸이를 단 채 인증 포토존에서 사진을 남깁니다. 인스타그램에 올리면 선물 추첨으로 이어집니다."],
+      dl:[["Reward","미니 부채 140×140, 앞면 윌라와 월터, 뒷면 좋아하는 말씀"],["Event","My ID 인증, 윌라 찾기"]]},
+    {n:"MD", name:"Official Goods", en:"Goods shop", x:1250, y:745, photo:P+"md.jpg",
+      p:["중앙 테이블에 공식 굿즈 30여 종을 모았습니다. 3만 원 이상 구매하면 매주 디자인이 바뀌는 한정 엽서를 증정해, 다시 들를 이유를 만들었습니다."],
+      dl:[["MD","티셔츠, 에코백, 인형, 텀블러, 키링, 목걸이"]], sub:[[P+"m11.jpg","월터 인형"],[P+"m12.jpg","윌라 인형"],[P+"m16.jpg","글리터 코스터"]]}
+  ]},
+  { t:"specs", label:"Measured", h:"설치 전에 직접 잰 숫자들", p:["팔시보 스토어를 직접 실측해 그래픽과 집기 사이즈를 맞췄습니다."], items:[
+    ["외부 간판","64.3 × 22.2 cm","두께 3.9cm, 간판 시트 교체"],["메인 창","305 × 213 cm","외관 윈도 그래픽"],["실내 거울","84 × 173 cm","거울 포토존"],
+    ["안쪽 창","95 × 50 cm","라이팅 패널 5칸"],["안쪽 흰 벽","500 × 155 cm","메시지 월과 투표존"],["디피 테이블","200 × 60 cm","중앙 MD 테이블"]]},
+  { t:"grid", label:"Characters", h:"가장 나쁜 빌런은? 최애 제자는?", p:["안쪽 흰 벽 테이블에 인물 카드를 펼쳐 두고, 방문객이 스티커로 투표했습니다. 정답이 없는 질문이 대화를 만들었습니다."], cols:6, cover:true, ratio:"3/4", bg:"#111", items:[
+    [P+"c-charles.jpg",""],[P+"c-catherine.jpg",""],[P+"c-walter.jpg",""],[P+"v1.jpg",""],[P+"v2.jpg",""],[P+"v3.jpg",""],[P+"v4.jpg",""],[P+"v5.jpg",""],[P+"v6.jpg",""],[P+"v7.jpg",""],[P+"v8.jpg",""],[P+"v9.jpg",""]]},
+  { t:"cards", label:"Event", h:"끝까지 걷게 만드는 네 가지 장치", cols:4, items:[
+    {k:"01", t:"스탬프 완주 리워드", d:"모든 ID와 나의 페이지까지 완성하면 KOK Fan을 증정했습니다.", pt:"자연스러운 완주와 성취감"},
+    {k:"02", t:"My ID 인증", d:"집게 카드걸이를 단 채 사진을 찍어 인스타그램에 올리면 선물을 추첨했습니다.", pt:"메시지의 개인화, SNS 확산"},
+    {k:"03", t:"윌라 찾기", d:"팝업 곳곳에 숨은 고양이 윌라 그림을 찾아 사진으로 인증합니다.", pt:"어린이와 가족 방문객"},
+    {k:"04", t:"구매 혜택", d:"3만 원 이상 구매 시 매주 디자인이 바뀌는 한정 일러스트 엽서를 드렸습니다.", pt:"객단가와 재방문"}]},
+  { t:"grid", label:"Goods", h:"공식 굿즈 라인업", cols:6, bg:"#fff", items:[
+    [P+"m01.jpg","티셔츠"],[P+"m02.jpg","티셔츠"],[P+"m03.jpg","티셔츠"],[P+"m04.jpg","티셔츠"],[P+"m05.jpg","티셔츠"],[P+"m06.jpg","티셔츠"],
+    [P+"m07.jpg","에코백"],[P+"m08.jpg","미니 백"],[P+"m09.jpg","키링"],[P+"m10.jpg","파우치"],[P+"m11.jpg","월터 인형"],[P+"m12.jpg","윌라 인형"],
+    [P+"m13.jpg","키링 파우치"],[P+"m14.jpg","글라스"],[P+"m15.jpg","텀블러"],[P+"m16.jpg","글리터 코스터"],[P+"m17.jpg","스톤 오브제"],[P+"m18.jpg","우드 십자가 목걸이"],
+    [P+"m19.jpg","실버 목걸이"],[P+"m20.jpg","우드 십자가"],[P+"m21.jpg","증정 엽서"],[P+"m22.jpg","노트"]], note:"영화사 공식 굿즈와 팝업 한정 제작물을 함께 진열했습니다."},
+  { t:"table", label:"Production", h:"직접 챙긴 제작물 명세", head:["#","제작물","수량","사양","메모"], rows:[
+    ["01","스탬프 투어 카드","6종 × 3,000","92×60mm, 반누보 스노우화이트 227g","5페이지 구성"],
+    ["02","포토 스탬프","5개 + 충전 잉크","30×40mm","가장 먼저 발주"],
+    ["03","집게형 명찰","3,000","106×69mm","카드걸이 겸용"],
+    ["04","리워드 미니 부채","3,000","140×140mm","제작 기간이 가장 긴 품목"],
+    ["05","증정 엽서","6종 × 80","100×148mm","매주 디자인 교체"],
+    ["06","포장 스티커","-","40×60mm","무료 증정"],
+    ["07","색칠 도안","5종 × 100","A4","사무실 출력"]], note:"단가와 거래처는 제외했습니다."},
+  { t:"deck", label:"Original deck", h:"원본 기획안 29장", folder:"king-of-kings/d", caps:["표지","Hello. 팔시보 스토어","팔시보 스토어 공간","ID 카드 6종","Deco Plan","평면 배치","실외 간판 실측","메인 창 실측","외관 시뮬레이션","0. Start 입구","0. Start 카운터","캐릭터 시트지 데코","1·2 디킨스 패밀리 MD","1·2 디킨스 패밀리 DP","실내 거울 실측","전체 굿즈 DP","3·4 월터의 방","색칠 도안","5. 메시지 월","안쪽 창 실측","안쪽 흰 벽 투표존","6. Myself","디피 테이블 실측","스탬프 투어 구성","리워드 KOK Fan","MD List","MD 라인업","이벤트","포인트"], note:"키노트 원본 PDF에서 고해상도로 다시 뽑았습니다. 누르면 크게 볼 수 있습니다."}
+];
+})();
+
 function initDyn(){
   const v = $(".view.active"); if (!v) return;
-  $$(".car", v).forEach(initCar); $$(".bx", v).forEach(initBx); $$(".cmp", v).forEach(initCmp); $$(".dos", v).forEach(initDos); $$(".xf", v).forEach(initXf); $$(".stg", v).forEach(initStg); $$(".emb", v).forEach(initEmb);
+  $$(".car", v).forEach(initCar); $$(".bx", v).forEach(initBx); $$(".cmp", v).forEach(initCmp); $$(".dos", v).forEach(initDos); $$(".xf", v).forEach(initXf); $$(".stg", v).forEach(initStg); $$(".emb", v).forEach(initEmb); $$(".xs-plan", v).forEach(initPlan);
   $$(".rail-wrap", v).forEach(initRail); $$(".wf", v).forEach(initWf);
 }
 (function(){
