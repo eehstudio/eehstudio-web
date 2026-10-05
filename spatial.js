@@ -1,23 +1,23 @@
-/* Original plans, presentation drawings and clearly identified concept imagery. */
+/* Source-based geometry, orthographic projections, and original project evidence. */
 (() => {
   const data = window.EEH_SPATIAL_DATA.projects;
   const E = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const link = (url, label) => `<a href="${E(url)}" target="_blank" rel="noopener noreferrer">${E(label)} <span aria-hidden="true">↗</span></a>`;
   function visual(a,w,i){
     if(a.model)return `<div class="spatial-live-host"><img class="spatial-poster" src="${E(a.src)}" alt="${E(w.title)} 도면 미리보기"><button type="button" class="spatial-launch" data-spatial-launch="${E(a.model)}" data-model-title="${E(w.title)} 인터랙티브 3D">3D 직접 돌려보기 <span>드래그 회전 · 확대 · 시점 선택</span></button></div>`;
-    return `<figure class="spatial-view"><span class="spatial-kind">${E(a.kind)}</span><img src="${E(a.drawing||a.src)}" alt="${E(w.title+' · '+a.label)}" decoding="async" ${i?'loading="lazy"':''}></figure>`;
+    return `<figure class="spatial-view" style="--view-ratio:${Number(a.width)||1600}/${Number(a.height)||1100}"><img src="${E(a.src)}" alt="${E(w.title+' · '+a.label+' · '+a.kind)}" decoding="async" ${a.width?`width="${Number(a.width)}" height="${Number(a.height)}"`:''} ${i?'loading="lazy"':''}></figure>`;
   }
 
   function hero(w) {
     const p = data[w.id];
     if (!p?.assets.length) return '';
     const id = 'study-' + w.id;
-    return `<section class="spatial-study" aria-label="${E(w.title)} 공간·디자인 프레젠테이션">
-      <div class="spatial-head"><span>DESIGN STUDY / ${String(p.assets.length).padStart(2,'0')} VIEWS</span><p>기획을, 눈앞의 장면으로.</p></div>
+    return `<section class="spatial-study${p.cad?' spatial-cad':''}" aria-label="${E(w.title)} 공간·디자인 프레젠테이션">
+      <div class="spatial-head"><span>${p.cad?'MODEL VIEWS / ORTHOGRAPHIC':'DESIGN STUDY'}</span><p>${p.cad?'하나의 구조, 다섯 개의 시점.':'기획을, 눈앞의 장면으로.'}</p></div>
       <div class="spatial-tabs" role="tablist" aria-label="도면과 이미지 선택">${p.assets.map((a,i) => `<button type="button" role="tab" data-spatial-tab="${i}" id="${id}-tab-${i}" aria-controls="${id}-panel-${i}" aria-selected="${i===0}" tabindex="${i===0?0:-1}">${E(a.label)}</button>`).join('')}</div>
       ${p.assets.map((a,i) => `<div class="spatial-panel" role="tabpanel" id="${id}-panel-${i}" aria-labelledby="${id}-tab-${i}" ${i?'hidden':''}>
         ${visual(a,w,i)}
-        <div class="spatial-caption"><p>${E(a.caption)}</p><div>${link(a.model||a.drawing||a.src,a.model?'3D 크게 열기':'크게 보기')}${a.drawing?link(a.drawing,'SVG 도면 원본'):''}</div></div>
+        <div class="spatial-caption"><p><small>${E(a.kind)}</small>${E(a.caption)}</p><div>${link(a.model||a.src,a.model?'3D 크게 열기':'크게 보기')}${a.drawing&&a.drawing!==a.src?link(a.drawing,'선 도면 SVG'):''}${a.glb?link(a.glb,'3D 모델 GLB'):''}</div></div>
       </div>`).join('')}
     </section>`;
   }

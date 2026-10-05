@@ -19,6 +19,7 @@
  show(parse());
  if(!boot.preview)return;
  document.documentElement.classList.add('cms-preview');
+ const editorStyle=document.createElement('style');editorStyle.textContent='.cms-preview .cms-selected{outline:2px solid #233955;outline-offset:4px}.cms-preview[data-cms-mode=text] main :is(h1,h2,h3,h4,p,li,dd,dt,figcaption):hover,.cms-preview[data-cms-mode=image] main img:hover,.cms-preview[data-cms-mode=link] main a:hover{outline:1px dashed #7692b7;outline-offset:3px}';document.head.append(editorStyle);
  const send=value=>parent.postMessage(value,location.origin);
  document.addEventListener('click',e=>{
   if(e.target.closest('.spatial-tabs,.spatial-launch,.bx-bar,.tap-guard'))return;

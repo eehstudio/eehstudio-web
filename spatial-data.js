@@ -3,37 +3,70 @@ window.EEH_SPATIAL_DATA = {
     "recette-booth": {
       "assets": [
         {
-          "src": "images/studies/recette-booth/front-elevation.svg",
+          "src": "space/cad/recette-booth/iso.webp",
+          "drawing": "space/cad/recette-booth/iso.svg",
+          "label": "01 아이소",
+          "caption": "정면 15,000×4,000mm는 원본 표기. 깊이와 일부 집기는 원본 렌더 비례 재구성입니다. 원본 공간 렌더 DITTE, 부스 그래픽 EEH 디렉터 작업 기록.",
+          "kind": "AXONOMETRIC",
+          "width": 1800,
+          "height": 1468,
+          "view": "iso"
+        },
+        {
+          "src": "space/cad/recette-booth/plan.svg",
+          "drawing": "space/cad/recette-booth/plan.svg",
+          "label": "02 평면",
+          "caption": "정면 15,000×4,000mm는 원본 표기. 깊이와 일부 집기는 원본 렌더 비례 재구성입니다. 원본 공간 렌더 DITTE, 부스 그래픽 EEH 디렉터 작업 기록.",
+          "kind": "PLAN / TOP",
+          "width": 1800,
+          "height": 757,
+          "view": "plan"
+        },
+        {
+          "src": "space/cad/recette-booth/front.svg",
+          "drawing": "space/cad/recette-booth/front.svg",
+          "label": "03 정면",
+          "caption": "정면 15,000×4,000mm는 원본 표기. 깊이와 일부 집기는 원본 렌더 비례 재구성입니다. 원본 공간 렌더 DITTE, 부스 그래픽 EEH 디렉터 작업 기록.",
+          "kind": "FRONT ELEVATION",
+          "width": 1800,
+          "height": 599,
+          "view": "front"
+        },
+        {
+          "src": "space/cad/recette-booth/left.svg",
+          "drawing": "space/cad/recette-booth/left.svg",
+          "label": "04 좌측",
+          "caption": "정면 15,000×4,000mm는 원본 표기. 깊이와 일부 집기는 원본 렌더 비례 재구성입니다. 원본 공간 렌더 DITTE, 부스 그래픽 EEH 디렉터 작업 기록.",
+          "kind": "LEFT ELEVATION",
+          "width": 1800,
+          "height": 1352,
+          "view": "left"
+        },
+        {
+          "src": "space/cad/recette-booth/right.svg",
+          "drawing": "space/cad/recette-booth/right.svg",
+          "label": "05 우측",
+          "caption": "정면 15,000×4,000mm는 원본 표기. 깊이와 일부 집기는 원본 렌더 비례 재구성입니다. 원본 공간 렌더 DITTE, 부스 그래픽 EEH 디렉터 작업 기록.",
+          "kind": "RIGHT ELEVATION",
+          "width": 1800,
+          "height": 1352,
+          "view": "right"
+        },
+        {
+          "src": "space/cad/recette-booth/iso.webp",
+          "label": "06 직접 돌려보기",
           "model": "space/viewer.html?project=recette-booth",
-          "label": "직접 돌려보는 3D",
-          "caption": "정면 15m·높이 4m 원본 기준 · 깊이·집기 세부는 개념 재구성 · 원공간 렌더 DITTE · 드래그 회전·확대와 탑뷰를 지원합니다.",
-          "kind": "인터랙티브 3D"
-        },
-        {
-          "src": "images/studies/recette-booth/exec-3fcc3bbb-412f-4613-8150-2446de7e8a8e.webp",
-          "label": "3D 부스 시각화",
-          "caption": "기존 부스·그래픽 기획안을 재구성한 AI 3D 프레젠테이션. 원본 공간 렌더: DITTE · 황윤희: 신세계푸드 브랜드디자인팀, 부스 그래픽·ISP 디자인.",
-          "kind": "AI 공간 시안"
-        },
-        {
-          "src": "images/studies/recette-booth/recette-booth-front-elevation.webp",
-          "label": "정면 입면도",
-          "caption": "원본에 기재된 치수만 반영한 입면 재도면. 원본 공간 렌더: DITTE · 부스 그래픽·ISP: 황윤희, 신세계푸드 브랜드디자인팀.",
-          "kind": "원본 기반 재도면",
-          "drawing": "images/studies/recette-booth/front-elevation.svg"
-        },
-        {
-          "src": "images/studies/recette-booth/recette-booth-display-wall-detail.webp",
-          "label": "진열 벽면 상세",
-          "caption": "원본에 기재된 치수만 반영한 입면 재도면. 원본 공간 렌더: DITTE · 부스 그래픽·ISP: 황윤희, 신세계푸드 브랜드디자인팀.",
-          "kind": "원본 기반 재도면",
-          "drawing": "images/studies/recette-booth/display-wall-detail.svg"
+          "glb": "space/cad/recette-booth/model.glb",
+          "caption": "드래그로 회전하고, 휠로 확대합니다. 재질·백색 모형·선 도면을 선택할 수 있습니다. 정면 15,000×4,000mm는 원본 표기. 깊이와 일부 집기는 원본 렌더 비례 재구성입니다. 원본 공간 렌더 DITTE, 부스 그래픽 EEH 디렉터 작업 기록.",
+          "kind": "INTERACTIVE 3D"
         },
         {
           "src": "images/pf/recette-booth/x/b05.jpg",
           "label": "실제 현장",
-          "caption": "2023 서울카페쇼 실제 부스 사진.",
-          "kind": "현장 사진"
+          "caption": "2023 서울카페쇼 부스 현장. 원공간 렌더 DITTE · 부스 그래픽·ISP 황윤희, 신세계푸드 브랜드디자인팀.",
+          "kind": "SOURCE / REFERENCE",
+          "width": 2400,
+          "height": 1350
         }
       ],
       "client": {
@@ -47,10 +80,12 @@ window.EEH_SPATIAL_DATA = {
           },
           {
             "label": "2023 카페쇼 공식 현장 보도",
-            "url": "https://www.shinsegaegroupnewsroom.com/116328/"
+            "url": "https://www.shinsegaegroupnewsroom.com/shinsegae-food-cafe-owners-lessette/"
           }
         ]
-      }
+      },
+      "cad": true,
+      "note": "정면 15,000×4,000mm는 원본 표기. 깊이와 일부 집기는 원본 렌더 비례 재구성입니다. 원본 공간 렌더 DITTE, 부스 그래픽 EEH 디렉터 작업 기록."
     },
     "red-sky": {
       "assets": [
@@ -287,31 +322,70 @@ window.EEH_SPATIAL_DATA = {
     "king-of-kings": {
       "assets": [
         {
-          "src": "images/studies/king-of-kings/axonometric.svg",
+          "src": "space/cad/king-of-kings/iso.webp",
+          "drawing": "space/cad/king-of-kings/iso.svg",
+          "label": "01 아이소",
+          "caption": "원본 배치안의 비례를 보존한 구조 모델. 실제 치수·천장고가 없어 높이는 시각화 가정이며 NTS로 표시합니다.",
+          "kind": "AXONOMETRIC",
+          "width": 1800,
+          "height": 1412,
+          "view": "iso"
+        },
+        {
+          "src": "space/cad/king-of-kings/plan.svg",
+          "drawing": "space/cad/king-of-kings/plan.svg",
+          "label": "02 평면",
+          "caption": "원본 배치안의 비례를 보존한 구조 모델. 실제 치수·천장고가 없어 높이는 시각화 가정이며 NTS로 표시합니다.",
+          "kind": "PLAN / TOP",
+          "width": 1800,
+          "height": 1072,
+          "view": "plan"
+        },
+        {
+          "src": "space/cad/king-of-kings/front.svg",
+          "drawing": "space/cad/king-of-kings/front.svg",
+          "label": "03 정면",
+          "caption": "원본 배치안의 비례를 보존한 구조 모델. 실제 치수·천장고가 없어 높이는 시각화 가정이며 NTS로 표시합니다.",
+          "kind": "FRONT ELEVATION",
+          "width": 1800,
+          "height": 585,
+          "view": "front"
+        },
+        {
+          "src": "space/cad/king-of-kings/left.svg",
+          "drawing": "space/cad/king-of-kings/left.svg",
+          "label": "04 좌측",
+          "caption": "원본 배치안의 비례를 보존한 구조 모델. 실제 치수·천장고가 없어 높이는 시각화 가정이며 NTS로 표시합니다.",
+          "kind": "LEFT ELEVATION",
+          "width": 1800,
+          "height": 916,
+          "view": "left"
+        },
+        {
+          "src": "space/cad/king-of-kings/right.svg",
+          "drawing": "space/cad/king-of-kings/right.svg",
+          "label": "05 우측",
+          "caption": "원본 배치안의 비례를 보존한 구조 모델. 실제 치수·천장고가 없어 높이는 시각화 가정이며 NTS로 표시합니다.",
+          "kind": "RIGHT ELEVATION",
+          "width": 1800,
+          "height": 916,
+          "view": "right"
+        },
+        {
+          "src": "space/cad/king-of-kings/iso.webp",
+          "label": "06 직접 돌려보기",
           "model": "space/viewer.html?project=king-of-kings",
-          "label": "직접 돌려보는 3D",
-          "caption": "원본 평면 배치 기반 · 높이는 공간 구성을 설명하는 개념 표현 · 드래그 회전·확대와 탑뷰를 지원합니다.",
-          "kind": "인터랙티브 3D"
-        },
-        {
-          "src": "images/studies/king-of-kings/king-of-kings-axonometric.webp",
-          "label": "3D 아이소메트릭",
-          "caption": "원본 평면의 집기·존 배치를 유지한 재도면. 치수 없는 개념도(NTS)이며 3D 높이는 공간 이해를 위한 표현입니다.",
-          "kind": "원본 기반 재도면",
-          "drawing": "images/studies/king-of-kings/axonometric.svg"
-        },
-        {
-          "src": "images/studies/king-of-kings/king-of-kings-plan.webp",
-          "label": "2D 평면도",
-          "caption": "원본 평면의 집기·존 배치를 유지한 재도면. 치수 없는 개념도(NTS)이며 3D 높이는 공간 이해를 위한 표현입니다.",
-          "kind": "원본 기반 재도면",
-          "drawing": "images/studies/king-of-kings/plan.svg"
+          "glb": "space/cad/king-of-kings/model.glb",
+          "caption": "드래그로 회전하고, 휠로 확대합니다. 재질·백색 모형·선 도면을 선택할 수 있습니다. 원본 배치안의 비례를 보존한 구조 모델. 실제 치수·천장고가 없어 높이는 시각화 가정이며 NTS로 표시합니다.",
+          "kind": "INTERACTIVE 3D"
         },
         {
           "src": "images/pf/king-of-kings/07.jpg",
-          "label": "원본 기획",
-          "caption": "원본 기획안에 수록된 공간 배치 자료.",
-          "kind": "원본 자료"
+          "label": "원본 배치안",
+          "caption": "공간별 프로그램과 배치를 담은 원본 기획안.",
+          "kind": "SOURCE / REFERENCE",
+          "width": 1600,
+          "height": 900
         }
       ],
       "client": {
@@ -328,36 +402,77 @@ window.EEH_SPATIAL_DATA = {
             "url": "https://www.angel.com/watch/king-of-kings"
           }
         ]
-      }
+      },
+      "cad": true,
+      "note": "원본 배치안의 비례를 보존한 구조 모델. 실제 치수·천장고가 없어 높이는 시각화 가정이며 NTS로 표시합니다."
     },
     "lifemeal-yeonnam": {
       "assets": [
         {
-          "src": "images/studies/lifemeal-yeonnam/axonometric.svg",
+          "src": "space/cad/lifemeal-yeonnam/iso.webp",
+          "drawing": "space/cad/lifemeal-yeonnam/iso.svg",
+          "label": "01 아이소",
+          "caption": "원본 배치안의 비례를 보존한 구조 모델. 실제 치수·천장고가 없어 높이는 시각화 가정이며 NTS로 표시합니다.",
+          "kind": "AXONOMETRIC",
+          "width": 1800,
+          "height": 1412,
+          "view": "iso"
+        },
+        {
+          "src": "space/cad/lifemeal-yeonnam/plan.svg",
+          "drawing": "space/cad/lifemeal-yeonnam/plan.svg",
+          "label": "02 평면",
+          "caption": "원본 배치안의 비례를 보존한 구조 모델. 실제 치수·천장고가 없어 높이는 시각화 가정이며 NTS로 표시합니다.",
+          "kind": "PLAN / TOP",
+          "width": 1800,
+          "height": 1072,
+          "view": "plan"
+        },
+        {
+          "src": "space/cad/lifemeal-yeonnam/front.svg",
+          "drawing": "space/cad/lifemeal-yeonnam/front.svg",
+          "label": "03 정면",
+          "caption": "원본 배치안의 비례를 보존한 구조 모델. 실제 치수·천장고가 없어 높이는 시각화 가정이며 NTS로 표시합니다.",
+          "kind": "FRONT ELEVATION",
+          "width": 1800,
+          "height": 585,
+          "view": "front"
+        },
+        {
+          "src": "space/cad/lifemeal-yeonnam/left.svg",
+          "drawing": "space/cad/lifemeal-yeonnam/left.svg",
+          "label": "04 좌측",
+          "caption": "원본 배치안의 비례를 보존한 구조 모델. 실제 치수·천장고가 없어 높이는 시각화 가정이며 NTS로 표시합니다.",
+          "kind": "LEFT ELEVATION",
+          "width": 1800,
+          "height": 916,
+          "view": "left"
+        },
+        {
+          "src": "space/cad/lifemeal-yeonnam/right.svg",
+          "drawing": "space/cad/lifemeal-yeonnam/right.svg",
+          "label": "05 우측",
+          "caption": "원본 배치안의 비례를 보존한 구조 모델. 실제 치수·천장고가 없어 높이는 시각화 가정이며 NTS로 표시합니다.",
+          "kind": "RIGHT ELEVATION",
+          "width": 1800,
+          "height": 916,
+          "view": "right"
+        },
+        {
+          "src": "space/cad/lifemeal-yeonnam/iso.webp",
+          "label": "06 직접 돌려보기",
           "model": "space/viewer.html?project=lifemeal-yeonnam",
-          "label": "직접 돌려보는 3D",
-          "caption": "원본 평면 배치 기반 · 높이는 공간 구성을 설명하는 개념 표현 · 드래그 회전·확대와 탑뷰를 지원합니다.",
-          "kind": "인터랙티브 3D"
-        },
-        {
-          "src": "images/studies/lifemeal-yeonnam/lifemeal-yeonnam-axonometric.webp",
-          "label": "3D 아이소메트릭",
-          "caption": "팔시보 팝업 기획안의 6개 존과 집기 배치를 재도면했습니다. 치수 없는 개념도(NTS)이며 3D 높이는 개념 표현입니다.",
-          "kind": "원본 기반 재도면",
-          "drawing": "images/studies/lifemeal-yeonnam/axonometric.svg"
-        },
-        {
-          "src": "images/studies/lifemeal-yeonnam/lifemeal-yeonnam-plan.webp",
-          "label": "2D 평면도",
-          "caption": "팔시보 팝업 기획안의 6개 존과 집기 배치를 재도면했습니다. 치수 없는 개념도(NTS)이며 3D 높이는 개념 표현입니다.",
-          "kind": "원본 기반 재도면",
-          "drawing": "images/studies/lifemeal-yeonnam/plan.svg"
+          "glb": "space/cad/lifemeal-yeonnam/model.glb",
+          "caption": "드래그로 회전하고, 휠로 확대합니다. 재질·백색 모형·선 도면을 선택할 수 있습니다. 원본 배치안의 비례를 보존한 구조 모델. 실제 치수·천장고가 없어 높이는 시각화 가정이며 NTS로 표시합니다.",
+          "kind": "INTERACTIVE 3D"
         },
         {
           "src": "images/pf/lifemeal-yeonnam/03.jpg",
-          "label": "원본 기획",
-          "caption": "원본 공간 배치·시뮬레이션 기획 장표.",
-          "kind": "원본 자료"
+          "label": "원본 배치안",
+          "caption": "연남 팝업 원본 배치안. 마트·루틴 체험·6인 오마카세 구성을 대조했습니다.",
+          "kind": "SOURCE / REFERENCE",
+          "width": 1600,
+          "height": 900
         }
       ],
       "client": {
@@ -378,28 +493,77 @@ window.EEH_SPATIAL_DATA = {
             "url": "https://www.instagram.com/palcibostore/"
           }
         ]
-      }
+      },
+      "cad": true,
+      "note": "원본 배치안의 비례를 보존한 구조 모델. 실제 치수·천장고가 없어 높이는 시각화 가정이며 NTS로 표시합니다."
     },
     "hotel-1997": {
       "assets": [
         {
-          "src": "images/pf/hotel-1997/x/sim-lobby.jpg",
-          "label": "3D 로비 시각화",
-          "caption": "원본 가구 배치를 바탕으로 제작한 로비 시뮬레이션. 실제 시공 결과와 구분되는 공간 제안입니다.",
-          "kind": "공간 시뮬레이션"
+          "src": "space/cad/hotel-1997/iso.webp",
+          "drawing": "space/cad/hotel-1997/iso.svg",
+          "label": "01 아이소",
+          "caption": "원본 3,030×2,180mm 벽면 구성의 부분 모델. 전체 행사장 평면이나 실측 시공도가 아닙니다.",
+          "kind": "AXONOMETRIC",
+          "width": 1800,
+          "height": 1500,
+          "view": "iso"
         },
         {
-          "src": "images/studies/hotel-1997/hotel-1997-lobby-elevation.webp",
-          "label": "로비 입면도",
-          "caption": "원본 현황 사진과 가구 제안을 재구성한 입면. 3,030 × 2,180mm는 벽의 너비 × 높이입니다.",
-          "kind": "원본 기반 재도면",
-          "drawing": "images/studies/hotel-1997/lobby-elevation.svg"
+          "src": "space/cad/hotel-1997/plan.svg",
+          "drawing": "space/cad/hotel-1997/plan.svg",
+          "label": "02 평면",
+          "caption": "원본 3,030×2,180mm 벽면 구성의 부분 모델. 전체 행사장 평면이나 실측 시공도가 아닙니다.",
+          "kind": "PLAN / TOP",
+          "width": 1800,
+          "height": 880,
+          "view": "plan"
+        },
+        {
+          "src": "space/cad/hotel-1997/front.svg",
+          "drawing": "space/cad/hotel-1997/front.svg",
+          "label": "03 정면",
+          "caption": "원본 3,030×2,180mm 벽면 구성의 부분 모델. 전체 행사장 평면이나 실측 시공도가 아닙니다.",
+          "kind": "FRONT ELEVATION",
+          "width": 1800,
+          "height": 1322,
+          "view": "front"
+        },
+        {
+          "src": "space/cad/hotel-1997/left.svg",
+          "drawing": "space/cad/hotel-1997/left.svg",
+          "label": "04 좌측",
+          "caption": "원본 3,030×2,180mm 벽면 구성의 부분 모델. 전체 행사장 평면이나 실측 시공도가 아닙니다.",
+          "kind": "LEFT ELEVATION",
+          "width": 1800,
+          "height": 1500,
+          "view": "left"
+        },
+        {
+          "src": "space/cad/hotel-1997/right.svg",
+          "drawing": "space/cad/hotel-1997/right.svg",
+          "label": "05 우측",
+          "caption": "원본 3,030×2,180mm 벽면 구성의 부분 모델. 전체 행사장 평면이나 실측 시공도가 아닙니다.",
+          "kind": "RIGHT ELEVATION",
+          "width": 1800,
+          "height": 1500,
+          "view": "right"
+        },
+        {
+          "src": "space/cad/hotel-1997/iso.webp",
+          "label": "06 직접 돌려보기",
+          "model": "space/viewer.html?project=hotel-1997",
+          "glb": "space/cad/hotel-1997/model.glb",
+          "caption": "드래그로 회전하고, 휠로 확대합니다. 재질·백색 모형·선 도면을 선택할 수 있습니다. 원본 3,030×2,180mm 벽면 구성의 부분 모델. 전체 행사장 평면이나 실측 시공도가 아닙니다.",
+          "kind": "INTERACTIVE 3D"
         },
         {
           "src": "images/pf/hotel-1997/04.jpg",
-          "label": "원본 배치안",
-          "caption": "벽면 치수와 가구 구성의 원본 제안.",
-          "kind": "원본 자료"
+          "label": "원본 로비안",
+          "caption": "벽면 가구와 아트워크를 구성한 원본 로비 연출안.",
+          "kind": "SOURCE / REFERENCE",
+          "width": 1600,
+          "height": 900
         }
       ],
       "client": {
@@ -407,29 +571,77 @@ window.EEH_SPATIAL_DATA = {
         "relation": "클라이언트 · 숙박 브랜드",
         "intro": "호텔 로비와 입구의 첫인상을 다듬는 공간 브랜딩 제안입니다.",
         "links": []
-      }
+      },
+      "cad": true,
+      "note": "원본 3,030×2,180mm 벽면 구성의 부분 모델. 전체 행사장 평면이나 실측 시공도가 아닙니다."
     },
     "immersive-2021": {
       "assets": [
         {
-          "src": "images/studies/immersive-2021/exhibition-plan.svg",
-          "model": "space/viewer.html?project=immersive-2021",
-          "label": "직접 돌려보는 3D",
-          "caption": "원본 평면 배치 기반 · 높이는 공간 구성을 설명하는 개념 표현 · 드래그 회전·확대와 탑뷰를 지원합니다.",
-          "kind": "인터랙티브 3D"
+          "src": "space/cad/immersive-2021/iso.webp",
+          "drawing": "space/cad/immersive-2021/iso.svg",
+          "label": "01 아이소",
+          "caption": "원본 전시 평면의 구획과 배치 비례를 보존했습니다. 높이는 시각화 가정이며 NTS입니다.",
+          "kind": "AXONOMETRIC",
+          "width": 1800,
+          "height": 1373,
+          "view": "iso"
         },
         {
-          "src": "images/studies/immersive-2021/immersive-2021-exhibition-plan.webp",
-          "label": "2D 전시 동선",
-          "caption": "〈예수님과 함께한 마지막 7일〉 원본 기획안의 전시 코스와 공간 배치를 유지한 동선도. NTS.",
-          "kind": "원본 기반 재도면",
-          "drawing": "images/studies/immersive-2021/exhibition-plan.svg"
+          "src": "space/cad/immersive-2021/plan.svg",
+          "drawing": "space/cad/immersive-2021/plan.svg",
+          "label": "02 평면",
+          "caption": "원본 전시 평면의 구획과 배치 비례를 보존했습니다. 높이는 시각화 가정이며 NTS입니다.",
+          "kind": "PLAN / TOP",
+          "width": 1800,
+          "height": 1036,
+          "view": "plan"
+        },
+        {
+          "src": "space/cad/immersive-2021/front.svg",
+          "drawing": "space/cad/immersive-2021/front.svg",
+          "label": "03 정면",
+          "caption": "원본 전시 평면의 구획과 배치 비례를 보존했습니다. 높이는 시각화 가정이며 NTS입니다.",
+          "kind": "FRONT ELEVATION",
+          "width": 1800,
+          "height": 540,
+          "view": "front"
+        },
+        {
+          "src": "space/cad/immersive-2021/left.svg",
+          "drawing": "space/cad/immersive-2021/left.svg",
+          "label": "04 좌측",
+          "caption": "원본 전시 평면의 구획과 배치 비례를 보존했습니다. 높이는 시각화 가정이며 NTS입니다.",
+          "kind": "LEFT ELEVATION",
+          "width": 1800,
+          "height": 838,
+          "view": "left"
+        },
+        {
+          "src": "space/cad/immersive-2021/right.svg",
+          "drawing": "space/cad/immersive-2021/right.svg",
+          "label": "05 우측",
+          "caption": "원본 전시 평면의 구획과 배치 비례를 보존했습니다. 높이는 시각화 가정이며 NTS입니다.",
+          "kind": "RIGHT ELEVATION",
+          "width": 1800,
+          "height": 838,
+          "view": "right"
+        },
+        {
+          "src": "space/cad/immersive-2021/iso.webp",
+          "label": "06 직접 돌려보기",
+          "model": "space/viewer.html?project=immersive-2021",
+          "glb": "space/cad/immersive-2021/model.glb",
+          "caption": "드래그로 회전하고, 휠로 확대합니다. 재질·백색 모형·선 도면을 선택할 수 있습니다. 원본 전시 평면의 구획과 배치 비례를 보존했습니다. 높이는 시각화 가정이며 NTS입니다.",
+          "kind": "INTERACTIVE 3D"
         },
         {
           "src": "images/pf/immersive-2021/03.jpg",
-          "label": "원본 기획",
-          "caption": "체험 전시의 원본 공간·동선 기획.",
-          "kind": "원본 자료"
+          "label": "원본 배치안",
+          "caption": "전시 구획과 집기 위치를 담은 원본 기획안.",
+          "kind": "SOURCE / REFERENCE",
+          "width": 1600,
+          "height": 900
         }
       ],
       "client": {
@@ -450,36 +662,85 @@ window.EEH_SPATIAL_DATA = {
             "url": "https://www.instagram.com/space.cor/"
           }
         ]
-      }
+      },
+      "cad": true,
+      "note": "원본 전시 평면의 구획과 배치 비례를 보존했습니다. 높이는 시각화 가정이며 NTS입니다."
     },
     "social-value-market": {
       "assets": [
         {
-          "src": "images/studies/social-value-market/crate-axonometric.svg",
-          "model": "svm/booth3d.html",
-          "label": "직접 돌려보는 3D",
-          "caption": "원본 부스 모델을 직접 드래그해 돌려볼 수 있습니다. 시점은 조작한 위치에 정지합니다.",
-          "kind": "인터랙티브 3D"
+          "src": "space/cad/social-value-market/iso.webp",
+          "drawing": "space/cad/social-value-market/iso.svg",
+          "label": "01 아이소",
+          "caption": "현장 사진으로 재구성. 부스 3×3m는 기획 규격이며 집기 높이·간격은 사진 비례 추정입니다.",
+          "kind": "AXONOMETRIC",
+          "width": 1800,
+          "height": 1500,
+          "view": "iso"
         },
         {
-          "src": "images/studies/social-value-market/social-value-market-crate-axonometric.webp",
-          "label": "3D 아이소메트릭",
-          "caption": "원본 웹 3D 부스의 집기 좌표를 바탕으로 재구성한 배치·아이소메트릭 도판. NTS.",
-          "kind": "원본 기반 재도면",
-          "drawing": "images/studies/social-value-market/crate-axonometric.svg"
+          "src": "space/cad/social-value-market/plan.svg",
+          "drawing": "space/cad/social-value-market/plan.svg",
+          "label": "02 평면",
+          "caption": "현장 사진으로 재구성. 부스 3×3m는 기획 규격이며 집기 높이·간격은 사진 비례 추정입니다.",
+          "kind": "PLAN / TOP",
+          "width": 1800,
+          "height": 1454,
+          "view": "plan"
         },
         {
-          "src": "images/studies/social-value-market/social-value-market-crate-plan.webp",
-          "label": "2D 배치도",
-          "caption": "원본 웹 3D 부스의 집기 좌표를 바탕으로 재구성한 배치·아이소메트릭 도판. NTS.",
-          "kind": "원본 기반 재도면",
-          "drawing": "images/studies/social-value-market/crate-plan.svg"
+          "src": "space/cad/social-value-market/front.svg",
+          "drawing": "space/cad/social-value-market/front.svg",
+          "label": "03 정면",
+          "caption": "현장 사진으로 재구성. 부스 3×3m는 기획 규격이며 집기 높이·간격은 사진 비례 추정입니다.",
+          "kind": "FRONT ELEVATION",
+          "width": 1800,
+          "height": 1396,
+          "view": "front"
         },
         {
-          "src": "images/svm-booth.jpg",
-          "label": "실제 현장",
-          "caption": "CSES SOCIAL VALUE MARKET 실제 부스 현장.",
-          "kind": "현장 사진"
+          "src": "space/cad/social-value-market/left.svg",
+          "drawing": "space/cad/social-value-market/left.svg",
+          "label": "04 좌측",
+          "caption": "현장 사진으로 재구성. 부스 3×3m는 기획 규격이며 집기 높이·간격은 사진 비례 추정입니다.",
+          "kind": "LEFT ELEVATION",
+          "width": 1800,
+          "height": 1500,
+          "view": "left"
+        },
+        {
+          "src": "space/cad/social-value-market/right.svg",
+          "drawing": "space/cad/social-value-market/right.svg",
+          "label": "05 우측",
+          "caption": "현장 사진으로 재구성. 부스 3×3m는 기획 규격이며 집기 높이·간격은 사진 비례 추정입니다.",
+          "kind": "RIGHT ELEVATION",
+          "width": 1800,
+          "height": 1500,
+          "view": "right"
+        },
+        {
+          "src": "space/cad/social-value-market/iso.webp",
+          "label": "06 직접 돌려보기",
+          "model": "space/viewer.html?project=social-value-market",
+          "glb": "space/cad/social-value-market/model.glb",
+          "caption": "드래그로 회전하고, 휠로 확대합니다. 재질·백색 모형·선 도면을 선택할 수 있습니다. 현장 사진으로 재구성. 부스 3×3m는 기획 규격이며 집기 높이·간격은 사진 비례 추정입니다.",
+          "kind": "INTERACTIVE 3D"
+        },
+        {
+          "src": "images/svm-hall.jpg",
+          "label": "현장 전경",
+          "caption": "현장 사진 · 후면과 왼쪽 벽체, 전면·우측 개방 구조를 대조했습니다.",
+          "kind": "SOURCE / REFERENCE",
+          "width": 1920,
+          "height": 1280
+        },
+        {
+          "src": "images/svm-crates.jpg",
+          "label": "진열 상세",
+          "caption": "현장 사진 · 목재 진열함과 크레이트, 체크 패브릭을 구조 모델에 반영했습니다.",
+          "kind": "SOURCE / REFERENCE",
+          "width": 1920,
+          "height": 1440
         }
       ],
       "client": {
@@ -500,36 +761,77 @@ window.EEH_SPATIAL_DATA = {
             "url": "https://socialvalueconnect.com/community/1953.do"
           }
         ]
-      }
+      },
+      "cad": true,
+      "note": "현장 사진으로 재구성. 부스 3×3m는 기획 규격이며 집기 높이·간격은 사진 비례 추정입니다."
     },
     "freeze-lab": {
       "assets": [
         {
-          "src": "images/studies/freeze-lab/model-axonometric.svg",
-          "model": "fl/booth3d.html?embed=1",
-          "label": "직접 돌려보는 3D",
-          "caption": "원본 R02 모델을 직접 회전·확대하고 정면·측면·탑뷰로 볼 수 있습니다. 자동 회전은 기본으로 꺼져 있습니다.",
-          "kind": "인터랙티브 3D"
+          "src": "space/cad/freeze-lab/iso.webp",
+          "drawing": "space/cad/freeze-lab/iso.svg",
+          "label": "01 아이소",
+          "caption": "원본 R02 GLB에서 직접 추출한 동일 형상의 정투영입니다. 실측 현황도가 아닌 제작 전 모델 기록입니다.",
+          "kind": "AXONOMETRIC",
+          "width": 1800,
+          "height": 1098,
+          "view": "iso"
         },
         {
-          "src": "images/studies/freeze-lab/freeze-lab-model-axonometric.webp",
-          "label": "3D 모델 투영",
-          "caption": "FREEZE LAB 원본 GLB R02 모델의 메시를 직접 투영했습니다. 모델 형상에 근거한 프레젠테이션 도면입니다.",
-          "kind": "원본 기반 재도면",
-          "drawing": "images/studies/freeze-lab/model-axonometric.svg"
+          "src": "space/cad/freeze-lab/plan.svg",
+          "drawing": "space/cad/freeze-lab/plan.svg",
+          "label": "02 평면",
+          "caption": "원본 R02 GLB에서 직접 추출한 동일 형상의 정투영입니다. 실측 현황도가 아닌 제작 전 모델 기록입니다.",
+          "kind": "PLAN / TOP",
+          "width": 1800,
+          "height": 1379,
+          "view": "plan"
         },
         {
-          "src": "images/studies/freeze-lab/freeze-lab-model-plan.webp",
-          "label": "2D 모델 평면",
-          "caption": "FREEZE LAB 원본 GLB R02 모델의 메시를 직접 투영했습니다. 모델 형상에 근거한 프레젠테이션 도면입니다.",
-          "kind": "원본 기반 재도면",
-          "drawing": "images/studies/freeze-lab/model-plan.svg"
+          "src": "space/cad/freeze-lab/front.svg",
+          "drawing": "space/cad/freeze-lab/front.svg",
+          "label": "03 정면",
+          "caption": "원본 R02 GLB에서 직접 추출한 동일 형상의 정투영입니다. 실측 현황도가 아닌 제작 전 모델 기록입니다.",
+          "kind": "FRONT ELEVATION",
+          "width": 1800,
+          "height": 608,
+          "view": "front"
+        },
+        {
+          "src": "space/cad/freeze-lab/left.svg",
+          "drawing": "space/cad/freeze-lab/left.svg",
+          "label": "04 좌측",
+          "caption": "원본 R02 GLB에서 직접 추출한 동일 형상의 정투영입니다. 실측 현황도가 아닌 제작 전 모델 기록입니다.",
+          "kind": "LEFT ELEVATION",
+          "width": 1800,
+          "height": 757,
+          "view": "left"
+        },
+        {
+          "src": "space/cad/freeze-lab/right.svg",
+          "drawing": "space/cad/freeze-lab/right.svg",
+          "label": "05 우측",
+          "caption": "원본 R02 GLB에서 직접 추출한 동일 형상의 정투영입니다. 실측 현황도가 아닌 제작 전 모델 기록입니다.",
+          "kind": "RIGHT ELEVATION",
+          "width": 1800,
+          "height": 757,
+          "view": "right"
+        },
+        {
+          "src": "space/cad/freeze-lab/iso.webp",
+          "label": "06 직접 돌려보기",
+          "model": "space/viewer.html?project=freeze-lab",
+          "glb": "fl/booth.glb",
+          "caption": "드래그로 회전하고, 휠로 확대합니다. 재질·백색 모형·선 도면을 선택할 수 있습니다. 원본 R02 GLB에서 직접 추출한 동일 형상의 정투영입니다. 실측 현황도가 아닌 제작 전 모델 기록입니다.",
+          "kind": "INTERACTIVE 3D"
         },
         {
           "src": "images/pf/fl-site/01.jpg",
           "label": "실제 현장",
-          "caption": "용산 아이파크몰 FREEZE LAB 실제 팝업 현장.",
-          "kind": "현장 사진"
+          "caption": "용산 FREEZE LAB 현장 사진. 위 도면은 원본 R02 모델에서 추출했습니다.",
+          "kind": "SOURCE / REFERENCE",
+          "width": 1800,
+          "height": 1200
         }
       ],
       "client": {
@@ -546,7 +848,9 @@ window.EEH_SPATIAL_DATA = {
             "url": "https://hemily.net/document/sub1_1N"
           }
         ]
-      }
+      },
+      "cad": true,
+      "note": "원본 R02 GLB에서 직접 추출한 동일 형상의 정투영입니다. 실측 현황도가 아닌 제작 전 모델 기록입니다."
     },
     "recette-bi": {
       "assets": [],
@@ -573,10 +877,6 @@ window.EEH_SPATIAL_DATA = {
         "relation": "클라이언트 · 재단",
         "intro": "기독 청년의 문화 활동과 커뮤니티를 지원하는 재단. 영화·음악·미술·IT 등 다양한 분야의 청년들을 연결합니다.",
         "links": [
-          {
-            "label": "KCYCF 공식 사이트",
-            "url": "https://www.kcycf2024.com/"
-          },
           {
             "label": "KCYCF 공식 Instagram",
             "url": "https://www.instagram.com/kcycf.official/"
@@ -670,7 +970,76 @@ window.EEH_SPATIAL_DATA = {
           }
         ]
       },
-      "assets": []
+      "assets": [
+        {
+          "src": "space/cad/cses-2025/iso.webp",
+          "drawing": "space/cad/cses-2025/iso.svg",
+          "label": "01 아이소",
+          "caption": "당시 기획안의 5패널 부스 재구성. 패널 규격은 원본 표기, 꺾임과 집기 배치는 제안 렌더 기준입니다.",
+          "kind": "AXONOMETRIC",
+          "width": 1800,
+          "height": 1500,
+          "view": "iso"
+        },
+        {
+          "src": "space/cad/cses-2025/plan.svg",
+          "drawing": "space/cad/cses-2025/plan.svg",
+          "label": "02 평면",
+          "caption": "당시 기획안의 5패널 부스 재구성. 패널 규격은 원본 표기, 꺾임과 집기 배치는 제안 렌더 기준입니다.",
+          "kind": "PLAN / TOP",
+          "width": 1800,
+          "height": 1500,
+          "view": "plan"
+        },
+        {
+          "src": "space/cad/cses-2025/front.svg",
+          "drawing": "space/cad/cses-2025/front.svg",
+          "label": "03 정면",
+          "caption": "당시 기획안의 5패널 부스 재구성. 패널 규격은 원본 표기, 꺾임과 집기 배치는 제안 렌더 기준입니다.",
+          "kind": "FRONT ELEVATION",
+          "width": 1800,
+          "height": 1428,
+          "view": "front"
+        },
+        {
+          "src": "space/cad/cses-2025/left.svg",
+          "drawing": "space/cad/cses-2025/left.svg",
+          "label": "04 좌측",
+          "caption": "당시 기획안의 5패널 부스 재구성. 패널 규격은 원본 표기, 꺾임과 집기 배치는 제안 렌더 기준입니다.",
+          "kind": "LEFT ELEVATION",
+          "width": 1800,
+          "height": 1472,
+          "view": "left"
+        },
+        {
+          "src": "space/cad/cses-2025/right.svg",
+          "drawing": "space/cad/cses-2025/right.svg",
+          "label": "05 우측",
+          "caption": "당시 기획안의 5패널 부스 재구성. 패널 규격은 원본 표기, 꺾임과 집기 배치는 제안 렌더 기준입니다.",
+          "kind": "RIGHT ELEVATION",
+          "width": 1800,
+          "height": 1472,
+          "view": "right"
+        },
+        {
+          "src": "space/cad/cses-2025/iso.webp",
+          "label": "06 직접 돌려보기",
+          "model": "space/viewer.html?project=cses-2025",
+          "glb": "space/cad/cses-2025/model.glb",
+          "caption": "드래그로 회전하고, 휠로 확대합니다. 재질·백색 모형·선 도면을 선택할 수 있습니다. 당시 기획안의 5패널 부스 재구성. 패널 규격은 원본 표기, 꺾임과 집기 배치는 제안 렌더 기준입니다.",
+          "kind": "INTERACTIVE 3D"
+        },
+        {
+          "src": "images/pf/cses-proposal/x/booth3d.jpg",
+          "label": "원본 제안",
+          "caption": "2025년 당시 제안 렌더. 2026 SOCIAL VALUE MARKET과 별개 프로젝트입니다.",
+          "kind": "SOURCE / REFERENCE",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "cad": true,
+      "note": "당시 기획안의 5패널 부스 재구성. 패널 규격은 원본 표기, 꺾임과 집기 배치는 제안 렌더 기준입니다."
     }
   },
   "created": "2026-10-05",

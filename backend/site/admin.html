@@ -1,13 +1,61 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>EEH STUDIO · 관리자</title><link rel="stylesheet" href="/admin/admin.css"></head><body>
-<header class="top"><a class="brand" href="/admin">EEH STUDIO<span>CONTENT STUDIO</span></a><div><span id="account"></span><a href="https://eehstudio.kr" target="_blank" rel="noopener">사이트 보기 ↗</a><a href="/api/cms/backup">백업 받기</a><a href="/signout-with-chatgpt?return_to=%2F" target="_top">로그아웃</a></div></header>
-<div class="shell"><aside><h1>콘텐츠 관리</h1><p class="side-note">기록을 정리하고,<br>브랜드의 다음 장면을 더하세요.</p><nav class="types"><button data-kind="project" class="active">프로젝트 <b id="project-count"></b></button><button data-kind="note">노트 · 블로그 <b id="note-count"></b></button><button data-kind="site">사이트 공통</button></nav><input id="search" type="search" placeholder="제목·클라이언트 검색" aria-label="콘텐츠 검색"><button class="add" id="new">＋ 새 프로젝트</button><div id="list" aria-label="콘텐츠 목록"></div><p class="side-foot">임시 저장은 관리자에게만 보입니다.<br>‘게시하기’를 누르면 사이트에 반영됩니다.</p></aside>
-<main><div id="empty"><span>EEH / EDITOR</span><h2>어떤 이야기를 다듬을까요?</h2><p>왼쪽에서 프로젝트나 노트를 선택하세요.<br>기존 사진과 3D 도면은 그대로 두고 필요한 부분만 고칠 수 있습니다.</p></div><div id="workspace" hidden>
-<div class="editor-head"><div><small id="kind-label"></small><h2 id="doc-title"></h2><p id="state" role="status"></p></div><div class="actions"><button id="save">임시 저장</button><button id="preview">미리보기</button><button id="publish" class="primary">게시하기</button><button id="unpublish" class="quiet">게시 중단</button></div></div>
-<div class="editor-grid"><section class="form-pane"><nav class="edit-tabs"><button data-tab="info" class="active">기본 정보</button><button data-tab="blocks">본문</button><button data-tab="pick">화면에서 수정</button><button data-tab="history">저장 기록</button></nav>
-<div id="info" class="tab-pane"></div><div id="blocks" class="tab-pane" hidden><p class="help" id="blocks-help"></p><div id="block-list"></div><div class="block-add"><select id="block-type" aria-label="추가할 본문 종류"><option value="p">문단</option><option value="h2">제목</option><option value="blockquote">인용</option><option value="image">이미지</option><option value="link">링크</option></select><button id="add-block">＋ 추가</button></div></div>
-<div id="pick" class="tab-pane" hidden><h3>페이지를 보며 수정하기</h3><p class="help">미리보기에서 바꿀 글자·이미지·링크를 누르세요. 수정 후 임시 저장하거나 게시할 수 있습니다.</p><div class="modes"><button data-mode="text" class="active">텍스트</button><button data-mode="image">이미지</button><button data-mode="link">링크</button></div><div id="picked"><p class="help">오른쪽 미리보기에서 항목을 선택하세요.</p></div></div>
-<div id="history" class="tab-pane" hidden><h3>이전 저장본</h3><p class="help">복원하면 임시 저장본이 바뀝니다. 공개 사이트는 게시하기 전까지 유지됩니다.</p><div id="history-list"></div></div>
-</section><section class="preview-pane"><div class="preview-label"><span>PAGE PREVIEW</span><small>임시 저장본 · 선택한 항목만 편집</small><button id="mobile-preview" aria-pressed="false">모바일 보기</button></div><div id="frame-wrap"><div class="preview-empty">‘미리보기’를 누르면 현재 임시 저장본이 열립니다.</div></div></section></div></div></main></div>
-<dialog id="assets"><div class="dialog-head"><h2>이미지 선택</h2><button id="close-assets" aria-label="닫기">×</button></div><p class="help">원본 파일을 그대로 업로드합니다. JPG · PNG · WebP · GIF, 최대 20MB.</p><div class="asset-tools"><input type="search" id="asset-search" placeholder="프로젝트명·파일명 검색" aria-label="이미지 검색"><button id="asset-upload" class="primary">이미지 업로드</button></div><div id="asset-grid"></div><button id="asset-more">더 보기</button></dialog>
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>EEH STUDIO · 관리자</title><link rel="stylesheet" href="/admin/admin.css">
+</head>
+<body>
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+<div class="shell">
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="#overview" aria-label="EEH STUDIO 대시보드"><span class="brand-mark">e.</span><span>EEH STUDIO<small>사이트 관리</small></span></a>
+    <nav class="navigation" aria-label="관리 메뉴">
+      <button class="nav-item active" data-view="overview"><i data-icon="dashboard"></i><span>대시보드</span></button>
+      <p class="nav-label">콘텐츠</p>
+      <button class="nav-item" data-view="project"><i data-icon="folder"></i><span>프로젝트</span><b id="project-count">0</b></button>
+      <button class="nav-item" data-view="note"><i data-icon="file"></i><span>노트 · 블로그</span><b id="note-count">0</b></button>
+      <p class="nav-label">사이트</p>
+      <button class="nav-item" data-view="site"><i data-icon="sliders"></i><span>사이트 공통</span></button>
+      <button class="nav-item" id="nav-assets"><i data-icon="image"></i><span>이미지 보관함</span></button>
+      <p class="nav-label">데이터</p>
+      <button class="nav-item" data-view="backup"><i data-icon="download"></i><span>백업</span></button>
+    </nav>
+    <div class="sidebar-bottom"><a class="site-link" href="https://eehstudio.kr" target="_blank" rel="noopener"><i data-icon="external"></i> 공개 사이트 보기</a><div class="account"><span class="avatar">E</span><div><strong>사이트 관리자</strong><span id="account">계정 확인 중</span></div></div><a class="signout" href="/signout-with-chatgpt?return_to=%2F" target="_top">로그아웃</a></div>
+  </aside>
+  <div class="main-shell">
+    <header class="topbar"><button class="icon-button menu-button" id="menu-toggle" aria-label="메뉴 열기" aria-expanded="false"><i data-icon="menu"></i></button><div class="breadcrumb"><span>사이트 관리</span><span aria-hidden="true">/</span><strong id="breadcrumb">대시보드</strong></div><button class="global-search" id="open-search" aria-label="콘텐츠 검색"><i data-icon="search"></i><span>콘텐츠 검색</span><kbd>⌘ K</kbd></button><span class="top-avatar" aria-hidden="true">E</span></header>
+    <main id="main" tabindex="-1">
+      <div id="loading" class="loading-state" role="status">콘텐츠를 불러오고 있어요…</div>
+      <div id="error-state" class="empty-state" hidden></div>
+      <section id="overview" hidden>
+        <div class="page-heading"><div><p class="eyebrow">EEH STUDIO</p><h1>대시보드</h1><p>콘텐츠를 살펴보고, 다음 이야기를 이어가세요.</p></div><button class="primary" data-create="project"><i data-icon="plus"></i> 새 프로젝트</button></div>
+        <div class="stats" id="stats"></div>
+        <div class="overview-grid"><section class="card recent-card"><div class="card-heading"><div><h2>최근 수정한 콘텐츠</h2><p>저장한 문서를 이어서 편집하세요.</p></div><button class="text-button" data-view="project">전체 보기</button></div><div id="recent-list"></div></section><div class="overview-rail"><section class="card quick-card"><h2>빠른 작업</h2><button data-create="project"><span class="quick-icon"><i data-icon="folder"></i></span><span><strong>프로젝트 추가</strong><small>새로운 작업을 포트폴리오에</small></span><i data-icon="chevron"></i></button><button data-create="note"><span class="quick-icon"><i data-icon="file"></i></span><span><strong>노트 작성</strong><small>과정과 생각을 기록해 보세요</small></span><i data-icon="chevron"></i></button><button data-view="site"><span class="quick-icon"><i data-icon="sliders"></i></span><span><strong>사이트 정보 수정</strong><small>연락처와 공통 문구 관리</small></span><i data-icon="chevron"></i></button></section><section class="publish-guide"><i data-icon="shield"></i><h2>차분히 다듬고, 준비되면 게시</h2><p>임시 저장은 관리자에게만 보여요.<br>‘게시하기’를 눌러야 사이트에 반영됩니다.</p><span>임시 저장 <i data-icon="chevron"></i> 미리보기 <i data-icon="chevron"></i> 게시하기</span></section></div></div>
+      </section>
+      <section id="content-view" hidden>
+        <div class="page-heading"><div><p class="eyebrow" id="view-eyebrow">CONTENT</p><h1 id="view-title">프로젝트</h1><p id="view-description"></p></div><button class="primary" id="new"><i data-icon="plus"></i><span>새 프로젝트</span></button></div>
+        <section class="card content-card"><div class="table-toolbar"><label class="search-field"><i data-icon="search"></i><input id="search" type="search" placeholder="제목·클라이언트 검색" aria-label="콘텐츠 검색"></label><div class="filters"><select id="status-filter" aria-label="게시 상태 필터"><option value="all">모든 게시 상태</option><option value="published">공개</option><option value="draft">비공개 초안</option><option value="changed">미게시 수정</option><option value="hidden">게시 중단</option></select><select id="category-filter" aria-label="분야 필터"><option value="all">모든 분야</option><option value="brand">브랜딩</option><option value="space">오프라인 전시·팝업</option><option value="marketing">마케팅</option><option value="design">디자인</option></select><select id="sort" aria-label="정렬"><option value="recent">최근 수정순</option><option value="title">제목순</option></select></div></div><div class="table-wrap"><table class="content-table"><thead><tr><th scope="col" id="title-column">프로젝트</th><th scope="col" id="category-column">분야</th><th scope="col">게시 상태</th><th scope="col">최근 수정</th><th scope="col"><span class="sr-only">편집</span></th></tr></thead><tbody id="list"></tbody></table></div><div id="list-empty" class="empty-state" hidden><i data-icon="search"></i><h2>찾는 콘텐츠가 없어요</h2><p>검색어나 필터를 바꿔 보세요.</p><button id="reset-filters">필터 초기화</button></div><footer class="table-footer"><span id="result-count"></span><span>문서를 선택하면 오른쪽에서 편집할 수 있어요.</span></footer></section>
+      </section>
+      <section id="backup-view" hidden><div class="page-heading"><div><p class="eyebrow">DATA</p><h1>백업</h1><p>저장된 콘텐츠를 파일로 안전하게 보관하세요.</p></div></div><section class="card backup-card"><span class="large-icon"><i data-icon="download"></i></span><h2>콘텐츠 백업 다운로드</h2><p>프로젝트, 노트와 사이트 공통 정보의 현재 임시 저장본·공개본을 JSON 파일로 받습니다. 이미지 원본과 이전 버전 기록은 포함되지 않습니다.</p><a class="button primary" href="/api/cms/backup" download>백업 파일 받기</a><p class="help">이전 문서로 돌아가려면 편집 화면의 ‘저장 기록’을 이용하세요.</p></section></section>
+    </main>
+  </div>
+</div>
+<dialog id="workspace" class="editor-drawer" aria-labelledby="doc-title">
+  <div class="drawer-heading"><div><small id="kind-label"></small><h2 id="doc-title"></h2></div><button class="icon-button" id="close-editor" aria-label="편집 닫기"><i data-icon="close"></i></button></div>
+  <div class="drawer-state"><p id="state" role="status"></p><span id="version-label"></span></div>
+  <nav class="edit-tabs" aria-label="문서 편집 탭"><button data-tab="info" class="active" aria-current="page">기본 정보</button><button data-tab="blocks">본문</button><button data-tab="pick">화면에서 수정</button><button data-tab="history">저장 기록</button></nav>
+  <div id="conflict" class="conflict-banner" role="alert" hidden><strong>다른 창에서 문서가 변경됐어요.</strong><p>현재 수정은 이 화면에 남아 있습니다. 먼저 사본을 내려받은 뒤 최신 저장본을 불러오세요.</p><div><button id="copy-draft">현재 수정 사본 받기</button><button id="reload-entry">최신 저장본 불러오기</button></div></div>
+  <div class="editor-grid">
+    <section class="form-pane"><div id="info" class="tab-pane"></div><div id="blocks" class="tab-pane" hidden><h3>본문 블록</h3><p class="help" id="blocks-help"></p><div id="block-list"></div><div class="block-add"><select id="block-type" aria-label="추가할 본문 종류"><option value="p">문단</option><option value="h2">제목</option><option value="blockquote">인용</option><option value="image">이미지</option><option value="link">링크</option></select><button id="add-block"><i data-icon="plus"></i> 블록 추가</button></div></div>
+      <div id="pick" class="tab-pane" hidden><div class="inspector-heading"><span class="eyebrow">INSPECTOR</span><h3>선택한 요소</h3></div><p class="help">미리보기에서 바꿀 글·이미지·링크를 선택하세요.</p><div class="modes" aria-label="선택 모드"><button data-mode="text" class="active" aria-pressed="true">글</button><button data-mode="image" aria-pressed="false">이미지</button><button data-mode="link" aria-pressed="false">링크</button></div><div id="picked"><div class="inspector-empty"><i data-icon="cursor"></i><p>페이지의 요소를 선택하면<br>여기서 수정할 수 있어요.</p></div></div></div>
+      <div id="history" class="tab-pane" hidden><h3>이전 저장본</h3><p class="help">최근 30개 기록을 확인할 수 있어요. 복원은 임시본에만 적용되며, 공개 사이트는 게시하기 전까지 유지됩니다.</p><div id="history-list"></div></div>
+    </section>
+    <section class="preview-pane" hidden><div class="preview-label"><span><i data-icon="cursor"></i> 화면에서 수정</span><small>관리자 전용 미리보기</small><button id="mobile-preview" aria-pressed="false"><i data-icon="monitor"></i><span>모바일 보기</span></button><button id="refresh-preview" title="현재 임시 저장본으로 새로 열기" aria-label="미리보기 새로 열기"><i data-icon="refresh"></i></button></div><div id="frame-wrap"></div></section>
+  </div>
+  <footer class="drawer-footer"><div class="completion" id="completion"></div><div class="actions"><button id="cancel-editor">닫기</button><button id="unpublish" class="quiet">게시 중단</button><button id="preview">미리보기</button><button id="save">임시 저장</button><button id="publish" class="primary">게시하기</button></div><p class="save-note">임시 저장은 비공개로 보관됩니다. 게시하기를 눌러 공개하세요.</p></footer>
+</dialog>
+<dialog id="assets" class="asset-dialog" aria-labelledby="assets-title"><div class="dialog-head"><div><span class="eyebrow">ASSETS</span><h2 id="assets-title">이미지 선택</h2></div><button class="icon-button" id="close-assets" aria-label="이미지 보관함 닫기"><i data-icon="close"></i></button></div><p class="help">JPG · PNG · WebP · GIF, 최대 20MB. 원본 파일을 그대로 업로드합니다.</p><div class="asset-tools"><label class="search-field"><i data-icon="search"></i><input type="search" id="asset-search" placeholder="프로젝트명·파일명 검색" aria-label="이미지 검색"></label><button id="asset-upload" class="primary"><i data-icon="plus"></i> 이미지 업로드</button></div><p id="asset-status" role="status"></p><div id="asset-grid"></div><button id="asset-more">더 보기</button></dialog>
+<dialog id="command" class="command-dialog" aria-label="전체 콘텐츠 검색"><div class="command-input"><i data-icon="search"></i><input id="command-search" type="search" placeholder="프로젝트, 노트, 사이트 정보 검색" aria-label="전체 콘텐츠 검색어"><button class="icon-button" id="close-command" aria-label="검색 닫기"><i data-icon="close"></i></button></div><div id="command-results"></div><p class="command-hint">↑ ↓ 이동 · Enter 열기 · Esc 닫기</p></dialog>
 <div id="toast" role="status" hidden></div><input type="file" id="file" accept="image/jpeg,image/png,image/webp,image/gif" hidden>
-<script src="/assets-index.js"></script><script src="/admin/admin.js"></script></body></html>
+<script src="/assets-index.js"></script><script src="/admin/admin.js"></script>
+</body></html>

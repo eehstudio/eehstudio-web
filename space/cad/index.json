@@ -1,0 +1,446 @@
+{
+  "social-value-market": {
+    "title": "SOCIAL VALUE MARKET / 2026",
+    "note": "현장 사진으로 재구성. 부스 3×3m는 기획 규격이며 집기 높이·간격은 사진 비례 추정입니다.",
+    "sources": "images/svm-hall.jpg · svm-mission.jpg · svm-booth.jpg · svm-crates.jpg",
+    "glb": "space/cad/social-value-market/model.glb",
+    "views": [
+      {
+        "id": "iso",
+        "label": "AXONOMETRIC",
+        "svg": "space/cad/social-value-market/iso.svg",
+        "src": "space/cad/social-value-market/iso.webp",
+        "width": 1800,
+        "height": 1500
+      },
+      {
+        "id": "plan",
+        "label": "PLAN / TOP",
+        "svg": "space/cad/social-value-market/plan.svg",
+        "src": "space/cad/social-value-market/plan.svg",
+        "width": 1800,
+        "height": 1454
+      },
+      {
+        "id": "front",
+        "label": "FRONT ELEVATION",
+        "svg": "space/cad/social-value-market/front.svg",
+        "src": "space/cad/social-value-market/front.svg",
+        "width": 1800,
+        "height": 1396
+      },
+      {
+        "id": "left",
+        "label": "LEFT ELEVATION",
+        "svg": "space/cad/social-value-market/left.svg",
+        "src": "space/cad/social-value-market/left.svg",
+        "width": 1800,
+        "height": 1500
+      },
+      {
+        "id": "right",
+        "label": "RIGHT ELEVATION",
+        "svg": "space/cad/social-value-market/right.svg",
+        "src": "space/cad/social-value-market/right.svg",
+        "width": 1800,
+        "height": 1500
+      }
+    ],
+    "dimensions": [
+      {
+        "label": "3,000 mm · 기획 규격",
+        "axis": "x",
+        "value": 3
+      },
+      {
+        "label": "3,000 mm · 기획 규격",
+        "axis": "z",
+        "value": 3
+      }
+    ],
+    "partCount": 1585
+  },
+  "cses-2025": {
+    "title": "CSES / THE BETTER, THE MORE / 2025",
+    "note": "당시 기획안의 5패널 부스 재구성. 패널 규격은 원본 표기, 꺾임과 집기 배치는 제안 렌더 기준입니다.",
+    "sources": "images/pf/cses-proposal/04.jpg · 05.jpg · x/detail.jpg · x/front.jpg",
+    "glb": "space/cad/cses-2025/model.glb",
+    "views": [
+      {
+        "id": "iso",
+        "label": "AXONOMETRIC",
+        "svg": "space/cad/cses-2025/iso.svg",
+        "src": "space/cad/cses-2025/iso.webp",
+        "width": 1800,
+        "height": 1500
+      },
+      {
+        "id": "plan",
+        "label": "PLAN / TOP",
+        "svg": "space/cad/cses-2025/plan.svg",
+        "src": "space/cad/cses-2025/plan.svg",
+        "width": 1800,
+        "height": 1500
+      },
+      {
+        "id": "front",
+        "label": "FRONT ELEVATION",
+        "svg": "space/cad/cses-2025/front.svg",
+        "src": "space/cad/cses-2025/front.svg",
+        "width": 1800,
+        "height": 1428
+      },
+      {
+        "id": "left",
+        "label": "LEFT ELEVATION",
+        "svg": "space/cad/cses-2025/left.svg",
+        "src": "space/cad/cses-2025/left.svg",
+        "width": 1800,
+        "height": 1472
+      },
+      {
+        "id": "right",
+        "label": "RIGHT ELEVATION",
+        "svg": "space/cad/cses-2025/right.svg",
+        "src": "space/cad/cses-2025/right.svg",
+        "width": 1800,
+        "height": 1472
+      }
+    ],
+    "dimensions": [
+      {
+        "axis": "x",
+        "value": 3.01,
+        "label": "3,010 mm · 후면 계획"
+      },
+      {
+        "axis": "y",
+        "value": 2.37,
+        "label": "2,370 mm · 패널 규격"
+      }
+    ],
+    "partCount": 83
+  },
+  "freeze-lab": {
+    "title": "LIFEMEAL / FREEZE LAB",
+    "note": "원본 R02 GLB에서 직접 추출한 동일 형상의 정투영입니다. 실측 현황도가 아닌 제작 전 모델 기록입니다.",
+    "sources": "fl/booth.glb · fl/booth_meta.json · images/pf/fl-site/01.jpg",
+    "glb": "fl/booth.glb",
+    "views": [
+      {
+        "id": "iso",
+        "label": "AXONOMETRIC",
+        "svg": "space/cad/freeze-lab/iso.svg",
+        "src": "space/cad/freeze-lab/iso.webp",
+        "width": 1800,
+        "height": 1098
+      },
+      {
+        "id": "plan",
+        "label": "PLAN / TOP",
+        "svg": "space/cad/freeze-lab/plan.svg",
+        "src": "space/cad/freeze-lab/plan.svg",
+        "width": 1800,
+        "height": 1379
+      },
+      {
+        "id": "front",
+        "label": "FRONT ELEVATION",
+        "svg": "space/cad/freeze-lab/front.svg",
+        "src": "space/cad/freeze-lab/front.svg",
+        "width": 1800,
+        "height": 608
+      },
+      {
+        "id": "left",
+        "label": "LEFT ELEVATION",
+        "svg": "space/cad/freeze-lab/left.svg",
+        "src": "space/cad/freeze-lab/left.svg",
+        "width": 1800,
+        "height": 757
+      },
+      {
+        "id": "right",
+        "label": "RIGHT ELEVATION",
+        "svg": "space/cad/freeze-lab/right.svg",
+        "src": "space/cad/freeze-lab/right.svg",
+        "width": 1800,
+        "height": 757
+      }
+    ],
+    "dimensions": [],
+    "partCount": 87
+  },
+  "recette-booth": {
+    "title": "RECETTE / SEOUL CAFE SHOW",
+    "note": "정면 15,000×4,000mm는 원본 표기. 깊이와 일부 집기는 원본 렌더 비례 재구성입니다. 원본 공간 렌더 DITTE, 부스 그래픽 EEH 디렉터 작업 기록.",
+    "sources": "images/pf/recette-booth/x/b04.jpg · 11.jpg · x/o1.jpg · x/o7.jpg",
+    "glb": "space/cad/recette-booth/model.glb",
+    "views": [
+      {
+        "id": "iso",
+        "label": "AXONOMETRIC",
+        "svg": "space/cad/recette-booth/iso.svg",
+        "src": "space/cad/recette-booth/iso.webp",
+        "width": 1800,
+        "height": 1468
+      },
+      {
+        "id": "plan",
+        "label": "PLAN / TOP",
+        "svg": "space/cad/recette-booth/plan.svg",
+        "src": "space/cad/recette-booth/plan.svg",
+        "width": 1800,
+        "height": 757
+      },
+      {
+        "id": "front",
+        "label": "FRONT ELEVATION",
+        "svg": "space/cad/recette-booth/front.svg",
+        "src": "space/cad/recette-booth/front.svg",
+        "width": 1800,
+        "height": 599
+      },
+      {
+        "id": "left",
+        "label": "LEFT ELEVATION",
+        "svg": "space/cad/recette-booth/left.svg",
+        "src": "space/cad/recette-booth/left.svg",
+        "width": 1800,
+        "height": 1352
+      },
+      {
+        "id": "right",
+        "label": "RIGHT ELEVATION",
+        "svg": "space/cad/recette-booth/right.svg",
+        "src": "space/cad/recette-booth/right.svg",
+        "width": 1800,
+        "height": 1352
+      }
+    ],
+    "dimensions": [
+      {
+        "axis": "x",
+        "value": 15,
+        "label": "15,000 mm · 원본 정면"
+      },
+      {
+        "axis": "y",
+        "value": 4,
+        "label": "4,000 mm · 원본 높이"
+      }
+    ],
+    "partCount": 242
+  },
+  "king-of-kings": {
+    "title": "KING OF KINGS / PALCIBO",
+    "note": "원본 배치안의 비례를 보존한 구조 모델. 실제 치수·천장고가 없어 높이는 시각화 가정이며 NTS로 표시합니다.",
+    "sources": "images/pf/king-of-kings/07.jpg · 원본 평면도",
+    "glb": "space/cad/king-of-kings/model.glb",
+    "views": [
+      {
+        "id": "iso",
+        "label": "AXONOMETRIC",
+        "svg": "space/cad/king-of-kings/iso.svg",
+        "src": "space/cad/king-of-kings/iso.webp",
+        "width": 1800,
+        "height": 1412
+      },
+      {
+        "id": "plan",
+        "label": "PLAN / TOP",
+        "svg": "space/cad/king-of-kings/plan.svg",
+        "src": "space/cad/king-of-kings/plan.svg",
+        "width": 1800,
+        "height": 1072
+      },
+      {
+        "id": "front",
+        "label": "FRONT ELEVATION",
+        "svg": "space/cad/king-of-kings/front.svg",
+        "src": "space/cad/king-of-kings/front.svg",
+        "width": 1800,
+        "height": 585
+      },
+      {
+        "id": "left",
+        "label": "LEFT ELEVATION",
+        "svg": "space/cad/king-of-kings/left.svg",
+        "src": "space/cad/king-of-kings/left.svg",
+        "width": 1800,
+        "height": 916
+      },
+      {
+        "id": "right",
+        "label": "RIGHT ELEVATION",
+        "svg": "space/cad/king-of-kings/right.svg",
+        "src": "space/cad/king-of-kings/right.svg",
+        "width": 1800,
+        "height": 916
+      }
+    ],
+    "dimensions": [],
+    "partCount": 52
+  },
+  "lifemeal-yeonnam": {
+    "title": "LIFEMEAL / YEONNAM",
+    "note": "원본 배치안의 비례를 보존한 구조 모델. 실제 치수·천장고가 없어 높이는 시각화 가정이며 NTS로 표시합니다.",
+    "sources": "images/pf/lifemeal-yeonnam/03.jpg · 원본 평면도",
+    "glb": "space/cad/lifemeal-yeonnam/model.glb",
+    "views": [
+      {
+        "id": "iso",
+        "label": "AXONOMETRIC",
+        "svg": "space/cad/lifemeal-yeonnam/iso.svg",
+        "src": "space/cad/lifemeal-yeonnam/iso.webp",
+        "width": 1800,
+        "height": 1412
+      },
+      {
+        "id": "plan",
+        "label": "PLAN / TOP",
+        "svg": "space/cad/lifemeal-yeonnam/plan.svg",
+        "src": "space/cad/lifemeal-yeonnam/plan.svg",
+        "width": 1800,
+        "height": 1072
+      },
+      {
+        "id": "front",
+        "label": "FRONT ELEVATION",
+        "svg": "space/cad/lifemeal-yeonnam/front.svg",
+        "src": "space/cad/lifemeal-yeonnam/front.svg",
+        "width": 1800,
+        "height": 585
+      },
+      {
+        "id": "left",
+        "label": "LEFT ELEVATION",
+        "svg": "space/cad/lifemeal-yeonnam/left.svg",
+        "src": "space/cad/lifemeal-yeonnam/left.svg",
+        "width": 1800,
+        "height": 916
+      },
+      {
+        "id": "right",
+        "label": "RIGHT ELEVATION",
+        "svg": "space/cad/lifemeal-yeonnam/right.svg",
+        "src": "space/cad/lifemeal-yeonnam/right.svg",
+        "width": 1800,
+        "height": 916
+      }
+    ],
+    "dimensions": [],
+    "partCount": 79
+  },
+  "immersive-2021": {
+    "title": "IMMERSIVE EXHIBITION / 2021",
+    "note": "원본 전시 평면의 구획과 배치 비례를 보존했습니다. 높이는 시각화 가정이며 NTS입니다.",
+    "sources": "images/pf/immersive-2021/03.jpg · 원본 전시 배치안",
+    "glb": "space/cad/immersive-2021/model.glb",
+    "views": [
+      {
+        "id": "iso",
+        "label": "AXONOMETRIC",
+        "svg": "space/cad/immersive-2021/iso.svg",
+        "src": "space/cad/immersive-2021/iso.webp",
+        "width": 1800,
+        "height": 1373
+      },
+      {
+        "id": "plan",
+        "label": "PLAN / TOP",
+        "svg": "space/cad/immersive-2021/plan.svg",
+        "src": "space/cad/immersive-2021/plan.svg",
+        "width": 1800,
+        "height": 1036
+      },
+      {
+        "id": "front",
+        "label": "FRONT ELEVATION",
+        "svg": "space/cad/immersive-2021/front.svg",
+        "src": "space/cad/immersive-2021/front.svg",
+        "width": 1800,
+        "height": 540
+      },
+      {
+        "id": "left",
+        "label": "LEFT ELEVATION",
+        "svg": "space/cad/immersive-2021/left.svg",
+        "src": "space/cad/immersive-2021/left.svg",
+        "width": 1800,
+        "height": 838
+      },
+      {
+        "id": "right",
+        "label": "RIGHT ELEVATION",
+        "svg": "space/cad/immersive-2021/right.svg",
+        "src": "space/cad/immersive-2021/right.svg",
+        "width": 1800,
+        "height": 838
+      }
+    ],
+    "dimensions": [],
+    "partCount": 16
+  },
+  "hotel-1997": {
+    "title": "THE HOTEL 1997 / LOBBY WALL",
+    "note": "원본 3,030×2,180mm 벽면 구성의 부분 모델. 전체 행사장 평면이나 실측 시공도가 아닙니다.",
+    "sources": "images/pf/hotel-1997/04.jpg · 05.jpg · 로비 입면 계획",
+    "glb": "space/cad/hotel-1997/model.glb",
+    "views": [
+      {
+        "id": "iso",
+        "label": "AXONOMETRIC",
+        "svg": "space/cad/hotel-1997/iso.svg",
+        "src": "space/cad/hotel-1997/iso.webp",
+        "width": 1800,
+        "height": 1500
+      },
+      {
+        "id": "plan",
+        "label": "PLAN / TOP",
+        "svg": "space/cad/hotel-1997/plan.svg",
+        "src": "space/cad/hotel-1997/plan.svg",
+        "width": 1800,
+        "height": 880
+      },
+      {
+        "id": "front",
+        "label": "FRONT ELEVATION",
+        "svg": "space/cad/hotel-1997/front.svg",
+        "src": "space/cad/hotel-1997/front.svg",
+        "width": 1800,
+        "height": 1322
+      },
+      {
+        "id": "left",
+        "label": "LEFT ELEVATION",
+        "svg": "space/cad/hotel-1997/left.svg",
+        "src": "space/cad/hotel-1997/left.svg",
+        "width": 1800,
+        "height": 1500
+      },
+      {
+        "id": "right",
+        "label": "RIGHT ELEVATION",
+        "svg": "space/cad/hotel-1997/right.svg",
+        "src": "space/cad/hotel-1997/right.svg",
+        "width": 1800,
+        "height": 1500
+      }
+    ],
+    "dimensions": [
+      {
+        "axis": "x",
+        "value": 3.03,
+        "label": "3,030 mm · 원본 벽면"
+      },
+      {
+        "axis": "y",
+        "value": 2.18,
+        "label": "2,180 mm · 원본 벽면"
+      }
+    ],
+    "partCount": 25
+  }
+}

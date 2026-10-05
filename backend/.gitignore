@@ -44,3 +44,7 @@ next-env.d.ts
 /.codex/
 /outputs/
 /work/
+
+# Python geometry build cache
+__pycache__/
+*.pyc

@@ -1,0 +1,690 @@
+{
+  "king-of-kings": [
+    {
+      "title": "팔시보 스토어 한 층을 일곱 개의 장면으로",
+      "svg": "<svg viewBox=\"200 150 1620 930\" role=\"img\" aria-label=\"팔시보 스토어 평면도와 존 배치\">\n  <rect x=\"200\" y=\"150\" width=\"1620\" height=\"930\" fill=\"#fafaf8\"/>\n  <rect class=\"room\" x=\"220\" y=\"177\" width=\"1558\" height=\"863\"/>\n  <rect class=\"fx\" x=\"221\" y=\"178\" width=\"468\" height=\"284\"/><text class=\"lbl\" x=\"455\" y=\"325\" text-anchor=\"middle\">창고</text>\n  <path class=\"wall\" d=\"M690 178 V540 M789 178 V540 M690 540 H789\"/>\n  <rect class=\"fx\" x=\"1491\" y=\"178\" width=\"286\" height=\"349\"/>\n  <rect class=\"fx\" x=\"1011\" y=\"342\" width=\"478\" height=\"53\"/><text class=\"lbl dk\" x=\"1250\" y=\"376\" text-anchor=\"middle\">Cashier</text>\n  <rect class=\"fx\" x=\"977\" y=\"708\" width=\"546\" height=\"170\"/><rect x=\"1042\" y=\"745\" width=\"417\" height=\"95\" fill=\"none\" stroke=\"#b9b7ae\"/><text class=\"lbl dk\" x=\"1250\" y=\"800\" text-anchor=\"middle\">MD</text>\n  <path class=\"wall\" d=\"M690 720 V1040 M221 462 H440\"/>\n  <path class=\"wall\" d=\"M220 1040 H780 M985 1040 H1778 V177 H220 V1040\"/>\n  <rect x=\"1003\" y=\"1027\" width=\"765\" height=\"22\" fill=\"#fff\" stroke=\"#000\"/><text class=\"lbl\" x=\"1385\" y=\"1070\" text-anchor=\"middle\">Window</text>\n  <text class=\"lbl dk\" x=\"883\" y=\"1070\" text-anchor=\"middle\">IN &amp; OUT</text>\n  <text class=\"lbl\" x=\"307\" y=\"700\" text-anchor=\"middle\">Message Wall</text>\n  <text class=\"lbl\" x=\"1707\" y=\"900\" text-anchor=\"middle\">Story 스틸컷</text>\n  <text class=\"lbl\" x=\"470\" y=\"1010\" text-anchor=\"middle\">등신대 포토존</text>\n  <text class=\"lbl\" x=\"1740\" y=\"680\" text-anchor=\"end\">벽면 거울</text>\n  <text class=\"lbl\" x=\"780\" y=\"890\" text-anchor=\"middle\">거울 포토존</text>\n</svg>",
+      "zones": [
+        {
+          "n": "0",
+          "name": "Collect Start",
+          "en": "Entrance · Counter",
+          "x": 1370,
+          "y": 430,
+          "photo": "pf/king-of-kings/x/sim-z0.jpg",
+          "tag": "SIMULATION",
+          "p": [
+            "입구 커튼을 지나면 카운터에서 스탬프 투어 카드와 집게형 명찰을 받습니다. 카운터는 투어의 시작점이자 미션을 마치고 돌아오는 자리입니다."
+          ],
+          "dl": [
+            [
+              "DP",
+              "입구 커튼, 입구 현수막, 행잉 스틸"
+            ],
+            [
+              "Kit",
+              "스탬프 투어 카드, 집게형 명찰"
+            ]
+          ],
+          "sub": [
+            [
+              "pf/king-of-kings/x/z0b.jpg",
+              "설치 전 실측 사진"
+            ],
+            [
+              "pf/king-of-kings/x/z0.jpg",
+              "입구 실측"
+            ],
+            [
+              "pf/king-of-kings/x/z0-curtain.jpg",
+              "커튼 샘플"
+            ],
+            [
+              "pf/king-of-kings/x/z0-banner.jpg",
+              "입구 현수막 디자인"
+            ]
+          ]
+        },
+        {
+          "n": "1·2",
+          "name": "Dickens Family",
+          "en": "Charles & Catherine",
+          "x": 1615,
+          "y": 610,
+          "photo": "pf/king-of-kings/x/sim-z1.jpg",
+          "tag": "SIMULATION",
+          "p": [
+            "이야기를 들려주는 아버지 찰스와 어머니 캐서린의 존. 영화 스틸을 걸고 티셔츠를 종류별로 모듈 가구에 진열해, 첫 스탬프와 첫 굿즈 동선을 겹쳤습니다."
+          ],
+          "dl": [
+            [
+              "DP",
+              "행잉 스틸, 롤링 트라이비전, 옷걸이 20개"
+            ],
+            [
+              "MD",
+              "티셔츠, 목걸이와 키링은 가구 뒷면 후크"
+            ],
+            [
+              "Stamp",
+              "찰스, 캐서린 ID"
+            ]
+          ],
+          "sub": [
+            [
+              "pf/king-of-kings/x/z1.jpg",
+              "설치 전 실측 사진"
+            ],
+            [
+              "pf/king-of-kings/x/z1b.jpg",
+              "디킨스 패밀리 DP 벽면"
+            ],
+            [
+              "pf/king-of-kings/x/z1c.jpg",
+              "전체 굿즈 DP 3단"
+            ],
+            [
+              "pf/king-of-kings/x/story.jpg",
+              "영화 스틸컷 롤링"
+            ]
+          ]
+        },
+        {
+          "n": "3·4",
+          "name": "Walter’s Room",
+          "en": "Willa & Walter · Coloring",
+          "x": 620,
+          "y": 825,
+          "photo": "pf/king-of-kings/x/sim-z3.jpg",
+          "tag": "SIMULATION",
+          "p": [
+            "막내 월터의 방을 색칠 공간으로 꾸몄습니다. 접이식 테이블과 롤 도화지에서 윌라 카드와 포스터를 색칠하고, 완성작은 벽에 붙여 함께 만드는 전시가 됩니다. 공간 곳곳에 숨은 고양이 윌라를 찾는 미션도 이어집니다."
+          ],
+          "dl": [
+            [
+              "Set",
+              "접이식 테이블 2, 크레용과 롤 도화지, A4 도안"
+            ],
+            [
+              "Wall",
+              "색칠을 마친 포스터, 등신대"
+            ]
+          ],
+          "sub": [
+            [
+              "pf/king-of-kings/x/z3.jpg",
+              "설치 전 실측 사진"
+            ],
+            [
+              "pf/king-of-kings/x/z3-mola.jpg",
+              "색칠 키트 레퍼런스"
+            ],
+            [
+              "pf/king-of-kings/x/col2.jpg",
+              "색칠 도안"
+            ],
+            [
+              "pf/king-of-kings/x/col3.jpg",
+              "색칠 도안"
+            ]
+          ]
+        },
+        {
+          "n": "5",
+          "name": "Message Wall",
+          "en": "Jesus Christ",
+          "x": 307,
+          "y": 752,
+          "photo": "pf/king-of-kings/x/sim-z5.jpg",
+          "tag": "SIMULATION",
+          "p": [
+            "투명 PET에 드로잉 스케치를 출력해 창에 붙이고, 빛이 그림을 통과하는 라이팅 패널로 만들었습니다. 아래에는 등신대를, 맞은편 흰 벽에는 방문객이 메시지를 남기고 스티커로 투표하는 테이블을 두었습니다."
+          ],
+          "dl": [
+            [
+              "Size",
+              "안쪽 창 95×50cm, 흰 벽 500×155cm"
+            ],
+            [
+              "Play",
+              "가장 나쁜 빌런, 최애 제자 스티커 투표"
+            ]
+          ],
+          "sub": [
+            [
+              "pf/king-of-kings/x/z5.jpg",
+              "설치 전 실측 사진"
+            ],
+            [
+              "pf/king-of-kings/x/z5-wall.jpg",
+              "흰 벽 투표존 계획"
+            ],
+            [
+              "pf/king-of-kings/x/z5-mock.jpg",
+              "라이팅 패널 위치"
+            ],
+            [
+              "pf/king-of-kings/x/v9.jpg",
+              "예수"
+            ]
+          ]
+        },
+        {
+          "n": "6",
+          "name": "Myself",
+          "en": "Drawing Sketch",
+          "x": 355,
+          "y": 486,
+          "photo": "pf/king-of-kings/x/sim-z6.jpg",
+          "tag": "SIMULATION",
+          "p": [
+            "마지막 존에서는 나의 ID 카드를 완성합니다. 복음을 전하는 월터의 장면 앞에서 내 이름과 전하고 싶은 메시지를 적고, 마지막 스탬프를 찍습니다."
+          ],
+          "dl": [
+            [
+              "DP",
+              "드로잉 스케치 투명 PET, 접이식 테이블"
+            ]
+          ],
+          "sub": [
+            [
+              "pf/king-of-kings/x/z6.jpg",
+              "설치 전 실측 사진"
+            ],
+            [
+              "pf/king-of-kings/x/c-walter.jpg",
+              "월터"
+            ],
+            [
+              "pf/king-of-kings/x/id5.jpg",
+              "나의 ID 카드"
+            ],
+            [
+              "pf/king-of-kings/x/z5-strip.jpg",
+              "드로잉 스케치"
+            ]
+          ]
+        },
+        {
+          "n": "✓",
+          "name": "Mission Complete",
+          "en": "Reward · Photo zone",
+          "x": 850,
+          "y": 380,
+          "photo": "pf/king-of-kings/x/fan.jpg",
+          "p": [
+            "모든 ID를 완성하면 팝업 한정 리워드 KOK Fan을 받고, 집게 카드걸이를 단 채 인증 포토존에서 사진을 남깁니다. 인스타그램에 올리면 선물 추첨으로 이어집니다."
+          ],
+          "dl": [
+            [
+              "Reward",
+              "미니 부채 140×140, 앞면 윌라와 월터, 뒷면 좋아하는 말씀"
+            ],
+            [
+              "Event",
+              "My ID 인증, 윌라 찾기"
+            ]
+          ]
+        },
+        {
+          "n": "MD",
+          "name": "Official Goods",
+          "en": "Goods shop",
+          "x": 1250,
+          "y": 745,
+          "photo": "pf/king-of-kings/x/md.jpg",
+          "p": [
+            "중앙 테이블에 공식 굿즈 30여 종을 모았습니다. 3만 원 이상 구매하면 매주 디자인이 바뀌는 한정 엽서를 증정해, 다시 들를 이유를 만들었습니다."
+          ],
+          "dl": [
+            [
+              "MD",
+              "티셔츠, 에코백, 인형, 텀블러, 키링, 목걸이"
+            ]
+          ],
+          "sub": [
+            [
+              "pf/king-of-kings/x/m11.jpg",
+              "월터 인형"
+            ],
+            [
+              "pf/king-of-kings/x/m12.jpg",
+              "윌라 인형"
+            ],
+            [
+              "pf/king-of-kings/x/m16.jpg",
+              "글리터 코스터"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "lifemeal-yeonnam": [
+    {
+      "title": "입구에서 티 테이블까지 여섯 개의 장면",
+      "svg": "<svg viewBox=\"200 150 1620 930\" role=\"img\" aria-label=\"팔시보 스토어 라이프밀 팝업 동선\">\n  <rect x=\"200\" y=\"150\" width=\"1620\" height=\"930\" fill=\"#fafaf8\"/>\n  <rect class=\"room\" x=\"220\" y=\"177\" width=\"1558\" height=\"863\"/>\n  <rect class=\"fx\" x=\"221\" y=\"178\" width=\"468\" height=\"258\"/><text class=\"lbl\" x=\"455\" y=\"312\" text-anchor=\"middle\">Storage</text>\n  <path class=\"wall\" d=\"M690 178 V540 H789 V474 M221 436 H488\"/>\n  <rect class=\"fx\" x=\"779\" y=\"178\" width=\"712\" height=\"174\"/><text class=\"lbl\" x=\"1135\" y=\"270\" text-anchor=\"middle\">Storage</text>\n  <rect x=\"779\" y=\"352\" width=\"712\" height=\"29\" fill=\"#fff\" stroke=\"#000\"/><text class=\"lbl\" x=\"1135\" y=\"372\" text-anchor=\"middle\">Curtain</text>\n  <rect class=\"fx\" x=\"1491\" y=\"178\" width=\"286\" height=\"349\"/>\n  <rect x=\"779\" y=\"420\" width=\"176\" height=\"53\" fill=\"#a63d33\"/><rect x=\"955\" y=\"420\" width=\"338\" height=\"53\" fill=\"#d4cab6\"/><text class=\"lbl dk\" x=\"1124\" y=\"453\" text-anchor=\"middle\">Cashier</text>\n  <rect x=\"1409\" y=\"420\" width=\"82\" height=\"107\" fill=\"#9cc1d9\"/><text class=\"lbl\" x=\"1450\" y=\"555\" text-anchor=\"middle\">Fridge</text>\n  <rect x=\"267\" y=\"469\" width=\"111\" height=\"117\" fill=\"#a63d33\"/>\n  <rect x=\"267\" y=\"595\" width=\"111\" height=\"440\" fill=\"#9cc1d9\"/><text class=\"lbl dk\" x=\"323\" y=\"820\" text-anchor=\"middle\" transform=\"rotate(-90 323 820)\">Product</text>\n  <text class=\"lbl\" x=\"493\" y=\"785\" text-anchor=\"middle\">Mart</text>\n  <rect x=\"608\" y=\"723\" width=\"82\" height=\"312\" fill=\"#a63d33\"/><rect x=\"690\" y=\"723\" width=\"83\" height=\"259\" fill=\"#a63d33\"/>\n  <rect x=\"1395\" y=\"653\" width=\"192\" height=\"325\" fill=\"#d4cab6\"/><text class=\"lbl dk\" x=\"1491\" y=\"905\" text-anchor=\"middle\">Tea Table</text>\n  <g fill=\"#d4cab6\"><circle cx=\"1338\" cy=\"705\" r=\"26\"/><circle cx=\"1644\" cy=\"705\" r=\"26\"/><circle cx=\"1338\" cy=\"816\" r=\"26\"/><circle cx=\"1644\" cy=\"816\" r=\"26\"/><circle cx=\"1338\" cy=\"927\" r=\"26\"/><circle cx=\"1644\" cy=\"927\" r=\"26\"/></g>\n  <rect x=\"1002\" y=\"1008\" width=\"768\" height=\"32\" fill=\"#fff\" stroke=\"#000\"/><text class=\"lbl\" x=\"1385\" y=\"1030\" text-anchor=\"middle\">Window</text>\n  <path class=\"wall\" d=\"M220 1040 H780 M985 1040 H1778 V177 H220 V1040\"/>\n  <text class=\"lbl dk\" x=\"883\" y=\"1070\" text-anchor=\"middle\">IN &amp; OUT</text>\n  <path class=\"flow\" d=\"M883 1010 C860 950 760 930 731 880 M731 700 C760 560 840 520 867 480 M800 500 C700 560 660 640 649 700 M600 860 C480 860 400 820 378 760 M323 560 C600 640 1000 700 1330 780\"/>\n</svg>",
+      "zones": [
+        {
+          "n": "IN",
+          "name": "입구",
+          "en": "Entrance · Window",
+          "x": 883,
+          "y": 985,
+          "photo": "pf/lifemeal-yeonnam/x/sim-facade.jpg",
+          "tag": "3D",
+          "p": [
+            "통창 너머로 티 테이블이 보이도록 입구를 열어 두었습니다. 들어오면 바로 왼쪽 벽의 미션 존이 첫 장면이 됩니다."
+          ],
+          "dl": [
+            [
+              "운영",
+              "2026.02.13 – 02.22, 10일"
+            ],
+            [
+              "시간",
+              "14:00 – 20:00"
+            ]
+          ]
+        },
+        {
+          "n": "1",
+          "name": "웰니스 체크리스트",
+          "en": "Mission 1 · Check List",
+          "x": 731,
+          "y": 850,
+          "photo": "pf/lifemeal-yeonnam/x/sim-in2.jpg",
+          "tag": "3D",
+          "p": [
+            "종이에 나의 건강 루틴을 적습니다. 아침 식사 여부, 피부 관리 같은 질문에 답하고 점수를 합산해 카운터에 제출합니다."
+          ],
+          "dl": [
+            [
+              "미션",
+              "나의 건강 고민 체크"
+            ],
+            [
+              "다음",
+              "카운터로 제출"
+            ]
+          ]
+        },
+        {
+          "n": "2",
+          "name": "What's your WBTI?",
+          "en": "Mission 2 · Counter",
+          "x": 867,
+          "y": 447,
+          "photo": "pf/lifemeal-yeonnam/x/sim-in1.jpg",
+          "tag": "3D",
+          "p": [
+            "리스트를 내고 인스타그램을 팔로우하면 새뱃돈 봉투를 받습니다. 안에는 럭키드로우 동전과 나의 웰니스 타입 카드가 들어 있습니다."
+          ],
+          "dl": [
+            [
+              "진단",
+              "WBTI, Wellness Balance Type Indicator"
+            ],
+            [
+              "증정",
+              "새뱃돈 봉투, 웰니스 타입 카드"
+            ]
+          ]
+        },
+        {
+          "n": "3",
+          "name": "2026 웰니스 루틴",
+          "en": "Mission 3 · Routine Card",
+          "x": 649,
+          "y": 850,
+          "photo": "pf/lifemeal-yeonnam/x/sim-in2.jpg",
+          "tag": "3D",
+          "p": [
+            "웰니스 카드를 제품 스티커로 꾸며 나만의 2026 루틴을 만듭니다. 앞면은 타입별 분석, 뒷면은 제품 추천과 QR입니다. 카카오 플러스친구를 추가하면 꽝 없는 럭키드로우에 참여합니다."
+          ],
+          "dl": [
+            [
+              "보상",
+              "자사몰 쿠폰, 제품 1종, 2026 포스터 달력"
+            ]
+          ]
+        },
+        {
+          "n": "M",
+          "name": "마트와 리워드",
+          "en": "Mart · Product · Reward",
+          "x": 323,
+          "y": 700,
+          "photo": "pf/lifemeal-yeonnam/x/fx-1.jpg",
+          "tag": "BEFORE",
+          "p": [
+            "왼쪽 벽 전체를 제품 진열로 쓰고, 안쪽 끝에 리워드 존을 두어 미션을 마친 뒤 자연스럽게 진열을 지나가게 했습니다. 사진은 설치 전 집기입니다."
+          ]
+        },
+        {
+          "n": "O",
+          "name": "웰니스 오마카세",
+          "en": "Tea Table · Program II",
+          "x": 1491,
+          "y": 760,
+          "photo": "pf/lifemeal-yeonnam/x/omakase.jpg",
+          "tag": "MOOD",
+          "p": [
+            "예약한 방문객이 티 테이블에 둘러앉아 하루 루틴 순서대로 다섯 코스를 맛봅니다. 코스마다 효능과 섭취 타이밍을 적은 제품 카드를 함께 놓습니다."
+          ],
+          "dl": [
+            [
+              "회차",
+              "주말·공휴일 15:00 · 16:30 · 18:00"
+            ],
+            [
+              "정원",
+              "회차별 6명, 네이버 예약과 워크인"
+            ],
+            [
+              "시간",
+              "40분"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "hotel-1997": [
+    {
+      "title": "벽 한 면에 들어가는 여덟 가지",
+      "svg": "<svg viewBox=\"-160 -170 4300 2700\" role=\"img\" aria-label=\"로비 벽면 배치 입면\" style=\"width:100%;height:auto;font-family:inherit\">\n  <rect x=\"-160\" y=\"-170\" width=\"4300\" height=\"2700\" fill=\"#0d0d0d\"/>\n  <rect x=\"0\" y=\"0\" width=\"3030\" height=\"2180\" fill=\"#efede8\"/>\n  <g stroke=\"#38b2d6\" stroke-width=\"6\" fill=\"#38b2d6\" font-size=\"56\">\n    <line x1=\"0\" y1=\"-70\" x2=\"3030\" y2=\"-70\"/><text x=\"1515\" y=\"-100\" text-anchor=\"middle\" stroke=\"none\">3030</text>\n    <line x1=\"-70\" y1=\"0\" x2=\"-70\" y2=\"2180\"/><text x=\"-100\" y=\"1090\" text-anchor=\"middle\" stroke=\"none\" transform=\"rotate(-90 -100 1090)\">2180</text></g>\n  <rect x=\"70\" y=\"380\" width=\"875\" height=\"1800\" fill=\"#151515\"/><text x=\"94\" y=\"450\" font-size=\"62\" fill=\"#fff\" font-weight=\"600\">선반</text><text x=\"94\" y=\"520\" font-size=\"50\" fill=\"#fff\" opacity=\".75\">875 × 1800</text>\n  <rect x=\"1080\" y=\"260\" width=\"500\" height=\"640\" fill=\"#fff\" stroke=\"#bbb\" stroke-width=\"6\"/><rect x=\"1620\" y=\"260\" width=\"560\" height=\"640\" fill=\"#fff\" stroke=\"#bbb\" stroke-width=\"6\"/>\n  <text x=\"1110\" y=\"340\" font-size=\"62\" fill=\"#555\" font-weight=\"600\">작품</text>\n  <rect x=\"2600\" y=\"380\" width=\"70\" height=\"1800\" fill=\"#6a6a6a\"/><path d=\"M2520 380 h230 l-60 -150 h-110z\" fill=\"#8a8a8a\"/><text x=\"2700\" y=\"560\" font-size=\"56\" fill=\"#333\" font-weight=\"600\">스탠딩 조명 1800</text>\n  <rect x=\"1080\" y=\"1460\" width=\"1000\" height=\"720\" fill=\"#2d7a5a\"/><text x=\"1104\" y=\"1530\" font-size=\"62\" fill=\"#fff\" font-weight=\"600\">소파</text><text x=\"1104\" y=\"1600\" font-size=\"50\" fill=\"#fff\" opacity=\".75\">1000 × 720</text>\n  <rect x=\"2090\" y=\"1520\" width=\"190\" height=\"660\" fill=\"#4a4a4a\"/><text x=\"2114\" y=\"1590\" font-size=\"62\" fill=\"#fff\" font-weight=\"600\"></text><text x=\"2090\" y=\"1490\" font-size=\"50\" fill=\"#333\">노트북 스탠드</text>\n  <rect x=\"1080\" y=\"1880\" width=\"1200\" height=\"300\" fill=\"#3d3d3d\"/><text x=\"1104\" y=\"1950\" font-size=\"62\" fill=\"#fff\" font-weight=\"600\">거실 테이블</text><text x=\"1104\" y=\"2020\" font-size=\"50\" fill=\"#fff\" opacity=\".75\">1200 × 500</text>\n  <rect x=\"2320\" y=\"1700\" width=\"330\" height=\"480\" fill=\"#2d7a5a\"/><text x=\"2344\" y=\"1770\" font-size=\"62\" fill=\"#fff\" font-weight=\"600\">스툴</text>\n  <rect x=\"380\" y=\"2180\" width=\"2400\" height=\"110\" fill=\"#6f8fc0\"/><text x=\"400\" y=\"2400\" font-size=\"56\" fill=\"#cfd8e8\">러그 2000 × 3000 · 워셔블 논슬립</text>\n  <rect x=\"3300\" y=\"0\" width=\"760\" height=\"2180\" fill=\"#e2e0db\"/>\n  <rect x=\"3360\" y=\"420\" width=\"640\" height=\"640\" fill=\"#bcd6ee\"/><text x=\"3680\" y=\"760\" font-size=\"58\" fill=\"#334\" text-anchor=\"middle\" font-weight=\"600\">레터링 거울</text>\n  <text x=\"3680\" y=\"840\" font-size=\"48\" fill=\"#556\" text-anchor=\"middle\">750 × 750</text>\n  <rect x=\"3420\" y=\"1200\" width=\"520\" height=\"220\" fill=\"none\" stroke=\"#333\" stroke-width=\"8\"/><text x=\"3680\" y=\"1330\" font-size=\"54\" fill=\"#333\" text-anchor=\"middle\">영문 레터링</text>\n  <text x=\"3680\" y=\"2120\" font-size=\"50\" fill=\"#777\" text-anchor=\"middle\">측면 벽</text>\n</svg>"
+    }
+  ],
+  "immersive-2021": [
+    {
+      "title": "날짜를 따라 걷는 공간 동선도",
+      "svg": "<svg class=\"xi-plan\" viewBox=\"100 120 1420 760\" role=\"img\" aria-label=\"예수님과 함께한 마지막 7일 공간 동선도\" style=\"width:100%;height:auto\">\n  <rect x=\"100\" y=\"120\" width=\"1420\" height=\"760\" fill=\"#f6f4f0\"/>\n  <rect x=\"116\" y=\"140\" width=\"1390\" height=\"725\" fill=\"#fff\" stroke=\"#d9d4cb\" stroke-width=\"2\"/>\n  <g fill=\"#e7e1d6\"><circle cx=\"278\" cy=\"575\" r=\"18\"/><circle cx=\"462\" cy=\"575\" r=\"18\"/><circle cx=\"553\" cy=\"575\" r=\"18\"/><circle cx=\"278\" cy=\"780\" r=\"18\"/><circle cx=\"460\" cy=\"780\" r=\"18\"/></g>\n  <path d=\"M225 668 L365 642 L520 680 L515 702 L365 664 L230 692Z\" fill=\"#8a857c\"/>\n  <text x=\"232\" y=\"712\" font-size=\"12.5\" fill=\"#6b665e\" text-anchor=\"start\" letter-spacing=\".08em\">기타 실물 십자가 · 하늘에 천 달기</text>\n  <g fill=\"none\" stroke=\"#4a6c94\" stroke-width=\"7\" stroke-linejoin=\"round\" opacity=\".55\">\n    <polyline points=\"160,225 160,790 700,790 700,380 1460,380 1460,470\"/><polyline points=\"640,380 640,630 370,630 370,645\"/><polyline points=\"160,225 675,225 675,380\"/></g>\n  <text x=\"176\" y=\"300\" font-size=\"15\" fill=\"#9a958c\" text-anchor=\"start\" letter-spacing=\".08em\">ENTRANCE</text> <text x=\"400\" y=\"318\" font-size=\"15\" fill=\"#9a958c\" text-anchor=\"start\" letter-spacing=\".08em\">GALLERY ZONE</text> <text x=\"760\" y=\"176\" font-size=\"15\" fill=\"#9a958c\" text-anchor=\"start\" letter-spacing=\".08em\">SEMINAR ROOM  B</text> <text x=\"292\" y=\"768\" font-size=\"15\" fill=\"#9a958c\" text-anchor=\"start\" letter-spacing=\".08em\">CAFE &amp; EVENT HALL  C</text>\n  <rect x=\"120\" y=\"150\" width=\"490\" height=\"55\" fill=\"#d8d5cf\"/><text x=\"365\" y=\"174.5\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"700\" fill=\"#333\">Project 3. 십자가</text><text x=\"365\" y=\"193.5\" text-anchor=\"middle\" font-size=\"12.5\" fill=\"#333\" opacity=\".9\">제1일 – 제8일, 날짜를 따라 걷는 코스</text>\n  <rect x=\"620\" y=\"152\" width=\"108\" height=\"46\" fill=\"#8c2bd1\"/><text x=\"674\" y=\"172\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"700\" fill=\"#fff\">제7일 · 토</text><text x=\"674\" y=\"191\" text-anchor=\"middle\" font-size=\"12.5\" fill=\"#fff\" opacity=\".9\">암흑</text>\n  <rect x=\"938\" y=\"152\" width=\"160\" height=\"46\" fill=\"#2f9a4e\"/><text x=\"1018\" y=\"172\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"700\" fill=\"#fff\">제4일 · 수</text><text x=\"1018\" y=\"191\" text-anchor=\"middle\" font-size=\"12.5\" fill=\"#fff\" opacity=\".9\">향유옥합 · 향낭 만들기</text>\n  <rect x=\"1100\" y=\"222\" width=\"322\" height=\"44\" fill=\"#e9711c\"/><text x=\"1261\" y=\"241\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"700\" fill=\"#fff\">제2일 활동</text><text x=\"1261\" y=\"260\" text-anchor=\"middle\" font-size=\"12.5\" fill=\"#fff\" opacity=\".9\">스크래치에 성경말씀 적기</text>\n  <rect x=\"723\" y=\"482\" width=\"217\" height=\"38\" fill=\"#39c3d6\"/><text x=\"831.5\" y=\"507\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"700\" fill=\"#123\">Isaiah 53:5</text>\n  <rect x=\"942\" y=\"482\" width=\"103\" height=\"38\" fill=\"#d8b73a\"/><text x=\"993.5\" y=\"498\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"700\" fill=\"#222\">제3일 · 화</text><text x=\"993.5\" y=\"517\" text-anchor=\"middle\" font-size=\"12.5\" fill=\"#222\" opacity=\".9\">과부의 헌금</text>\n  <rect x=\"1045\" y=\"482\" width=\"317\" height=\"38\" fill=\"#a69a3a\"/><text x=\"1203.5\" y=\"507\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"700\" fill=\"#fff\">고난주간 에디션 일러스트</text>\n  <rect x=\"1362\" y=\"482\" width=\"130\" height=\"38\" fill=\"#e9711c\"/><text x=\"1427\" y=\"498\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"700\" fill=\"#fff\">제2일 · 월</text><text x=\"1427\" y=\"517\" text-anchor=\"middle\" font-size=\"12.5\" fill=\"#fff\" opacity=\".9\">성전을 깨끗이</text>\n  <path d=\"M735 532 H940 V590 H797 V845 H735Z\" fill=\"#2449e0\"/>\n  <text x=\"868\" y=\"560\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"700\" fill=\"#fff\">제5일 · 목</text><text x=\"868\" y=\"578\" text-anchor=\"middle\" font-size=\"12.5\" fill=\"#fff\">최후의 만찬</text>\n  <rect x=\"313\" y=\"497\" width=\"110\" height=\"48\" fill=\"#26346b\"/><text x=\"368\" y=\"518\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"700\" fill=\"#fff\">제6일 · 금</text><text x=\"368\" y=\"537\" text-anchor=\"middle\" font-size=\"12.5\" fill=\"#fff\" opacity=\".9\">십자가</text>\n  <rect x=\"442\" y=\"510\" width=\"148\" height=\"26\" fill=\"none\" stroke=\"#c0392b\" stroke-width=\"6\"/>\n  <rect x=\"120\" y=\"555\" width=\"30\" height=\"207\" fill=\"#333\"/><text x=\"135\" y=\"660\" transform=\"rotate(90 135 660)\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"700\" fill=\"#fff\">제8일 · 일 · 부활</text>\n  <rect x=\"120\" y=\"800\" width=\"104\" height=\"48\" fill=\"#d0352b\"/><text x=\"172\" y=\"821\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"700\" fill=\"#fff\">제1일 · 월</text><text x=\"172\" y=\"840\" text-anchor=\"middle\" font-size=\"12.5\" fill=\"#fff\" opacity=\".9\">예루살렘 입성</text>\n  <circle cx=\"368\" cy=\"825\" r=\"42\" fill=\"#fff\" stroke=\"#333\" stroke-width=\"5\"/><text x=\"368\" y=\"822\" text-anchor=\"middle\" font-size=\"13.5\" font-weight=\"700\" fill=\"#333\">거울</text><text x=\"368\" y=\"840\" text-anchor=\"middle\" font-size=\"11.5\" fill=\"#555\">최후의 만찬</text>\n</svg>"
+    }
+  ],
+  "ghs-2025": [
+    {
+      "title": "진입로에서 5층 홀까지, 여덟 개의 매체",
+      "svg": "<svg viewBox=\"0 0 1200 760\" role=\"img\" aria-label=\"제주 ICC 단면 동선과 매체 위치\">\n  <rect width=\"1200\" height=\"760\" fill=\"#fafaf8\"/>\n  <line x1=\"20\" y1=\"700\" x2=\"1180\" y2=\"700\" stroke=\"#000\" stroke-width=\"2\"/>\n  <path class=\"wall\" d=\"M260 700 V90 H1150 V700\"/>\n  <path d=\"M260 520 H1150 M260 330 H1150\" stroke=\"#000\" stroke-width=\"1.5\"/>\n  <line x1=\"1150\" y1=\"92\" x2=\"1150\" y2=\"330\" stroke=\"#9cc8e0\" stroke-width=\"7\"/>\n  <rect x=\"262\" y=\"612\" width=\"14\" height=\"86\" fill=\"#fff\" stroke=\"#000\"/>\n  <path d=\"M370 700 L520 520 M392 700 L542 520\" stroke=\"#b9b7ae\" stroke-width=\"2\"/>\n  <path d=\"M560 520 L690 330 M582 520 L712 330\" stroke=\"#b9b7ae\" stroke-width=\"2\"/>\n  <path class=\"flow\" d=\"M180 660 C230 660 250 660 300 660 S360 690 381 690 L531 510 C560 505 575 505 571 510 L701 320 H1080\"/>\n  <line x1=\"100\" y1=\"700\" x2=\"100\" y2=\"500\" stroke=\"#000\" stroke-width=\"3\"/><rect x=\"104\" y=\"520\" width=\"18\" height=\"54\" fill=\"#fc4c02\"/><rect x=\"124\" y=\"520\" width=\"18\" height=\"54\" fill=\"#00b5e2\"/>\n  <line x1=\"200\" y1=\"700\" x2=\"200\" y2=\"500\" stroke=\"#000\" stroke-width=\"3\"/><rect x=\"204\" y=\"520\" width=\"18\" height=\"54\" fill=\"#fc4c02\"/><rect x=\"224\" y=\"520\" width=\"18\" height=\"54\" fill=\"#00b5e2\"/>\n  <rect x=\"268\" y=\"560\" width=\"210\" height=\"16\" fill=\"#fc4c02\"/>\n  <rect x=\"584\" y=\"440\" width=\"16\" height=\"48\" fill=\"#fc4c02\"/>\n  <rect x=\"728\" y=\"286\" width=\"96\" height=\"42\" fill=\"#fc4c02\"/><rect x=\"716\" y=\"290\" width=\"9\" height=\"38\" fill=\"#00b5e2\"/><rect x=\"827\" y=\"290\" width=\"9\" height=\"38\" fill=\"#fc4c02\"/>\n  <rect x=\"862\" y=\"92\" width=\"14\" height=\"72\" fill=\"#c9a86a\"/><rect x=\"882\" y=\"92\" width=\"14\" height=\"72\" fill=\"#c9a86a\"/>\n  <rect x=\"930\" y=\"160\" width=\"104\" height=\"82\" fill=\"#00b5e2\"/><path d=\"M944 330 V262 H1020 V330\" fill=\"#fff\" stroke=\"#000\"/>\n  <g fill=\"#fff\" stroke=\"#000\"><rect x=\"1050\" y=\"300\" width=\"22\" height=\"28\"/><rect x=\"1076\" y=\"300\" width=\"22\" height=\"28\"/><rect x=\"1102\" y=\"300\" width=\"22\" height=\"28\"/></g>\n  <rect x=\"1132\" y=\"102\" width=\"12\" height=\"150\" fill=\"#fc4c02\"/>\n  <text class=\"lbl dk\" x=\"1170\" y=\"225\" text-anchor=\"end\" transform=\"rotate(-90 1170 225)\">유리 파사드</text>\n  <text class=\"lbl dk\" x=\"280\" y=\"350\">5F 탐라홀</text><text class=\"lbl dk\" x=\"280\" y=\"540\">3F</text><text class=\"lbl dk\" x=\"290\" y=\"690\">1F 입구</text>\n  <text class=\"lbl\" x=\"150\" y=\"725\" text-anchor=\"middle\">진입로</text>\n  <text class=\"lbl\" x=\"476\" y=\"645\">에스컬레이터</text>\n</svg>",
+      "zones": [
+        {
+          "n": "1",
+          "name": "가로등 현수막",
+          "en": "Street Banner · Approach",
+          "x": 150,
+          "y": 470,
+          "photo": "pf/ghs-2025/x/c02.jpg",
+          "tag": "MOCK-UP",
+          "p": [
+            "진입로 가로등에 오렌지와 블루 두 장을 한 쌍으로 걸었습니다. 행사명과 슬로건 GO BILLION SOULS!를 번갈아 보여 줍니다."
+          ],
+          "dl": [
+            [
+              "위치",
+              "제주 ICC 진입로"
+            ],
+            [
+              "사이즈",
+              "600×1800mm"
+            ],
+            [
+              "구성",
+              "A·B 2종 Mix"
+            ]
+          ],
+          "sub": [
+            [
+              "pf/ghs-2025/x/d-lamp-o.jpg",
+              "가로등 현수막 A"
+            ],
+            [
+              "pf/ghs-2025/x/d-lamp-b.jpg",
+              "가로등 현수막 B"
+            ]
+          ]
+        },
+        {
+          "n": "2",
+          "name": "입구 현수막",
+          "en": "Entrance Banner · 1F",
+          "x": 372,
+          "y": 560,
+          "photo": "pf/ghs-2025/x/c04.jpg",
+          "tag": "MOCK-UP",
+          "p": [
+            "ICC 정문 캐노피 아래 12m 폭의 가로 현수막입니다. 행사장 사진을 받아 실제 비율로 앉혀 보고, 자리를 미리 선점해야 한다는 조건까지 함께 정리했습니다."
+          ],
+          "dl": [
+            [
+              "위치",
+              "제주 ICC 입구"
+            ],
+            [
+              "사이즈",
+              "12200×1800mm"
+            ],
+            [
+              "조건",
+              "설치 자리 선점 필요"
+            ]
+          ],
+          "sub": [
+            [
+              "pf/ghs-2025/x/d-entry.jpg",
+              "입구 현수막 원본"
+            ]
+          ]
+        },
+        {
+          "n": "3",
+          "name": "에스컬레이터 배너",
+          "en": "Escalator Banner · 3F",
+          "x": 592,
+          "y": 412,
+          "photo": "pf/ghs-2025/x/c06.jpg",
+          "tag": "MOCK-UP",
+          "p": [
+            "3층 입구 에스컬레이터 사이에 화살표 하나만 크게 넣은 배너를 세웠습니다. 같은 배너를 동선 곳곳에 반복해 길을 잃지 않게 했습니다."
+          ],
+          "dl": [
+            [
+              "위치",
+              "3F 입구"
+            ],
+            [
+              "사이즈",
+              "600×1800mm"
+            ],
+            [
+              "역할",
+              "동선 표시"
+            ]
+          ],
+          "sub": [
+            [
+              "pf/ghs-2025/x/d-esc.jpg",
+              "에스컬레이터 배너 원본"
+            ]
+          ]
+        },
+        {
+          "n": "4",
+          "name": "인포메이션",
+          "en": "Information · 5F",
+          "x": 776,
+          "y": 262,
+          "photo": "pf/ghs-2025/x/c08.jpg",
+          "tag": "MOCK-UP",
+          "p": [
+            "5층에 올라서자마자 보이는 인포메이션입니다. 목공 백월 상·하부로 평소에는 안내 데스크로 쓰고, 첫날 접수 때만 양쪽에 등록 배너를 세웁니다. 에스컬레이터에서 국제 참가자 등록이 먼저 보이도록 인포 오른쪽에 두었습니다."
+          ],
+          "dl": [
+            [
+              "위치",
+              "5F 탐라홀 입구"
+            ],
+            [
+              "백월",
+              "상부 7350×2500mm · 하부 7350×1220mm"
+            ],
+            [
+              "배너",
+              "600×1800mm 좌·우"
+            ]
+          ],
+          "sub": [
+            [
+              "pf/ghs-2025/x/d-info-top.jpg",
+              "백월 상부"
+            ],
+            [
+              "pf/ghs-2025/x/d-reg-korea.jpg",
+              "국내 참가자 등록"
+            ],
+            [
+              "pf/ghs-2025/x/d-reg-global.jpg",
+              "국제 참가자 등록"
+            ]
+          ]
+        },
+        {
+          "n": "5",
+          "name": "초대형 현수막",
+          "en": "Glass Facade · 5F",
+          "x": 1100,
+          "y": 150,
+          "photo": "pf/ghs-2025/x/c11.jpg",
+          "tag": "MOCK-UP",
+          "p": [
+            "탐라홀 유리 파사드에 거는 12m 정사각 현수막으로, 행사의 정면 메인입니다. 단면 인쇄라 반대편에서는 보이지 않는다는 조건을 시안 단계에서 짚었습니다."
+          ],
+          "dl": [
+            [
+              "위치",
+              "5F 탐라홀 유리"
+            ],
+            [
+              "사이즈",
+              "12000×12000mm"
+            ],
+            [
+              "인쇄",
+              "단면"
+            ]
+          ],
+          "sub": [
+            [
+              "pf/ghs-2025/x/d-giant.jpg",
+              "초대형 현수막 원본"
+            ]
+          ]
+        },
+        {
+          "n": "6",
+          "name": "탐라홀 포이어",
+          "en": "Foyer Ceiling · 5F",
+          "x": 880,
+          "y": 200,
+          "photo": "pf/ghs-2025/x/foyer-pair.jpg",
+          "p": [
+            "포이어 천장에서 내려오는 세로 현수막 두 장입니다. 하늘과 벼 이삭 사진 위에 슬로건과 성경 구절을 얹었습니다."
+          ],
+          "dl": [
+            [
+              "위치",
+              "5F 탐라홀 천장"
+            ],
+            [
+              "사이즈",
+              "3000×12000mm"
+            ],
+            [
+              "인쇄",
+              "세로 천장 현수막, 단면"
+            ]
+          ],
+          "sub": [
+            [
+              "pf/ghs-2025/x/d-foyer-1.jpg",
+              "포이어 현수막 1"
+            ],
+            [
+              "pf/ghs-2025/x/d-foyer-2.jpg",
+              "포이어 현수막 2"
+            ]
+          ]
+        },
+        {
+          "n": "7",
+          "name": "입구 메인",
+          "en": "Hall Entrance · 5F",
+          "x": 982,
+          "y": 202,
+          "photo": "pf/ghs-2025/x/c14.jpg",
+          "tag": "MOCK-UP",
+          "p": [
+            "탐라홀 입구 위의 대형 현수막은 블루 B안으로 정했습니다. 유리면 메인이 오렌지라서, 마주 보는 홀 입구는 블루로 바꿔 두 장면을 구분했습니다."
+          ],
+          "dl": [
+            [
+              "위치",
+              "5F 탐라홀 입구"
+            ],
+            [
+              "사이즈",
+              "7200×5690mm"
+            ],
+            [
+              "안",
+              "B안 블루"
+            ]
+          ],
+          "sub": [
+            [
+              "pf/ghs-2025/x/d-main.jpg",
+              "입구 메인 원본"
+            ]
+          ]
+        },
+        {
+          "n": "8",
+          "name": "부스존",
+          "en": "Booth Zone · 5F",
+          "x": 1087,
+          "y": 268,
+          "photo": "pf/ghs-2025/x/c16.jpg",
+          "p": [
+            "탐라홀 측면에 2.5m 개별 부스를 줄지어 놓았습니다. 참여 단체마다 같은 그리드의 상단 패널을 만들고, 각 단체 홈페이지 QR을 넣었습니다."
+          ],
+          "dl": [
+            [
+              "위치",
+              "5F 탐라홀 측면"
+            ],
+            [
+              "부스",
+              "2.5m 개별 부스"
+            ],
+            [
+              "패널",
+              "단체명과 홈페이지 QR"
+            ]
+          ],
+          "sub": [
+            [
+              "pf/ghs-2025/x/d-booth-plan.jpg",
+              "부스 배치"
+            ],
+            [
+              "pf/ghs-2025/x/d-booth-o.jpg",
+              "부스 패널 오렌지"
+            ],
+            [
+              "pf/ghs-2025/x/d-booth-b.jpg",
+              "부스 패널 블루"
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

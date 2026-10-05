@@ -2,7 +2,8 @@ import seeds from './seeds.json' with {type:'json'};
 export const SEEDS=seeds;
 const byKey=new Map(seeds.map(x=>[x.key,x]));
 const json=(data,status=200)=>Response.json(data,{status,headers:{'Cache-Control':'no-store','X-Content-Type-Options':'nosniff'}});
-const fail=(status,message)=>{throw Object.assign(new Error(message),{status})};
+/** @returns {never} */
+function fail(status,message){throw Object.assign(new Error(message),{status})}
 export function identity(req,env){const id=req.headers.get('oai-authenticated-user-id'),email=req.headers.get('oai-authenticated-user-email')?.toLowerCase();return id&&email&&email===String(env.CMS_ADMIN_EMAIL||'').toLowerCase()?{id,email}:null}
 const validKey=k=>/^(project|note|site):[a-z0-9][a-z0-9-]{0,79}$/.test(k);
 function safeUrl(v,image=false){if(!v)return '';if(typeof v!=='string'||v.length>2048||/[\x00-\x20<>"'\\]/.test(v))fail(400,'주소를 확인해 주세요.');if(image){if(/^(https:\/\/|\/(?!\/)|images\/|pf\/|fl\/|svm\/)/.test(v))return v;}else if(/^(https?:\/\/|mailto:|tel:|\/(?!\/)|#)/.test(v))return v;fail(400,'사용할 수 없는 주소입니다.')}
@@ -24,6 +25,7 @@ export function validate(input,key){
 }
 async function row(env,key){return env.DB.prepare('SELECT * FROM cms_entries WHERE key=?').bind(key).first()}
 export async function getEntry(env,key){if(!validKey(key))fail(404,'문서가 없습니다.');const r=await row(env,key);if(r)return {key,doc:JSON.parse(r.draft_json),version:r.version,publishedVersion:r.published_version,publishedAt:r.published_at,updatedAt:r.updated_at,published:r.published_json?JSON.parse(r.published_json):null};if(byKey.has(key))return {key,doc:byKey.get(key),version:0,publishedVersion:0,publishedAt:null,updatedAt:null,published:byKey.get(key)};fail(404,'문서가 없습니다.')}
+/** @returns {Promise<Array<{key: string} & Record<string, unknown>>>} */
 export async function published(env){const r=await env.DB.prepare('SELECT published_json FROM cms_entries WHERE published_json IS NOT NULL').all();return r.results.map(x=>JSON.parse(x.published_json))}
 async function list(env){const r=await env.DB.prepare('SELECT * FROM cms_entries ORDER BY updated_at DESC').all();const map=new Map(seeds.map(doc=>[doc.key,{key:doc.key,doc,version:0,publishedVersion:0,published:doc,updatedAt:null}]));for(const x of r.results)map.set(x.key,{key:x.key,doc:JSON.parse(x.draft_json),version:x.version,publishedVersion:x.published_version,published:x.published_json?JSON.parse(x.published_json):null,updatedAt:x.updated_at});return [...map.values()]}
 const revision=async(env,key,version,doc,action)=>env.DB.prepare('INSERT INTO cms_revisions(id,entry_key,version,content_json,action,created_at) VALUES(?,?,?,?,?,?)').bind(crypto.randomUUID(),key,version,JSON.stringify(doc),action,new Date().toISOString()).run();

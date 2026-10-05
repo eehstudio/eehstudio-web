@@ -413,9 +413,9 @@ html:not(.has-cursor) .cur-dot,html:not(.has-cursor) .cur-label,html:not(.has-cu
 
 /* ---------- Thumbnails (16:9, 1920x1080) ---------- */
 .thumb{position:relative;aspect-ratio:16/9;overflow:hidden;background:var(--soft);container-type:inline-size}
-.thumb > img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ease-out)}
+.thumb > img{width:100%;height:100%;object-fit:contain;transition:transform 1.1s var(--ease-out)}
 .thumb-in{position:absolute;inset:0;transition:transform 1.1s var(--ease-out)}
-.card:hover .thumb > img,.card:hover .thumb-in{transform:scale(1.03)}
+.card:hover .thumb-in{transform:scale(1.03)}
 
 /* CSES cover art (built in CSS, swap with a 1920x1080 image via cover:"") */
 .art-svm{position:absolute;inset:0;background:var(--svm-red);color:#fff;overflow:hidden}
@@ -1161,7 +1161,7 @@ h1,h2,h3{text-wrap:balance}
 .car-thumbs{display:flex;gap:6px;margin-top:14px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
 .car-thumbs::-webkit-scrollbar{display:none}
 .car-thumbs button{flex:0 0 auto;width:92px;aspect-ratio:16/9;border:0;padding:0;background-color:#eee;background-repeat:no-repeat;opacity:.45;transition:opacity .3s,outline-color .3s;outline:2px solid transparent;outline-offset:1px}
-.car-thumbs button img{width:100%;height:100%;object-fit:cover}
+.car-thumbs button img{width:100%;height:100%;object-fit:contain}
 .car-thumbs button:hover{opacity:.8}
 .car-thumbs button.on{opacity:1;outline-color:#000}
 
@@ -1193,7 +1193,7 @@ h1,h2,h3{text-wrap:balance}
 .lite-status b.System,.lite-status b.Archive{background:#fff;color:#000;border:1px solid var(--gray)}
 .rel{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.4vw,20px)}
 .rel a{display:grid;grid-template-columns:160px 1fr;gap:16px;align-items:center;border-top:1px solid #000;padding-top:14px}
-.rel a img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.rel a img{width:100%;aspect-ratio:16/10;object-fit:contain}
 .rel small{font-size:12.5px;color:var(--gray)}
 .rel b{display:block;font-size:clamp(17px,1.4vw,21px);letter-spacing:-.02em;margin-top:4px}
 
@@ -1791,7 +1791,7 @@ h1,h2,h3{text-wrap:balance}
   <section class="view" data-view="work">
     <div class="page-head wrap">
       <h1>Work<sup class="js-count"></sup></h1>
-      <p>현장에서 겪는 브랜드와, 화면과 손에 남는 브랜드. 팝업과 공간, 브랜딩과 마케팅의 두 갈래로 나눠 보여드립니다.</p>
+      <p>현장에서 겪는 브랜드와, 화면과 손에 남는 브랜드. 브랜딩, 오프라인 전시·팝업, 마케팅, 디자인의 네 분야로 나눠 보여드립니다.</p>
     </div>
     <div class="wrap" style="padding-bottom:clamp(72px,9vw,140px)">
       <div class="page-tools">
@@ -1836,6 +1836,12 @@ h1,h2,h3{text-wrap:balance}
       <div class="sec-head"><h2 class="sec-title">What we do</h2><small class="muted-s">한 분야부터 통합 프로젝트까지, 필요한 범위에 맞춰 함께합니다</small></div>
       <div class="caps service-offers js-caps"></div><p class="offer-method">AI는 자료 분석과 기획 정리, 공간 시뮬레이션과 운영 도구 제작에 활용합니다. <a href="#/work/freeze-lab">용산 팝업</a>과 <a href="#/work/social-value-market">CSES 기획 대시보드</a>에서 그 과정을 확인할 수 있습니다.</p>
       <div class="js-ai-about"></div>
+      <section class="ee-ai-about" aria-labelledby="director-portfolio-title">
+        <span class="ee-eyebrow">DIRECTOR / HWANG YUNHEE</span>
+        <h2 id="director-portfolio-title">2026 황윤희 포트폴리오</h2>
+        <p>EEH STUDIO 디렉터 황윤희의 개인 포트폴리오에서 작업과 관심사를 더 살펴보세요.</p>
+        <div class="ee-links"><a href="https://yh2026-site.home-business-kr.chatgpt.site/#/portfolio" target="_blank" rel="noopener noreferrer">개인 포트폴리오 보기 <span aria-hidden="true">↗</span></a></div>
+      </section>
     </div>
 
     <div class="band">
@@ -1976,7 +1982,7 @@ const WORKS = [
     category: "Pop-up Booth",
     tags: ["Concept","Branding","Space","Goods","Digital","Operation"],
     summary: "2026 대한민국 사회적가치 페스타 홍보부스. 일상 속 실천을 사회적 가치로 측정하고, 가치의 이름을 단 굿즈로 교환하는 체험형 마켓.",
-    cover: "images/svm-cover.jpg",
+    cover: "images/svm-booth.jpg",
     hero: "svm-booth.jpg",
     art: "svm",
     photos: [],
@@ -2388,8 +2394,8 @@ function svmBody(){
 
     <div class="cs-block">
       <div class="cs-label">Booth in 3D</div>
-      <div class="b3frame"><iframe src="svm/booth3d.html" title="SOCIAL VALUE MARKET 3D 부스" loading="lazy"></iframe><button type="button" class="tap-guard" aria-label="3D 부스 조작 시작"><span>눌러서 3D 돌려보기</span></button></div>
-      <p class="cap"><b>3,000 × 3,000mm, ㄴ자 개방형 부스를 3D로 먼저 지었습니다.</b> 드래그해서 돌려 보거나 ISO, FRONT, TOP 시점으로 바꿔 볼 수 있습니다. 레드 크레이트 34개와 화이트 7개, 벽면 5면, 코너의 초대형 영수증까지 9월 5일 공간 기획안을 바탕으로 재구성한 배치입니다. 현장 사진과 제작 전 시뮬레이션을 함께 비교할 수 있습니다. <a class="ul" href="svm/booth3d.html" target="_blank" rel="noopener">크게 보기</a></p>
+      <div class="b3frame"><iframe src="space/viewer.html?project=social-value-market" title="SOCIAL VALUE MARKET 3D 부스" loading="lazy"></iframe><button type="button" class="tap-guard" aria-label="3D 부스 조작 시작"><span>눌러서 3D 돌려보기</span></button></div>
+      <p class="cap"><b>현장 사진에서 다시 구성한 사회적 가치페스타 부스.</b> 후면과 왼쪽 벽체, 목재 진열함 8+2개, 전면 왼쪽 START와 오른쪽 COUNTER, 바닥으로 이어지는 대형 영수증을 사진에 맞춰 재구성했습니다. 3×3m는 기획 규격이며, 집기의 높이·간격과 가려진 구조는 사진 비례 추정입니다. 상단에서 평면·정면·좌우측 도면도 함께 볼 수 있습니다. <a class="ul" href="space/viewer.html?project=social-value-market" target="_blank" rel="noopener">크게 보기</a></p>
       <div class="walls-strip">${["p1","p2","p3","p4","p5"].map((p,i)=>`<figure><img src="${IMG}walls/wall${p}.webp" alt="벽면 ${p.toUpperCase()} 인쇄 시안" loading="lazy"><figcaption>${p.toUpperCase()}</figcaption></figure>`).join("")}</div>
       <p class="cap"><b>벽면 5면 인쇄 시안, 각 950 × 2,200mm.</b> 뒷벽 3면에 SOCIAL Value MARKET 워드마크가 이어지고, 우측 레드 2면에는 브랜드 선언문과 MISSION을 담았습니다.</p>
       <div class="flow" aria-label="부스 동선"><span>IN</span><i></i><span>TEST</span><i></i><span>GIFT</span><i></i><span>COUNTER</span><i></i><span>OUT</span></div>
@@ -2710,8 +2716,8 @@ function flBody(){
 
     <div class="cs-block">
       <div class="cs-label">Booth in 3D</div>
-      <div class="b3frame"><iframe src="fl/booth3d.html" title="FREEZE LAB 3D 부스" loading="lazy"></iframe><button type="button" class="tap-guard" aria-label="3D 부스 조작 시작"><span>눌러서 3D 돌려보기</span></button></div>
-      <p class="cap"><b>12,287 × 9,170mm, 실제 치수로 먼저 지은 실험실.</b> 드래그해서 돌려 보고, 오른쪽 목록에서 존별로 따로 볼 수 있습니다. 가벽과 매대는 헤어라인 스텐 시트, 미션존 집기는 SUS201 기준으로 마감을 맞췄습니다. <a class="ul" href="fl/booth3d.html" target="_blank" rel="noopener">크게 보기</a></p>
+      <div class="b3frame"><iframe src="space/viewer.html?project=freeze-lab" title="FREEZE LAB 3D 부스" loading="lazy"></iframe><button type="button" class="tap-guard" aria-label="3D 부스 조작 시작"><span>눌러서 3D 돌려보기</span></button></div>
+      <p class="cap"><b>원본 R02 모델에서 뽑은 12,287 × 9,170mm 공간.</b> 드래그해서 돌려 보고, 평면·정면·좌우측 시점으로 구조를 확인할 수 있습니다. 가벽과 매대는 헤어라인 스텐 시트, 미션존 집기는 SUS201 기준으로 마감을 맞췄습니다. <a class="ul" href="space/viewer.html?project=freeze-lab" target="_blank" rel="noopener">크게 보기</a></p>
       <div class="pair mt">${fig("fl/fl-wall.jpg","제품 진열벽 3D 렌더","wide169")}${fig("fl/fl-mission.jpg","미션 체험존 3D 렌더","wide169")}</div>
       <div class="pair mt">${fig("fl/fl-top.jpg","부스 탑뷰 3D 렌더","wide169")}${fig("fl/view_w02_iso.jpg","중앙 가벽 도면","wide169")}</div>
       <p class="cap"><b>렌더와 도면을 같은 모델에서.</b> 3D 모델 하나에서 존별 사시도와 평행투영 도면을 뽑아, 시공사와 현장이 같은 그림을 보며 움직이게 했습니다.</p>
@@ -2926,7 +2932,7 @@ addEventListener("scroll", onScrollV8, {passive:true});
 /* ---------- Router + curtain ---------- */
 const TITLES = { home:"EEH STUDIO | Every Experience, Humanized", work:"Work | EEH STUDIO", about:"About | EEH STUDIO", notes:"Notes | EEH STUDIO", contact:"Contact | EEH STUDIO" };
 const LABELS = { home:"EEH STUDIO", work:"Work", about:"About", notes:"Notes", contact:"Contact" };
-let first = true, busy = false;
+let first = true, busy = false, routePending = false;
 
 function parse(){
   const parts = location.hash.replace(/^#\/?/, "").split("/");
@@ -2954,14 +2960,21 @@ function show({view, w}){
 function route(){
   const r = parse();
   if (first || reduce){ show(r); first = false; return; }
-  if (busy) return; busy = true;
+  if (busy){ routePending = true; return; } busy = true;
   const c = $(".curtain");
   $(".js-curtain-t").textContent = (r.view === "case" || r.view === "note") ? r.w.title : LABELS[r.view];
   c.classList.remove("out"); void c.offsetWidth; c.classList.add("in");
   setTimeout(()=>{
-    show(r);
+    // History can change while the curtain enters; render the latest URL.
+    const latest = parse(); routePending = false;
+    $(".js-curtain-t").textContent = (latest.view === "case" || latest.view === "note") ? latest.w.title : LABELS[latest.view];
+    show(latest);
     c.classList.add("out");
-    setTimeout(()=>{ c.classList.remove("in","out"); busy = false; }, 650);
+    setTimeout(()=>{
+      c.classList.remove("in","out"); busy = false;
+      // Do not drop navigation received during the exit animation either.
+      if (routePending){ routePending = false; route(); }
+    }, 650);
   }, 560);
 }
 
@@ -3324,7 +3337,7 @@ document.body.insertAdjacentHTML("beforeend", `<div class="lb" role="dialog" ari
 const lbEl = $(".lb");
 function lbShow(){ const it = LB.list[LB.i]; $("img", lbEl).src = it.src; $("img", lbEl).alt = it.cap; $(".lb-c", lbEl).textContent = it.cap; $(".ct", lbEl).textContent = `${pad(LB.i+1)} / ${pad(LB.list.length)}`; }
 function lbOpen(img){
-  const scope = img.closest(".car, .xs-zp, .xs, .cs-block, .note-body, .cs-hero, .js-note") || document;
+  const scope = img.closest(".ea, .car, .xs-zp, .xs, .cs-block, .note-body, .cs-hero, .js-note") || document;
   const imgs = $$("img", scope).filter(x => !x.closest(".car-thumbs, .bx-stage, .rel"));
   LB.list = imgs.map(x => ({src: x.currentSrc || x.src, cap: x.dataset.lb || x.alt || ""}));
   LB.i = Math.max(0, imgs.indexOf(img)); lbShow(); lbEl.classList.add("on"); document.documentElement.style.overflow = "hidden";
@@ -3339,7 +3352,7 @@ addEventListener("keydown", e => { if (!lbEl.classList.contains("on")) return; i
 (function(){ let sx = null; lbEl.addEventListener("touchstart", e => { sx = e.touches[0].clientX; }, {passive:true}); lbEl.addEventListener("touchend", e => { if (sx === null) return; const d = e.changedTouches[0].clientX - sx; if (Math.abs(d) > 50){ LB.i = (LB.i + (d < 0 ? 1 : -1) + LB.list.length) % LB.list.length; lbShow(); } sx = null; }); })();
 document.addEventListener("click", e => {
   if (typeof ED !== "undefined" && ED.on) return;
-  const img = e.target.closest && e.target.closest(".js-case .ph-fig img, .js-case .deck-strip img, .js-case .trio img, .js-case .prod img, .js-case .car-s img, .js-note .ph-fig img, .js-case .bx-panel img, .js-case .stg img, .js-note .note-gal img, .js-case .xs-fig img, .js-case .xs-grid img, .js-case .xs-card img, .js-case .xs-zp img");
+  const img = e.target.closest && e.target.closest(".js-case .ea-grid img, .js-case .ep-plates img, .js-case .ph-fig img, .js-case .deck-strip img, .js-case .trio img, .js-case .prod img, .js-case .car-s img, .js-note .ph-fig img, .js-case .bx-panel img, .js-case .stg img, .js-note .note-gal img, .js-case .xs-fig img, .js-case .xs-grid img, .js-case .xs-card img, .js-case .xs-zp img");
   if (!img) return;
   const tr = img.closest(".car-track"); if (tr && tr.dataset.moved) return;
   e.preventDefault(); lbOpen(img);
@@ -3451,11 +3464,11 @@ const BX_Z = [
 function bxHTML(){
   return `<div class="bx">
     <div class="spatial-live-host bx-model-host">
-      <img class="spatial-poster" src="fl/plan-r02.svg" alt="FREEZE LAB 원본 모델 평면도">
-      <button type="button" class="spatial-launch" data-spatial-launch="fl/booth3d.html?embed=1" data-model-title="FREEZE LAB 원본 3D 모델">3D 직접 돌려보기 <span>드래그 회전 · 확대 · 정면·측면·탑뷰</span></button>
+      <img class="spatial-poster" src="space/cad/freeze-lab/iso.webp" alt="FREEZE LAB 원본 모델 평면도">
+      <button type="button" class="spatial-launch" data-spatial-launch="space/viewer.html?project=freeze-lab" data-model-title="FREEZE LAB 원본 3D 모델">3D 직접 돌려보기 <span>드래그 회전 · 확대 · 정면·측면·탑뷰</span></button>
     </div>
     <div class="bx-bar">${BX_Z.map((z,i)=>`<button type="button" class="chip" data-z="${i}" aria-pressed="false"><b>${esc(z.step)}</b>${esc(z.ko)}</button>`).join("")}<span class="sp"></span>
-      <a class="ctl" href="fl/booth3d.html" target="_blank" rel="noopener">3D 전체 화면으로 열기 ↗</a></div>
+      <a class="ctl" href="space/viewer.html?project=freeze-lab" target="_blank" rel="noopener">3D 전체 화면으로 열기 ↗</a></div>
     <div class="bx-panel" aria-live="polite"></div>
   </div>`;
 }
@@ -3633,7 +3646,7 @@ function enhanceFL(){
   const b3 = blocks.find(b => /Booth in 3D/.test(($(".cs-label", b)||{}).textContent||""));
   if (b3){
     const fr = $(".b3frame", b3); if (fr) fr.outerHTML = bxHTML();
-    const cap = $(".cap", b3); if (cap) cap.innerHTML = `<b>12,287 × 9,170mm, 실제 치수로 먼저 지은 실험실.</b> 원본 R02 모델을 직접 돌려보고 확대할 수 있습니다. 처음에는 정지된 상태이며, 드래그하거나 정면·측면·탑뷰를 선택할 때 시점이 바뀝니다. 아래 존을 누르면 관련 기획안과 현장 사진이 열립니다. 가벽과 매대는 헤어라인 스텐 시트, 미션존 집기는 SUS201 기준으로 마감을 맞췄습니다.`;
+    const cap = $(".cap", b3); if (cap) cap.innerHTML = `<b>원본 R02 모델에서 뽑은 12,287 × 9,170mm 공간.</b> 원본 R02 모델을 직접 돌려보고 확대할 수 있습니다. 자동 회전 없이 드래그하거나 평면·정면·좌우측 시점을 선택합니다. 도면과 3D는 같은 모델을 사용합니다. 아래 존을 누르면 관련 기획안과 현장 사진이 열립니다. 가벽과 매대는 헤어라인 스텐 시트, 미션존 집기는 SUS201 기준으로 마감을 맞췄습니다.`;
     b3.insertAdjacentHTML("afterend", `
       <div class="cs-block">
         <div class="cs-label">Plan to site</div>
@@ -3669,7 +3682,7 @@ function enhanceSVM(){}
 /* ---------- home: rails + why + workflow ---------- */
 const WHY = [
   ["한 팀이 기획부터 철수까지","콘셉트 문장, 3D 도면, 제작물 명세, 시공 발주, 현장 운영, 결과 리포트까지 한 팀이 끝까지 맡습니다. 메일 첫 통부터 정산까지 하나의 문서로 관리합니다.","77","실행 항목, 8주","pf/fl-deck/05.jpg","#/work/freeze-lab"],
-  ["먼저 짓고, 같은 그림으로 말합니다","실제 치수 3D 모델로 부스를 먼저 짓고, 도면과 렌더를 같은 모델에서 뽑아 클라이언트, 시공사와 같은 화면을 봅니다.","3D","직접 회전·확대하는 부스","fl/view_all_iso.jpg","#/work/freeze-lab"],
+  ["먼저 짓고, 같은 그림으로 말합니다","실제 치수 3D 모델로 부스를 먼저 짓고, 도면과 렌더를 같은 모델에서 뽑아 클라이언트, 시공사와 같은 화면을 봅니다.","3D","직접 회전·확대하는 부스","/fl/view_all_iso.jpg","#/work/freeze-lab"],
   ["숫자로 확인하는 경험","사전예약 1,094명 중 96%가 실제로 방문했고, 현장에서 매일 고친 끝에 2주차 일평균 매출은 1주차의 1.6배가 되었습니다.","96%","예약자의 실제 방문율","pf/fl-site/03.jpg","#/work/freeze-lab"],
   ["브랜드와 현장을 같은 손으로","아이덴티티 가이드부터 공간 그래픽과 현장 콘텐츠까지 연결합니다. RECETTE 카페쇼에서는 아치 모티프를 부스 사인과 공간 그래픽으로 확장했습니다.","4","브랜딩 · 전시·팝업 · 마케팅 · 디자인","pf/recette-booth/01.jpg","#/work/recette-booth"]
 ];
@@ -3924,11 +3937,11 @@ function initPlan(p){
 const w = WORKS.find(x => x.id === "king-of-kings"); if (!w) return;
 const P = "pf/king-of-kings/x/";
 w.heroSrc = P + "sim-z1.jpg"; w.heroTag = "SIMULATION";
-w.cover = "images/pf/king-of-kings/t01.jpg";
+w.cover = "images/pf/king-of-kings/x/sim-z1.jpg";
 const svg = `<svg viewBox="200 150 1620 930" role="img" aria-label="팔시보 스토어 평면도와 존 배치">
   <rect x="200" y="150" width="1620" height="930" fill="#fafaf8"/>
   <rect class="room" x="220" y="177" width="1558" height="863"/>
-  <rect class="fx" x="221" y="178" width="468" height="284"/><text class="lbl" x="455" y="325" text-anchor="middle">창고</text>
+  <rect class="fx" x="221" y="178" width="468" height="284" fill="white"/><text class="lbl" x="455" y="325" text-anchor="middle">Myself · 월터의 방</text>
   <path class="wall" d="M690 178 V540 M789 178 V540 M690 540 H789"/>
   <rect class="fx" x="1491" y="178" width="286" height="349"/>
   <rect class="fx" x="1011" y="342" width="478" height="53"/><text class="lbl dk" x="1250" y="376" text-anchor="middle">Cashier</text>
@@ -4019,7 +4032,7 @@ XS.type = s => { if (s.gfont && !document.querySelector(`link[data-gf="${s.gfont
 (function(){
 const w = WORKS.find(x => x.id === "recette-booth"); if (!w) return;
 const P = "pf/recette-booth/x/";
-w.heroSrc = P + "b05.jpg"; w.heroTag = "ON SITE"; w.cover = "images/pf/recette-booth/t01.jpg";
+w.heroSrc = P + "b05.jpg"; w.heroTag = "ON SITE"; w.cover = "images/pf/recette-booth/x/b05.jpg";
 w.sections = [
   { t:"role", who:"황윤희", sub:"Brand Designer, 신세계푸드 브랜드디자인팀", items:[
     ["Guide","카페쇼 전용 ISP 디자인 가이드, 로고와 서체, 컬러, 아치 프레임"],
@@ -4212,7 +4225,7 @@ const svg = `<svg viewBox="0 0 1200 760" role="img" aria-label="제주 ICC 단�
 </svg>`;
 
 w.heroSrc = P + "c14.jpg"; w.heroTag = "MOCK-UP";
-w.cover = "images/pf/ghs-2025/t01.jpg";
+w.cover = "images/pf/ghs-2025/x/m08.jpg";
 w.sections = [
   { t:"role", who:"황윤희", sub:"Designer · 아이덴티티와 공간 디자인", items:[
     ["Identity","프라이머리·세컨더리 로고, 컨셉, 컬러, 무드, 서체"],["Graphic","오렌지와 블루 두 무드의 웨이브 그래픽"],
@@ -4313,18 +4326,7 @@ const concept = `<svg viewBox="0 0 900 520" role="img" aria-label="미션, 코�
   <text x="830" y="476" font-size="15" fill="${M}" text-anchor="end">참여할수록 더 좋은 리워드</text>
   </g></svg>`;
 const panels = [["가치카드","가치 카드 설명","side"],["Collect Card","CSES 소개 · 미션과 비전"],["프로젝트 1 · DBL","지속가능한 성장 방법론"],["프로젝트 2 · SPC","사회적 가치 측정·보상"],["프로젝트 3 · EPC","탄소 중립을 위한 새로운 해법"]];
-const elev = `<svg viewBox="0 0 1100 520" role="img" aria-label="부스 패널 입면" style="width:94%;height:auto">
-  <g font-family="inherit">
-  ${panels.map(([t,d,side],i)=>{ const x=60+i*200; return `<rect x="${x}" y="40" width="190" height="380" fill="${side?"#efe6ec":"#fff"}" stroke="#000" stroke-width="1.5"/>
-    <rect x="${x}" y="352" width="190" height="68" fill="${Y}" opacity=".9"/>
-    <text x="${x+95}" y="150" text-anchor="middle" font-size="17" font-weight="700">${t}</text>
-    <foreignObject x="${x+12}" y="164" width="166" height="90"><div xmlns="http://www.w3.org/1999/xhtml" style="font-size:13px;line-height:1.5;text-align:center;color:#555">${d}</div></foreignObject>`; }).join("")}
-  <g stroke="#38b2d6" fill="#38b2d6" font-size="14"><line x1="60" y1="450" x2="250" y2="450"/><text x="155" y="472" text-anchor="middle" stroke="none">950</text>
-  <line x1="260" y1="450" x2="1050" y2="450"/><text x="655" y="472" text-anchor="middle" stroke="none">정면 3,010 (+ 측면 950)</text>
-  <line x1="30" y1="40" x2="30" y2="420"/><text x="22" y="236" text-anchor="middle" stroke="none" transform="rotate(-90 22 236)">2,370</text></g>
-  <text x="155" y="30" text-anchor="middle" font-size="13" fill="#888">측면</text><text x="655" y="30" text-anchor="middle" font-size="13" fill="#888">정면</text>
-  <text x="1050" y="505" text-anchor="end" font-size="13" fill="#888">패널 950×2370 · 종이보드 949×2200 (mm)</text>
-  </g></svg>`;
+const elev = `<img src="space/cad/cses-2025/front.svg" alt="2025 CSES 부스 정면 구조도" style="display:block;width:100%;height:auto">`;
 return [
   { t:"html", label:"Concept", h:"사회적 가치를 만들수록 더 큰 보상이 돌아오는 구조",
     p:["제안의 이름은 The better, the more. 연구원이 운영하는 사회성과보상(SPC) 제도를 관람객이 몸으로 겪도록, 미션을 수행하면 코인을 받고 코인을 굿즈로 바꾸는 흐름으로 옮겼습니다."],
@@ -4336,7 +4338,7 @@ return [
     {k:"B-3", t:"코인 교환과 뽑기", d:"연구원 부스에서 미션을 확인받아 코인을 받고, 캡슐 자판기에서 굿즈를 뽑습니다.", pt:"캡슐 150개 · 코인 60개"}]},
   { t:"html", label:"Booth", h:"패널 다섯 장으로 짓는 3×3 부스",
     p:["정면 세 장에는 연구원과 세 개의 프로젝트를, 측면에는 가치카드를 걸었습니다. 집기는 종이 가구로 맞췄습니다."],
-    html: xbBoard(elev, "<b>Elevation</b>측면 가치카드 + 정면 연구원·프로젝트 소개", {ratio:"1100/520", bg:"#fafaf8"})},
+    html: xbBoard(elev, "<b>Front elevation</b>5패널 제안 모델의 정면. 후면 옐로 3패널 + 왼쪽 가치카드 2패널 · 원본 패널 950×2370mm", {ratio:"1800/1428", bg:"#fff"})},
   { t:"row", cls:"c2", ratio:"16/9", items:[[P+"booth3d.jpg","부스 3D. 패널과 상부 사인",{tag:"3D"}],[P+"booth3d-b.jpg","테이블이 없을 경우의 배치",{tag:"3D"}]]},
   { t:"row", cls:"w12", label:"Front graphic", h:"옐로와 크라프트, 두 가지 재료", ratio:"1940/962", contain:true, bg:"#5a5a5a", items:[[P+"detail.jpg","정면 그래픽 상세. 가치카드 월, 미션 안내, TV, 굿즈 캐비닛"],[P+"front.jpg","정면 구성. 입구, 이벤트 테이블, 로고 스탠드",{ratio:"1340/1090"}]]},
   { t:"media", label:"Card design", h:"가치카드 25종", src:P+"cards.jpg", cap:"앞면은 그라데이션 위의 문장 하나, 뒷면은 SOCIAL PROGRESS CREDIT 정보와 미션 칸입니다.", ratio:"2400/2871", contain:true, bg:"#fff"},
@@ -4469,7 +4471,7 @@ const svg = `<svg viewBox="200 150 1620 930" role="img" aria-label="팔시보 �
   <path class="flow" d="M883 1010 C860 950 760 930 731 880 M731 700 C760 560 840 520 867 480 M800 500 C700 560 660 640 649 700 M600 860 C480 860 400 820 378 760 M323 560 C600 640 1000 700 1330 780"/>
 </svg>`;
 w.heroSrc = P + "sim-facade.jpg"; w.heroTag = "3D";
-w.cover = "images/pf/lifemeal-yeonnam/t01.jpg";
+w.cover = "images/pf/lifemeal-yeonnam/x/sim-facade.jpg";
 w.sections = [
   { t:"role", who:"황윤희", sub:"Director · EEH STUDIO 전체 디렉팅", items:[
     ["Pitch","라이프밀 마케팅 단기 플랜과 팝업 기획안 발표"],["Space","팔시보 스토어 3D 모델과 동선 설계"],
@@ -5009,7 +5011,7 @@ const _show9 = show;
 show = function(r){ _show9(r); if (r.view === "case") buildToc(); rvScan(); initDyn(); };
 
 
-WORKS.push({id:"cses-2025",div:"space",practices:["space","design"],status:"Built",lite:true,title:"CSES · THE BETTER, THE MORE",client:"사회적가치연구원 CSES",year:"2025",category:"Exhibition Booth · 2025",cover:"images/pf/cses-proposal/x/booth3d.jpg",heroSrc:"pf/cses-proposal/x/booth3d.jpg",heroTag:"SIMULATION",tags:["Booth Planning","Graphic","Mission","Reward"],summary:"2025 CSES 부스 프로젝트. 미션 수행과 코인, 리워드를 연결하고 가치카드 25종과 옐로 그래픽, 종이 집기로 참여 동선을 구성했습니다.",headline:"미션으로 시작해, 코인과 리워드로 이어지는 사회적가치.",meta:[["Client","사회적가치연구원 CSES"],["Year","2025"],["Scope","Booth Planning, Graphic, Mission, Reward"],["Archive","당시 기획안 · 공간 렌더 · 제작 시안"]],body:["2025년 CSES 부스의 기획·디자인 기록입니다. 연구원의 사회성과보상 구조를 미션 수행, 코인 수집, 리워드 교환으로 옮겼습니다. 2026 SOCIAL VALUE MARKET과는 별도의 연도별 프로젝트입니다."],points:[],slides:[],photos:[],link:"social-value-market",sections:[{t:"lead",label:"CSES / 2025",q:"The better, the more",p:["미션 수행 → 코인 → 굿즈. SNS·SV 허브 구독과 SPC 참여 기업 방문을 연결한 부스입니다. 아래 이미지는 당시 기획안의 공간 렌더와 제작 시안입니다."]},...CSES_SECS]});
+WORKS.push({id:"cses-2025",div:"space",practices:["space","design"],status:"Built",lite:true,title:"CSES · THE BETTER, THE MORE",client:"사회적가치연구원 CSES",year:"2025",category:"Exhibition Booth · 2025",cover:"images/pf/cses-proposal/x/detail.jpg",heroSrc:"pf/cses-proposal/x/booth3d.jpg",heroTag:"SIMULATION",tags:["Booth Planning","Graphic","Mission","Reward"],summary:"2025 CSES 부스 프로젝트. 미션 수행과 코인, 리워드를 연결하고 가치카드 25종과 옐로 그래픽, 종이 집기로 참여 동선을 구성했습니다.",headline:"미션으로 시작해, 코인과 리워드로 이어지는 사회적가치.",meta:[["Client","사회적가치연구원 CSES"],["Year","2025"],["Scope","Booth Planning, Graphic, Mission, Reward"],["Archive","당시 기획안 · 공간 렌더 · 제작 시안"]],body:["2025년 CSES 부스의 기획·디자인 기록입니다. 연구원의 사회성과보상 구조를 미션 수행, 코인 수집, 리워드 교환으로 옮겼습니다. 2026 SOCIAL VALUE MARKET과는 별도의 연도별 프로젝트입니다."],points:[],slides:[],photos:[],link:"social-value-market",sections:[{t:"lead",label:"CSES / 2025",q:"The better, the more",p:["미션 수행 → 코인 → 굿즈. SNS·SV 허브 구독과 SPC 참여 기업 방문을 연결한 부스입니다. 아래 이미지는 당시 기획안의 공간 렌더와 제작 시안입니다."]},...CSES_SECS]});
 const svmWork=WORKS.find(w=>w.id==='social-value-market');svmWork.category='Exhibition Booth · 2026';svmWork.link='cses-2025';
 const flWork=WORKS.find(w=>w.id==='freeze-lab');flWork.category='Pop-up · Experience Marketing';flWork.tags=[...new Set([...flWork.tags,'Campaign','CRM'])];
 const ynWork=WORKS.find(w=>w.id==='lifemeal-yeonnam');ynWork.category='Pop-up · Experience Marketing';ynWork.tags=[...new Set([...ynWork.tags,'Marketing','CRM'])];
