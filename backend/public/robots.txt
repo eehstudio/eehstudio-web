@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /svm/app.html
+Sitemap: https://eeh-studio.home-business-kr.chatgpt.site/sitemap.xml

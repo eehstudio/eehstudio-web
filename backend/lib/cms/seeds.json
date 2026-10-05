@@ -1,0 +1,849 @@
+[
+  {
+    "key": "project:social-value-market",
+    "kind": "project",
+    "id": "social-value-market",
+    "title": "SOCIAL VALUE MARKET",
+    "client": "CSES 사회적가치연구원",
+    "year": "2026",
+    "div": "space",
+    "status": "Built",
+    "summary": "2026 대한민국 사회적가치 페스타 홍보부스. 일상 속 실천을 사회적 가치로 측정하고, 가치의 이름을 단 굿즈로 교환하는 체험형 마켓.",
+    "cover": "images/svm-cover.jpg",
+    "tags": [
+      "Concept",
+      "Branding",
+      "Space",
+      "Goods",
+      "Digital",
+      "Operation"
+    ],
+    "hidden": false,
+    "blocks": [],
+    "text": {},
+    "images": {},
+    "links": {},
+    "practices": [
+      "space",
+      "design"
+    ]
+  },
+  {
+    "key": "project:freeze-lab",
+    "kind": "project",
+    "id": "freeze-lab",
+    "title": "LIFEMEAL FREEZE LAB",
+    "client": "라이프밀 LIFEMEAL",
+    "year": "2026",
+    "div": "space",
+    "status": "Built",
+    "summary": "용산 아이파크몰 리빙파크 4F에서 14일간 연 라이프밀 추석 선물 팝업. 방문객을 연구원으로 세우고, 진공동결건조 공정을 그대로 동선으로 옮긴 실험실형 스토어.",
+    "cover": "images/pf/fl-site/01.jpg",
+    "tags": [
+      "Concept",
+      "Space",
+      "3D",
+      "Graphic",
+      "Digital",
+      "Operation"
+    ],
+    "hidden": false,
+    "blocks": [],
+    "text": {},
+    "images": {},
+    "links": {},
+    "practices": [
+      "space",
+      "marketing",
+      "design"
+    ]
+  },
+  {
+    "key": "project:lifemeal-yeonnam",
+    "kind": "project",
+    "id": "lifemeal-yeonnam",
+    "title": "LIFEMEAL MY WELLNESS ROUTINE",
+    "client": "라이프밀 LIFEMEAL",
+    "year": "2026",
+    "div": "space",
+    "status": "Built",
+    "summary": "연남동 편집숍 팔시보 스토어 안에 연 라이프밀의 첫 단독 브랜드 팝업. WBTI 웰니스 유형 진단과 웰니스 오마카세로 일상 속 건강 루틴을 직접 겪게 했고, 사전예약은 이틀 만에 1,000명을 넘었습니다.",
+    "cover": "images/pf/lifemeal-yeonnam/t01.jpg",
+    "tags": [
+      "Concept",
+      "Space",
+      "Program",
+      "WBTI",
+      "Goods"
+    ],
+    "hidden": false,
+    "blocks": [],
+    "text": {},
+    "images": {},
+    "links": {},
+    "practices": [
+      "space",
+      "marketing"
+    ]
+  },
+  {
+    "key": "project:king-of-kings",
+    "kind": "project",
+    "id": "king-of-kings",
+    "title": "KING OF KINGS POP-UP",
+    "client": "팔시보 스토어 × 영화 <킹 오브 킹스>",
+    "year": "2025",
+    "div": "space",
+    "status": "Built",
+    "summary": "애니메이션 <킹 오브 킹스> 개봉과 함께 연남동 팔시보 스토어에 연 몰입형 팝업. 인물들의 ID 카드를 모아 나의 이야기를 완성하는 스탬프 투어와 리워드 굿즈, MD, 공간 동선까지 전체 디렉팅을 맡았습니다.",
+    "cover": "images/pf/king-of-kings/t01.jpg",
+    "tags": [
+      "Concept",
+      "Stamp Tour",
+      "Goods",
+      "Space"
+    ],
+    "hidden": false,
+    "blocks": [],
+    "text": {},
+    "images": {},
+    "links": {},
+    "practices": [
+      "space",
+      "marketing"
+    ]
+  },
+  {
+    "key": "project:recette-booth",
+    "kind": "project",
+    "id": "recette-booth",
+    "title": "RECETTE @ SEOUL CAFE SHOW",
+    "client": "신세계푸드 RECETTE",
+    "year": "2023",
+    "div": "space",
+    "status": "Built",
+    "summary": "2023 서울카페쇼의 신세계푸드 베이커리 브랜드 RECETTE 부스. 사인과 라이팅 패널부터 POP, 레시피북, 컵과 유니폼까지 아치 하나로 묶었습니다.",
+    "cover": "images/pf/recette-booth/t01.jpg",
+    "tags": [
+      "Booth Graphic",
+      "ISP",
+      "Editorial",
+      "Goods",
+      "Uniform"
+    ],
+    "hidden": false,
+    "blocks": [],
+    "text": {},
+    "images": {},
+    "links": {},
+    "practices": [
+      "space",
+      "design"
+    ]
+  },
+  {
+    "key": "project:hyundai-leaders",
+    "kind": "project",
+    "id": "hyundai-leaders",
+    "title": "HYUNDAI MOTOR LEADERS CONFERENCE",
+    "client": "현대자동차 생산부문",
+    "year": "2025",
+    "div": "space",
+    "status": "Proposal",
+    "summary": "현대자동차 생산부문 리더 컨퍼런스 제안. THE INNER ENGINE이라는 한 문장으로 강연 두 단계와 공연 두 단계를 하나의 흐름으로 설계했습니다.",
+    "cover": "images/pf/hyundai-leaders/t01.jpg",
+    "tags": [
+      "Concept",
+      "Program",
+      "Lineup",
+      "Proposal"
+    ],
+    "hidden": false,
+    "blocks": [],
+    "text": {},
+    "images": {},
+    "links": {},
+    "practices": [
+      "space"
+    ]
+  },
+  {
+    "key": "project:energy-hero-race",
+    "kind": "project",
+    "id": "energy-hero-race",
+    "title": "ENERGY HERO RACE 2023",
+    "client": "한국지역난방공사 · 굿피플",
+    "year": "2023",
+    "div": "space",
+    "status": "Proposal",
+    "summary": "한국지역난방공사의 기부 마라톤 행사계획. 대회 이름과 슬로건부터 추진 일정, 당일 일정표, 220명 운영 조직, 안전과 우천 대응까지 한 권으로 짰습니다.",
+    "cover": "images/pf/energy-hero-race/t01.jpg",
+    "tags": [
+      "Concept",
+      "Run sheet",
+      "Operation",
+      "Safety"
+    ],
+    "hidden": false,
+    "blocks": [],
+    "text": {},
+    "images": {},
+    "links": {},
+    "practices": [
+      "space"
+    ]
+  },
+  {
+    "key": "project:cheongsinho",
+    "kind": "project",
+    "id": "cheongsinho",
+    "title": "CHEONGSINHO MYEONGDONG CULTURE PROGRAM",
+    "client": "청신호 명동 (SH 서울주택도시공사)",
+    "year": "2021–2022",
+    "div": "marketing",
+    "status": "Built",
+    "summary": "청년 주거 커뮤니티 청신호 명동의 연간 문화 프로그램. 랜선 버스킹 폰서트와 북콘서트, 전시와 플리마켓까지 기획부터 예산, 섭외, 광고, 운영, 결과 보고서를 한 사람이 맡았습니다.",
+    "cover": "images/pf/cheongsinho/t01.jpg",
+    "tags": [
+      "Program",
+      "Space",
+      "Content",
+      "SNS",
+      "Report"
+    ],
+    "hidden": false,
+    "blocks": [],
+    "text": {},
+    "images": {},
+    "links": {},
+    "practices": [
+      "marketing",
+      "space"
+    ]
+  },
+  {
+    "key": "project:immersive-2021",
+    "kind": "project",
+    "id": "immersive-2021",
+    "title": "IMMERSIVE EXHIBITIONS 2020–2021",
+    "client": "교회친구다모여 × 스페이스코르 · 한밭제일교회",
+    "year": "2020–2021",
+    "div": "space",
+    "status": "Built",
+    "summary": "이야기를 날짜와 코스로 나눠 관람객이 직접 걸으며 겪게 한 세 편의 체험 전시. 2020 성탄 전시 #HJD, 「예수님과 함께한 마지막 7일」, 대전 성탄 체험 전시 「HAPPY JESUS DAY」.",
+    "cover": "images/pf/immersive-2021/t01.jpg",
+    "tags": [
+      "Exhibition",
+      "Space",
+      "Storytelling",
+      "Poster",
+      "Goods"
+    ],
+    "hidden": false,
+    "blocks": [],
+    "text": {},
+    "images": {},
+    "links": {},
+    "practices": [
+      "space"
+    ]
+  },
+  {
+    "key": "project:creator-festival",
+    "kind": "project",
+    "id": "creator-festival",
+    "title": "CREATOR FESTIVAL 2025",
+    "client": "넥스트엠(next M)",
+    "year": "2025",
+    "div": "space",
+    "status": "Built",
+    "summary": "제4회 넥스트엠 크리에이터 페스티벌. 분야가 다른 연사 13명의 라인업과 세션을 하나의 키 비주얼로 묶고, 현장 사인과 웰컴 굿즈, 행사 후 설문 리포트까지 만들었습니다.",
+    "cover": "images/pf/creator-festival/t01.jpg",
+    "tags": [
+      "Key Visual",
+      "Program",
+      "Signage",
+      "Goods",
+      "Report"
+    ],
+    "hidden": false,
+    "blocks": [],
+    "text": {},
+    "images": {},
+    "links": {},
+    "practices": [
+      "space",
+      "design"
+    ]
+  },
+  {
+    "key": "project:hotel-1997",
+    "kind": "project",
+    "id": "hotel-1997",
+    "title": "THE HOTEL 1997 LOBBY BRANDING",
+    "client": "THE HOTEL 1997",
+    "year": "2025",
+    "div": "space",
+    "status": "Proposal",
+    "summary": "호텔 로비와 입구 통로를 브랜드 공간으로 바꾸는 로비 브랜딩 제안. 실측 사진 위에 가구와 조명, 러그의 치수와 배치를 올려 가구와 사인의 위치를 검토할 수 있게 정리했습니다.",
+    "cover": "images/pf/hotel-1997/t01.jpg",
+    "tags": [
+      "Space",
+      "Furniture",
+      "Signage",
+      "Mock-up"
+    ],
+    "hidden": false,
+    "blocks": [],
+    "text": {},
+    "images": {},
+    "links": {},
+    "practices": [
+      "space"
+    ]
+  },
+  {
+    "key": "project:red-sky",
+    "kind": "project",
+    "id": "red-sky",
+    "title": "RED SKY · 1ST FAN MEETING",
+    "client": "조하늘 팬미팅",
+    "year": "2025",
+    "div": "space",
+    "status": "Proposal",
+    "summary": "조하늘 첫 팬미팅의 초기 기획 제안. 감정 카드와 사전 설문에서 토크·공연·포토 타임까지, 팬의 참여가 다음 프로그램으로 이어지도록 설계했습니다.",
+    "cover": "images/pf/red-sky/t01.jpg",
+    "tags": [
+      "Concept",
+      "Program",
+      "Goods",
+      "Space"
+    ],
+    "hidden": false,
+    "blocks": [],
+    "text": {},
+    "images": {},
+    "links": {},
+    "practices": [
+      "space"
+    ]
+  },
+  {
+    "key": "project:recette-bi",
+    "kind": "project",
+    "id": "recette-bi",
+    "title": "RECETTE BASIC SYSTEM",
+    "client": "신세계푸드 RECETTE",
+    "year": "2026",
+    "div": "brand",
+    "status": "System",
+    "summary": "프렌치 클래식 베이커리 RECETTE의 기본 아이덴티티 가이드. 워드마크와 아치 심볼, 시그니처 조합, 컬러와 서체, 응용 규정을 한 권으로 정리했습니다.",
+    "cover": "images/pf/recette-bi/t01.jpg",
+    "tags": [
+      "Wordmark",
+      "Symbol",
+      "Color",
+      "Typography",
+      "Guideline"
+    ],
+    "hidden": false,
+    "blocks": [],
+    "text": {},
+    "images": {},
+    "links": {},
+    "practices": [
+      "brand",
+      "design"
+    ]
+  },
+  {
+    "key": "project:kcycf",
+    "kind": "project",
+    "id": "kcycf",
+    "title": "KCYCF BRANDING",
+    "client": "한국기독청년문화재단",
+    "year": "2025",
+    "div": "brand",
+    "status": "System",
+    "summary": "청년과 청년, 교회와 세상을 잇는 기독교 청년 문화 재단의 아이덴티티. 네 가지 가치를 로고와 심볼, 블랙 앤 화이트 컬러, 인스타그램 운영 보드로 정리했습니다.",
+    "cover": "images/pf/kcycf/t01.jpg",
+    "tags": [
+      "Values",
+      "Logo",
+      "Symbol",
+      "Color",
+      "Instagram"
+    ],
+    "hidden": false,
+    "blocks": [],
+    "text": {},
+    "images": {},
+    "links": {},
+    "practices": [
+      "brand",
+      "design"
+    ]
+  },
+  {
+    "key": "project:holly-jolly",
+    "kind": "project",
+    "id": "holly-jolly",
+    "title": "HOLLY & JOLLY REBRANDING",
+    "client": "네오에프앤비 · Holly & Jolly",
+    "year": "2023",
+    "div": "brand",
+    "status": "System",
+    "summary": "도넛·디저트 카페 홀리앤졸리의 캐릭터와 로고를 정비하고, 매장 그래픽과 인스타그램 첫 화면까지 다시 세운 리브랜딩.",
+    "cover": "images/pf/holly-jolly/t01.jpg",
+    "tags": [
+      "Character",
+      "Logo",
+      "Graphic",
+      "Instagram"
+    ],
+    "hidden": false,
+    "blocks": [],
+    "text": {},
+    "images": {},
+    "links": {},
+    "practices": [
+      "brand",
+      "design"
+    ]
+  },
+  {
+    "key": "project:ghs-2025",
+    "kind": "project",
+    "id": "ghs-2025",
+    "title": "GLOBAL HARVEST SUMMIT 2025",
+    "client": "Global Harvest Summit 2025",
+    "year": "2025",
+    "div": "brand",
+    "status": "Proposal",
+    "summary": "제주에서 열리는 국제 서밋의 아이덴티티와 행사장 그래픽 제안. 수확의 물결을 닮은 그라데이션 하나로 빌보드, 배너, 사인, 무대, 부스까지 확장했습니다.",
+    "cover": "images/pf/ghs-2025/t01.jpg",
+    "tags": [
+      "Logo",
+      "Graphic",
+      "Signage",
+      "Stage"
+    ],
+    "hidden": false,
+    "blocks": [],
+    "text": {},
+    "images": {},
+    "links": {},
+    "practices": [
+      "brand",
+      "design"
+    ]
+  },
+  {
+    "key": "project:siaff",
+    "kind": "project",
+    "id": "siaff",
+    "title": "2025 SIAFF KEY VISUAL",
+    "client": "서울국제사랑영화제",
+    "year": "2025",
+    "div": "design",
+    "status": "Proposal",
+    "summary": "2025 서울국제사랑영화제 메인 포스터 제안. 주제 LIGHT UP [ ]을 시네마, 심플리시티, 전구 세 가지 안으로 풀었습니다.",
+    "cover": "images/pf/siaff/t01.jpg",
+    "tags": [
+      "Poster",
+      "Key Visual",
+      "Typography"
+    ],
+    "hidden": false,
+    "blocks": [],
+    "text": {},
+    "images": {},
+    "links": {},
+    "practices": [
+      "design"
+    ]
+  },
+  {
+    "key": "project:marketing",
+    "kind": "project",
+    "id": "marketing",
+    "title": "POKE ALL DAY & BRAND MARKETING",
+    "client": "외식·식품 D2C 브랜드",
+    "year": "2021–2023",
+    "div": "marketing",
+    "status": "Archive",
+    "summary": "외식·식품 D2C 브랜드의 SNS 리브랜딩, 프로젝트 제안, 포스터와 카드뉴스, 행잉 배너까지. 디렉터가 직접 운영한 브랜드 마케팅 기록입니다.",
+    "cover": "images/pf/marketing/t01.jpg",
+    "tags": [
+      "SNS",
+      "Rebranding",
+      "Poster",
+      "Card News"
+    ],
+    "hidden": false,
+    "blocks": [],
+    "text": {},
+    "images": {},
+    "links": {},
+    "practices": [
+      "marketing",
+      "design"
+    ]
+  },
+  {
+    "key": "project:design-archive",
+    "kind": "project",
+    "id": "design-archive",
+    "title": "GRAPHIC DESIGN 2020–2022",
+    "client": "전시 · 공연 · 공공 공간",
+    "year": "2020–2022",
+    "div": "design",
+    "status": "Archive",
+    "summary": "전시와 공연, 공공 공간을 위한 포스터, 티켓, 브로슈어, 카드뉴스. 2020년부터 쌓아 온 그래픽 디자인 기록입니다.",
+    "cover": "images/pf/design-archive/t01.jpg",
+    "tags": [
+      "Poster",
+      "Ticket",
+      "Brochure",
+      "Card News"
+    ],
+    "hidden": false,
+    "blocks": [],
+    "text": {},
+    "images": {},
+    "links": {},
+    "practices": [
+      "design"
+    ]
+  },
+  {
+    "key": "note:language-over-efficacy",
+    "kind": "note",
+    "id": "language-over-efficacy",
+    "title": "효능 대신 경험의 언어로",
+    "date": "2026.10",
+    "tag": "Brand language",
+    "case": "freeze-lab",
+    "summary": "건강식 브랜드의 팝업에서 효능을 말하지 않기로 한 이유, 그리고 고객이 그 말을 되받아 쓰기까지.",
+    "cover": "images/pf/fl-site/03.jpg",
+    "hidden": false,
+    "blocks": [
+      {
+        "type": "p",
+        "text": "건강식 브랜드가 팝업을 열면 가장 하고 싶은 말은 대개 효능입니다. 무엇에 좋은지, 얼마나 좋은지. 하지만 LIFEMEAL FREEZE LAB의 판매 제품은 모두 일반식품이었고, 기능을 약속하는 문장은 쓸 수 없었습니다. 그리고 이 브랜드를 고른 사람의 70% 이상은 20~30대였습니다."
+      },
+      {
+        "type": "p",
+        "text": "그래서 질문을 바꿨습니다. 이 브랜드가 이미 가진 사실 중에서, 고객이 직접 겪고 말할 수 있는 것은 무엇일까. 답은 공법이었습니다. 원물을 얼리고 수분만 덜어내는 진공동결건조. 매일 쓰지만 한 번도 보여준 적 없는 과정이었습니다."
+      },
+      {
+        "type": "blockquote",
+        "text": "좋은 것은, 오래 남았으면 합니다. 그래서 우리는 얼립니다."
+      },
+      {
+        "type": "image",
+        "url": "images/fl/poster-badge.jpg",
+        "text": "연구원증 발급 안내 포스터"
+      },
+      {
+        "type": "image",
+        "url": "images/pf/fl-site/07.jpg",
+        "text": "연구복 행거와 체험 안내 배너"
+      },
+      {
+        "type": "image",
+        "url": "images/pf/fl-site/04.jpg",
+        "text": "미션 체험존"
+      },
+      {
+        "type": "p",
+        "text": "공법은 연구소가 되었고, 방문객은 연구원이 되었습니다. 효능 대신 미션을, 설명 대신 실험을, 판매 대신 처방과 선물을 골랐습니다. 단어 하나하나를 고객이 소리 내어 말해도 어색하지 않은지 기준으로 삼았습니다."
+      },
+      {
+        "type": "h2",
+        "text": "고객이 돌려준 말"
+      },
+      {
+        "type": "p",
+        "text": "팝업 기간에 올라온 인스타그램과 블로그 게시물 30건을 다시 읽었습니다. 21건이 FREEZE LAB이나 동결건조를, 17건이 연구원이나 연구소를 언급했습니다. 그냥 구경만 하는 게 아니라 내가 직접 연구원이 돼서, 라는 문장이 여러 사람의 글에서 반복되었습니다."
+      },
+      {
+        "type": "p",
+        "text": "브랜드의 말이 고객의 문장 안에서 다시 쓰일 때, 우리는 그 언어가 제대로 번역되었다고 판단합니다."
+      }
+    ],
+    "text": {},
+    "images": {},
+    "links": {}
+  },
+  {
+    "key": "note:price-tag-on-value",
+    "kind": "note",
+    "id": "price-tag-on-value",
+    "title": "가치에 가격표를 붙이는 일",
+    "date": "2026.10",
+    "tag": "Concept",
+    "case": "social-value-market",
+    "summary": "사회적 가치를 점수가 아니라 돈으로 보여주기로 한 결정, 그리고 모두에게 같은 보상을 준 이유.",
+    "cover": "images/svm-receipt.jpg",
+    "hidden": false,
+    "blocks": [
+      {
+        "type": "p",
+        "text": "사회적가치연구원은 사람의 선한 행동을 측정하는 일을 합니다. 문제는 측정 결과가 대부분 보고서 속 숫자로만 남는다는 점이었습니다. SOCIAL VALUE MARKET은 그 숫자를 누구나 아는 언어로 바꾸는 데서 시작했습니다. 장보기와 계산대, 그리고 영수증입니다."
+      },
+      {
+        "type": "blockquote",
+        "text": "측정에서 보상으로, 보상에서 제도로."
+      },
+      {
+        "type": "p",
+        "text": "텀블러를 챙긴 하루, 안부를 물은 하루가 금액으로 환산되고, 그 금액이 찍힌 바코드로 굿즈를 고릅니다. 굿즈에는 상품명 대신 가치의 이름을 붙였습니다. REFILL, WALK, LIFE. 사 가는 것이 인형이 아니라 이름이 된 가치가 되도록."
+      },
+      {
+        "type": "image",
+        "url": "images/svm-receipt.jpg",
+        "text": "가치가 찍힌 영수증"
+      },
+      {
+        "type": "image",
+        "url": "images/svm-tags.jpg",
+        "text": "가치의 이름을 단 행택"
+      },
+      {
+        "type": "image",
+        "url": "images/svm-queue.jpg",
+        "text": "계산대 앞의 줄"
+      },
+      {
+        "type": "h2",
+        "text": "같은 보상을 준 이유"
+      },
+      {
+        "type": "p",
+        "text": "처음에는 측정 금액만큼 차등 지급하려 했습니다. 하지만 그러면 실천에 등수가 생깁니다. 행사 일주일 전, 누구에게나 같은 20,000 VALUE를 주고 남은 금액은 사회에 기부되는 구조로 바꿨습니다. 측정의 재미는 미터로 남기고, 보상은 공평하게 나눴습니다."
+      },
+      {
+        "type": "p",
+        "text": "평생 남의 물건값만 찍히던 영수증에 처음으로 내가 만든 가치가 찍힙니다. 우리가 디자인한 것은 굿즈나 앱이 아니라 그 순간이었습니다."
+      }
+    ],
+    "text": {},
+    "images": {},
+    "links": {}
+  },
+  {
+    "key": "note:after-opening",
+    "kind": "note",
+    "id": "after-opening",
+    "title": "오픈한 날부터 다시 기획합니다",
+    "date": "2026.10",
+    "tag": "Operation",
+    "case": "freeze-lab",
+    "summary": "팝업 2주차 일평균 매출이 1주차의 1.6배가 되기까지, 현장에서 바꾼 일곱 가지.",
+    "cover": "images/pf/fl-site/11.jpg",
+    "hidden": false,
+    "blocks": [
+      {
+        "type": "p",
+        "text": "팝업을 열면 기획이 끝났다고 생각하기 쉽습니다. LIFEMEAL FREEZE LAB에서 우리는 오픈 다음 날부터 다시 기획했습니다. 매대 앞에서 고객이 어디서 멈추고 무엇을 집었다 내려놓는지 보고, 다음 날 아침 진열과 동선을 바꿨습니다."
+      },
+      {
+        "type": "h2",
+        "text": "작게, 매일 바꾼 것들"
+      },
+      {
+        "type": "p",
+        "text": "가격표를 두 배로 키웠고, 직접 맛보고 고르는 시식 동선을 만들었습니다. 3층 에스컬레이터 앞에서 4층으로 사람을 이끌었고, 반응이 가장 좋았던 과일칩을 가족 고객 중심으로 다시 소구했습니다. 몰 임직원을 직접 찾아갔고, 고객이 고른 대로 세트를 다시 담았고, 추석 보자기 포장을 넓혔습니다."
+      },
+      {
+        "type": "image",
+        "url": "images/pf/fl-site/10.jpg",
+        "text": "넓힌 추석 보자기 포장"
+      },
+      {
+        "type": "image",
+        "url": "images/pf/fl-site/13.jpg",
+        "text": "매대에서 미션존으로 이어지는 동선"
+      },
+      {
+        "type": "image",
+        "url": "images/pf/fl-site/14.jpg",
+        "text": "메인 진열대와 사이니지"
+      },
+      {
+        "type": "blockquote",
+        "text": "2주차 일평균 매출은 1주차의 1.6배가 되었습니다."
+      },
+      {
+        "type": "p",
+        "text": "하나하나는 작은 변화였지만, 모두 현장에서 본 것에서 출발했습니다. 3D로 먼저 짓고 도면으로 시공하는 일만큼, 오픈 이후의 2주를 운영하는 일도 디자인이라고 생각합니다."
+      },
+      {
+        "type": "p",
+        "text": "다음 팝업에서는 이 일곱 가지를 첫날부터 기본 세팅으로 시작하려 합니다. 기록해 둔 이유입니다."
+      }
+    ],
+    "text": {},
+    "images": {},
+    "links": {}
+  },
+  {
+    "key": "note:palsibo-store",
+    "kind": "note",
+    "id": "palsibo-store",
+    "title": "한 편집숍에서 연 두 번의 팝업",
+    "date": "2026.10",
+    "tag": "Space",
+    "case": "lifemeal-yeonnam",
+    "summary": "연남동 팔시보 스토어에서 연 킹 오브 킹스와 라이프밀. 작은 공간을 카드 한 장으로 묶은 방법이 FREEZE LAB까지 이어지기까지.",
+    "cover": "images/pf/lifemeal-yeonnam/04.jpg",
+    "hidden": false,
+    "blocks": [
+      {
+        "type": "p",
+        "text": "연남동 골목의 편집숍 팔시보 스토어에서 두 번의 팝업을 열었습니다. 2025년에는 애니메이션 <킹 오브 킹스>, 2026년 2월에는 라이프밀의 첫 단독 브랜드 팝업이었습니다. 두 프로젝트 모두 콘셉트부터 공간, 굿즈, 현장 운영까지 전체 디렉팅을 맡았습니다."
+      },
+      {
+        "type": "h2",
+        "text": "작은 공간에는 많이 놓을 수 없습니다"
+      },
+      {
+        "type": "p",
+        "text": "편집숍 한쪽을 빌려 쓰는 팝업은 가벽을 세우거나 집기를 늘리기 어렵습니다. 그래서 공간을 채우는 대신 방문객의 손에 카드 한 장을 쥐여 주기로 했습니다. 킹 오브 킹스에서는 인물들의 ID 카드를 모아 나의 이야기를 완성하는 스탬프 투어였고, 라이프밀에서는 웰니스 체크리스트와 WBTI 진단으로 받는 나의 웰니스 루틴 카드였습니다."
+      },
+      {
+        "type": "image",
+        "url": "images/pf/king-of-kings/04.jpg",
+        "text": "킹 오브 킹스, 인물 ID 카드"
+      },
+      {
+        "type": "image",
+        "url": "images/pf/lifemeal-yeonnam/03.jpg",
+        "text": "라이프밀, 동선 시뮬레이션"
+      },
+      {
+        "type": "image",
+        "url": "images/pf/lifemeal-yeonnam/17.jpg",
+        "text": "라이프밀, 루틴 도어행어 카드"
+      },
+      {
+        "type": "blockquote",
+        "text": "공간을 채우는 대신, 방문객의 손에 카드 한 장을 쥐여 주었습니다."
+      },
+      {
+        "type": "p",
+        "text": "돌아보면 이 방법은 2020년 종로 스페이스코르의 성탄 전시 #HJD에서 시작됐습니다. 성탄의 여섯 가지 의미를 따라 도장을 모으는 카드 한 장이 작은 카페 전시의 동선이 되었습니다."
+      },
+      {
+        "type": "p",
+        "text": "카드가 있으면 동선이 생깁니다. 어디서 시작해 어디서 끝나는지, 무엇을 모으고 무엇을 가져가는지가 분명해집니다. 라이프밀 팝업의 사전예약은 이틀 만에 1,000명을 넘었고, 이 방식은 일곱 달 뒤 용산 FREEZE LAB에서 연구원증과 네 단계 코스로 커졌습니다."
+      }
+    ],
+    "text": {},
+    "images": {},
+    "links": {}
+  },
+  {
+    "key": "note:plan-to-site",
+    "kind": "note",
+    "id": "plan-to-site",
+    "title": "기획안이 현장이 되기까지",
+    "date": "2026.10",
+    "tag": "Process",
+    "case": "freeze-lab",
+    "summary": "메일 첫 통에서 철수까지, 하나의 문서로 움직인 14일짜리 실험실의 준비 과정.",
+    "cover": "images/pf/fl-deck/08.jpg",
+    "hidden": false,
+    "blocks": [
+      {
+        "type": "p",
+        "text": "FREEZE LAB은 6월 30일 몰의 첫 제안 메일에서 시작해 9월 23일 철수까지 하나의 문서로 움직였습니다. 바이어와 본사, 제작사와 주고받은 메일을 모두 이어 붙이고, 그 안에서 확정된 것과 아직 답이 없는 것을 매일 나눴습니다."
+      },
+      {
+        "type": "h2",
+        "text": "조건이 적혀 있으면, 디자인이 빨라집니다"
+      },
+      {
+        "type": "p",
+        "text": "라이프밀만으로 22평을 채울 수 있겠냐는 바이어의 질문에 콘셉트 문서는 진열 대신 공정 라인으로 답했습니다. 체험이 현장 제조로 보이면 영업신고 대상이 된다는 조건에는 완제품 시식으로, 기능성 표현 금지에는 경험의 언어로 답했습니다. 조건이 문서에 적혀 있으니 디자인은 그 안에서 바로 결정될 수 있었습니다."
+      },
+      {
+        "type": "image",
+        "url": "images/fl/deck/plan.jpg",
+        "text": "PLAN · 메인 존 평면 배치"
+      },
+      {
+        "type": "image",
+        "url": "images/fl/turn/f06.jpg",
+        "text": "3D · 모델 R02"
+      },
+      {
+        "type": "image",
+        "url": "images/pf/fl-site/04.jpg",
+        "text": "SITE · 미션 체험존 현장"
+      },
+      {
+        "type": "blockquote",
+        "text": "확정된 것과 아직 답이 없는 것을 매일 나눴습니다."
+      },
+      {
+        "type": "h2",
+        "text": "장표와 3D, 그리고 계약서까지 같은 숫자로"
+      },
+      {
+        "type": "p",
+        "text": "3D 모델 R02에서 존별 렌더와 도면을 뽑고, 그 치수로 시공사와 계약했습니다. 중앙 가벽 외측 3,890, 체험벽 3,660, 높이 1,820, 미션 작업대 1,200×600×800. 9월 9일 하루 만에 설치하고 다음 날 문을 열기까지 같은 숫자가 이어졌습니다."
+      },
+      {
+        "type": "p",
+        "text": "77개의 실행 항목은 8주로 나눴고, 아홉 가지 리스크에는 대응을 미리 적어 두었습니다. 고지물 마감처럼 지키지 못한 날짜도 그대로 기록했습니다. 다음 프로젝트를 더 빨리, 더 정확하게 시작하기 위해서입니다."
+      }
+    ],
+    "text": {},
+    "images": {},
+    "links": {}
+  },
+  {
+    "key": "site:main",
+    "kind": "site",
+    "id": "main",
+    "title": "사이트 공통 정보",
+    "email": "eehstudio.kr@gmail.com",
+    "instagram": "eeh_studio",
+    "phone": "",
+    "address": "",
+    "profilePdf": "",
+    "text": {},
+    "images": {},
+    "links": {},
+    "blocks": []
+  },
+  {
+    "id": "cses-2025",
+    "title": "CSES · THE BETTER, THE MORE",
+    "client": "사회적가치연구원 CSES",
+    "year": "2025",
+    "div": "space",
+    "practices": [
+      "space",
+      "design"
+    ],
+    "status": "Built",
+    "summary": "2025 CSES 부스 프로젝트. 미션 수행과 코인, 리워드를 연결하고 가치카드 25종과 옐로 그래픽, 종이 집기로 참여 동선을 구성했습니다.",
+    "cover": "images/pf/cses-proposal/x/booth3d.jpg",
+    "tags": [
+      "Booth Planning",
+      "Graphic",
+      "Mission",
+      "Reward"
+    ],
+    "key": "project:cses-2025",
+    "kind": "project",
+    "hidden": false,
+    "text": {},
+    "images": {},
+    "links": {},
+    "blocks": []
+  }
+]
